@@ -36,7 +36,7 @@ namespace ControleSe
 
         private void dividasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (var form = new DividasForm(_usuario, new ServicoDivida()))
+            using (var form = new DividasForm(_usuario, new ServicoDivida(), new Divida()))
             {
                 form.ShowDialog();
             }

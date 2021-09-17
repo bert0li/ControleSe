@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ControleSe.Entidade;
+using ControleSe.Servico;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,14 @@ namespace ControleSe.Operacoes
 {
     public partial class DividaDetalhe : Form
     {
-        public DividaDetalhe()
+        private ServicoDivida _servicoDivida;
+        private Divida _divida;
+
+        public DividaDetalhe(ServicoDivida servicoDivida, Divida divida)
         {
             InitializeComponent();
+            _servicoDivida = servicoDivida;
+            _divida = divida;
         }
     }
 }

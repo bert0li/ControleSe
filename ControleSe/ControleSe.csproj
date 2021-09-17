@@ -38,6 +38,9 @@
     <None Update="Arquivos\Imagens\add.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Arquivos\Imagens\alterar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Arquivos\Imagens\deletar.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
