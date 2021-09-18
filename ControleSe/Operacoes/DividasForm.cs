@@ -32,6 +32,7 @@ namespace ControleSe.Operacoes
             _servicoDivida = _servicoDivida ?? new ServicoDivida();
             _divida.Usuario = _usuario;
             grid.DataSource = _servicoDivida.ObterDividas(_usuario);
+            grid.AutoGenerateColumns = false;
         }
 
         private void LinhaSeleciona(/*DataGridViewCellEventArgs e*/)
