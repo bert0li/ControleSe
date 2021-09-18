@@ -35,6 +35,9 @@ namespace ControleSe.Operacoes
             grid.AutoGenerateColumns = false;
         }
 
+        /// <summary>
+        ///  TESTE
+        /// </summary>
         private void LinhaSeleciona(/*DataGridViewCellEventArgs e*/)
         {
             grid.RowEnter += (s, e) =>
