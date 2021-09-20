@@ -1,4 +1,5 @@
 ﻿using ControleSe.Entidade;
+using ControleSe.Entidade.Base;
 using ControleSe.Repositorio.Contexto;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ControleSe.Servico
 {
-    public class ServicoDivida
+    public class ServicoDivida : ServicoBase
     {
         public IEnumerable<Divida> ObterDividas(Usuario usuario)
         {
@@ -32,6 +33,32 @@ namespace ControleSe.Servico
             }
 
             return dividas;
+        }
+
+        public bool Salvar(Divida divida)
+        {
+            EhValido = false;
+
+            try
+            {
+                if (divida != null)
+                {
+                    using (var contexto = new Contexto())
+                    {
+                        contexto.Divida.Add(divida);
+                        contexto.SaveChanges();
+                        EhValido = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                //Implementar Msg e Log
+                EhValido = false;
+                throw;
+            }
+
+            return EhValido;
         }
     }
 }
