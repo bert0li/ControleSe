@@ -34,12 +34,12 @@ namespace ControleSe.Operacoes
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblDescricao = new System.Windows.Forms.Label();
             this.lblValor = new System.Windows.Forms.Label();
+            this.cbxTipoDivida = new System.Windows.Forms.ComboBox();
             this.lblTipoDivida = new System.Windows.Forms.Label();
             this.lblDataCompra = new System.Windows.Forms.Label();
             this.lblDataVencimento = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.txtValor = new System.Windows.Forms.TextBox();
-            this.cbxTipoDivida = new System.Windows.Forms.ComboBox();
             this.dtpDataCompra = new System.Windows.Forms.DateTimePicker();
             this.dtpDataVencimento = new System.Windows.Forms.DateTimePicker();
             this.tlpCodigo = new System.Windows.Forms.TableLayoutPanel();
@@ -66,12 +66,12 @@ namespace ControleSe.Operacoes
             this.tlpInfoDivida.Controls.Add(this.txtNome, 1, 0);
             this.tlpInfoDivida.Controls.Add(this.lblDescricao, 0, 1);
             this.tlpInfoDivida.Controls.Add(this.lblValor, 0, 2);
+            this.tlpInfoDivida.Controls.Add(this.cbxTipoDivida, 10, 3);
             this.tlpInfoDivida.Controls.Add(this.lblTipoDivida, 0, 3);
             this.tlpInfoDivida.Controls.Add(this.lblDataCompra, 0, 4);
             this.tlpInfoDivida.Controls.Add(this.lblDataVencimento, 0, 5);
             this.tlpInfoDivida.Controls.Add(this.txtDescricao, 1, 1);
             this.tlpInfoDivida.Controls.Add(this.txtValor, 1, 2);
-            this.tlpInfoDivida.Controls.Add(this.cbxTipoDivida, 1, 3);
             this.tlpInfoDivida.Controls.Add(this.dtpDataCompra, 1, 4);
             this.tlpInfoDivida.Controls.Add(this.dtpDataVencimento, 1, 5);
             this.tlpInfoDivida.Location = new System.Drawing.Point(12, 86);
@@ -131,6 +131,18 @@ namespace ControleSe.Operacoes
             this.lblValor.Text = "Valor:";
             this.lblValor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // cbxTipoDivida
+            // 
+            this.cbxTipoDivida.DropDownHeight = 100;
+            this.cbxTipoDivida.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbxTipoDivida.FormattingEnabled = true;
+            this.cbxTipoDivida.IntegralHeight = false;
+            this.cbxTipoDivida.Location = new System.Drawing.Point(141, 111);
+            this.cbxTipoDivida.Name = "cbxTipoDivida";
+            this.cbxTipoDivida.Size = new System.Drawing.Size(168, 27);
+            this.cbxTipoDivida.TabIndex = 2;
+            this.cbxTipoDivida.SelectedIndexChanged += new System.EventHandler(this.cbxTipoDivida_SelectedIndexChanged);
+            // 
             // lblTipoDivida
             // 
             this.lblTipoDivida.AutoSize = true;
@@ -184,18 +196,6 @@ namespace ControleSe.Operacoes
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(467, 27);
             this.txtValor.TabIndex = 1;
-            // 
-            // cbxTipoDivida
-            // 
-            this.cbxTipoDivida.DropDownHeight = 2;
-            this.cbxTipoDivida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxTipoDivida.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbxTipoDivida.FormattingEnabled = true;
-            this.cbxTipoDivida.IntegralHeight = false;
-            this.cbxTipoDivida.Location = new System.Drawing.Point(141, 111);
-            this.cbxTipoDivida.Name = "cbxTipoDivida";
-            this.cbxTipoDivida.Size = new System.Drawing.Size(168, 27);
-            this.cbxTipoDivida.TabIndex = 2;
             // 
             // dtpDataCompra
             // 

@@ -12,6 +12,40 @@ namespace ControleSe.Servico
 {
     public class ServicoDivida : ServicoBase
     {
+        public bool Validar(Divida divida)
+        {
+            EhValido = false;
+
+            if (divida != null)
+            {
+                if (string.IsNullOrWhiteSpace(divida.Nome))
+                {
+                    // TODO: Msg
+                    EhValido = false;
+                }
+
+                if (string.IsNullOrWhiteSpace(divida.Descricao))
+                {
+                    // TODO: Msg
+                    EhValido = false;
+                }
+
+                if (divida.Valor == 0)
+                {
+                    // TODO: Msg
+                    EhValido = false;
+                }
+
+                if (divida.DataVencimento == DateTime.MinValue)
+                {
+                    // TODO: Msg
+                    EhValido = false;
+                }
+            }
+
+            return EhValido;
+        }
+
         public IEnumerable<Divida> ObterDividas(Usuario usuario)
         {
             IEnumerable<Divida> dividas = null;

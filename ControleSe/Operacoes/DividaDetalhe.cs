@@ -1,4 +1,5 @@
 ﻿using ControleSe.Entidade;
+using ControleSe.Enumerador;
 using ControleSe.Servico;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,42 @@ namespace ControleSe.Operacoes
             InitializeComponent();
             _servicoDivida = servicoDivida;
             _divida = divida;
+            AtribuirBinding(_divida);
+        }
+
+        private void InicializarDatas()
+        {
+            dtpDataCompra.Value = DateTime.Now;
+            dtpDataVencimento.Value = DateTime.Now;
+            _divida.DataCompra = dtpDataCompra.Value;
+            _divida.DataVencimento = dtpDataVencimento.Value;
+        }
+
+        private void CarregarCompoBox()
+        {
+            var tiposDivida = Enum.GetValues(typeof(TipoDivida));
+            cbxTipoDivida.DataSource = tiposDivida;
+        }
+
+        private void AtribuirBinding(Divida divida)
+        {
+            InicializarDatas();
+            CarregarCompoBox();
+
+            _servicoDivida = _servicoDivida ?? new ServicoDivida();
+            _divida = divida ?? new Divida();
+
+            txtNome.DataBindings.Add("Text", _divida, "Nome");
+            txtDescricao.DataBindings.Add("Text", _divida, "Descricao");
+            dtpDataCompra.DataBindings.Add("Value", _divida, "DataCompra");
+            dtpDataVencimento.DataBindings.Add("Value", _divida, "DataVencimento");
+            
+        }
+
+        private void cbxTipoDivida_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var tipoDivida = (TipoDivida)cbxTipoDivida.SelectedIndex;
+            _divida.TipoDivida = tipoDivida;
         }
     }
 }
