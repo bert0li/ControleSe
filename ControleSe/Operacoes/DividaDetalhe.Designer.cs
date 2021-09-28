@@ -278,6 +278,7 @@ namespace ControleSe.Operacoes
             this.btnSalvar.TabIndex = 0;
             this.btnSalvar.Text = "Salvar [F5]";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnSair
             // 
@@ -291,6 +292,7 @@ namespace ControleSe.Operacoes
             this.btnSair.TabIndex = 0;
             this.btnSair.Text = "Sair [Esc]";
             this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // tableLayoutPanel1
             // 

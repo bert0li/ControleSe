@@ -1,6 +1,7 @@
 ﻿using ControleSe.Entidade;
 using ControleSe.Enumerador;
 using ControleSe.Servico;
+using ControleSe.Utilitario;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,9 +51,26 @@ namespace ControleSe.Operacoes
 
             txtNome.DataBindings.Add("Text", _divida, "Nome");
             txtDescricao.DataBindings.Add("Text", _divida, "Descricao");
+            txtValor.DataBindings.Add("Text", _divida, "Valor");
             dtpDataCompra.DataBindings.Add("Value", _divida, "DataCompra");
             dtpDataVencimento.DataBindings.Add("Value", _divida, "DataVencimento");
-            
+
+        }
+
+        private void Salvar()
+        {
+            try
+            {
+                if (_servicoDivida.Validar(_divida))
+                {
+                    if (_servicoDivida.Salvar(_divida))
+                        Msg.Informacao("Divida salva.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Msg.Erro(ex.Message);
+            }
         }
 
         private void cbxTipoDivida_SelectedIndexChanged(object sender, EventArgs e)
@@ -60,5 +78,11 @@ namespace ControleSe.Operacoes
             var tipoDivida = (TipoDivida)cbxTipoDivida.SelectedIndex;
             _divida.TipoDivida = tipoDivida;
         }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+            => Salvar();
+
+        private void btnSair_Click(object sender, EventArgs e)
+            => Close();
     }
 }

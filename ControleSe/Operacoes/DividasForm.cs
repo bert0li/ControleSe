@@ -24,15 +24,16 @@ namespace ControleSe.Operacoes
             _servicoDivida = servicoDivida;
             _usuario = usuario;
             _divida = divida;
+            _divida.UsuarioId = _usuario.Id;
             BindingDividas();
         }
 
         private void BindingDividas()
         {
             _servicoDivida = _servicoDivida ?? new ServicoDivida();
-            _divida.Usuario = _usuario;
-            grid.DataSource = _servicoDivida.ObterDividas(_usuario);
+            //_divida.Usuario = _usuario;
             grid.AutoGenerateColumns = false;
+            grid.DataSource = _servicoDivida.ObterDividas(_usuario);
         }
 
         private void LinhaSeleciona(/*DataGridViewCellEventArgs e*/)
@@ -60,14 +61,17 @@ namespace ControleSe.Operacoes
             {
                 form.ShowDialog();
             }
+
+            BindingDividas();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
-        => AlterarIncluir(true);
+            => AlterarIncluir(true);
 
         private void btnAlterar_Click(object sender, EventArgs e)
-        => AlterarIncluir();
+            => AlterarIncluir();
 
-        private void grid_RowEnter(object sender, DataGridViewCellEventArgs e) => LinhaSeleciona();
+        private void grid_RowEnter(object sender, DataGridViewCellEventArgs e)
+            => LinhaSeleciona();
     }
 }

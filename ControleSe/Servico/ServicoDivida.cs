@@ -1,6 +1,7 @@
 ﻿using ControleSe.Entidade;
 using ControleSe.Entidade.Base;
 using ControleSe.Repositorio.Contexto;
+using ControleSe.Utilitario;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -14,31 +15,31 @@ namespace ControleSe.Servico
     {
         public bool Validar(Divida divida)
         {
-            EhValido = false;
+            EhValido = true;
 
             if (divida != null)
             {
                 if (string.IsNullOrWhiteSpace(divida.Nome))
                 {
-                    // TODO: Msg
+                    Msg.Atencao("Informe o Nome da divida");
                     EhValido = false;
                 }
 
                 if (string.IsNullOrWhiteSpace(divida.Descricao))
                 {
-                    // TODO: Msg
+                    Msg.Atencao("Informe o Descricao da divida");
                     EhValido = false;
                 }
 
                 if (divida.Valor == 0)
                 {
-                    // TODO: Msg
+                    Msg.Atencao("Informe o Valor da divida");
                     EhValido = false;
                 }
 
                 if (divida.DataVencimento == DateTime.MinValue)
                 {
-                    // TODO: Msg
+                    Msg.Atencao("Informe uma Data valida da divida");
                     EhValido = false;
                 }
             }
@@ -62,7 +63,7 @@ namespace ControleSe.Servico
             }
             catch (Exception ex)
             {
-                //Implementar Msg e Log
+                ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
                 throw;
             }
 
@@ -87,7 +88,7 @@ namespace ControleSe.Servico
             }
             catch (Exception ex)
             {
-                //Implementar Msg e Log
+                _servicoLogErro.Gravar(ex.Message, ex.StackTrace);
                 EhValido = false;
                 throw;
             }
