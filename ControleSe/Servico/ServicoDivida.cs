@@ -64,7 +64,6 @@ namespace ControleSe.Servico
             catch (Exception ex)
             {
                 ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
-                throw;
             }
 
             return dividas;
@@ -88,9 +87,8 @@ namespace ControleSe.Servico
             }
             catch (Exception ex)
             {
-                _servicoLogErro.Gravar(ex.Message, ex.StackTrace);
+                ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
                 EhValido = false;
-                throw;
             }
 
             return EhValido;

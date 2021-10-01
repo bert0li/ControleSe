@@ -1,5 +1,6 @@
 ﻿using ControleSe.Entidade;
 using ControleSe.Repositorio.Contexto;
+using ControleSe.Utilitario;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -26,12 +27,12 @@ namespace ControleSe.Servico
                         .FirstOrDefault();
 
                     if (_usuario == null)
-                        MessageBox.Show("Usuario ou Senha invalido. Tente novamente.");
+                        Msg.Atencao("Usuario ou Senha invalido. Tente novamente.");
                 }
             }
             catch (Exception ex)
             {
-                // TODO: Implementar Msg e Log
+                ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
                 throw;
             }
 
