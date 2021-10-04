@@ -31,7 +31,6 @@ namespace ControleSe.Operacoes
         private void BindingDividas()
         {
             _servicoDivida = _servicoDivida ?? new ServicoDivida();
-            //_divida.Usuario = _usuario;
             grid.AutoGenerateColumns = false;
             grid.DataSource = _servicoDivida.ObterDividas(_usuario);
         }

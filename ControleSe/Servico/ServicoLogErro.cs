@@ -8,47 +8,47 @@ using System.Threading.Tasks;
 
 namespace ControleSe.Servico
 {
-    public static class ServicoLogErro
+    public class ServicoLogErro
     {
-        private static DateTime _dataAtual;
-        private static string _pastaLog;
-        private static string _arquivo;
-        private static string _logMsg;
+        public static DateTime DataAtual { get; set; }
+        public static string Pasta { get; set; }
+        public static string Arquivo { get; set; }
+        public static string MsgLog { get; set; }
 
-        public static void Gravar(string msg, string stackTrace)
+        public static void Gravar(string mensagem, string stackTrace)
         {
             try
             {
-                _dataAtual = DateTime.Now;
-                _pastaLog = @"C:\LogErroSentinela";
-                _arquivo = @"C:\LogErroSentinela\logErro.txt";
-                _logMsg = $"{_dataAtual} ERRO: {msg} \nStackTrace: {stackTrace}";
+                DataAtual = DateTime.Now;
+                Pasta = @"C:\LogErroControleSe";
+                Arquivo = @"C:\LogErroControleSe\LogErro.txt";
+                MsgLog = $"[{DataAtual}] [MENSAGEM ERRO]=> {mensagem} [StackTrace] => {stackTrace}";
 
-                VerificarPasta(_pastaLog);
-                VerificarArquivo(_arquivo);
+                VerificarPasta(Pasta);
+                VerificarArquivo(Arquivo);
 
-                using (StreamWriter writer = File.AppendText(_arquivo))
+                using (StreamWriter writer = File.AppendText(Arquivo))
                 {
-                    writer.WriteLine(_logMsg);
-                    writer.WriteLine("<-----//-----//-----//-----//-----//----- //----->");
+                    writer.WriteLine(MsgLog);
+                    writer.WriteLine("-----//-----//-----//-----");
                 }
             }
             catch (IOException ex)
             {
-                Msg.Erro(ex.Message);
+                Msg.Erro($"Erro ao gravar o arquivo de LOG:\n {ex.Message}\n {ex.StackTrace}");
             }
         }
 
-        public static void VerificarArquivo(string pasta)
-        {
-            if (!Directory.Exists(pasta))
-                Directory.CreateDirectory(pasta);
-        }
-
-        public static void VerificarPasta(string arquivo)
+        public static void VerificarArquivo(string arquivo)
         {
             if (!File.Exists(arquivo))
                 File.Create(arquivo);
+        }
+
+        public static void VerificarPasta(string pasta)
+        {
+            if (!Directory.Exists(pasta))
+                Directory.CreateDirectory(pasta);
         }
     }
 }

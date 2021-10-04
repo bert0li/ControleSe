@@ -70,6 +70,7 @@ namespace ControleSe.Operacoes
             }
             catch (Exception ex)
             {
+                ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
                 Msg.Erro(ex.Message);
             }
         }
