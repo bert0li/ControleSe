@@ -44,7 +44,7 @@ namespace ControleSe.Operacoes
             this.dtpDataVencimento = new System.Windows.Forms.DateTimePicker();
             this.tlpCodigo = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.tlpBotoes = new System.Windows.Forms.TableLayoutPanel();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
@@ -221,7 +221,7 @@ namespace ControleSe.Operacoes
             this.tlpCodigo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.84848F));
             this.tlpCodigo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.15151F));
             this.tlpCodigo.Controls.Add(this.label1, 0, 0);
-            this.tlpCodigo.Controls.Add(this.textBox1, 1, 0);
+            this.tlpCodigo.Controls.Add(this.txtCodigo, 1, 0);
             this.tlpCodigo.Location = new System.Drawing.Point(12, 26);
             this.tlpCodigo.Name = "tlpCodigo";
             this.tlpCodigo.RowCount = 1;
@@ -241,16 +241,16 @@ namespace ControleSe.Operacoes
             this.label1.Text = "Código:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox1
+            // txtCodigo
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(95, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(166, 30);
-            this.textBox1.TabIndex = 1;
+            this.txtCodigo.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtCodigo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtCodigo.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCodigo.Location = new System.Drawing.Point(95, 3);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.ReadOnly = true;
+            this.txtCodigo.Size = new System.Drawing.Size(166, 30);
+            this.txtCodigo.TabIndex = 1;
             // 
             // tlpBotoes
             // 
@@ -372,7 +372,7 @@ namespace ControleSe.Operacoes
         private System.Windows.Forms.DateTimePicker dtpDataVencimento;
         private System.Windows.Forms.TableLayoutPanel tlpCodigo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.TableLayoutPanel tlpBotoes;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnSair;

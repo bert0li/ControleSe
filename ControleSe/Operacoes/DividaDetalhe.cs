@@ -49,6 +49,7 @@ namespace ControleSe.Operacoes
             _servicoDivida = _servicoDivida ?? new ServicoDivida();
             _divida = divida ?? new Divida();
 
+            txtCodigo.DataBindings.Add("Text", _divida, "Id");
             txtNome.DataBindings.Add("Text", _divida, "Nome");
             txtDescricao.DataBindings.Add("Text", _divida, "Descricao");
             txtValor.DataBindings.Add("Text", _divida, "Valor");

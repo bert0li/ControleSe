@@ -14,9 +14,9 @@ namespace ControleSe.Operacoes
 {
     public partial class DividasForm : Form
     {
-        private ServicoDivida _servicoDivida;
-        private Usuario _usuario;
-        private Divida _divida;
+        private ServicoDivida _servicoDivida = null;
+        private Usuario _usuario = null;
+        private Divida _divida = null;
 
         public DividasForm(Usuario usuario, ServicoDivida servicoDivida, Divida divida)
         {
@@ -36,26 +36,18 @@ namespace ControleSe.Operacoes
             grid.DataSource = _servicoDivida.ObterDividas(_usuario);
         }
 
-        private void LinhaSeleciona(/*DataGridViewCellEventArgs e*/)
+        private void LinhaSeleciona(DataGridViewCellEventArgs e)
         {
-            grid.RowEnter += (s, e) =>
-            {
-                if (e.RowIndex > 0)
-                    _divida = grid.Rows[e.RowIndex].DataBoundItem as Divida;
-            };
-
-            //if (e.RowIndex < 0)
-            //    return;
-            //else
-            //    _divida = grid.Rows[e.RowIndex].DataBoundItem as Divida;
+            if (e.RowIndex < 0)
+                return;
+            else
+                _divida = grid.Rows[e.RowIndex].DataBoundItem as Divida;
         }
 
         private void AlterarIncluir(bool incluir = false)
         {
             if (!incluir)
-            {
-                LinhaSeleciona();
-            }
+                _divida = new Divida();
 
             using (var form = new DividaDetalhe(_servicoDivida, _divida))
             {
@@ -65,13 +57,16 @@ namespace ControleSe.Operacoes
             BindingDividas();
         }
 
+        private void grid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+            => LinhaSeleciona(e);
+
+        private void grid_CellClick(object sender, DataGridViewCellEventArgs e)
+            => LinhaSeleciona(e);
+
         private void btnAdd_Click(object sender, EventArgs e)
             => AlterarIncluir(true);
 
         private void btnAlterar_Click(object sender, EventArgs e)
             => AlterarIncluir();
-
-        private void grid_RowEnter(object sender, DataGridViewCellEventArgs e)
-            => LinhaSeleciona();
     }
 }
