@@ -90,6 +90,7 @@ namespace ControleSe.Operacoes
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(261, 27);
             this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsuario_KeyDown);
             // 
             // txtSenha
             // 
@@ -100,6 +101,7 @@ namespace ControleSe.Operacoes
             this.txtSenha.Size = new System.Drawing.Size(261, 27);
             this.txtSenha.TabIndex = 1;
             this.txtSenha.UseSystemPasswordChar = true;
+            this.txtSenha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSenha_KeyDown);
             // 
             // tableLayoutPanel1
             // 

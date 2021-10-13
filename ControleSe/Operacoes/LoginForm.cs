@@ -37,14 +37,47 @@ namespace ControleSe.Operacoes
 
         private void Entrar()
         {
-            // TODO : Implementar validação
-            var usuario = _servicoUsuario.Logar(Usuario);
-
-            if (usuario != null)
+            if (_servicoUsuario.ValidarLogin(Usuario))
             {
-                Usuario = usuario;
-                Close();
+                var usuario = _servicoUsuario.Logar(Usuario);
+
+                if (usuario != null)
+                {
+                    Usuario = usuario;
+                    Close();
+                }
             }
+        }
+
+        private void AcaoAcionada(KeyEventArgs e)
+        {
+            if (txtUsuario.Focused)
+            {
+                if (e.KeyData == Keys.Enter)
+                {
+                    txtSenha.Focus();
+                    return;
+                }
+            }
+
+            if (txtSenha.Focused)
+            {
+                if (e.KeyData == Keys.Enter)
+                {
+                    btnEntrar.PerformClick();
+                    return;
+                }
+            }
+        }
+
+        private void txtUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            AcaoAcionada(e);
+        }
+
+        private void txtSenha_KeyDown(object sender, KeyEventArgs e)
+        {
+            AcaoAcionada(e);
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
