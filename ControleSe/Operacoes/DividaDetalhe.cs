@@ -31,8 +31,12 @@ namespace ControleSe.Operacoes
         {
             dtpDataCompra.Value = DateTime.Now;
             dtpDataVencimento.Value = DateTime.Now;
-            _divida.DataCompra = dtpDataCompra.Value;
-            _divida.DataVencimento = dtpDataVencimento.Value;
+
+            if (_divida.EhIncluir)
+            {
+                _divida.DataCompra = dtpDataCompra.Value;
+                _divida.DataVencimento = dtpDataVencimento.Value;
+            }
         }
 
         private void CarregarCompoBox()
@@ -65,7 +69,10 @@ namespace ControleSe.Operacoes
                 if (_servicoDivida.Validar(_divida))
                 {
                     if (_servicoDivida.Salvar(_divida))
+                    {
                         Msg.Informacao("Divida salva.");
+                        Close();
+                    }
                 }
             }
             catch (Exception ex)

@@ -45,8 +45,10 @@ namespace ControleSe.Operacoes
 
         private void AlterarIncluir(bool incluir = false)
         {
-            if (!incluir)
-                _divida = new Divida();
+            if (incluir)
+            {
+                _divida.EhIncluir = true;
+            }
 
             using (var form = new DividaDetalhe(_servicoDivida, _divida))
             {
@@ -54,6 +56,21 @@ namespace ControleSe.Operacoes
             }
 
             BindingDividas();
+        }
+
+        private void grid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            var dataVencimento = (DateTime)grid.Rows[e.RowIndex].Cells["colDataVencimento"]?.Value;
+
+            if (dataVencimento <= DateTime.Now)
+            {
+                var cells = grid.Columns.Count;
+
+                for (int i = 0; i < cells; i++)
+                {
+                    grid.Rows[e.RowIndex].Cells[i].Style.ForeColor = Color.Red;
+                }
+            }
         }
 
         private void grid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
