@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace ControleSe.Servico
 {
-    public class ServicoUsuario: ServicoBase
+    public class ServicoUsuario : ServicoBase
     {
         public bool ValidarLogin(Usuario usuario)
         {
             if (usuario == null) return false;
 
-            EhValido = false;
+            EhValido = true;
 
             if (string.IsNullOrWhiteSpace(usuario.UsuarioAcesso))
             {
