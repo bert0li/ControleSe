@@ -17,6 +17,7 @@ namespace ControleSe.Operacoes
         private ServicoDivida _servicoDivida = null;
         private Usuario _usuario = null;
         private Divida _divida = null;
+        private List<decimal> _somaTotalDivida;
 
         public DividasForm(Usuario usuario, ServicoDivida servicoDivida, Divida divida)
         {
@@ -26,10 +27,12 @@ namespace ControleSe.Operacoes
             _divida = divida;
             _divida.UsuarioId = _usuario.Id;
             BindingDividas();
+            SomarTotalDivida();
         }
 
         private void BindingDividas()
         {
+            _somaTotalDivida = new List<decimal>();
             _servicoDivida = _servicoDivida ?? new ServicoDivida();
             grid.AutoGenerateColumns = false;
             grid.DataSource = _servicoDivida.ObterDividas(_usuario);
@@ -56,9 +59,10 @@ namespace ControleSe.Operacoes
             }
 
             BindingDividas();
+            SomarTotalDivida();
         }
 
-        private void grid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void VerificarVencimento(DataGridViewCellFormattingEventArgs e)
         {
             var dataVencimento = (DateTime)grid.Rows[e.RowIndex].Cells["colDataVencimento"]?.Value;
 
@@ -72,6 +76,25 @@ namespace ControleSe.Operacoes
                 }
             }
         }
+
+        private void SomarTotalDivida()
+        {
+            var somaTotalDivida = 0M;
+
+            for (var i = 0; i < grid.RowCount; i++)
+            {
+                var valorDivida = (decimal)grid.Rows[i].Cells["colValor"]?.Value;
+                if (valorDivida > 0)
+                {
+                    somaTotalDivida += valorDivida;
+                }
+            }
+
+            lblValorTotalDivida.Text = somaTotalDivida.ToString("C");
+        }
+
+        private void grid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+            => VerificarVencimento(e);
 
         private void grid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
             => LinhaSeleciona(e);
