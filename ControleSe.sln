@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControleSe", "ControleSe\ControleSe.csproj", "{01A18B21-E2CF-4E3A-9CA1-44FDB0DE5771}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{4754ED72-6B0F-4FB8-9192-6A4DB3884371}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{30F61F18-67D6-4806-AFEA-FCFEC920D950}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{01A18B21-E2CF-4E3A-9CA1-44FDB0DE5771}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01A18B21-E2CF-4E3A-9CA1-44FDB0DE5771}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01A18B21-E2CF-4E3A-9CA1-44FDB0DE5771}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4754ED72-6B0F-4FB8-9192-6A4DB3884371}.Debug|Any CPU.ActiveCfg = Debug
-		{4754ED72-6B0F-4FB8-9192-6A4DB3884371}.Release|Any CPU.ActiveCfg = Release
+		{30F61F18-67D6-4806-AFEA-FCFEC920D950}.Debug|Any CPU.ActiveCfg = Debug
+		{30F61F18-67D6-4806-AFEA-FCFEC920D950}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
