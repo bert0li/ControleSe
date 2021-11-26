@@ -3,11 +3,13 @@ using ControleSe.Enumerador;
 using ControleSe.Servico;
 using ControleSe.Utilitario;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -39,10 +41,40 @@ namespace ControleSe.Operacoes
             }
         }
 
+        // https://imasters.com.br/dotnet/populando-um-combobox-com-enumeradores
+        private string ObterDescricao(Enum valor)
+        {
+            FieldInfo fieldInfo = valor.GetType().GetField(valor.ToString());
+            DescriptionAttribute[] attributes = (DescriptionAttribute[])fieldInfo.GetCustomAttributes(typeof(DescriptionAttribute), false);
+
+            return attributes.Length > 0 ? attributes[0].Description ?? "Nulo" : valor.ToString();
+        }
+
+        public IList ListarEnum(Type tipo)
+        {
+            ArrayList lista = new ArrayList();
+
+            if (tipo != null)
+            {
+                Array enumValores = Enum.GetValues(tipo);
+
+                foreach (Enum valor in enumValores)
+                {
+                    lista.Add(new KeyValuePair<Enum, string>(valor, ObterDescricao(valor)));
+                }
+            }
+
+            return lista;
+        }
+
         private void CarregarCompoBox()
         {
             var tiposDivida = Enum.GetValues(typeof(TipoDivida));
             cbxTipoDivida.DataSource = tiposDivida;
+
+            //cbxTipoDivida.DataSource = ListarEnum(typeof(TipoDivida));
+            //cbxTipoDivida.DisplayMember = "Value";
+            //cbxTipoDivida.ValueMember = "Key";
         }
 
         private void AtribuirBinding(Divida divida)
@@ -84,6 +116,7 @@ namespace ControleSe.Operacoes
 
         private void cbxTipoDivida_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // erro aqui
             var tipoDivida = (TipoDivida)cbxTipoDivida.SelectedIndex;
             _divida.TipoDivida = tipoDivida;
         }
