@@ -93,5 +93,11 @@ namespace ControleSe.Operacoes
 
         private void btnSair_Click(object sender, EventArgs e)
             => Close();
+
+        private void txtValor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+                e.Handled = true;
+        }
     }
 }

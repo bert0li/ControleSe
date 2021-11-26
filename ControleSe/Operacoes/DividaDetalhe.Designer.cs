@@ -196,6 +196,7 @@ namespace ControleSe.Operacoes
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(467, 27);
             this.txtValor.TabIndex = 1;
+            this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
             // 
             // dtpDataCompra
             // 
