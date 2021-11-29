@@ -19,13 +19,12 @@ namespace ControleSe.Operacoes
         private Divida _divida = null;
         private List<decimal> _somaTotalDivida;
 
-        public DividasForm(Usuario usuario, ServicoDivida servicoDivida, Divida divida)
+        public DividasForm(Usuario usuario, ServicoDivida servicoDivida/*, Divida divida*/)
         {
             InitializeComponent();
             _servicoDivida = servicoDivida;
             _usuario = usuario;
-            _divida = divida;
-            _divida.UsuarioId = _usuario.Id;
+            //_divida = divida;
             BindingDividas();
             SomarTotalDivida();
         }
@@ -50,6 +49,8 @@ namespace ControleSe.Operacoes
         {
             if (incluir)
             {
+                _divida = new Divida();
+                _divida.UsuarioId = _usuario.Id;
                 _divida.EhIncluir = true;
             }
 

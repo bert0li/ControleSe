@@ -134,6 +134,7 @@ namespace ControleSe.Operacoes
             // cbxTipoDivida
             // 
             this.cbxTipoDivida.DropDownHeight = 100;
+            this.cbxTipoDivida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTipoDivida.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbxTipoDivida.FormattingEnabled = true;
             this.cbxTipoDivida.IntegralHeight = false;

@@ -20,12 +20,14 @@ namespace ControleSe.Operacoes
     {
         private ServicoDivida _servicoDivida;
         private Divida _divida;
+        private bool PrimeiroBinding = false;
 
         public DividaDetalhe(ServicoDivida servicoDivida, Divida divida)
         {
             InitializeComponent();
             _servicoDivida = servicoDivida;
             _divida = divida;
+            PrimeiroBinding = true;
             AtribuirBinding(_divida);
         }
 
@@ -69,21 +71,21 @@ namespace ControleSe.Operacoes
 
         private void CarregarCompoBox()
         {
-            var tiposDivida = Enum.GetValues(typeof(TipoDivida));
-            cbxTipoDivida.DataSource = tiposDivida;
+            //var tiposDivida = Enum.GetValues(typeof(TipoDivida));
+            //cbxTipoDivida.DataSource = tiposDivida;
 
-            //cbxTipoDivida.DataSource = ListarEnum(typeof(TipoDivida));
-            //cbxTipoDivida.DisplayMember = "Value";
-            //cbxTipoDivida.ValueMember = "Key";
+            cbxTipoDivida.DataSource = ListarEnum(typeof(TipoDivida));
+            cbxTipoDivida.DisplayMember = "Value";
+            cbxTipoDivida.ValueMember = "Key";
         }
 
         private void AtribuirBinding(Divida divida)
         {
-            InicializarDatas();
-            CarregarCompoBox();
-
             _servicoDivida = _servicoDivida ?? new ServicoDivida();
             _divida = divida ?? new Divida();
+
+            InicializarDatas();
+            CarregarCompoBox();
 
             txtCodigo.DataBindings.Add("Text", _divida, "Id");
             txtNome.DataBindings.Add("Text", _divida, "Nome");
@@ -91,7 +93,7 @@ namespace ControleSe.Operacoes
             txtValor.DataBindings.Add("Text", _divida, "Valor");
             dtpDataCompra.DataBindings.Add("Value", _divida, "DataCompra");
             dtpDataVencimento.DataBindings.Add("Value", _divida, "DataVencimento");
-
+            cbxTipoDivida.DataBindings.Add("SelectedIndex", _divida, "TipoDivida");
         }
 
         private void Salvar()
@@ -116,9 +118,23 @@ namespace ControleSe.Operacoes
 
         private void cbxTipoDivida_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // erro aqui
-            var tipoDivida = (TipoDivida)cbxTipoDivida.SelectedIndex;
-            _divida.TipoDivida = tipoDivida;
+            //if (_divida.TipoDivida != null)
+            //{
+            //    cbxTipoDivida.SelectedIndex = (int)_divida.TipoDivida;
+            //}
+            //else
+            //{
+            //    _divida.TipoDivida = (TipoDivida)cbxTipoDivida.SelectedIndex;
+            //}
+
+            if (PrimeiroBinding && _divida.EhIncluir)
+            {
+                _divida.TipoDivida = (TipoDivida)cbxTipoDivida.SelectedIndex;
+            }
+            else
+            {
+                cbxTipoDivida.SelectedIndex = (int)_divida.TipoDivida;
+            }
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)

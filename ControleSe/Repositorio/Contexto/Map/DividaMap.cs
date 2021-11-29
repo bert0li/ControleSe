@@ -21,7 +21,7 @@ namespace ControleSe.Repositorio.Contexto.Map
             entity.Property(m => m.TipoDivida).HasConversion<int>();
             entity.Property(m => m.DataCompra).HasColumnName("date").IsRequired();
             entity.Property(m => m.DataVencimento).HasColumnType("date").IsRequired();
-            entity.Property(m => m.DataPagamento).HasColumnType("date").IsRequired();
+            entity.Property(m => m.DataPagamento).HasColumnType("date").IsRequired(false);
 
             entity.HasOne(m => m.Usuario)
                 .WithMany(m => m.Dividas)
