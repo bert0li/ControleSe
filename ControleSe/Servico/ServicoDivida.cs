@@ -79,9 +79,18 @@ namespace ControleSe.Servico
                 {
                     using (var contexto = new Contexto())
                     {
-                        contexto.Divida.Add(divida);
-                        contexto.SaveChanges();
-                        EhValido = true;
+                        if (divida.Id == 0)
+                        {
+                            contexto.Divida.Add(divida);
+                            contexto.SaveChanges();
+                            EhValido = true;
+                        }
+                        else
+                        {
+                            contexto.Divida.Update(divida);
+                            contexto.SaveChanges();
+                            EhValido = true;
+                        }
                     }
                 }
             }
