@@ -48,6 +48,12 @@
     <None Update="Arquivos\Imagens\deletar.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Arquivos\Imagens\dividaMenu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Arquivos\Imagens\entradaMenu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Arquivos\Imagens\pagar.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

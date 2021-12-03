@@ -1,6 +1,7 @@
 ﻿using ControleSe.Entidade;
 using ControleSe.Operacoes;
 using ControleSe.Servico;
+using ControleSe.Utilitario;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,10 +37,23 @@ namespace ControleSe
 
         private void dividasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (var form = new DividasForm(_usuario, new ServicoDivida()/*, new Divida()*/))
+            using (var form = new DividasForm(_usuario, new ServicoDivida()))
             {
                 form.ShowDialog();
             }
+        }
+
+        private void btnDividas_Click(object sender, EventArgs e)
+        {
+            using (var form = new DividasForm(_usuario, new ServicoDivida()))
+            {
+                form.ShowDialog();
+            }
+        }
+
+        private void btnEntradas_Click(object sender, EventArgs e)
+        {
+            Msg.Informacao("Este recurso esta em desenvolvimento.");
         }
     }
 }
