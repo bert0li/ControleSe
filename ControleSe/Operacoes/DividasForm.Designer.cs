@@ -50,10 +50,6 @@ namespace ControleSe.Operacoes
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.gbxDataPor = new System.Windows.Forms.GroupBox();
-            this.rbnVencimento = new System.Windows.Forms.RadioButton();
-            this.rbnPagamento = new System.Windows.Forms.RadioButton();
-            this.rbnCompra = new System.Windows.Forms.RadioButton();
             this.btnPesquisa = new System.Windows.Forms.Button();
             this.tlpBotoes = new System.Windows.Forms.TableLayoutPanel();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -64,7 +60,6 @@ namespace ControleSe.Operacoes
             this.lblValorTotalDivida = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            this.gbxDataPor.SuspendLayout();
             this.tlpBotoes.SuspendLayout();
             this.tlpTotalDivida.SuspendLayout();
             this.SuspendLayout();
@@ -77,6 +72,7 @@ namespace ControleSe.Operacoes
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grid.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.grid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -94,6 +90,7 @@ namespace ControleSe.Operacoes
             this.colDataVencimento,
             this.colDataCompra});
             this.grid.Location = new System.Drawing.Point(12, 137);
+            this.grid.MultiSelect = false;
             this.grid.Name = "grid";
             this.grid.ReadOnly = true;
             this.grid.RowHeadersVisible = false;
@@ -166,12 +163,12 @@ namespace ControleSe.Operacoes
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 6;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.44785F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.55215F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 102F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.50802F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 84.49198F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 107F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 159F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 165F));
             this.tableLayoutPanel1.Controls.Add(this.lblPesquisa, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblDataInicio, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblDataFim, 4, 0);
@@ -182,7 +179,7 @@ namespace ControleSe.Operacoes
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(767, 33);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1036, 33);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // lblPesquisa
@@ -192,7 +189,7 @@ namespace ControleSe.Operacoes
             this.lblPesquisa.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblPesquisa.Location = new System.Drawing.Point(3, 0);
             this.lblPesquisa.Name = "lblPesquisa";
-            this.lblPesquisa.Size = new System.Drawing.Size(81, 33);
+            this.lblPesquisa.Size = new System.Drawing.Size(79, 33);
             this.lblPesquisa.TabIndex = 0;
             this.lblPesquisa.Text = "Pesquisa:";
             this.lblPesquisa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -202,9 +199,9 @@ namespace ControleSe.Operacoes
             this.lblDataInicio.AutoSize = true;
             this.lblDataInicio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblDataInicio.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDataInicio.Location = new System.Drawing.Point(298, 0);
+            this.lblDataInicio.Location = new System.Drawing.Point(556, 0);
             this.lblDataInicio.Name = "lblDataInicio";
-            this.lblDataInicio.Size = new System.Drawing.Size(96, 33);
+            this.lblDataInicio.Size = new System.Drawing.Size(101, 33);
             this.lblDataInicio.TabIndex = 0;
             this.lblDataInicio.Text = "Data inicio:";
             this.lblDataInicio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -214,7 +211,7 @@ namespace ControleSe.Operacoes
             this.lblDataFim.AutoSize = true;
             this.lblDataFim.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblDataFim.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDataFim.Location = new System.Drawing.Point(525, 0);
+            this.lblDataFim.Location = new System.Drawing.Point(788, 0);
             this.lblDataFim.Name = "lblDataFim";
             this.lblDataFim.Size = new System.Drawing.Size(79, 33);
             this.lblDataFim.TabIndex = 0;
@@ -225,9 +222,9 @@ namespace ControleSe.Operacoes
             // 
             this.txtPesquisa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPesquisa.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPesquisa.Location = new System.Drawing.Point(90, 3);
+            this.txtPesquisa.Location = new System.Drawing.Point(88, 3);
             this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(202, 26);
+            this.txtPesquisa.Size = new System.Drawing.Size(462, 26);
             this.txtPesquisa.TabIndex = 1;
             // 
             // dateTimePicker1
@@ -235,7 +232,7 @@ namespace ControleSe.Operacoes
             this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateTimePicker1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(400, 3);
+            this.dateTimePicker1.Location = new System.Drawing.Point(663, 3);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(119, 26);
             this.dateTimePicker1.TabIndex = 2;
@@ -245,69 +242,20 @@ namespace ControleSe.Operacoes
             this.dateTimePicker2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateTimePicker2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(610, 3);
+            this.dateTimePicker2.Location = new System.Drawing.Point(873, 3);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(154, 26);
+            this.dateTimePicker2.Size = new System.Drawing.Size(160, 26);
             this.dateTimePicker2.TabIndex = 2;
-            // 
-            // gbxDataPor
-            // 
-            this.gbxDataPor.Controls.Add(this.rbnVencimento);
-            this.gbxDataPor.Controls.Add(this.rbnPagamento);
-            this.gbxDataPor.Controls.Add(this.rbnCompra);
-            this.gbxDataPor.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.gbxDataPor.Location = new System.Drawing.Point(785, 60);
-            this.gbxDataPor.Name = "gbxDataPor";
-            this.gbxDataPor.Size = new System.Drawing.Size(275, 62);
-            this.gbxDataPor.TabIndex = 2;
-            this.gbxDataPor.TabStop = false;
-            this.gbxDataPor.Text = "Data por:";
-            // 
-            // rbnVencimento
-            // 
-            this.rbnVencimento.AutoSize = true;
-            this.rbnVencimento.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rbnVencimento.Location = new System.Drawing.Point(177, 31);
-            this.rbnVencimento.Name = "rbnVencimento";
-            this.rbnVencimento.Size = new System.Drawing.Size(92, 20);
-            this.rbnVencimento.TabIndex = 0;
-            this.rbnVencimento.TabStop = true;
-            this.rbnVencimento.Text = "Vencimento";
-            this.rbnVencimento.UseVisualStyleBackColor = true;
-            // 
-            // rbnPagamento
-            // 
-            this.rbnPagamento.AutoSize = true;
-            this.rbnPagamento.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rbnPagamento.Location = new System.Drawing.Point(82, 31);
-            this.rbnPagamento.Name = "rbnPagamento";
-            this.rbnPagamento.Size = new System.Drawing.Size(89, 20);
-            this.rbnPagamento.TabIndex = 0;
-            this.rbnPagamento.TabStop = true;
-            this.rbnPagamento.Text = "Pagamento";
-            this.rbnPagamento.UseVisualStyleBackColor = true;
-            // 
-            // rbnCompra
-            // 
-            this.rbnCompra.AutoSize = true;
-            this.rbnCompra.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rbnCompra.Location = new System.Drawing.Point(6, 31);
-            this.rbnCompra.Name = "rbnCompra";
-            this.rbnCompra.Size = new System.Drawing.Size(70, 20);
-            this.rbnCompra.TabIndex = 0;
-            this.rbnCompra.TabStop = true;
-            this.rbnCompra.Text = "Compra";
-            this.rbnCompra.UseVisualStyleBackColor = true;
             // 
             // btnPesquisa
             // 
             this.btnPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPesquisa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesquisa.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnPesquisa.Location = new System.Drawing.Point(1066, 85);
+            this.btnPesquisa.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnPesquisa.Location = new System.Drawing.Point(1054, 92);
             this.btnPesquisa.Name = "btnPesquisa";
-            this.btnPesquisa.Size = new System.Drawing.Size(150, 34);
+            this.btnPesquisa.Size = new System.Drawing.Size(159, 28);
             this.btnPesquisa.TabIndex = 3;
             this.btnPesquisa.Text = "Pesquisa";
             this.btnPesquisa.UseVisualStyleBackColor = true;
@@ -317,7 +265,7 @@ namespace ControleSe.Operacoes
             this.tlpBotoes.ColumnCount = 3;
             this.tlpBotoes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.65789F));
             this.tlpBotoes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.34211F));
-            this.tlpBotoes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.tlpBotoes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 72F));
             this.tlpBotoes.Controls.Add(this.btnAdd, 0, 0);
             this.tlpBotoes.Controls.Add(this.btnDeletar, 2, 0);
             this.tlpBotoes.Controls.Add(this.btnAlterar, 1, 0);
@@ -336,7 +284,7 @@ namespace ControleSe.Operacoes
             this.btnAdd.Image = global::ControleSe.Properties.Resources.add;
             this.btnAdd.Location = new System.Drawing.Point(3, 3);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(61, 59);
+            this.btnAdd.Size = new System.Drawing.Size(58, 59);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -347,9 +295,9 @@ namespace ControleSe.Operacoes
             this.btnDeletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeletar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDeletar.Image = global::ControleSe.Properties.Resources.deletar;
-            this.btnDeletar.Location = new System.Drawing.Point(136, 3);
+            this.btnDeletar.Location = new System.Drawing.Point(130, 3);
             this.btnDeletar.Name = "btnDeletar";
-            this.btnDeletar.Size = new System.Drawing.Size(61, 59);
+            this.btnDeletar.Size = new System.Drawing.Size(67, 59);
             this.btnDeletar.TabIndex = 0;
             this.btnDeletar.UseVisualStyleBackColor = true;
             // 
@@ -358,9 +306,9 @@ namespace ControleSe.Operacoes
             this.btnAlterar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlterar.Image = global::ControleSe.Properties.Resources.alterar;
-            this.btnAlterar.Location = new System.Drawing.Point(70, 3);
+            this.btnAlterar.Location = new System.Drawing.Point(67, 3);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(60, 59);
+            this.btnAlterar.Size = new System.Drawing.Size(57, 59);
             this.btnAlterar.TabIndex = 1;
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
@@ -413,7 +361,6 @@ namespace ControleSe.Operacoes
             this.Controls.Add(this.tlpTotalDivida);
             this.Controls.Add(this.tlpBotoes);
             this.Controls.Add(this.btnPesquisa);
-            this.Controls.Add(this.gbxDataPor);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.grid);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -424,8 +371,6 @@ namespace ControleSe.Operacoes
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.gbxDataPor.ResumeLayout(false);
-            this.gbxDataPor.PerformLayout();
             this.tlpBotoes.ResumeLayout(false);
             this.tlpTotalDivida.ResumeLayout(false);
             this.tlpTotalDivida.PerformLayout();
@@ -443,11 +388,7 @@ namespace ControleSe.Operacoes
         private System.Windows.Forms.TextBox txtPesquisa;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.GroupBox gbxDataPor;
         private System.Windows.Forms.Button btnPesquisa;
-        private System.Windows.Forms.RadioButton rbnVencimento;
-        private System.Windows.Forms.RadioButton rbnCompra;
-        private System.Windows.Forms.RadioButton rbnPagamento;
         private System.Windows.Forms.TableLayoutPanel tlpBotoes;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnDeletar;

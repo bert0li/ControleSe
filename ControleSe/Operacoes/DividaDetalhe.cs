@@ -42,7 +42,7 @@ namespace ControleSe.Operacoes
             }
         }
 
-        // https://imasters.com.br/dotnet/populando-um-combobox-com-enumeradores
+        //https://imasters.com.br/dotnet/populando-um-combobox-com-enumeradores
         private string ObterDescricao(Enum valor)
         {
             FieldInfo fieldInfo = valor.GetType().GetField(valor.ToString());
@@ -70,9 +70,6 @@ namespace ControleSe.Operacoes
 
         private void CarregarCompoBox()
         {
-            //var tiposDivida = Enum.GetValues(typeof(TipoDivida));
-            //cbxTipoDivida.DataSource = tiposDivida;
-
             cbxTipoDivida.DataSource = ListarEnum(typeof(TipoDivida));
             cbxTipoDivida.DisplayMember = "Value";
             cbxTipoDivida.ValueMember = "Key";
