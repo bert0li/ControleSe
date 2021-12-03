@@ -17,21 +17,18 @@ namespace ControleSe.Operacoes
         private ServicoDivida _servicoDivida = null;
         private Usuario _usuario = null;
         private Divida _divida = null;
-        private List<decimal> _somaTotalDivida;
 
-        public DividasForm(Usuario usuario, ServicoDivida servicoDivida/*, Divida divida*/)
+        public DividasForm(Usuario usuario, ServicoDivida servicoDivida)
         {
             InitializeComponent();
             _servicoDivida = servicoDivida;
             _usuario = usuario;
-            //_divida = divida;
             BindingDividas();
             SomarTotalDivida();
         }
 
         private void BindingDividas()
         {
-            _somaTotalDivida = new List<decimal>();
             _servicoDivida = _servicoDivida ?? new ServicoDivida();
             grid.AutoGenerateColumns = false;
             grid.DataSource = _servicoDivida.ObterDividas(_usuario);
@@ -66,14 +63,16 @@ namespace ControleSe.Operacoes
         private void VerificarVencimento(DataGridViewCellFormattingEventArgs e)
         {
             var dataVencimento = (DateTime)grid.Rows[e.RowIndex].Cells["colDataVencimento"]?.Value;
+            var pago = (bool)grid.Rows[e.RowIndex].Cells["colPago"]?.Value;
 
-            if (dataVencimento <= DateTime.Now)
+            if (dataVencimento <= DateTime.Now && pago != true)
             {
                 var cells = grid.Columns.Count;
 
                 for (int i = 0; i < cells; i++)
                 {
                     grid.Rows[e.RowIndex].Cells[i].Style.ForeColor = Color.Red;
+                    grid.Rows[e.RowIndex].Cells[i].Style.Font = new Font(new FontFamily("Tahoma"), 11, FontStyle.Bold);
                 }
             }
         }

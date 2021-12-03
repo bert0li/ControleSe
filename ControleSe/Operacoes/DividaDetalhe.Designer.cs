@@ -36,11 +36,9 @@ namespace ControleSe.Operacoes
             this.lblValor = new System.Windows.Forms.Label();
             this.cbxTipoDivida = new System.Windows.Forms.ComboBox();
             this.lblTipoDivida = new System.Windows.Forms.Label();
-            this.lblDataCompra = new System.Windows.Forms.Label();
-            this.lblDataVencimento = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.txtValor = new System.Windows.Forms.TextBox();
-            this.dtpDataCompra = new System.Windows.Forms.DateTimePicker();
+            this.lblDataVencimento = new System.Windows.Forms.Label();
             this.dtpDataVencimento = new System.Windows.Forms.DateTimePicker();
             this.tlpCodigo = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,7 +48,6 @@ namespace ControleSe.Operacoes
             this.btnSair = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnPagar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.tlpInfoDivida.SuspendLayout();
             this.tlpCodigo.SuspendLayout();
             this.tlpBotoes.SuspendLayout();
@@ -60,30 +57,27 @@ namespace ControleSe.Operacoes
             // tlpInfoDivida
             // 
             this.tlpInfoDivida.ColumnCount = 2;
-            this.tlpInfoDivida.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.74959F));
-            this.tlpInfoDivida.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.25041F));
+            this.tlpInfoDivida.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.45827F));
+            this.tlpInfoDivida.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.54173F));
             this.tlpInfoDivida.Controls.Add(this.lblNomeDivida, 0, 0);
             this.tlpInfoDivida.Controls.Add(this.txtNome, 1, 0);
             this.tlpInfoDivida.Controls.Add(this.lblDescricao, 0, 1);
             this.tlpInfoDivida.Controls.Add(this.lblValor, 0, 2);
             this.tlpInfoDivida.Controls.Add(this.cbxTipoDivida, 10, 3);
             this.tlpInfoDivida.Controls.Add(this.lblTipoDivida, 0, 3);
-            this.tlpInfoDivida.Controls.Add(this.lblDataCompra, 0, 4);
-            this.tlpInfoDivida.Controls.Add(this.lblDataVencimento, 0, 5);
             this.tlpInfoDivida.Controls.Add(this.txtDescricao, 1, 1);
             this.tlpInfoDivida.Controls.Add(this.txtValor, 1, 2);
-            this.tlpInfoDivida.Controls.Add(this.dtpDataCompra, 1, 4);
-            this.tlpInfoDivida.Controls.Add(this.dtpDataVencimento, 1, 5);
-            this.tlpInfoDivida.Location = new System.Drawing.Point(12, 86);
+            this.tlpInfoDivida.Controls.Add(this.lblDataVencimento, 0, 4);
+            this.tlpInfoDivida.Controls.Add(this.dtpDataVencimento, 1, 4);
+            this.tlpInfoDivida.Location = new System.Drawing.Point(12, 101);
             this.tlpInfoDivida.Name = "tlpInfoDivida";
-            this.tlpInfoDivida.RowCount = 6;
+            this.tlpInfoDivida.RowCount = 5;
             this.tlpInfoDivida.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpInfoDivida.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpInfoDivida.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
             this.tlpInfoDivida.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
             this.tlpInfoDivida.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tlpInfoDivida.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
-            this.tlpInfoDivida.Size = new System.Drawing.Size(611, 218);
+            this.tlpInfoDivida.Size = new System.Drawing.Size(611, 181);
             this.tlpInfoDivida.TabIndex = 0;
             // 
             // lblNomeDivida
@@ -93,7 +87,7 @@ namespace ControleSe.Operacoes
             this.lblNomeDivida.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblNomeDivida.Location = new System.Drawing.Point(3, 0);
             this.lblNomeDivida.Name = "lblNomeDivida";
-            this.lblNomeDivida.Size = new System.Drawing.Size(132, 36);
+            this.lblNomeDivida.Size = new System.Drawing.Size(119, 36);
             this.lblNomeDivida.TabIndex = 0;
             this.lblNomeDivida.Text = "Nome divida:";
             this.lblNomeDivida.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -102,9 +96,9 @@ namespace ControleSe.Operacoes
             // 
             this.txtNome.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtNome.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNome.Location = new System.Drawing.Point(141, 3);
+            this.txtNome.Location = new System.Drawing.Point(128, 3);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(467, 27);
+            this.txtNome.Size = new System.Drawing.Size(480, 27);
             this.txtNome.TabIndex = 1;
             // 
             // lblDescricao
@@ -114,7 +108,7 @@ namespace ControleSe.Operacoes
             this.lblDescricao.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblDescricao.Location = new System.Drawing.Point(3, 36);
             this.lblDescricao.Name = "lblDescricao";
-            this.lblDescricao.Size = new System.Drawing.Size(132, 36);
+            this.lblDescricao.Size = new System.Drawing.Size(119, 36);
             this.lblDescricao.TabIndex = 0;
             this.lblDescricao.Text = "Descrição:";
             this.lblDescricao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -126,7 +120,7 @@ namespace ControleSe.Operacoes
             this.lblValor.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblValor.Location = new System.Drawing.Point(3, 72);
             this.lblValor.Name = "lblValor";
-            this.lblValor.Size = new System.Drawing.Size(132, 36);
+            this.lblValor.Size = new System.Drawing.Size(119, 36);
             this.lblValor.TabIndex = 0;
             this.lblValor.Text = "Valor:";
             this.lblValor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -138,7 +132,7 @@ namespace ControleSe.Operacoes
             this.cbxTipoDivida.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbxTipoDivida.FormattingEnabled = true;
             this.cbxTipoDivida.IntegralHeight = false;
-            this.cbxTipoDivida.Location = new System.Drawing.Point(141, 111);
+            this.cbxTipoDivida.Location = new System.Drawing.Point(128, 111);
             this.cbxTipoDivida.Name = "cbxTipoDivida";
             this.cbxTipoDivida.Size = new System.Drawing.Size(168, 27);
             this.cbxTipoDivida.TabIndex = 2;
@@ -151,68 +145,47 @@ namespace ControleSe.Operacoes
             this.lblTipoDivida.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTipoDivida.Location = new System.Drawing.Point(3, 108);
             this.lblTipoDivida.Name = "lblTipoDivida";
-            this.lblTipoDivida.Size = new System.Drawing.Size(132, 36);
+            this.lblTipoDivida.Size = new System.Drawing.Size(119, 36);
             this.lblTipoDivida.TabIndex = 0;
             this.lblTipoDivida.Text = "Tipo divida:";
             this.lblTipoDivida.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblDataCompra
-            // 
-            this.lblDataCompra.AutoSize = true;
-            this.lblDataCompra.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDataCompra.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDataCompra.Location = new System.Drawing.Point(3, 144);
-            this.lblDataCompra.Name = "lblDataCompra";
-            this.lblDataCompra.Size = new System.Drawing.Size(132, 37);
-            this.lblDataCompra.TabIndex = 0;
-            this.lblDataCompra.Text = "Data compra:";
-            this.lblDataCompra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblDataVencimento
-            // 
-            this.lblDataVencimento.AutoSize = true;
-            this.lblDataVencimento.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDataVencimento.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDataVencimento.Location = new System.Drawing.Point(3, 181);
-            this.lblDataVencimento.Name = "lblDataVencimento";
-            this.lblDataVencimento.Size = new System.Drawing.Size(132, 37);
-            this.lblDataVencimento.TabIndex = 0;
-            this.lblDataVencimento.Text = "Data venc.:";
-            this.lblDataVencimento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtDescricao
             // 
             this.txtDescricao.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtDescricao.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDescricao.Location = new System.Drawing.Point(141, 39);
+            this.txtDescricao.Location = new System.Drawing.Point(128, 39);
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(467, 27);
+            this.txtDescricao.Size = new System.Drawing.Size(480, 27);
             this.txtDescricao.TabIndex = 1;
             // 
             // txtValor
             // 
             this.txtValor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtValor.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtValor.Location = new System.Drawing.Point(141, 75);
+            this.txtValor.Location = new System.Drawing.Point(128, 75);
             this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(467, 27);
+            this.txtValor.Size = new System.Drawing.Size(480, 27);
             this.txtValor.TabIndex = 1;
             this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
             // 
-            // dtpDataCompra
+            // lblDataVencimento
             // 
-            this.dtpDataCompra.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dtpDataCompra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataCompra.Location = new System.Drawing.Point(141, 147);
-            this.dtpDataCompra.Name = "dtpDataCompra";
-            this.dtpDataCompra.Size = new System.Drawing.Size(168, 27);
-            this.dtpDataCompra.TabIndex = 3;
+            this.lblDataVencimento.AutoSize = true;
+            this.lblDataVencimento.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDataVencimento.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDataVencimento.Location = new System.Drawing.Point(3, 144);
+            this.lblDataVencimento.Name = "lblDataVencimento";
+            this.lblDataVencimento.Size = new System.Drawing.Size(119, 37);
+            this.lblDataVencimento.TabIndex = 0;
+            this.lblDataVencimento.Text = "Data venc.:";
+            this.lblDataVencimento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dtpDataVencimento
             // 
             this.dtpDataVencimento.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtpDataVencimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataVencimento.Location = new System.Drawing.Point(141, 184);
+            this.dtpDataVencimento.Location = new System.Drawing.Point(128, 147);
             this.dtpDataVencimento.Name = "dtpDataVencimento";
             this.dtpDataVencimento.Size = new System.Drawing.Size(168, 27);
             this.dtpDataVencimento.TabIndex = 3;
@@ -220,15 +193,15 @@ namespace ControleSe.Operacoes
             // tlpCodigo
             // 
             this.tlpCodigo.ColumnCount = 2;
-            this.tlpCodigo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.84848F));
-            this.tlpCodigo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.15151F));
+            this.tlpCodigo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.44586F));
+            this.tlpCodigo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.55414F));
             this.tlpCodigo.Controls.Add(this.label1, 0, 0);
             this.tlpCodigo.Controls.Add(this.txtCodigo, 1, 0);
-            this.tlpCodigo.Location = new System.Drawing.Point(12, 26);
+            this.tlpCodigo.Location = new System.Drawing.Point(12, 29);
             this.tlpCodigo.Name = "tlpCodigo";
             this.tlpCodigo.RowCount = 1;
             this.tlpCodigo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpCodigo.Size = new System.Drawing.Size(264, 37);
+            this.tlpCodigo.Size = new System.Drawing.Size(314, 37);
             this.tlpCodigo.TabIndex = 1;
             // 
             // label1
@@ -238,20 +211,20 @@ namespace ControleSe.Operacoes
             this.label1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 37);
+            this.label1.Size = new System.Drawing.Size(121, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Código:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtCodigo
             // 
             this.txtCodigo.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtCodigo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCodigo.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCodigo.Location = new System.Drawing.Point(95, 3);
+            this.txtCodigo.Location = new System.Drawing.Point(130, 3);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.ReadOnly = true;
-            this.txtCodigo.Size = new System.Drawing.Size(166, 30);
+            this.txtCodigo.Size = new System.Drawing.Size(181, 30);
             this.txtCodigo.TabIndex = 1;
             // 
             // tlpBotoes
@@ -261,7 +234,7 @@ namespace ControleSe.Operacoes
             this.tlpBotoes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpBotoes.Controls.Add(this.btnSalvar, 0, 0);
             this.tlpBotoes.Controls.Add(this.btnSair, 1, 0);
-            this.tlpBotoes.Location = new System.Drawing.Point(376, 329);
+            this.tlpBotoes.Location = new System.Drawing.Point(376, 298);
             this.tlpBotoes.Name = "tlpBotoes";
             this.tlpBotoes.RowCount = 1;
             this.tlpBotoes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -298,46 +271,38 @@ namespace ControleSe.Operacoes
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.btnPagar, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(476, 13);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(536, 13);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(147, 67);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(87, 82);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // btnPagar
             // 
             this.btnPagar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnPagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPagar.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnPagar.Image = global::ControleSe.Properties.Resources.pagar;
+            this.btnPagar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnPagar.Location = new System.Drawing.Point(3, 3);
             this.btnPagar.Name = "btnPagar";
-            this.btnPagar.Size = new System.Drawing.Size(67, 61);
+            this.btnPagar.Size = new System.Drawing.Size(81, 76);
             this.btnPagar.TabIndex = 0;
+            this.btnPagar.Text = "Pagar";
+            this.btnPagar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnPagar.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Image = global::ControleSe.Properties.Resources.deletar;
-            this.btnCancelar.Location = new System.Drawing.Point(76, 3);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(68, 61);
-            this.btnCancelar.TabIndex = 0;
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnPagar.Click += new System.EventHandler(this.btnPagar_Click);
             // 
             // DividaDetalhe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(635, 380);
+            this.ClientSize = new System.Drawing.Size(635, 349);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tlpBotoes);
             this.Controls.Add(this.tlpCodigo);
@@ -364,13 +329,11 @@ namespace ControleSe.Operacoes
         private System.Windows.Forms.Label lblDescricao;
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.Label lblTipoDivida;
-        private System.Windows.Forms.Label lblDataCompra;
         private System.Windows.Forms.Label lblDataVencimento;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.ComboBox cbxTipoDivida;
-        private System.Windows.Forms.DateTimePicker dtpDataCompra;
         private System.Windows.Forms.DateTimePicker dtpDataVencimento;
         private System.Windows.Forms.TableLayoutPanel tlpCodigo;
         private System.Windows.Forms.Label label1;
@@ -380,6 +343,5 @@ namespace ControleSe.Operacoes
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnPagar;
-        private System.Windows.Forms.Button btnCancelar;
     }
 }

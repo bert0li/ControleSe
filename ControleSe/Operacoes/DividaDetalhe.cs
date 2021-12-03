@@ -32,14 +32,10 @@ namespace ControleSe.Operacoes
 
         private void InicializarDatas()
         {
-            dtpDataCompra.Value = DateTime.Now;
             dtpDataVencimento.Value = DateTime.Now;
 
             if (_divida.EhIncluir)
-            {
-                _divida.DataCompra = dtpDataCompra.Value;
                 _divida.DataVencimento = dtpDataVencimento.Value;
-            }
         }
 
         //https://imasters.com.br/dotnet/populando-um-combobox-com-enumeradores
@@ -88,7 +84,6 @@ namespace ControleSe.Operacoes
             txtNome.DataBindings.Add("Text", _divida, "Nome");
             txtDescricao.DataBindings.Add("Text", _divida, "Descricao");
             txtValor.DataBindings.Add("Text", _divida, "Valor");
-            dtpDataCompra.DataBindings.Add("Value", _divida, "DataCompra");
             dtpDataVencimento.DataBindings.Add("Value", _divida, "DataVencimento");
             cbxTipoDivida.DataBindings.Add("SelectedIndex", _divida, "TipoDivida");
             PrimeiroBinding = false;
@@ -119,6 +114,28 @@ namespace ControleSe.Operacoes
             if (PrimeiroBinding) return;
 
             _divida.TipoDivida = (TipoDivida)cbxTipoDivida.SelectedIndex;
+        }
+
+        private void btnPagar_Click(object sender, EventArgs e)
+        {
+            if (_divida.Pago != true)
+            {
+                if (Msg.Pergunta("Deseja realmente pagar?") == DialogResult.OK)
+                {
+                    _divida.Pago = true;
+                    _divida.DataPagamento = DateTime.Now;
+
+                    if (_servicoDivida.Salvar(_divida))
+                    {
+                        Msg.Informacao("Divida paga.");
+                        Close();
+                    }
+                }
+            }
+            else
+            {
+                Msg.Informacao("Divida já paga.");
+            }
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
