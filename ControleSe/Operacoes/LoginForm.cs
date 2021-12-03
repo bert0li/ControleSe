@@ -1,5 +1,6 @@
 ﻿using ControleSe.Entidade;
 using ControleSe.Servico;
+using ControleSe.Utilitario;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -37,16 +38,25 @@ namespace ControleSe.Operacoes
 
         private void Entrar()
         {
-            if (_servicoUsuario.ValidarLogin(Usuario))
+            try
             {
-                var usuario = _servicoUsuario.Logar(Usuario);
-
-                if (usuario != null)
+                if (_servicoUsuario.ValidarLogin(Usuario))
                 {
-                    Usuario = usuario;
-                    Close();
+                    var usuario = _servicoUsuario.Logar(Usuario);
+
+                    if (usuario != null)
+                    {
+                        Usuario = usuario;
+                        Close();
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
+                Msg.Erro($"[Erro]:{ex.Message}\n[StackTrace]:{ex.StackTrace}");
+            }
+            
         }
 
         private void AcaoAcionada(KeyEventArgs e)
@@ -71,19 +81,15 @@ namespace ControleSe.Operacoes
         }
 
         private void txtUsuario_KeyDown(object sender, KeyEventArgs e)
-        {
-            AcaoAcionada(e);
-        }
+            => AcaoAcionada(e);
 
         private void txtSenha_KeyDown(object sender, KeyEventArgs e)
-        {
-            AcaoAcionada(e);
-        }
+            => AcaoAcionada(e);
 
         private void btnEntrar_Click(object sender, EventArgs e)
-        => Entrar();
+            => Entrar();
 
         private void btnCancelar_Click(object sender, EventArgs e)
-        => Close();
+            => Close();
     }
 }

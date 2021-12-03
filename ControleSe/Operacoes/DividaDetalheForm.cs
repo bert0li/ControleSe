@@ -16,13 +16,13 @@ using System.Windows.Forms;
 
 namespace ControleSe.Operacoes
 {
-    public partial class DividaDetalhe : Form
+    public partial class DividaDetalheForm : Form
     {
         private ServicoDivida _servicoDivida;
         private Divida _divida;
         private bool PrimeiroBinding = false;
 
-        public DividaDetalhe(ServicoDivida servicoDivida, Divida divida)
+        public DividaDetalheForm(ServicoDivida servicoDivida, Divida divida)
         {
             InitializeComponent();
             _servicoDivida = servicoDivida;

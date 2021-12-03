@@ -51,6 +51,14 @@ namespace ControleSe
             }
         }
 
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            using (var form = new UsuariosForm(new ServicoUsuario()))
+            {
+                form.ShowDialog();
+            }
+        }
+
         private void btnEntradas_Click(object sender, EventArgs e)
         {
             Msg.Informacao("Este recurso esta em desenvolvimento.");

@@ -29,6 +29,7 @@ namespace ControleSe
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuForm));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblHora = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblData = new System.Windows.Forms.ToolStripStatusLabel();
@@ -37,9 +38,13 @@ namespace ControleSe
             this.panelEntradas = new System.Windows.Forms.Panel();
             this.btnEntradas = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.panelUsuarios = new System.Windows.Forms.Panel();
+            this.btnUsuarios = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.panelDividas.SuspendLayout();
             this.panelEntradas.SuspendLayout();
+            this.panelUsuarios.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -65,7 +70,7 @@ namespace ControleSe
             // 
             this.lblData.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(41, 19);
+            this.lblData.Size = new System.Drawing.Size(39, 19);
             this.lblData.Text = "data";
             // 
             // panelDividas
@@ -132,12 +137,53 @@ namespace ControleSe
             this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button3.UseVisualStyleBackColor = false;
             // 
+            // panelUsuarios
+            // 
+            this.panelUsuarios.Controls.Add(this.btnUsuarios);
+            this.panelUsuarios.Controls.Add(this.button2);
+            this.panelUsuarios.Location = new System.Drawing.Point(345, 12);
+            this.panelUsuarios.Name = "panelUsuarios";
+            this.panelUsuarios.Size = new System.Drawing.Size(149, 161);
+            this.panelUsuarios.TabIndex = 4;
+            // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsuarios.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnUsuarios.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuarios.Image")));
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 0);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(149, 161);
+            this.btnUsuarios.TabIndex = 1;
+            this.btnUsuarios.Text = "Usuários";
+            this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnUsuarios.UseVisualStyleBackColor = false;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Gainsboro;
+            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button2.Image = global::ControleSe.Properties.Resources.dividaMenu;
+            this.button2.Location = new System.Drawing.Point(0, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(149, 161);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "Dividas";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1010, 384);
+            this.Controls.Add(this.panelUsuarios);
             this.Controls.Add(this.panelEntradas);
             this.Controls.Add(this.panelDividas);
             this.Controls.Add(this.statusStrip1);
@@ -149,6 +195,7 @@ namespace ControleSe
             this.statusStrip1.PerformLayout();
             this.panelDividas.ResumeLayout(false);
             this.panelEntradas.ResumeLayout(false);
+            this.panelUsuarios.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,5 +210,8 @@ namespace ControleSe
         private System.Windows.Forms.Panel panelEntradas;
         private System.Windows.Forms.Button btnEntradas;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel panelUsuarios;
+        private System.Windows.Forms.Button btnUsuarios;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -57,6 +57,9 @@
     <None Update="Arquivos\Imagens\pagar.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Arquivos\Imagens\usuarioMenu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Arquivos\Logo-Sistema\ControleSe.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

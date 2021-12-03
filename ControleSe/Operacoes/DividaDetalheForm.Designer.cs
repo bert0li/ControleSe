@@ -1,7 +1,7 @@
 ﻿
 namespace ControleSe.Operacoes
 {
-    partial class DividaDetalhe
+    partial class DividaDetalheForm
     {
         /// <summary>
         /// Required designer variable.

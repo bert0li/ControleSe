@@ -15,14 +15,14 @@ namespace ControleSe.Operacoes
 {
     public partial class DividasForm : Form
     {
-        private ServicoDivida _servicoDivida = null;
+        private ServicoDivida _servico = null;
         private Usuario _usuario = null;
         private Divida _divida = null;
 
         public DividasForm(Usuario usuario, ServicoDivida servicoDivida)
         {
             InitializeComponent();
-            _servicoDivida = servicoDivida;
+            _servico = servicoDivida;
             _usuario = usuario;
             BindingDividas();
             SomarTotalDivida();
@@ -32,9 +32,9 @@ namespace ControleSe.Operacoes
         {
             try
             {
-                _servicoDivida = _servicoDivida ?? new ServicoDivida();
+                _servico = _servico ?? new ServicoDivida();
                 grid.AutoGenerateColumns = false;
-                grid.DataSource = _servicoDivida.ObterDividas(_usuario);
+                grid.DataSource = _servico.ObterDividas(_usuario);
             }
             catch (Exception ex)
             {
@@ -51,7 +51,7 @@ namespace ControleSe.Operacoes
                 _divida = grid.Rows[e.RowIndex].DataBoundItem as Divida;
         }
 
-        private void AlterarIncluir(bool incluir = false)
+        private void AlterarIncluirDivida(bool incluir = false)
         {
             if (incluir)
             {
@@ -60,13 +60,38 @@ namespace ControleSe.Operacoes
                 _divida.EhIncluir = true;
             }
 
-            using (var form = new DividaDetalhe(_servicoDivida, _divida))
+            using (var form = new DividaDetalheForm(_servico, _divida))
             {
                 form.ShowDialog();
             }
 
             BindingDividas();
             SomarTotalDivida();
+        }
+
+        private void ExcluirDivida()
+        {
+            try
+            {
+                if (_divida != null)
+                {
+                    if (_servico.Excluir(_divida))
+                    {
+                        BindingDividas();
+                        Msg.Informacao("Divida excluída com sucesso.");
+                    }
+                }
+                else
+                {
+                    Msg.Informacao("Selecione uma divida.");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
+                Msg.Erro($"[Erro]:{ex.Message}\n[StackTrace]:{ex.StackTrace}");
+            }
         }
 
         private void VerificarVencimento(DataGridViewCellFormattingEventArgs e)
@@ -109,38 +134,24 @@ namespace ControleSe.Operacoes
 
             lblValorTotalDivida.Text = somaTotalDivida.ToString("C");
         }
-
-        private void ExcluirDivida()
-        {
-            try
-            {
-                if (_servicoDivida.Excluir(_divida))
-                {
-                    BindingDividas();
-                    Msg.Informacao("Divida exluida com sucesso.");
-                }
-            }
-            catch (Exception ex)
-            {
-                ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
-                Msg.Erro($"[Erro]:{ex.Message}\n[StackTrace]:{ex.StackTrace}");
-            }
-        }
-
+        
         private void grid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
             => VerificarVencimento(e);
 
         private void grid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-            => LinhaSeleciona(e);
+        { 
+            LinhaSeleciona(e);
+            AlterarIncluirDivida();
+        }
 
         private void grid_CellClick(object sender, DataGridViewCellEventArgs e)
             => LinhaSeleciona(e);
 
         private void btnAdd_Click(object sender, EventArgs e)
-            => AlterarIncluir(true);
+            => AlterarIncluirDivida(true);
 
         private void btnAlterar_Click(object sender, EventArgs e)
-            => AlterarIncluir();
+            => AlterarIncluirDivida();
 
         private void btnDeletar_Click(object sender, EventArgs e)
             => ExcluirDivida();

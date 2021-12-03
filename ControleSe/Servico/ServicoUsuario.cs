@@ -45,20 +45,105 @@ namespace ControleSe.Servico
                 {
                     _usuario = contexto.Usuario
                         .Include(i => i.Dividas)
-                        .Where(w => w.UsuarioAcesso == usuario.UsuarioAcesso && w.SenhaAcesso == usuario.SenhaAcesso)
+                        .Where(w =>
+                               w.UsuarioAcesso == usuario.UsuarioAcesso &&
+                               w.SenhaAcesso == usuario.SenhaAcesso)
                         .FirstOrDefault();
 
                     if (_usuario == null)
                         Msg.Atencao("Usuario ou Senha invalido. Tente novamente.");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
                 throw;
             }
 
             return _usuario;
+        }
+
+        public IEnumerable<Usuario> ObterUsuarios()
+        {
+            IEnumerable<Usuario> usuarios = null;
+
+            try
+            {
+                using (var contexto = new Contexto())
+                {
+                    usuarios = contexto.Usuario.ToList();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return usuarios;
+        }
+
+        public bool Salvar(Usuario usuario)
+        {
+            EhValido = false;
+
+            try
+            {
+                if (usuario != null)
+                {
+                    using (var contexto = new Contexto())
+                    {
+                        if (usuario != null)
+                        {
+                            if (usuario.Id == 0)
+                                contexto.Usuario.Add(usuario);
+                            else
+                                contexto.Usuario.Update(usuario);
+
+                            contexto.SaveChanges();
+                            EhValido = true;
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return EhValido;
+        }
+
+        public bool Excluir(Usuario usuario)
+        {
+            EhValido = false;
+
+            try
+            {
+                using (var contexto = new Contexto())
+                {
+                    var usuarioRetorno = contexto.Usuario
+                                      .Include(i => i.Dividas)
+                                      .Where(w => w.Id == usuario.Id)
+                                      .FirstOrDefault();
+
+                    if (usuarioRetorno != null)
+                    {
+                        if (usuarioRetorno.Dividas.Any())
+                            Msg.Informacao("Não é possível excluir um usuário que possui dividas");
+                        else
+                        {
+                            contexto.Usuario.Remove(usuarioRetorno);
+                            contexto.SaveChanges();
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return EhValido;
         }
     }
 }
