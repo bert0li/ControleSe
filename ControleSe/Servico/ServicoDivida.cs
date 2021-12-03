@@ -102,5 +102,29 @@ namespace ControleSe.Servico
 
             return EhValido;
         }
+
+        public bool Excluir(Divida divida)
+        {
+            EhValido = false;
+
+            try
+            {
+                using (var contexto = new Contexto())
+                {
+                    if (divida != null)
+                    {
+                        contexto.Divida.Remove(divida);
+                        contexto.SaveChanges();
+                        EhValido = true;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return EhValido;
+        }
     }
 }

@@ -171,7 +171,7 @@ namespace ControleSe.Operacoes
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 107F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 171F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 173F));
             this.tableLayoutPanel1.Controls.Add(this.lblPesquisa, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblDataInicio, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblDataFim, 4, 0);
@@ -202,7 +202,7 @@ namespace ControleSe.Operacoes
             this.lblDataInicio.AutoSize = true;
             this.lblDataInicio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblDataInicio.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDataInicio.Location = new System.Drawing.Point(550, 0);
+            this.lblDataInicio.Location = new System.Drawing.Point(548, 0);
             this.lblDataInicio.Name = "lblDataInicio";
             this.lblDataInicio.Size = new System.Drawing.Size(101, 33);
             this.lblDataInicio.TabIndex = 0;
@@ -214,7 +214,7 @@ namespace ControleSe.Operacoes
             this.lblDataFim.AutoSize = true;
             this.lblDataFim.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblDataFim.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDataFim.Location = new System.Drawing.Point(782, 0);
+            this.lblDataFim.Location = new System.Drawing.Point(780, 0);
             this.lblDataFim.Name = "lblDataFim";
             this.lblDataFim.Size = new System.Drawing.Size(79, 33);
             this.lblDataFim.TabIndex = 0;
@@ -227,7 +227,7 @@ namespace ControleSe.Operacoes
             this.txtPesquisa.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPesquisa.Location = new System.Drawing.Point(87, 3);
             this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(457, 26);
+            this.txtPesquisa.Size = new System.Drawing.Size(455, 26);
             this.txtPesquisa.TabIndex = 1;
             // 
             // dateTimePicker1
@@ -235,7 +235,7 @@ namespace ControleSe.Operacoes
             this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateTimePicker1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(657, 3);
+            this.dateTimePicker1.Location = new System.Drawing.Point(655, 3);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(119, 26);
             this.dateTimePicker1.TabIndex = 2;
@@ -245,9 +245,9 @@ namespace ControleSe.Operacoes
             this.dateTimePicker2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateTimePicker2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(867, 3);
+            this.dateTimePicker2.Location = new System.Drawing.Point(865, 3);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(166, 26);
+            this.dateTimePicker2.Size = new System.Drawing.Size(168, 26);
             this.dateTimePicker2.TabIndex = 2;
             // 
             // btnPesquisa
@@ -268,7 +268,7 @@ namespace ControleSe.Operacoes
             this.tlpBotoes.ColumnCount = 3;
             this.tlpBotoes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.65789F));
             this.tlpBotoes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.34211F));
-            this.tlpBotoes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 78F));
+            this.tlpBotoes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
             this.tlpBotoes.Controls.Add(this.btnAdd, 0, 0);
             this.tlpBotoes.Controls.Add(this.btnDeletar, 2, 0);
             this.tlpBotoes.Controls.Add(this.btnAlterar, 1, 0);
@@ -287,7 +287,7 @@ namespace ControleSe.Operacoes
             this.btnAdd.Image = global::ControleSe.Properties.Resources.add;
             this.btnAdd.Location = new System.Drawing.Point(3, 3);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(55, 59);
+            this.btnAdd.Size = new System.Drawing.Size(61, 59);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -298,20 +298,21 @@ namespace ControleSe.Operacoes
             this.btnDeletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeletar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDeletar.Image = global::ControleSe.Properties.Resources.deletar;
-            this.btnDeletar.Location = new System.Drawing.Point(124, 3);
+            this.btnDeletar.Location = new System.Drawing.Point(135, 3);
             this.btnDeletar.Name = "btnDeletar";
-            this.btnDeletar.Size = new System.Drawing.Size(73, 59);
+            this.btnDeletar.Size = new System.Drawing.Size(62, 59);
             this.btnDeletar.TabIndex = 0;
             this.btnDeletar.UseVisualStyleBackColor = true;
+            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
             // 
             // btnAlterar
             // 
             this.btnAlterar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlterar.Image = global::ControleSe.Properties.Resources.alterar;
-            this.btnAlterar.Location = new System.Drawing.Point(64, 3);
+            this.btnAlterar.Location = new System.Drawing.Point(70, 3);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(54, 59);
+            this.btnAlterar.Size = new System.Drawing.Size(59, 59);
             this.btnAlterar.TabIndex = 1;
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);

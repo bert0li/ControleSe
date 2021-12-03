@@ -38,7 +38,12 @@ namespace ControleSe.Operacoes
                 _divida.DataVencimento = dtpDataVencimento.Value;
         }
 
-        //https://imasters.com.br/dotnet/populando-um-combobox-com-enumeradores
+
+        /// <summary>
+        /// Link com a documentação do código para 
+        /// colocar descrição dos enums no ComboBox
+        /// https://imasters.com.br/dotnet/populando-um-combobox-com-enumeradores
+        /// </summary>
         private string ObterDescricao(Enum valor)
         {
             FieldInfo fieldInfo = valor.GetType().GetField(valor.ToString());
@@ -105,7 +110,7 @@ namespace ControleSe.Operacoes
             catch (Exception ex)
             {
                 ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
-                Msg.Erro(ex.Message);
+                Msg.Erro($"[Erro]:{ex.Message} - [StackTrace]:{ex.StackTrace}");
             }
         }
 

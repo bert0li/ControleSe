@@ -1,5 +1,6 @@
 ﻿using ControleSe.Entidade;
 using ControleSe.Servico;
+using ControleSe.Utilitario;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -62,18 +63,26 @@ namespace ControleSe.Operacoes
 
         private void VerificarVencimento(DataGridViewCellFormattingEventArgs e)
         {
-            var dataVencimento = (DateTime)grid.Rows[e.RowIndex].Cells["colDataVencimento"]?.Value;
-            var pago = (bool)grid.Rows[e.RowIndex].Cells["colPago"]?.Value;
-
-            if (dataVencimento <= DateTime.Now && pago != true)
+            try
             {
-                var cells = grid.Columns.Count;
+                var dataVencimento = (DateTime)grid.Rows[e.RowIndex].Cells["colDataVencimento"]?.Value;
+                var pago = (bool)grid.Rows[e.RowIndex].Cells["colPago"]?.Value;
 
-                for (int i = 0; i < cells; i++)
+                if (dataVencimento <= DateTime.Now && pago != true)
                 {
-                    grid.Rows[e.RowIndex].Cells[i].Style.ForeColor = Color.Red;
-                    grid.Rows[e.RowIndex].Cells[i].Style.Font = new Font(new FontFamily("Tahoma"), 11, FontStyle.Bold);
+                    var cells = grid.Columns.Count;
+
+                    for (int i = 0; i < cells; i++)
+                    {
+                        grid.Rows[e.RowIndex].Cells[i].Style.ForeColor = Color.Red;
+                        grid.Rows[e.RowIndex].Cells[i].Style.Font = new Font(new FontFamily("Tahoma"), 11, FontStyle.Bold);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
+                Msg.Erro($"[Erro]:{ex.Message} - [StackTrace]:{ex.StackTrace}");
             }
         }
 
@@ -93,6 +102,23 @@ namespace ControleSe.Operacoes
             lblValorTotalDivida.Text = somaTotalDivida.ToString("C");
         }
 
+        private void ExcluirDivida()
+        {
+            try
+            {
+                if (_servicoDivida.Excluir(_divida))
+                {
+                    BindingDividas();
+                    Msg.Informacao("Divida exluida com sucesso.");
+                }
+            }
+            catch (Exception ex)
+            {
+                ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
+                Msg.Erro($"[Erro]:{ex.Message} - [StackTrace]:{ex.StackTrace}");
+            }
+        }
+
         private void grid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
             => VerificarVencimento(e);
 
@@ -107,5 +133,8 @@ namespace ControleSe.Operacoes
 
         private void btnAlterar_Click(object sender, EventArgs e)
             => AlterarIncluir();
+
+        private void btnDeletar_Click(object sender, EventArgs e)
+            => ExcluirDivida();
     }
 }
