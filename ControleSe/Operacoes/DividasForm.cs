@@ -85,7 +85,6 @@ namespace ControleSe.Operacoes
                 {
                     Msg.Informacao("Selecione uma divida.");
                 }
-
             }
             catch (Exception ex)
             {

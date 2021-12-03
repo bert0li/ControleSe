@@ -48,10 +48,10 @@ namespace ControleSe.Operacoes
                 _usuario.EhIncluir = true;
             }
 
-            //using (var form = new UsuarioDetalheForm(_servico, _usuario))
-            //{
-            //    form.ShowDialog();
-            //}
+            using (var form = new UsuarioDetalheForm(_servico, _usuario))
+            {
+                form.ShowDialog();
+            }
 
             BindingUsuarios();
         }

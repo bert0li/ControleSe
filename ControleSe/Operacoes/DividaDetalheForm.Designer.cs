@@ -30,7 +30,7 @@ namespace ControleSe.Operacoes
         private void InitializeComponent()
         {
             this.tlpInfoDivida = new System.Windows.Forms.TableLayoutPanel();
-            this.lblNomeDivida = new System.Windows.Forms.Label();
+            this.lblNome = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblDescricao = new System.Windows.Forms.Label();
             this.lblValor = new System.Windows.Forms.Label();
@@ -41,7 +41,7 @@ namespace ControleSe.Operacoes
             this.lblDataVencimento = new System.Windows.Forms.Label();
             this.dtpDataVencimento = new System.Windows.Forms.DateTimePicker();
             this.tlpCodigo = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblCodigo = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.tlpBotoes = new System.Windows.Forms.TableLayoutPanel();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -59,7 +59,7 @@ namespace ControleSe.Operacoes
             this.tlpInfoDivida.ColumnCount = 2;
             this.tlpInfoDivida.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.45827F));
             this.tlpInfoDivida.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.54173F));
-            this.tlpInfoDivida.Controls.Add(this.lblNomeDivida, 0, 0);
+            this.tlpInfoDivida.Controls.Add(this.lblNome, 0, 0);
             this.tlpInfoDivida.Controls.Add(this.txtNome, 1, 0);
             this.tlpInfoDivida.Controls.Add(this.lblDescricao, 0, 1);
             this.tlpInfoDivida.Controls.Add(this.lblValor, 0, 2);
@@ -80,17 +80,17 @@ namespace ControleSe.Operacoes
             this.tlpInfoDivida.Size = new System.Drawing.Size(611, 181);
             this.tlpInfoDivida.TabIndex = 0;
             // 
-            // lblNomeDivida
+            // lblNome
             // 
-            this.lblNomeDivida.AutoSize = true;
-            this.lblNomeDivida.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblNomeDivida.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblNomeDivida.Location = new System.Drawing.Point(3, 0);
-            this.lblNomeDivida.Name = "lblNomeDivida";
-            this.lblNomeDivida.Size = new System.Drawing.Size(119, 36);
-            this.lblNomeDivida.TabIndex = 0;
-            this.lblNomeDivida.Text = "Nome divida:";
-            this.lblNomeDivida.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblNome.AutoSize = true;
+            this.lblNome.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblNome.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblNome.Location = new System.Drawing.Point(3, 0);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(119, 36);
+            this.lblNome.TabIndex = 0;
+            this.lblNome.Text = "Nome divida:";
+            this.lblNome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtNome
             // 
@@ -195,26 +195,26 @@ namespace ControleSe.Operacoes
             this.tlpCodigo.ColumnCount = 2;
             this.tlpCodigo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.44586F));
             this.tlpCodigo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.55414F));
-            this.tlpCodigo.Controls.Add(this.label1, 0, 0);
+            this.tlpCodigo.Controls.Add(this.lblCodigo, 0, 0);
             this.tlpCodigo.Controls.Add(this.txtCodigo, 1, 0);
-            this.tlpCodigo.Location = new System.Drawing.Point(12, 29);
+            this.tlpCodigo.Location = new System.Drawing.Point(12, 41);
             this.tlpCodigo.Name = "tlpCodigo";
             this.tlpCodigo.RowCount = 1;
             this.tlpCodigo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpCodigo.Size = new System.Drawing.Size(314, 37);
             this.tlpCodigo.TabIndex = 1;
             // 
-            // label1
+            // lblCodigo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 37);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Código:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblCodigo.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblCodigo.Location = new System.Drawing.Point(3, 0);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(121, 37);
+            this.lblCodigo.TabIndex = 0;
+            this.lblCodigo.Text = "Código:";
+            this.lblCodigo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtCodigo
             // 
@@ -297,7 +297,7 @@ namespace ControleSe.Operacoes
             this.btnPagar.UseVisualStyleBackColor = true;
             this.btnPagar.Click += new System.EventHandler(this.btnPagar_Click);
             // 
-            // DividaDetalhe
+            // DividaDetalheForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -309,7 +309,7 @@ namespace ControleSe.Operacoes
             this.Controls.Add(this.tlpInfoDivida);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "DividaDetalhe";
+            this.Name = "DividaDetalheForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalhe da divida";
             this.tlpInfoDivida.ResumeLayout(false);
@@ -325,7 +325,7 @@ namespace ControleSe.Operacoes
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tlpInfoDivida;
-        private System.Windows.Forms.Label lblNomeDivida;
+        private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Label lblDescricao;
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.Label lblTipoDivida;
@@ -336,7 +336,7 @@ namespace ControleSe.Operacoes
         private System.Windows.Forms.ComboBox cbxTipoDivida;
         private System.Windows.Forms.DateTimePicker dtpDataVencimento;
         private System.Windows.Forms.TableLayoutPanel tlpCodigo;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.TableLayoutPanel tlpBotoes;
         private System.Windows.Forms.Button btnSalvar;
