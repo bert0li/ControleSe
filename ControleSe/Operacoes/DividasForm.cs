@@ -30,9 +30,17 @@ namespace ControleSe.Operacoes
 
         private void BindingDividas()
         {
-            _servicoDivida = _servicoDivida ?? new ServicoDivida();
-            grid.AutoGenerateColumns = false;
-            grid.DataSource = _servicoDivida.ObterDividas(_usuario);
+            try
+            {
+                _servicoDivida = _servicoDivida ?? new ServicoDivida();
+                grid.AutoGenerateColumns = false;
+                grid.DataSource = _servicoDivida.ObterDividas(_usuario);
+            }
+            catch (Exception ex)
+            {
+                ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
+                Msg.Erro($"[Erro]:{ex.Message}\n[StackTrace]:{ex.StackTrace}");
+            }
         }
 
         private void LinhaSeleciona(DataGridViewCellEventArgs e)
@@ -82,7 +90,7 @@ namespace ControleSe.Operacoes
             catch (Exception ex)
             {
                 ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
-                Msg.Erro($"[Erro]:{ex.Message} - [StackTrace]:{ex.StackTrace}");
+                Msg.Erro($"[Erro]:{ex.Message}\n[StackTrace]:{ex.StackTrace}");
             }
         }
 
@@ -115,7 +123,7 @@ namespace ControleSe.Operacoes
             catch (Exception ex)
             {
                 ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
-                Msg.Erro($"[Erro]:{ex.Message} - [StackTrace]:{ex.StackTrace}");
+                Msg.Erro($"[Erro]:{ex.Message}\n[StackTrace]:{ex.StackTrace}");
             }
         }
 

@@ -35,7 +35,7 @@ namespace ControleSe.Servico
             }
             catch (IOException ex)
             {
-                Msg.Erro($"Erro ao gravar o arquivo de LOG:\n {ex.Message}\n {ex.StackTrace}");
+                Msg.Erro($"Erro ao gravar o arquivo de LOG:\n{ex.Message}\n{ex.StackTrace}");
             }
         }
 

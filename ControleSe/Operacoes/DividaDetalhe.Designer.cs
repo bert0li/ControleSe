@@ -122,7 +122,7 @@ namespace ControleSe.Operacoes
             this.lblValor.Name = "lblValor";
             this.lblValor.Size = new System.Drawing.Size(119, 36);
             this.lblValor.TabIndex = 0;
-            this.lblValor.Text = "Valor:";
+            this.lblValor.Text = "Valor divida:";
             this.lblValor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // cbxTipoDivida
@@ -274,11 +274,11 @@ namespace ControleSe.Operacoes
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.btnPagar, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(536, 13);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(556, 13);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(87, 82);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(67, 82);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // btnPagar
@@ -290,7 +290,7 @@ namespace ControleSe.Operacoes
             this.btnPagar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnPagar.Location = new System.Drawing.Point(3, 3);
             this.btnPagar.Name = "btnPagar";
-            this.btnPagar.Size = new System.Drawing.Size(81, 76);
+            this.btnPagar.Size = new System.Drawing.Size(61, 76);
             this.btnPagar.TabIndex = 0;
             this.btnPagar.Text = "Pagar";
             this.btnPagar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;

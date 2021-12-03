@@ -61,9 +61,9 @@ namespace ControleSe.Servico
                         .ToList();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
+                throw;
             }
 
             return dividas;
@@ -94,10 +94,9 @@ namespace ControleSe.Servico
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
-                EhValido = false;
+                throw;
             }
 
             return EhValido;

@@ -78,20 +78,28 @@ namespace ControleSe.Operacoes
 
         private void AtribuirBinding(Divida divida)
         {
-            PrimeiroBinding = true;
-            _servicoDivida = _servicoDivida ?? new ServicoDivida();
-            _divida = divida ?? new Divida();
+            try
+            {
+                PrimeiroBinding = true;
+                _servicoDivida = _servicoDivida ?? new ServicoDivida();
+                _divida = divida ?? new Divida();
 
-            InicializarDatas();
-            CarregarCompoBox();
+                InicializarDatas();
+                CarregarCompoBox();
 
-            txtCodigo.DataBindings.Add("Text", _divida, "Id");
-            txtNome.DataBindings.Add("Text", _divida, "Nome");
-            txtDescricao.DataBindings.Add("Text", _divida, "Descricao");
-            txtValor.DataBindings.Add("Text", _divida, "Valor");
-            dtpDataVencimento.DataBindings.Add("Value", _divida, "DataVencimento");
-            cbxTipoDivida.DataBindings.Add("SelectedIndex", _divida, "TipoDivida");
-            PrimeiroBinding = false;
+                txtCodigo.DataBindings.Add("Text", _divida, "Id");
+                txtNome.DataBindings.Add("Text", _divida, "Nome");
+                txtDescricao.DataBindings.Add("Text", _divida, "Descricao");
+                txtValor.DataBindings.Add("Text", _divida, "Valor");
+                dtpDataVencimento.DataBindings.Add("Value", _divida, "DataVencimento");
+                cbxTipoDivida.DataBindings.Add("SelectedIndex", _divida, "TipoDivida");
+                PrimeiroBinding = false;
+            }
+            catch (Exception ex)
+            {
+                ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
+                Msg.Erro($"[Erro]:{ex.Message}\n[StackTrace]:{ex.StackTrace}");
+            }
         }
 
         private void Salvar()
