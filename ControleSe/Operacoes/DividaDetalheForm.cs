@@ -133,7 +133,7 @@ namespace ControleSe.Operacoes
         {
             if (_divida.Pago != true)
             {
-                if (Msg.Pergunta("Deseja realmente pagar?") == DialogResult.OK)
+                if (Msg.Pergunta("Deseja realmente pagar?") == DialogResult.Yes)
                 {
                     _divida.Pago = true;
                     _divida.DataPagamento = DateTime.Now;
