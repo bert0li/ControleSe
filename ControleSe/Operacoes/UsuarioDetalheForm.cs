@@ -30,6 +30,7 @@ namespace ControleSe.Operacoes
         {
             try
             {
+                BloquearLiberarSenha(false);
                 _usuario = usuario ?? new Usuario();
 
                 txtCodigo.DataBindings.Add("Text", _usuario, "Id");
@@ -43,5 +44,67 @@ namespace ControleSe.Operacoes
                 Msg.Erro($"[Erro]:{ex.Message}\n[StackTrace]:{ex.StackTrace}");
             }
         }
+
+        private bool VerificarIgualdadeSenha()
+        {
+            var senhasIguais = false;
+
+            if (txtSenha.Text != txtConfirmarSenha.Text)
+                Msg.Atencao("Senhas são diferentes. Digite novamente.");
+            else
+                senhasIguais = true;
+
+            return senhasIguais;
+        }
+
+        private void BloquearLiberarSenha(bool liberar)
+        {
+            txtConfirmarSenha.Text = string.Empty;
+            txtConfirmarSenha.Enabled = liberar;
+        }
+
+        private void Salvar()
+        {
+            try
+            {
+                if (_servico.Validar(_usuario))
+                {
+                    if (_servico.Salvar(_usuario))
+                    {
+                        Msg.Informacao("Usuário salvo.");
+                        Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
+                Msg.Erro($"[Erro]:{ex.Message} - [StackTrace]:{ex.StackTrace}");
+            }
+        }
+
+        private void txtSenha_Validated(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtSenha.Text))
+            {
+                BloquearLiberarSenha(true);
+                txtConfirmarSenha.Focus();
+            }
+        }
+
+        private void txtConfirmarSenha_Validated(object sender, EventArgs e)
+        {
+            if (!VerificarIgualdadeSenha())
+            {
+                txtSenha.Focus();
+                BloquearLiberarSenha(false);
+            }
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+            => Salvar();
+
+        private void btnSair_Click(object sender, EventArgs e)
+            => Close();
     }
 }

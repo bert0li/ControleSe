@@ -15,8 +15,6 @@ namespace ControleSe.Servico
     {
         public bool Validar(Divida divida)
         {
-            EhValido = true;
-
             if (divida != null)
             {
                 if (string.IsNullOrWhiteSpace(divida.Nome))
@@ -24,23 +22,24 @@ namespace ControleSe.Servico
                     Msg.Atencao("Informe o Nome da divida");
                     EhValido = false;
                 }
-
-                if (string.IsNullOrWhiteSpace(divida.Descricao))
+                else if (string.IsNullOrWhiteSpace(divida.Descricao))
                 {
                     Msg.Atencao("Informe o Descricao da divida");
                     EhValido = false;
                 }
-
-                if (divida.Valor == 0)
+                else if (divida.Valor == 0)
                 {
                     Msg.Atencao("Informe o Valor da divida");
                     EhValido = false;
                 }
-
-                if (divida.DataVencimento == DateTime.MinValue)
+                else if (divida.DataVencimento == DateTime.MinValue)
                 {
                     Msg.Atencao("Informe uma Data valida da divida");
                     EhValido = false;
+                }
+                else
+                {
+                    EhValido = true;
                 }
             }
 

@@ -33,6 +33,7 @@ namespace ControleSe.Operacoes
             this.lblCodigo = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.tlpInfoDivida = new System.Windows.Forms.TableLayoutPanel();
+            this.txtConfirmarSenha = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblUsuario = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@ namespace ControleSe.Operacoes
             this.tlpBotoes = new System.Windows.Forms.TableLayoutPanel();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
-            this.txtConfirmarSenha = new System.Windows.Forms.TextBox();
             this.tlpCodigo.SuspendLayout();
             this.tlpInfoDivida.SuspendLayout();
             this.tlpBotoes.SuspendLayout();
@@ -108,6 +108,17 @@ namespace ControleSe.Operacoes
             this.tlpInfoDivida.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
             this.tlpInfoDivida.Size = new System.Drawing.Size(611, 140);
             this.tlpInfoDivida.TabIndex = 3;
+            // 
+            // txtConfirmarSenha
+            // 
+            this.txtConfirmarSenha.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtConfirmarSenha.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtConfirmarSenha.Location = new System.Drawing.Point(124, 107);
+            this.txtConfirmarSenha.Name = "txtConfirmarSenha";
+            this.txtConfirmarSenha.Size = new System.Drawing.Size(484, 27);
+            this.txtConfirmarSenha.TabIndex = 2;
+            this.txtConfirmarSenha.UseSystemPasswordChar = true;
+            this.txtConfirmarSenha.Validated += new System.EventHandler(this.txtConfirmarSenha_Validated);
             // 
             // lblNome
             // 
@@ -183,6 +194,8 @@ namespace ControleSe.Operacoes
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(484, 27);
             this.txtSenha.TabIndex = 1;
+            this.txtSenha.UseSystemPasswordChar = true;
+            this.txtSenha.Validated += new System.EventHandler(this.txtSenha_Validated);
             // 
             // tlpBotoes
             // 
@@ -210,6 +223,7 @@ namespace ControleSe.Operacoes
             this.btnSalvar.TabIndex = 0;
             this.btnSalvar.Text = "Salvar [F5]";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnSair
             // 
@@ -223,15 +237,7 @@ namespace ControleSe.Operacoes
             this.btnSair.TabIndex = 0;
             this.btnSair.Text = "Sair [Esc]";
             this.btnSair.UseVisualStyleBackColor = true;
-            // 
-            // txtConfirmarSenha
-            // 
-            this.txtConfirmarSenha.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtConfirmarSenha.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtConfirmarSenha.Location = new System.Drawing.Point(124, 107);
-            this.txtConfirmarSenha.Name = "txtConfirmarSenha";
-            this.txtConfirmarSenha.Size = new System.Drawing.Size(484, 27);
-            this.txtConfirmarSenha.TabIndex = 2;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // UsuarioDetalheForm
             // 

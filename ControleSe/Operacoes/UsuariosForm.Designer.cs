@@ -40,6 +40,7 @@ namespace ControleSe.Operacoes
             this.lblPesquisa = new System.Windows.Forms.Label();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.grid = new System.Windows.Forms.DataGridView();
+            this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUsuarioNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpBotoes.SuspendLayout();
             this.tlpPesquisa.SuspendLayout();
@@ -51,7 +52,7 @@ namespace ControleSe.Operacoes
             this.tlpBotoes.ColumnCount = 3;
             this.tlpBotoes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.65789F));
             this.tlpBotoes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.34211F));
-            this.tlpBotoes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 72F));
+            this.tlpBotoes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tlpBotoes.Controls.Add(this.btnAdd, 0, 0);
             this.tlpBotoes.Controls.Add(this.btnDeletar, 2, 0);
             this.tlpBotoes.Controls.Add(this.btnAlterar, 1, 0);
@@ -70,7 +71,7 @@ namespace ControleSe.Operacoes
             this.btnAdd.Image = global::ControleSe.Properties.Resources.add;
             this.btnAdd.Location = new System.Drawing.Point(3, 3);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(58, 59);
+            this.btnAdd.Size = new System.Drawing.Size(59, 59);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -81,9 +82,9 @@ namespace ControleSe.Operacoes
             this.btnDeletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeletar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDeletar.Image = global::ControleSe.Properties.Resources.deletar;
-            this.btnDeletar.Location = new System.Drawing.Point(130, 3);
+            this.btnDeletar.Location = new System.Drawing.Point(132, 3);
             this.btnDeletar.Name = "btnDeletar";
-            this.btnDeletar.Size = new System.Drawing.Size(67, 59);
+            this.btnDeletar.Size = new System.Drawing.Size(65, 59);
             this.btnDeletar.TabIndex = 0;
             this.btnDeletar.UseVisualStyleBackColor = true;
             this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
@@ -93,9 +94,9 @@ namespace ControleSe.Operacoes
             this.btnAlterar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlterar.Image = global::ControleSe.Properties.Resources.alterar;
-            this.btnAlterar.Location = new System.Drawing.Point(67, 3);
+            this.btnAlterar.Location = new System.Drawing.Point(68, 3);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(57, 59);
+            this.btnAlterar.Size = new System.Drawing.Size(58, 59);
             this.btnAlterar.TabIndex = 1;
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
@@ -105,7 +106,7 @@ namespace ControleSe.Operacoes
             this.tlpPesquisa.ColumnCount = 3;
             this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.6164F));
             this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86.3836F));
-            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 204F));
+            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 208F));
             this.tlpPesquisa.Controls.Add(this.btnPesquisa, 2, 0);
             this.tlpPesquisa.Controls.Add(this.lblPesquisa, 0, 0);
             this.tlpPesquisa.Controls.Add(this.txtPesquisa, 1, 0);
@@ -121,9 +122,9 @@ namespace ControleSe.Operacoes
             this.btnPesquisa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnPesquisa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPesquisa.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnPesquisa.Location = new System.Drawing.Point(745, 3);
+            this.btnPesquisa.Location = new System.Drawing.Point(741, 3);
             this.btnPesquisa.Name = "btnPesquisa";
-            this.btnPesquisa.Size = new System.Drawing.Size(199, 27);
+            this.btnPesquisa.Size = new System.Drawing.Size(203, 27);
             this.btnPesquisa.TabIndex = 7;
             this.btnPesquisa.Text = "Pesquisa";
             this.btnPesquisa.UseVisualStyleBackColor = true;
@@ -135,7 +136,7 @@ namespace ControleSe.Operacoes
             this.lblPesquisa.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblPesquisa.Location = new System.Drawing.Point(3, 0);
             this.lblPesquisa.Name = "lblPesquisa";
-            this.lblPesquisa.Size = new System.Drawing.Size(95, 33);
+            this.lblPesquisa.Size = new System.Drawing.Size(94, 33);
             this.lblPesquisa.TabIndex = 0;
             this.lblPesquisa.Text = "Pesquisa:";
             this.lblPesquisa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -144,9 +145,9 @@ namespace ControleSe.Operacoes
             // 
             this.txtPesquisa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPesquisa.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPesquisa.Location = new System.Drawing.Point(104, 3);
+            this.txtPesquisa.Location = new System.Drawing.Point(103, 3);
             this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(635, 26);
+            this.txtPesquisa.Size = new System.Drawing.Size(632, 26);
             this.txtPesquisa.TabIndex = 1;
             // 
             // grid
@@ -167,6 +168,7 @@ namespace ControleSe.Operacoes
             this.grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colNome,
             this.colUsuarioNome});
             this.grid.Location = new System.Drawing.Point(12, 144);
             this.grid.MultiSelect = false;
@@ -188,10 +190,18 @@ namespace ControleSe.Operacoes
             this.grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellClick);
             this.grid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellDoubleClick);
             // 
+            // colNome
+            // 
+            this.colNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colNome.DataPropertyName = "Nome";
+            this.colNome.HeaderText = "Nome";
+            this.colNome.Name = "colNome";
+            this.colNome.ReadOnly = true;
+            // 
             // colUsuarioNome
             // 
             this.colUsuarioNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colUsuarioNome.DataPropertyName = "Nome";
+            this.colUsuarioNome.DataPropertyName = "UsuarioAcesso";
             this.colUsuarioNome.HeaderText = "Usuário";
             this.colUsuarioNome.Name = "colUsuarioNome";
             this.colUsuarioNome.ReadOnly = true;
@@ -227,6 +237,7 @@ namespace ControleSe.Operacoes
         private System.Windows.Forms.TextBox txtPesquisa;
         private System.Windows.Forms.Button btnPesquisa;
         private System.Windows.Forms.DataGridView grid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn colUsuarioNome;
     }
 }

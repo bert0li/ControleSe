@@ -53,7 +53,7 @@ namespace ControleSe
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            using (var form = new UsuariosForm(new ServicoUsuario()))
+            using (var form = new UsuariosForm(_usuario, new ServicoUsuario()))
             {
                 form.ShowDialog();
             }

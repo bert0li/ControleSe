@@ -17,11 +17,13 @@ namespace ControleSe.Operacoes
     {
         private ServicoUsuario _servico = null;
         private Usuario _usuario = null;
+        private Usuario _usuarioLogado = null;
 
-        public UsuariosForm(ServicoUsuario servico)
+        public UsuariosForm(Usuario usuarioLogado, ServicoUsuario servico)
         {
             InitializeComponent();  
             _servico = servico;
+            _usuarioLogado = usuarioLogado;
             BindingUsuarios();
         }
 
@@ -62,10 +64,13 @@ namespace ControleSe.Operacoes
             {
                 if (_usuario != null)
                 {
-                    if (_servico.Excluir(_usuario))
+                    if (Msg.Pergunta("Deseja realmente exluir o usuário?") == DialogResult.Yes)
                     {
-                        BindingUsuarios();
-                        Msg.Informacao("Usuário excluído com sucesso.");
+                        if (_servico.Excluir(_usuarioLogado ,_usuario))
+                        {
+                            BindingUsuarios();
+                            Msg.Informacao("Usuário excluído com sucesso.");
+                        }
                     }
                 }
                 else

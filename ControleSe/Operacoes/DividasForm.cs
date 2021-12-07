@@ -19,11 +19,11 @@ namespace ControleSe.Operacoes
         private Usuario _usuario = null;
         private Divida _divida = null;
 
-        public DividasForm(Usuario usuario, ServicoDivida servicoDivida)
+        public DividasForm(Usuario usuarioLogado, ServicoDivida servicoDivida)
         {
             InitializeComponent();
             _servico = servicoDivida;
-            _usuario = usuario;
+            _usuario = usuarioLogado;
             BindingDividas();
             SomarTotalDivida();
         }
