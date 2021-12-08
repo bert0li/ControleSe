@@ -1,6 +1,7 @@
 ﻿using ControleSe.Entidade;
 using ControleSe.Servico;
 using ControleSe.Utilitario;
+using ControleSe.Utilitario.Splash;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -71,7 +72,7 @@ namespace ControleSe.Operacoes
                 {
                     if (_servico.Salvar(_usuario))
                     {
-                        Msg.Informacao("Usuário salvo.");
+                        ExibirSplash();
                         Close();
                     }
                 }
@@ -80,6 +81,14 @@ namespace ControleSe.Operacoes
             {
                 ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
                 Msg.Erro($"[Erro]:{ex.Message} - [StackTrace]:{ex.StackTrace}");
+            }
+        }
+
+        private void ExibirSplash()
+        {
+            using (var formSplah = new SalvarSplash())
+            {
+                formSplah.ShowDialog();
             }
         }
 
