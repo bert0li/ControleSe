@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace ControleSe.Utilitario.Splash
 {
-    public partial class SalvarSplash : Form
+    public partial class DeletarSplash : Form
     {
         private Timer _timer = null;
         private int _contador = 0;
 
-        public SalvarSplash()
+        public DeletarSplash()
         {
             InitializeComponent();
             IniciarSplash();
@@ -27,7 +27,7 @@ namespace ControleSe.Utilitario.Splash
             _timer.Start();
             _timer.Tick += (o, e) =>
             {
-                if (_contador == 2)
+                if (_contador == 3)
                 {
                     _timer.Stop();
                     _timer.Dispose();

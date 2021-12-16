@@ -1,6 +1,7 @@
 ﻿using ControleSe.Entidade;
 using ControleSe.Servico;
 using ControleSe.Utilitario;
+using ControleSe.Utilitario.Splash;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -68,8 +69,8 @@ namespace ControleSe.Operacoes
                     {
                         if (_servico.Excluir(_usuarioLogado ,_usuario))
                         {
+                            ExibirSplash();
                             BindingUsuarios();
-                            Msg.Informacao("Usuário excluído com sucesso.");
                         }
                     }
                 }
@@ -91,6 +92,13 @@ namespace ControleSe.Operacoes
                 return;
             else
                 _usuario = grid.Rows[e.RowIndex].DataBoundItem as Usuario;
+        }
+        private void ExibirSplash()
+        {
+            using (var form = new DeletarSplash())
+            {
+                form.ShowDialog();
+            }
         }
 
         private void grid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

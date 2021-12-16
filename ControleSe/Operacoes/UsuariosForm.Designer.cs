@@ -52,7 +52,7 @@ namespace ControleSe.Operacoes
             this.tlpBotoes.ColumnCount = 3;
             this.tlpBotoes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.65789F));
             this.tlpBotoes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.34211F));
-            this.tlpBotoes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tlpBotoes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 71F));
             this.tlpBotoes.Controls.Add(this.btnAdd, 0, 0);
             this.tlpBotoes.Controls.Add(this.btnDeletar, 2, 0);
             this.tlpBotoes.Controls.Add(this.btnAlterar, 1, 0);
@@ -82,9 +82,9 @@ namespace ControleSe.Operacoes
             this.btnDeletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeletar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDeletar.Image = global::ControleSe.Properties.Resources.deletar;
-            this.btnDeletar.Location = new System.Drawing.Point(132, 3);
+            this.btnDeletar.Location = new System.Drawing.Point(131, 3);
             this.btnDeletar.Name = "btnDeletar";
-            this.btnDeletar.Size = new System.Drawing.Size(65, 59);
+            this.btnDeletar.Size = new System.Drawing.Size(66, 59);
             this.btnDeletar.TabIndex = 0;
             this.btnDeletar.UseVisualStyleBackColor = true;
             this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
@@ -96,7 +96,7 @@ namespace ControleSe.Operacoes
             this.btnAlterar.Image = global::ControleSe.Properties.Resources.alterar;
             this.btnAlterar.Location = new System.Drawing.Point(68, 3);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(58, 59);
+            this.btnAlterar.Size = new System.Drawing.Size(57, 59);
             this.btnAlterar.TabIndex = 1;
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
@@ -106,7 +106,7 @@ namespace ControleSe.Operacoes
             this.tlpPesquisa.ColumnCount = 3;
             this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.6164F));
             this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86.3836F));
-            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 208F));
+            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 209F));
             this.tlpPesquisa.Controls.Add(this.btnPesquisa, 2, 0);
             this.tlpPesquisa.Controls.Add(this.lblPesquisa, 0, 0);
             this.tlpPesquisa.Controls.Add(this.txtPesquisa, 1, 0);
@@ -122,9 +122,9 @@ namespace ControleSe.Operacoes
             this.btnPesquisa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnPesquisa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPesquisa.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnPesquisa.Location = new System.Drawing.Point(741, 3);
+            this.btnPesquisa.Location = new System.Drawing.Point(740, 3);
             this.btnPesquisa.Name = "btnPesquisa";
-            this.btnPesquisa.Size = new System.Drawing.Size(203, 27);
+            this.btnPesquisa.Size = new System.Drawing.Size(204, 27);
             this.btnPesquisa.TabIndex = 7;
             this.btnPesquisa.Text = "Pesquisa";
             this.btnPesquisa.UseVisualStyleBackColor = true;
@@ -147,7 +147,7 @@ namespace ControleSe.Operacoes
             this.txtPesquisa.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPesquisa.Location = new System.Drawing.Point(103, 3);
             this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(632, 26);
+            this.txtPesquisa.Size = new System.Drawing.Size(631, 26);
             this.txtPesquisa.TabIndex = 1;
             // 
             // grid
