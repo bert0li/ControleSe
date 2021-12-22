@@ -18,6 +18,7 @@ namespace ControleSe.Repositorio.Contexto.Map
             entity.Property(m => m.Nome).HasMaxLength(200).IsRequired();
             entity.Property(m => m.UsuarioAcesso).HasMaxLength(50).IsRequired();
             entity.Property(m => m.SenhaAcesso).HasMaxLength(50).IsRequired();
+            entity.Property(m => m.Ativo);
 
             entity.HasMany(m => m.Dividas)
                 .WithOne(m => m.Usuario)

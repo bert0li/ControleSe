@@ -38,6 +38,7 @@ namespace ControleSe.Operacoes
                 txtNome.DataBindings.Add("Text", _usuario, "Nome");
                 txtUsuario.DataBindings.Add("Text", _usuario, "UsuarioAcesso");
                 txtSenha.DataBindings.Add("Text", _usuario, "SenhaAcesso");
+                cbxAtivo.DataBindings.Add("Checked", _usuario, "Ativo");
             }
             catch (Exception ex)
             {
@@ -57,7 +58,7 @@ namespace ControleSe.Operacoes
 
             return senhasIguais;
         }
-
+        
         private void BloquearLiberarSenha(bool liberar)
         {
             txtConfirmarSenha.Text = string.Empty;

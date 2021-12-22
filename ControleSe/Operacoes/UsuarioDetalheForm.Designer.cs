@@ -32,6 +32,7 @@ namespace ControleSe.Operacoes
             this.tlpCodigo = new System.Windows.Forms.TableLayoutPanel();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.cbxAtivo = new System.Windows.Forms.CheckBox();
             this.tlpInfoDivida = new System.Windows.Forms.TableLayoutPanel();
             this.txtConfirmarSenha = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
@@ -51,16 +52,19 @@ namespace ControleSe.Operacoes
             // 
             // tlpCodigo
             // 
-            this.tlpCodigo.ColumnCount = 2;
-            this.tlpCodigo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.31847F));
-            this.tlpCodigo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.68153F));
+            this.tlpCodigo.ColumnCount = 4;
+            this.tlpCodigo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.15858F));
+            this.tlpCodigo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.84142F));
+            this.tlpCodigo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 213F));
+            this.tlpCodigo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
             this.tlpCodigo.Controls.Add(this.lblCodigo, 0, 0);
             this.tlpCodigo.Controls.Add(this.txtCodigo, 1, 0);
+            this.tlpCodigo.Controls.Add(this.cbxAtivo, 3, 0);
             this.tlpCodigo.Location = new System.Drawing.Point(12, 21);
             this.tlpCodigo.Name = "tlpCodigo";
             this.tlpCodigo.RowCount = 1;
             this.tlpCodigo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpCodigo.Size = new System.Drawing.Size(314, 37);
+            this.tlpCodigo.Size = new System.Drawing.Size(612, 37);
             this.tlpCodigo.TabIndex = 2;
             // 
             // lblCodigo
@@ -70,7 +74,7 @@ namespace ControleSe.Operacoes
             this.lblCodigo.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblCodigo.Location = new System.Drawing.Point(3, 0);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(152, 37);
+            this.lblCodigo.Size = new System.Drawing.Size(115, 37);
             this.lblCodigo.TabIndex = 0;
             this.lblCodigo.Text = "Código:";
             this.lblCodigo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -80,11 +84,23 @@ namespace ControleSe.Operacoes
             this.txtCodigo.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtCodigo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCodigo.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCodigo.Location = new System.Drawing.Point(161, 3);
+            this.txtCodigo.Location = new System.Drawing.Point(124, 3);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.ReadOnly = true;
-            this.txtCodigo.Size = new System.Drawing.Size(150, 30);
+            this.txtCodigo.Size = new System.Drawing.Size(181, 30);
             this.txtCodigo.TabIndex = 1;
+            // 
+            // cbxAtivo
+            // 
+            this.cbxAtivo.AutoSize = true;
+            this.cbxAtivo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbxAtivo.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cbxAtivo.Location = new System.Drawing.Point(524, 3);
+            this.cbxAtivo.Name = "cbxAtivo";
+            this.cbxAtivo.Size = new System.Drawing.Size(85, 31);
+            this.cbxAtivo.TabIndex = 2;
+            this.cbxAtivo.Text = "Ativo?";
+            this.cbxAtivo.UseVisualStyleBackColor = true;
             // 
             // tlpInfoDivida
             // 
@@ -278,5 +294,6 @@ namespace ControleSe.Operacoes
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.TextBox txtConfirmarSenha;
+        private System.Windows.Forms.CheckBox cbxAtivo;
     }
 }

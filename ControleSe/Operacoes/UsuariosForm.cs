@@ -48,7 +48,7 @@ namespace ControleSe.Operacoes
             if (incluir)
             {
                 _usuario = new Usuario();
-                _usuario.EhIncluir = true;
+                //_usuario.EhIncluir = true;
             }
 
             using (var form = new UsuarioDetalheForm(_servico, _usuario))
