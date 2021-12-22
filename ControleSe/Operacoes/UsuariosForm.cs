@@ -25,16 +25,20 @@ namespace ControleSe.Operacoes
             InitializeComponent();  
             _servico = servico;
             _usuarioLogado = usuarioLogado;
-            BindingUsuarios();
+            AtivarCheckBox();
+            BindingUsuarios(true);
         }
 
-        private void BindingUsuarios()
+        private void AtivarCheckBox()
+           => cbxAtivos.Checked = true;
+
+        private void BindingUsuarios(bool ativoInativo)
         {
             try
             {
                 _servico = _servico ?? new ServicoUsuario();
                 grid.AutoGenerateColumns = false;
-                grid.DataSource = _servico.ObterUsuarios();
+                grid.DataSource = _servico.ObterUsuarios(ativoInativo);
             }
             catch (Exception ex)
             {
@@ -56,7 +60,8 @@ namespace ControleSe.Operacoes
                 form.ShowDialog();
             }
 
-            BindingUsuarios();
+            AtivarCheckBox();
+            BindingUsuarios(true);
         }
 
         private void ExluirUsuario()
@@ -70,7 +75,8 @@ namespace ControleSe.Operacoes
                         if (_servico.Excluir(_usuarioLogado ,_usuario))
                         {
                             ExibirSplash();
-                            BindingUsuarios();
+                            AtivarCheckBox();
+                            BindingUsuarios(true);
                         }
                     }
                 }
@@ -106,6 +112,9 @@ namespace ControleSe.Operacoes
             SelecionarLinha(e);
             AlterarIncluirUsuario();
         }
+
+        private void cbxAtivos_CheckedChanged(object sender, EventArgs e)
+            => BindingUsuarios(cbxAtivos.Checked);
 
         private void grid_CellClick(object sender, DataGridViewCellEventArgs e)
             => SelecionarLinha(e);

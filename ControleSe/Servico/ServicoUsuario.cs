@@ -99,7 +99,7 @@ namespace ControleSe.Servico
             return _usuario;
         }
 
-        public IEnumerable<Usuario> ObterUsuarios()
+        public IEnumerable<Usuario> ObterUsuarios(bool ativoInativo)
         {
             IEnumerable<Usuario> usuarios = null;
 
@@ -107,7 +107,7 @@ namespace ControleSe.Servico
             {
                 using (var contexto = new Contexto())
                 {
-                    usuarios = contexto.Usuario.ToList();
+                    usuarios = contexto.Usuario.Where(w => w.Ativo == ativoInativo).ToList();
                 }
             }
             catch (Exception)
