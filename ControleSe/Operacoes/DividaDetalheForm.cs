@@ -2,6 +2,7 @@
 using ControleSe.Enumerador;
 using ControleSe.Servico;
 using ControleSe.Utilitario;
+using ControleSe.Utilitario.Splash;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,16 +19,16 @@ namespace ControleSe.Operacoes
 {
     public partial class DividaDetalheForm : Form
     {
-        private ServicoDivida _servicoDivida;
+        private ServicoDivida _servico;
         private Divida _divida;
         private bool PrimeiroBinding = false;
 
         public DividaDetalheForm(ServicoDivida servicoDivida, Divida divida)
         {
             InitializeComponent();
-            _servicoDivida = servicoDivida;
+            _servico = servicoDivida;
             _divida = divida;
-            AtribuirBinding(_divida);
+            AtribuirBinding();
         }
 
         private void InicializarDatas()
@@ -76,13 +77,12 @@ namespace ControleSe.Operacoes
             cbxTipoDivida.ValueMember = "Key";
         }
 
-        private void AtribuirBinding(Divida divida)
+        private void AtribuirBinding()
         {
             try
             {
                 PrimeiroBinding = true;
-                _servicoDivida = _servicoDivida ?? new ServicoDivida();
-                _divida = divida ?? new Divida();
+                _servico = _servico ?? new ServicoDivida();
 
                 InicializarDatas();
                 CarregarCompoBox();
@@ -106,11 +106,11 @@ namespace ControleSe.Operacoes
         {
             try
             {
-                if (_servicoDivida.Validar(_divida))
+                if (_servico.Validar(_divida))
                 {
-                    if (_servicoDivida.Salvar(_divida))
+                    if (_servico.Salvar(_divida))
                     {
-                        Msg.Informacao("Divida salva.");
+                        ExibirSplash();
                         Close();
                     }
                 }
@@ -119,6 +119,14 @@ namespace ControleSe.Operacoes
             {
                 ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
                 Msg.Erro($"[Erro]:{ex.Message} - [StackTrace]:{ex.StackTrace}");
+            }
+        }
+
+        private void ExibirSplash()
+        {
+            using (var formSplah = new SalvarSplash())
+            {
+                formSplah.ShowDialog();
             }
         }
 
@@ -138,7 +146,7 @@ namespace ControleSe.Operacoes
                     _divida.Pago = true;
                     _divida.DataPagamento = DateTime.Now;
 
-                    if (_servicoDivida.Salvar(_divida))
+                    if (_servico.Salvar(_divida))
                     {
                         Msg.Informacao("Divida paga.");
                         Close();
@@ -151,16 +159,14 @@ namespace ControleSe.Operacoes
             }
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
-            => Salvar();
-
-        private void btnSair_Click(object sender, EventArgs e)
-            => Close();
-
         private void txtValor_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
                 e.Handled = true;
         }
+
+        private void btnSalvar_Click(object sender, EventArgs e) => Salvar();
+
+        private void btnSair_Click(object sender, EventArgs e) => Close();
     }
 }

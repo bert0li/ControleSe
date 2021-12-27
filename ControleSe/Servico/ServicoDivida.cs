@@ -48,24 +48,24 @@ namespace ControleSe.Servico
 
         public IEnumerable<Divida> ObterDividas(Usuario usuario)
         {
-            IEnumerable<Divida> dividas = null;
-
             try
             {
+                IEnumerable<Divida> dividas = null;
+
                 using (var contexto = new Contexto())
                 {
                     dividas = contexto.Divida
-                        .Include(i => i.Usuario)
-                        .Where(w => w.UsuarioId == usuario.Id)
-                        .ToList();
+                                      .Include(i => i.Usuario)
+                                      .Where(w => w.UsuarioId == usuario.Id)
+                                      .ToList();
                 }
+
+                return dividas;
             }
             catch (Exception)
             {
                 throw;
             }
-
-            return dividas;
         }
 
         public bool Salvar(Divida divida)
@@ -81,15 +81,15 @@ namespace ControleSe.Servico
                         if (divida.Id == 0)
                         {
                             contexto.Divida.Add(divida);
-                            contexto.SaveChanges();
                             EhValido = true;
                         }
                         else
                         {
                             contexto.Divida.Update(divida);
-                            contexto.SaveChanges();
                             EhValido = true;
                         }
+
+                        contexto.SaveChanges();
                     }
                 }
             }

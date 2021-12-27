@@ -61,7 +61,10 @@ namespace ControleSe
 
         private void btnEntradas_Click(object sender, EventArgs e)
         {
-            Msg.Informacao("Este recurso esta em desenvolvimento.");
+            using (var form = new EntradasForm(_usuario, new ServicoEntrada()))
+            {
+                form.ShowDialog();
+            }
         }
     }
 }
