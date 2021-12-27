@@ -15,5 +15,15 @@ namespace ControleSe.Entidade
         
         [NotMapped]
         public bool EhIncluir { get; set; }
+
+        public void AdicionarValor(decimal valor)
+        {
+            TotalCobre += valor;
+        }
+
+        public void RetirarValor(decimal valor)
+        {
+            TotalCobre -= valor;
+        }
     }
 }

@@ -29,10 +29,10 @@ namespace ControleSe.Operacoes
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tlpBotoes = new System.Windows.Forms.TableLayoutPanel();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDeletar = new System.Windows.Forms.Button();
@@ -92,15 +92,13 @@ namespace ControleSe.Operacoes
             // 
             // tlpPesquisa
             // 
-            this.tlpPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpPesquisa.ColumnCount = 6;
             this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.42253F));
             this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.57747F));
             this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
             this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 163F));
             this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 236F));
-            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 264F));
+            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 267F));
             this.tlpPesquisa.Controls.Add(this.btnPesquisa, 5, 0);
             this.tlpPesquisa.Controls.Add(this.lblDataInicio, 0, 0);
             this.tlpPesquisa.Controls.Add(this.dateTimePicker1, 1, 0);
@@ -118,9 +116,9 @@ namespace ControleSe.Operacoes
             this.btnPesquisa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnPesquisa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPesquisa.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnPesquisa.Location = new System.Drawing.Point(788, 3);
+            this.btnPesquisa.Location = new System.Drawing.Point(785, 3);
             this.btnPesquisa.Name = "btnPesquisa";
-            this.btnPesquisa.Size = new System.Drawing.Size(259, 27);
+            this.btnPesquisa.Size = new System.Drawing.Size(262, 27);
             this.btnPesquisa.TabIndex = 3;
             this.btnPesquisa.Text = "Pesquisa";
             this.btnPesquisa.UseVisualStyleBackColor = true;
@@ -132,7 +130,7 @@ namespace ControleSe.Operacoes
             this.lblDataInicio.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblDataInicio.Location = new System.Drawing.Point(3, 0);
             this.lblDataInicio.Name = "lblDataInicio";
-            this.lblDataInicio.Size = new System.Drawing.Size(126, 33);
+            this.lblDataInicio.Size = new System.Drawing.Size(124, 33);
             this.lblDataInicio.TabIndex = 0;
             this.lblDataInicio.Text = "Data inicio:";
             this.lblDataInicio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -142,9 +140,9 @@ namespace ControleSe.Operacoes
             this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateTimePicker1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(135, 3);
+            this.dateTimePicker1.Location = new System.Drawing.Point(133, 3);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(152, 26);
+            this.dateTimePicker1.Size = new System.Drawing.Size(151, 26);
             this.dateTimePicker1.TabIndex = 2;
             // 
             // lblDataFim
@@ -152,7 +150,7 @@ namespace ControleSe.Operacoes
             this.lblDataFim.AutoSize = true;
             this.lblDataFim.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblDataFim.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDataFim.Location = new System.Drawing.Point(293, 0);
+            this.lblDataFim.Location = new System.Drawing.Point(290, 0);
             this.lblDataFim.Name = "lblDataFim";
             this.lblDataFim.Size = new System.Drawing.Size(90, 33);
             this.lblDataFim.TabIndex = 0;
@@ -164,7 +162,7 @@ namespace ControleSe.Operacoes
             this.dateTimePicker2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateTimePicker2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(389, 3);
+            this.dateTimePicker2.Location = new System.Drawing.Point(386, 3);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(157, 26);
             this.dateTimePicker2.TabIndex = 2;
@@ -177,14 +175,14 @@ namespace ControleSe.Operacoes
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grid.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colId,
@@ -203,8 +201,8 @@ namespace ControleSe.Operacoes
             // colId
             // 
             this.colId.DataPropertyName = "Id";
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.colId.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.colId.DefaultCellStyle = dataGridViewCellStyle2;
             this.colId.HeaderText = "Código";
             this.colId.Name = "colId";
             this.colId.ReadOnly = true;
@@ -213,8 +211,8 @@ namespace ControleSe.Operacoes
             // 
             this.colValorEntrada.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colValorEntrada.DataPropertyName = "ValorEntrada";
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.colValorEntrada.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.colValorEntrada.DefaultCellStyle = dataGridViewCellStyle3;
             this.colValorEntrada.HeaderText = "Valor da entrada";
             this.colValorEntrada.Name = "colValorEntrada";
             this.colValorEntrada.ReadOnly = true;
@@ -223,8 +221,8 @@ namespace ControleSe.Operacoes
             // 
             this.colDataEntrada.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colDataEntrada.DataPropertyName = "DataEntrada";
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.colDataEntrada.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.colDataEntrada.DefaultCellStyle = dataGridViewCellStyle4;
             this.colDataEntrada.HeaderText = "Data da entrada";
             this.colDataEntrada.Name = "colDataEntrada";
             this.colDataEntrada.ReadOnly = true;
@@ -240,6 +238,7 @@ namespace ControleSe.Operacoes
             this.Name = "EntradasForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Entradas";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tlpBotoes.ResumeLayout(false);
             this.tlpPesquisa.ResumeLayout(false);
             this.tlpPesquisa.PerformLayout();

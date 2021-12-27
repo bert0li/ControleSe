@@ -91,6 +91,7 @@ namespace ControleSe.Servico
                     {
                         contexto.Entrada.Add(entrada);
                         contexto.SaveChanges();
+                        AdicionarValorNoCofre(entrada.ValorEntrada);
                         EhValido = true;
                     }
                 }
@@ -101,6 +102,35 @@ namespace ControleSe.Servico
             }
 
             return EhValido;
+        }
+
+        private void AdicionarValorNoCofre(decimal valor)
+        {
+            try
+            {
+                using (var contexto = new Contexto())
+                {
+                    var cofre = contexto.Cofre.FirstOrDefault();
+
+                    if (cofre != null)
+                    {
+                        cofre.AdicionarValor(valor);
+                        contexto.Cofre.Update(cofre);
+                    }
+                    else
+                    {
+                        cofre = new Cofre();
+                        cofre.AdicionarValor(valor);
+                        contexto.Cofre.Add(cofre);
+                    }
+
+                    contexto.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }
