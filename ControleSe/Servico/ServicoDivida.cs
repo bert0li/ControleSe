@@ -68,6 +68,48 @@ namespace ControleSe.Servico
             }
         }
 
+        public bool Pagar(Divida divida)
+        {
+            try
+            {
+                EhValido = false;
+
+                try
+                {
+                    if (divida != null)
+                    {
+                        if (RetirarValorNoCofre(divida.Valor))
+                        {
+                            using (var contexto = new Contexto())
+                            {
+                                var dividaParaPagar = contexto.Divida.Where(w => w.Id == divida.Id).FirstOrDefault();
+
+                                if (dividaParaPagar != null)
+                                {
+                                    dividaParaPagar.Pago = true;
+                                    dividaParaPagar.DataPagamento = DateTime.Now;
+                                    contexto.Divida.Update(dividaParaPagar);
+                                    contexto.SaveChanges();
+                                    EhValido = true;
+                                }
+                            }
+                        }
+                    }
+
+                    return EhValido;
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public bool Salvar(Divida divida)
         {
             EhValido = false;
@@ -123,6 +165,37 @@ namespace ControleSe.Servico
             }
 
             return EhValido;
+        }
+
+        private bool RetirarValorNoCofre(decimal valor)
+        {
+            try
+            {
+                EhValido = false;
+
+                using (var contexto = new Contexto())
+                {
+                    var cofre = contexto.Cofre.FirstOrDefault();
+
+                    if (cofre != null)
+                    {
+                        cofre.RetirarValor(valor);
+                        contexto.Cofre.Update(cofre);
+                        contexto.SaveChanges();
+                        EhValido = true;
+                    }
+                    else
+                    {
+                        Msg.Informacao("O cofre esta vazio. Não é possivél pagar a divida.");
+                    }
+                }
+
+                return EhValido;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

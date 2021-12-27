@@ -143,10 +143,7 @@ namespace ControleSe.Operacoes
             {
                 if (Msg.Pergunta("Deseja realmente pagar?") == DialogResult.Yes)
                 {
-                    _divida.Pago = true;
-                    _divida.DataPagamento = DateTime.Now;
-
-                    if (_servico.Salvar(_divida))
+                    if (_servico.Pagar(_divida))
                     {
                         Msg.Informacao("Divida paga.");
                         Close();
