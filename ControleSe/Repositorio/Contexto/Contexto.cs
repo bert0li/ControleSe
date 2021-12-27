@@ -13,6 +13,7 @@ namespace ControleSe.Repositorio.Contexto
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Divida> Divida { get; set; }
         public DbSet<Entrada> Entrada { get; set; }
+        public DbSet<Cofre> Cofre { get; set; }
 
         public Contexto() { }
 
