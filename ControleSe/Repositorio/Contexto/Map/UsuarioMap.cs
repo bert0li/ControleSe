@@ -21,9 +21,15 @@ namespace ControleSe.Repositorio.Contexto.Map
             entity.Property(m => m.Ativo);
 
             entity.HasMany(m => m.Dividas)
-                .WithOne(m => m.Usuario)
-                .HasForeignKey(m => m.UsuarioId)
-                .OnDelete(DeleteBehavior.NoAction);
+                  .WithOne(m => m.Usuario)
+                  .HasForeignKey(m => m.UsuarioId)
+                  .OnDelete(DeleteBehavior.NoAction);
+
+            entity.HasMany(m => m.Entradas)
+                  .WithOne(m => m.Usuario)
+                  .HasForeignKey(m => m.UsuarioId)
+                  .OnDelete(DeleteBehavior.NoAction);
+
         }
     }
 }
