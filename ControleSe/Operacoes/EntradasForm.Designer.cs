@@ -37,11 +37,11 @@ namespace ControleSe.Operacoes
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDeletar = new System.Windows.Forms.Button();
             this.tlpPesquisa = new System.Windows.Forms.TableLayoutPanel();
+            this.lblDataDe = new System.Windows.Forms.Label();
+            this.dtpDataDe = new System.Windows.Forms.DateTimePicker();
+            this.lblDataAte = new System.Windows.Forms.Label();
+            this.dtpDataAte = new System.Windows.Forms.DateTimePicker();
             this.btnPesquisa = new System.Windows.Forms.Button();
-            this.lblDataInicio = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.lblDataFim = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.grid = new System.Windows.Forms.DataGridView();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colValorEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -92,80 +92,78 @@ namespace ControleSe.Operacoes
             // 
             // tlpPesquisa
             // 
-            this.tlpPesquisa.ColumnCount = 6;
-            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.42253F));
-            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.57747F));
-            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
-            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 163F));
-            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 236F));
-            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 267F));
-            this.tlpPesquisa.Controls.Add(this.btnPesquisa, 5, 0);
-            this.tlpPesquisa.Controls.Add(this.lblDataInicio, 0, 0);
-            this.tlpPesquisa.Controls.Add(this.dateTimePicker1, 1, 0);
-            this.tlpPesquisa.Controls.Add(this.lblDataFim, 2, 0);
-            this.tlpPesquisa.Controls.Add(this.dateTimePicker2, 3, 0);
+            this.tlpPesquisa.ColumnCount = 4;
+            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.31469F));
+            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.68532F));
+            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
+            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 172F));
+            this.tlpPesquisa.Controls.Add(this.lblDataDe, 0, 0);
+            this.tlpPesquisa.Controls.Add(this.dtpDataDe, 1, 0);
+            this.tlpPesquisa.Controls.Add(this.lblDataAte, 2, 0);
+            this.tlpPesquisa.Controls.Add(this.dtpDataAte, 3, 0);
             this.tlpPesquisa.Location = new System.Drawing.Point(12, 94);
             this.tlpPesquisa.Name = "tlpPesquisa";
             this.tlpPesquisa.RowCount = 1;
             this.tlpPesquisa.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpPesquisa.Size = new System.Drawing.Size(1050, 33);
+            this.tlpPesquisa.Size = new System.Drawing.Size(522, 33);
             this.tlpPesquisa.TabIndex = 6;
+            // 
+            // lblDataDe
+            // 
+            this.lblDataDe.AutoSize = true;
+            this.lblDataDe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDataDe.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDataDe.Location = new System.Drawing.Point(3, 0);
+            this.lblDataDe.Name = "lblDataDe";
+            this.lblDataDe.Size = new System.Drawing.Size(85, 33);
+            this.lblDataDe.TabIndex = 0;
+            this.lblDataDe.Text = "Data de:";
+            this.lblDataDe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // dtpDataDe
+            // 
+            this.dtpDataDe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtpDataDe.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtpDataDe.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDataDe.Location = new System.Drawing.Point(94, 3);
+            this.dtpDataDe.Name = "dtpDataDe";
+            this.dtpDataDe.Size = new System.Drawing.Size(162, 26);
+            this.dtpDataDe.TabIndex = 2;
+            // 
+            // lblDataAte
+            // 
+            this.lblDataAte.AutoSize = true;
+            this.lblDataAte.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDataAte.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDataAte.Location = new System.Drawing.Point(262, 0);
+            this.lblDataAte.Name = "lblDataAte";
+            this.lblDataAte.Size = new System.Drawing.Size(84, 33);
+            this.lblDataAte.TabIndex = 0;
+            this.lblDataAte.Text = "Data ate:";
+            this.lblDataAte.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // dtpDataAte
+            // 
+            this.dtpDataAte.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtpDataAte.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtpDataAte.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDataAte.Location = new System.Drawing.Point(352, 3);
+            this.dtpDataAte.Name = "dtpDataAte";
+            this.dtpDataAte.Size = new System.Drawing.Size(167, 26);
+            this.dtpDataAte.TabIndex = 2;
             // 
             // btnPesquisa
             // 
-            this.btnPesquisa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPesquisa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPesquisa.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnPesquisa.Location = new System.Drawing.Point(785, 3);
+            this.btnPesquisa.Location = new System.Drawing.Point(854, 97);
             this.btnPesquisa.Name = "btnPesquisa";
-            this.btnPesquisa.Size = new System.Drawing.Size(262, 27);
+            this.btnPesquisa.Size = new System.Drawing.Size(208, 27);
             this.btnPesquisa.TabIndex = 3;
             this.btnPesquisa.Text = "Pesquisa";
             this.btnPesquisa.UseVisualStyleBackColor = true;
-            // 
-            // lblDataInicio
-            // 
-            this.lblDataInicio.AutoSize = true;
-            this.lblDataInicio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDataInicio.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDataInicio.Location = new System.Drawing.Point(3, 0);
-            this.lblDataInicio.Name = "lblDataInicio";
-            this.lblDataInicio.Size = new System.Drawing.Size(124, 33);
-            this.lblDataInicio.TabIndex = 0;
-            this.lblDataInicio.Text = "Data inicio:";
-            this.lblDataInicio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(133, 3);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(151, 26);
-            this.dateTimePicker1.TabIndex = 2;
-            // 
-            // lblDataFim
-            // 
-            this.lblDataFim.AutoSize = true;
-            this.lblDataFim.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDataFim.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDataFim.Location = new System.Drawing.Point(290, 0);
-            this.lblDataFim.Name = "lblDataFim";
-            this.lblDataFim.Size = new System.Drawing.Size(90, 33);
-            this.lblDataFim.TabIndex = 0;
-            this.lblDataFim.Text = "Data fim:";
-            this.lblDataFim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dateTimePicker2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(386, 3);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(157, 26);
-            this.dateTimePicker2.TabIndex = 2;
+            this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
             // 
             // grid
             // 
@@ -232,6 +230,7 @@ namespace ControleSe.Operacoes
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1074, 512);
+            this.Controls.Add(this.btnPesquisa);
             this.Controls.Add(this.grid);
             this.Controls.Add(this.tlpPesquisa);
             this.Controls.Add(this.tlpBotoes);
@@ -254,10 +253,10 @@ namespace ControleSe.Operacoes
         private System.Windows.Forms.Button btnDeletar;
         private System.Windows.Forms.TableLayoutPanel tlpPesquisa;
         private System.Windows.Forms.Button btnPesquisa;
-        private System.Windows.Forms.Label lblDataInicio;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label lblDataFim;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Label lblDataDe;
+        private System.Windows.Forms.DateTimePicker dtpDataDe;
+        private System.Windows.Forms.Label lblDataAte;
+        private System.Windows.Forms.DateTimePicker dtpDataAte;
         private System.Windows.Forms.DataGridView grid;
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colValorEntrada;

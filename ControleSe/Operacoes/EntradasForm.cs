@@ -24,7 +24,16 @@ namespace ControleSe.Operacoes
             InitializeComponent();
             _usuario = usuarioLogado;
             _servico = servicoEntrada;
+            SetarDatas();
             BindingEntradas();
+        }
+
+        private void SetarDatas()
+        {
+            var primeiroDiaMes = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            var ultimoDiaMes = primeiroDiaMes.AddMonths(1).AddDays(-1);
+            dtpDataDe.Value = primeiroDiaMes;
+            dtpDataAte.Value = ultimoDiaMes;
         }
 
         private void BindingEntradas()
@@ -60,6 +69,20 @@ namespace ControleSe.Operacoes
             // TODO: Implementar
         }
 
+        private void Pesquisar()
+        {
+            try
+            {
+                var entradaPesquisa = _servico.PesquisarEntradas(_usuario, dtpDataDe.Value, dtpDataAte.Value);
+                grid.DataSource = entradaPesquisa;
+            }
+            catch (Exception ex)
+            {
+                ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
+                Msg.Erro($"[Erro]:{ex.Message}\n[StackTrace]:{ex.StackTrace}");
+            }
+        }
+
         private void LinhasSelecionada(DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
@@ -71,5 +94,7 @@ namespace ControleSe.Operacoes
         private void grid_CellClick(object sender, DataGridViewCellEventArgs e) => LinhasSelecionada(e);
 
         private void btnAdd_Click(object sender, EventArgs e) => IncluirEntrada();
+
+        private void btnPesquisa_Click(object sender, EventArgs e) => Pesquisar();
     }
 }
