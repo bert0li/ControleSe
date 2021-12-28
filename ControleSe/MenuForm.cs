@@ -66,5 +66,15 @@ namespace ControleSe
                 form.ShowDialog();
             }
         }
+
+        private void btnCofre_Click(object sender, EventArgs e)
+        {
+            Msg.Informacao("Recurso em desenvolvimento.");
+        }
+
+        private void btnRelatorios_Click(object sender, EventArgs e)
+        {
+            Msg.Informacao("Recurso em desenvolvimento.");
+        }
     }
 }

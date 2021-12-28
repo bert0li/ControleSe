@@ -41,10 +41,18 @@ namespace ControleSe
             this.panelUsuarios = new System.Windows.Forms.Panel();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.panelCofre = new System.Windows.Forms.Panel();
+            this.btnCofre = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.panelRelatorio = new System.Windows.Forms.Panel();
+            this.btnRelatorios = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.panelDividas.SuspendLayout();
             this.panelEntradas.SuspendLayout();
             this.panelUsuarios.SuspendLayout();
+            this.panelCofre.SuspendLayout();
+            this.panelRelatorio.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -86,7 +94,7 @@ namespace ControleSe
             this.btnDividas.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnDividas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnDividas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDividas.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDividas.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDividas.Image = global::ControleSe.Properties.Resources.dividaMenu;
             this.btnDividas.Location = new System.Drawing.Point(0, 0);
             this.btnDividas.Name = "btnDividas";
@@ -111,7 +119,7 @@ namespace ControleSe
             this.btnEntradas.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnEntradas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnEntradas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEntradas.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEntradas.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEntradas.Image = global::ControleSe.Properties.Resources.entradaMenu;
             this.btnEntradas.Location = new System.Drawing.Point(0, 0);
             this.btnEntradas.Name = "btnEntradas";
@@ -141,7 +149,7 @@ namespace ControleSe
             // 
             this.panelUsuarios.Controls.Add(this.btnUsuarios);
             this.panelUsuarios.Controls.Add(this.button2);
-            this.panelUsuarios.Location = new System.Drawing.Point(345, 12);
+            this.panelUsuarios.Location = new System.Drawing.Point(682, 12);
             this.panelUsuarios.Name = "panelUsuarios";
             this.panelUsuarios.Size = new System.Drawing.Size(149, 161);
             this.panelUsuarios.TabIndex = 4;
@@ -151,7 +159,7 @@ namespace ControleSe
             this.btnUsuarios.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsuarios.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnUsuarios.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnUsuarios.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuarios.Image")));
             this.btnUsuarios.Location = new System.Drawing.Point(0, 0);
             this.btnUsuarios.Name = "btnUsuarios";
@@ -177,12 +185,96 @@ namespace ControleSe
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = false;
             // 
+            // panelCofre
+            // 
+            this.panelCofre.Controls.Add(this.btnCofre);
+            this.panelCofre.Controls.Add(this.button4);
+            this.panelCofre.Location = new System.Drawing.Point(348, 12);
+            this.panelCofre.Name = "panelCofre";
+            this.panelCofre.Size = new System.Drawing.Size(149, 161);
+            this.panelCofre.TabIndex = 5;
+            // 
+            // btnCofre
+            // 
+            this.btnCofre.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCofre.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCofre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCofre.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCofre.Image = global::ControleSe.Properties.Resources.cofreMenu;
+            this.btnCofre.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCofre.Location = new System.Drawing.Point(0, 0);
+            this.btnCofre.Name = "btnCofre";
+            this.btnCofre.Size = new System.Drawing.Size(149, 161);
+            this.btnCofre.TabIndex = 1;
+            this.btnCofre.Text = "Cofre";
+            this.btnCofre.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCofre.UseVisualStyleBackColor = false;
+            this.btnCofre.Click += new System.EventHandler(this.btnCofre_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Gainsboro;
+            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button4.Image = global::ControleSe.Properties.Resources.dividaMenu;
+            this.button4.Location = new System.Drawing.Point(0, 0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(149, 161);
+            this.button4.TabIndex = 0;
+            this.button4.Text = "Dividas";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // panelRelatorio
+            // 
+            this.panelRelatorio.Controls.Add(this.btnRelatorios);
+            this.panelRelatorio.Controls.Add(this.button5);
+            this.panelRelatorio.Location = new System.Drawing.Point(514, 12);
+            this.panelRelatorio.Name = "panelRelatorio";
+            this.panelRelatorio.Size = new System.Drawing.Size(149, 161);
+            this.panelRelatorio.TabIndex = 6;
+            // 
+            // btnRelatorios
+            // 
+            this.btnRelatorios.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnRelatorios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRelatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRelatorios.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnRelatorios.Image = global::ControleSe.Properties.Resources.relatorioMenu;
+            this.btnRelatorios.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnRelatorios.Location = new System.Drawing.Point(0, 0);
+            this.btnRelatorios.Name = "btnRelatorios";
+            this.btnRelatorios.Size = new System.Drawing.Size(149, 161);
+            this.btnRelatorios.TabIndex = 1;
+            this.btnRelatorios.Text = "Relatório";
+            this.btnRelatorios.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRelatorios.UseVisualStyleBackColor = false;
+            this.btnRelatorios.Click += new System.EventHandler(this.btnRelatorios_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Gainsboro;
+            this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button5.Image = global::ControleSe.Properties.Resources.dividaMenu;
+            this.button5.Location = new System.Drawing.Point(0, 0);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(149, 161);
+            this.button5.TabIndex = 0;
+            this.button5.Text = "Dividas";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button5.UseVisualStyleBackColor = false;
+            // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1010, 384);
+            this.Controls.Add(this.panelRelatorio);
+            this.Controls.Add(this.panelCofre);
             this.Controls.Add(this.panelUsuarios);
             this.Controls.Add(this.panelEntradas);
             this.Controls.Add(this.panelDividas);
@@ -196,6 +288,8 @@ namespace ControleSe
             this.panelDividas.ResumeLayout(false);
             this.panelEntradas.ResumeLayout(false);
             this.panelUsuarios.ResumeLayout(false);
+            this.panelCofre.ResumeLayout(false);
+            this.panelRelatorio.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,5 +307,11 @@ namespace ControleSe
         private System.Windows.Forms.Panel panelUsuarios;
         private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panelCofre;
+        private System.Windows.Forms.Button btnCofre;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Panel panelRelatorio;
+        private System.Windows.Forms.Button btnRelatorios;
+        private System.Windows.Forms.Button button5;
     }
 }

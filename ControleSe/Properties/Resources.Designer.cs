@@ -83,6 +83,16 @@ namespace ControleSe.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cofreMenu {
+            get {
+                object obj = ResourceManager.GetObject("cofreMenu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap deletar {
             get {
                 object obj = ResourceManager.GetObject("deletar", resourceCulture);
@@ -126,6 +136,16 @@ namespace ControleSe.Properties {
         internal static System.Drawing.Bitmap pagar {
             get {
                 object obj = ResourceManager.GetObject("pagar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap relatorioMenu {
+            get {
+                object obj = ResourceManager.GetObject("relatorioMenu", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
