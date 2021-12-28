@@ -179,10 +179,17 @@ namespace ControleSe.Servico
 
                     if (cofre != null)
                     {
-                        cofre.RetirarValor(valor);
-                        contexto.Cofre.Update(cofre);
-                        contexto.SaveChanges();
-                        EhValido = true;
+                        if (cofre.TotalCobre >= valor)
+                        {
+                            cofre.RetirarValor(valor);
+                            contexto.Cofre.Update(cofre);
+                            contexto.SaveChanges();
+                            EhValido = true;
+                        }
+                        else
+                        {
+                            Msg.Informacao($"Valor insuficiente no cofre para pagar divida.\nValor no cofre: {cofre.TotalCobre}\nValor divida: {valor}");
+                        }
                     }
                     else
                     {
