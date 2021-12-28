@@ -24,7 +24,7 @@ namespace ControleSe.Repositorio.Contexto
             optionsBuilder.UseSqlServer(
                 //"server=Desenv;initial catalog=ControleSe;user id=sa;password=bertoli1836"
                 @"server=CODER\SQLEXPRESS;initial catalog=ControleSe;user id=sa;password=bertoli1836"
-                , p => 
+                , p =>
                   p.EnableRetryOnFailure(
                       maxRetryCount: 3,
                       maxRetryDelay: TimeSpan.FromSeconds(5),

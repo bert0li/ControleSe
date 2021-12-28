@@ -83,7 +83,7 @@ namespace ControleSe
             // 
             // btnDividas
             // 
-            this.btnDividas.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnDividas.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnDividas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnDividas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDividas.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -108,7 +108,7 @@ namespace ControleSe
             // 
             // btnEntradas
             // 
-            this.btnEntradas.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnEntradas.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnEntradas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnEntradas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEntradas.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -148,7 +148,7 @@ namespace ControleSe
             // 
             // btnUsuarios
             // 
-            this.btnUsuarios.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnUsuarios.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsuarios.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
