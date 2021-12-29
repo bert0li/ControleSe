@@ -12,7 +12,9 @@ namespace ControleSe.Entidade
     {
         public int Id { get; set; }
         public decimal TotalCobre { get; set; }
-        
+        public Usuario Usuario { get; set; }
+        public int UsuarioId { get; set; }
+
         [NotMapped]
         public bool EhIncluir { get; set; }
 

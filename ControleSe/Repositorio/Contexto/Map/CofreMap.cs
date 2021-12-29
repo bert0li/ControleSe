@@ -16,6 +16,11 @@ namespace ControleSe.Repositorio.Contexto.Map
             entity.ToTable("Cofre");
             entity.HasKey(m => m.Id);
             entity.Property(m => m.TotalCobre).IsRequired();
+
+            entity.HasOne(m => m.Usuario)
+                  .WithOne(m => m.Cofre)
+                  .HasPrincipalKey<Cofre>(m => m.Id)
+                  .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

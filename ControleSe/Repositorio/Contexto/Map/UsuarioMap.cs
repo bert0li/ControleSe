@@ -30,6 +30,10 @@ namespace ControleSe.Repositorio.Contexto.Map
                   .HasForeignKey(m => m.UsuarioId)
                   .OnDelete(DeleteBehavior.NoAction);
 
+            entity.HasOne(m => m.Cofre)
+                  .WithOne(m => m.Usuario)
+                  .HasPrincipalKey<Usuario>(m => m.Id)
+                  .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }
