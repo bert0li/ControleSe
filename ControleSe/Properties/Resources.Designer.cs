@@ -123,9 +123,9 @@ namespace ControleSe.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap load05 {
+        internal static System.Drawing.Bitmap loginSplash {
             get {
-                object obj = ResourceManager.GetObject("load05", resourceCulture);
+                object obj = ResourceManager.GetObject("loginSplash", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

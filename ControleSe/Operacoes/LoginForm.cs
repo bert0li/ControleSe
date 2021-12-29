@@ -1,6 +1,7 @@
 ﻿using ControleSe.Entidade;
 using ControleSe.Servico;
 using ControleSe.Utilitario;
+using ControleSe.Utilitario.Splash;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,6 +48,7 @@ namespace ControleSe.Operacoes
                     if (usuario != null)
                     {
                         Usuario = usuario;
+                        ExibirSplas();
                         Close();
                     }
                 }
@@ -57,6 +59,14 @@ namespace ControleSe.Operacoes
                 Msg.Erro($"[Erro]:{ex.Message}\n[StackTrace]:{ex.StackTrace}");
             }
             
+        }
+
+        private void ExibirSplas()
+        {
+            using(var form = new LoginSplash())
+            {
+                form.ShowDialog();
+            }
         }
 
         private void AcaoAcionada(KeyEventArgs e)
