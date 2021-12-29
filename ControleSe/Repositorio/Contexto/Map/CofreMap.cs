@@ -16,6 +16,7 @@ namespace ControleSe.Repositorio.Contexto.Map
             entity.ToTable("Cofre");
             entity.HasKey(m => m.Id);
             entity.Property(m => m.TotalCobre).IsRequired();
+            entity.Ignore(m => m.EhIncluir);
 
             entity.HasOne(m => m.Usuario)
                   .WithOne(m => m.Cofre)

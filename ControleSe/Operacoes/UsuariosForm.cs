@@ -18,13 +18,12 @@ namespace ControleSe.Operacoes
     {
         private ServicoUsuario _servico = null;
         private Usuario _usuario = null;
-        private Usuario _usuarioLogado = null;
 
         public UsuariosForm(Usuario usuarioLogado, ServicoUsuario servico)
         {
             InitializeComponent();  
             _servico = servico;
-            _usuarioLogado = usuarioLogado;
+            _usuario = usuarioLogado;
             AtivarCheckBox();
             BindingUsuarios(true);
         }
@@ -72,7 +71,7 @@ namespace ControleSe.Operacoes
                 {
                     if (Msg.Pergunta("Deseja realmente exluir o usuário?") == DialogResult.Yes)
                     {
-                        if (_servico.Excluir(_usuarioLogado ,_usuario))
+                        if (_servico.Excluir(_usuario))
                         {
                             ExibirSplash();
                             AtivarCheckBox();

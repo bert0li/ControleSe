@@ -56,7 +56,7 @@ namespace ControleSe.Operacoes
             _entrada = new Entrada();
             _entrada.UsuarioId = _usuario.Id;
 
-            using (var form = new EntradaDetalheForm(_servico, _entrada))
+            using (var form = new EntradaDetalheForm(_servico, _entrada, _usuario))
             {
                 form.ShowDialog();
             }

@@ -19,15 +19,17 @@ namespace ControleSe.Operacoes
 {
     public partial class DividaDetalheForm : Form
     {
-        private ServicoDivida _servico;
-        private Divida _divida;
+        private ServicoDivida _servico = null;
+        private Divida _divida = null;
+        private Usuario _usuario = null;
         private bool PrimeiroBinding = false;
 
-        public DividaDetalheForm(ServicoDivida servicoDivida, Divida divida)
+        public DividaDetalheForm(ServicoDivida servicoDivida, Divida divida, Usuario usuarioLogado)
         {
             InitializeComponent();
             _servico = servicoDivida;
             _divida = divida;
+            _usuario = usuarioLogado;
             AtribuirBinding();
         }
 
@@ -143,7 +145,7 @@ namespace ControleSe.Operacoes
             {
                 if (Msg.Pergunta("Deseja realmente pagar?") == DialogResult.Yes)
                 {
-                    if (_servico.Pagar(_divida))
+                    if (_servico.Pagar(_divida, _usuario))
                     {
                         Msg.Informacao("Divida paga.");
                         Close();

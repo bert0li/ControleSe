@@ -46,7 +46,7 @@ namespace ControleSe.Servico
             return EhValido;
         }
 
-        public IEnumerable<Divida> ObterDividas(Usuario usuario)
+        public IEnumerable<Divida> ObterDividas(Usuario usuarioLogado)
         {
             try
             {
@@ -56,7 +56,7 @@ namespace ControleSe.Servico
                 {
                     dividas = contexto.Divida
                                       .Include(i => i.Usuario)
-                                      .Where(w => w.UsuarioId == usuario.Id)
+                                      .Where(w => w.UsuarioId == usuarioLogado.Id)
                                       .ToList();
                 }
 
@@ -68,7 +68,7 @@ namespace ControleSe.Servico
             }
         }
 
-        public bool Pagar(Divida divida)
+        public bool Pagar(Divida divida, Usuario usuarioLogado)
         {
             try
             {
@@ -78,11 +78,13 @@ namespace ControleSe.Servico
                 {
                     if (divida != null)
                     {
-                        if (RetirarValorNoCofre(divida.Valor))
+                        if (RetirarValorNoCofre(divida.Valor, usuarioLogado))
                         {
                             using (var contexto = new Contexto())
                             {
-                                var dividaParaPagar = contexto.Divida.Where(w => w.Id == divida.Id).FirstOrDefault();
+                                var dividaParaPagar = contexto.Divida.Where(w => w.Id == divida.Id && 
+                                                                                 w.UsuarioId == usuarioLogado.Id)
+                                                                     .FirstOrDefault();
 
                                 if (dividaParaPagar != null)
                                 {
@@ -167,7 +169,7 @@ namespace ControleSe.Servico
             return EhValido;
         }
 
-        private bool RetirarValorNoCofre(decimal valor)
+        private bool RetirarValorNoCofre(decimal valor, Usuario usuarioLogado)
         {
             try
             {
@@ -175,7 +177,8 @@ namespace ControleSe.Servico
 
                 using (var contexto = new Contexto())
                 {
-                    var cofre = contexto.Cofre.FirstOrDefault();
+                    var cofre = contexto.Cofre.Where(w => w.UsuarioId == usuarioLogado.Id)
+                                              .FirstOrDefault();
 
                     if (cofre != null)
                     {

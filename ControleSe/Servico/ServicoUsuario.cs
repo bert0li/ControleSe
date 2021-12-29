@@ -14,16 +14,16 @@ namespace ControleSe.Servico
 {
     public class ServicoUsuario : ServicoBase
     {
-        public bool ValidarLogin(Usuario usuario)
+        public bool ValidarLogin(Usuario usuarioLogado)
         {
-            if (usuario != null)
+            if (usuarioLogado != null)
             {
-                if (string.IsNullOrWhiteSpace(usuario.UsuarioAcesso))
+                if (string.IsNullOrWhiteSpace(usuarioLogado.UsuarioAcesso))
                 {
                     Msg.Atencao("Informe o usuário.");
                     EhValido = false;
                 }
-                else if (string.IsNullOrWhiteSpace(usuario.SenhaAcesso))
+                else if (string.IsNullOrWhiteSpace(usuarioLogado.SenhaAcesso))
                 {
                     Msg.Atencao("Informe a senha.");
                     EhValido = false;
@@ -37,23 +37,23 @@ namespace ControleSe.Servico
             return EhValido;
         }
 
-        public bool Validar(Usuario usuario)
+        public bool Validar(Usuario usuarioLogado)
         {
             try
             {
-                if (usuario != null)
+                if (usuarioLogado != null)
                 {
-                    if (string.IsNullOrWhiteSpace(usuario.Nome))
+                    if (string.IsNullOrWhiteSpace(usuarioLogado.Nome))
                     {
                         Msg.Atencao("Informe o Nome do usuário");
                         EhValido = false;
                     }
-                    else if (string.IsNullOrWhiteSpace(usuario.UsuarioAcesso))
+                    else if (string.IsNullOrWhiteSpace(usuarioLogado.UsuarioAcesso))
                     {
                         Msg.Atencao("Informe o Usuário de acesso.");
                         EhValido = false;
                     }
-                    else if (string.IsNullOrWhiteSpace(usuario.SenhaAcesso))
+                    else if (string.IsNullOrWhiteSpace(usuarioLogado.SenhaAcesso))
                     {
                         Msg.Atencao("Informe o Senha do usuário");
                         EhValido = false;
@@ -72,7 +72,7 @@ namespace ControleSe.Servico
             return EhValido;
         }
 
-        public Usuario Logar(Usuario usuario)
+        public Usuario Logar(Usuario usuarioLogado)
         {
             Usuario _usuario = null;
 
@@ -81,11 +81,12 @@ namespace ControleSe.Servico
                 using (var contexto = new Contexto())
                 {
                     _usuario = contexto.Usuario
-                        .Include(i => i.Dividas)
-                        .Where(w =>
-                               w.UsuarioAcesso == usuario.UsuarioAcesso &&
-                               w.SenhaAcesso == usuario.SenhaAcesso)
-                               .FirstOrDefault();
+                                       .Include(i => i.Dividas)
+                                       .Include(i=>i.Cofre)
+                                       .Where(w =>
+                                              w.UsuarioAcesso == usuarioLogado.UsuarioAcesso &&
+                                              w.SenhaAcesso == usuarioLogado.SenhaAcesso)
+                                              .FirstOrDefault();
 
                     if (_usuario == null)
                         Msg.Atencao("Usuario ou Senha invalido. Tente novamente.");
@@ -107,7 +108,8 @@ namespace ControleSe.Servico
             {
                 using (var contexto = new Contexto())
                 {
-                    usuarios = contexto.Usuario.Where(w => w.Ativo == ativoInativo).ToList();
+                    usuarios = contexto.Usuario.Where(w => w.Ativo == ativoInativo)
+                                               .ToList();
                 }
             }
             catch (Exception)
@@ -118,22 +120,22 @@ namespace ControleSe.Servico
             return usuarios;
         }
 
-        public bool Salvar(Usuario usuario)
+        public bool Salvar(Usuario usuarioLogado)
         {
             EhValido = false;
 
             try
             {
-                if (usuario != null)
+                if (usuarioLogado != null)
                 {
                     using (var contexto = new Contexto())
                     {
-                        if (usuario != null)
+                        if (usuarioLogado != null)
                         {
-                            if (usuario.Id == 0)
-                                contexto.Usuario.Add(usuario);
+                            if (usuarioLogado.Id == 0)
+                                contexto.Usuario.Add(usuarioLogado);
                             else
-                                contexto.Usuario.Update(usuario);
+                                contexto.Usuario.Update(usuarioLogado);
 
                             contexto.SaveChanges();
                             EhValido = true;
@@ -149,19 +151,19 @@ namespace ControleSe.Servico
             return EhValido;
         }
 
-        public bool Excluir(Usuario usuarioLogado, Usuario usuario)
+        public bool Excluir(Usuario usuarioLogado)
         {
             EhValido = true;
 
             try
             {
-                if (usuario.Id != usuarioLogado.Id)
+                if (usuarioLogado.Id != usuarioLogado.Id)
                 {
                     using (var contexto = new Contexto())
                     {
                         var usuarioRetorno = contexto.Usuario
                                                      .Include(i => i.Dividas)
-                                                     .Where(w => w.Id == usuario.Id)
+                                                     .Where(w => w.Id == usuarioLogado.Id)
                                                      .FirstOrDefault();
 
                         if (usuarioRetorno != null)

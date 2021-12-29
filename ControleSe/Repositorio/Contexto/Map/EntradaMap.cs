@@ -18,6 +18,7 @@ namespace ControleSe.Repositorio.Contexto.Map
             entity.Property(m => m.ValorEntrada).IsRequired();
             entity.Property(m => m.DataEntrada).HasColumnType("date").IsRequired();
             entity.Property(m => m.Observacao).HasMaxLength(150).IsRequired(false);
+            entity.Ignore(m => m.EhIncluir);
 
             entity.HasOne(m => m.Usuario)
                   .WithMany(m => m.Entradas)

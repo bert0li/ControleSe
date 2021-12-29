@@ -69,7 +69,10 @@ namespace ControleSe
 
         private void btnCofre_Click(object sender, EventArgs e)
         {
-            Msg.Informacao("Recurso em desenvolvimento.");
+            using (var form = new CofreForm(_usuario, new ServicoCofre()))
+            {
+                form.ShowDialog();
+            }
         }
 
         private void btnRelatorios_Click(object sender, EventArgs e)

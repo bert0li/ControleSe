@@ -18,12 +18,14 @@ namespace ControleSe.Operacoes
     {
         private ServicoEntrada _servico = null;
         private Entrada _entrada = null;
+        private Usuario _usuario = null;
 
-        public EntradaDetalheForm(ServicoEntrada servicoEntrada, Entrada entrada)
+        public EntradaDetalheForm(ServicoEntrada servicoEntrada, Entrada entrada, Usuario usuarioLogado)
         {
             InitializeComponent();
             _servico = servicoEntrada;
             _entrada = entrada;
+            _usuario = usuarioLogado;
             IncluirLabelInformacao();
             AtribuirBinding();
         }
@@ -50,7 +52,7 @@ namespace ControleSe.Operacoes
             {
                 if (_servico.Validar(_entrada))
                 {
-                    if (_servico.Salvar(_entrada))
+                    if (_servico.Salvar(_entrada, _usuario))
                     {
                         ExibirSplash();
                         Close();

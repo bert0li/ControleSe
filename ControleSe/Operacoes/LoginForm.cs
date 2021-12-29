@@ -18,11 +18,11 @@ namespace ControleSe.Operacoes
         private ServicoUsuario _servicoUsuario;
         public Usuario Usuario;
 
-        public LoginForm(ServicoUsuario servicoUsuario, Usuario usuario)
+        public LoginForm(ServicoUsuario servicoUsuario, Usuario usuarioLogado)
         {
             InitializeComponent();
             _servicoUsuario = servicoUsuario;
-            Usuario = usuario;
+            Usuario = usuarioLogado;
             AtribuirBinding(Usuario);
         }
 

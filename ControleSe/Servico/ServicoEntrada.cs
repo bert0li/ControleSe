@@ -79,7 +79,7 @@ namespace ControleSe.Servico
             }
         }
 
-        public bool Salvar(Entrada entrada)
+        public bool Salvar(Entrada entrada, Usuario usuarioLogado)
         {
             EhValido = false;
 
@@ -91,7 +91,7 @@ namespace ControleSe.Servico
                     {
                         contexto.Entrada.Add(entrada);
                         contexto.SaveChanges();
-                        AdicionarValorNoCofre(entrada.ValorEntrada);
+                        AdicionarValorNoCofre(entrada.ValorEntrada, usuarioLogado);
                         EhValido = true;
                     }
                 }
@@ -104,13 +104,14 @@ namespace ControleSe.Servico
             return EhValido;
         }
 
-        private void AdicionarValorNoCofre(decimal valor)
+        private void AdicionarValorNoCofre(decimal valor, Usuario usuarioLogado)
         {
             try
             {
                 using (var contexto = new Contexto())
                 {
-                    var cofre = contexto.Cofre.FirstOrDefault();
+                    var cofre = contexto.Cofre.Where(w => w.UsuarioId == usuarioLogado.Id)
+                                              .FirstOrDefault();
 
                     if (cofre != null)
                     {
@@ -120,6 +121,7 @@ namespace ControleSe.Servico
                     else
                     {
                         cofre = new Cofre();
+                        cofre.UsuarioId = usuarioLogado.Id;
                         cofre.AdicionarValor(valor);
                         contexto.Cofre.Add(cofre);
                     }

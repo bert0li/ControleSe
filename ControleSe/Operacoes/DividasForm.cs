@@ -60,7 +60,7 @@ namespace ControleSe.Operacoes
                 _divida.EhIncluir = true;
             }
 
-            using (var form = new DividaDetalheForm(_servico, _divida))
+            using (var form = new DividaDetalheForm(_servico, _divida, _usuario))
             {
                 form.ShowDialog();
             }

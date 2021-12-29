@@ -22,6 +22,7 @@ namespace ControleSe.Repositorio.Contexto.Map
             entity.Property(m => m.DataVencimento).HasColumnType("date").IsRequired();
             entity.Property(m => m.DataPagamento).HasColumnType("date").IsRequired(false);
             entity.Property(m => m.Pago);
+            entity.Ignore(m => m.EhIncluir);
 
             entity.HasOne(m => m.Usuario)
                   .WithMany(m => m.Dividas)
