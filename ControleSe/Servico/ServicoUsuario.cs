@@ -194,5 +194,28 @@ namespace ControleSe.Servico
 
             return EhValido;
         }
+
+        public bool VerificarSenhaSegurança(Usuario usuarioLogado, string senha)
+        {
+            try
+            {
+                EhValido = false;
+
+                using (var contexto = new Contexto())
+                {
+                    var any = contexto.Usuario.Any(a => a.Id == usuarioLogado.Id && 
+                                                        a.SenhaAcesso == senha.Trim());
+
+                    if (any)
+                        EhValido = true;
+                }
+
+                return EhValido;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

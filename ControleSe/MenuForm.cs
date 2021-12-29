@@ -69,9 +69,20 @@ namespace ControleSe
 
         private void btnCofre_Click(object sender, EventArgs e)
         {
-            using (var form = new CofreForm(_usuario, new ServicoCofre()))
+            bool EhValido = false;
+
+            using (var form = new ConfirmarSenhaUsuarioForm(_usuario, new ServicoUsuario()))
             {
                 form.ShowDialog();
+                EhValido = form.EhValido;
+            }
+
+            if (EhValido)
+            {
+                using (var form = new CofreForm(_usuario, new ServicoCofre()))
+                {
+                    form.ShowDialog();
+                }
             }
         }
 
