@@ -27,6 +27,9 @@ namespace ControleSe.Repositorio.Contexto.Map
                   .WithMany(m => m.Dividas)
                   .HasForeignKey(m => m.UsuarioId)
                   .OnDelete(DeleteBehavior.NoAction);
+
+            entity.HasIndex(i => i.Nome)
+                  .HasDatabaseName("index_nome_divida");
         }
     }
 }

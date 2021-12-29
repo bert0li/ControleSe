@@ -23,6 +23,9 @@ namespace ControleSe.Repositorio.Contexto.Map
                   .WithMany(m => m.Entradas)
                   .HasForeignKey(m => m.UsuarioId)
                   .OnDelete(DeleteBehavior.NoAction);
+
+            entity.HasIndex(i => i.DataEntrada)
+                  .HasDatabaseName("index_dataEntrada_entrada");
         }
     }
 }
