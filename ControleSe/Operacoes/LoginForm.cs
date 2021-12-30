@@ -48,7 +48,7 @@ namespace ControleSe.Operacoes
                     if (usuario != null)
                     {
                         Usuario = usuario;
-                        ExibirSplas();
+                        //ExibirSplas();
                         Close();
                     }
                 }

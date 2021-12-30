@@ -13,13 +13,13 @@ using System.Windows.Forms;
 
 namespace ControleSe.Operacoes
 {
-    public partial class DividasForm : Form
+    public partial class DividasFormNova : Form
     {
         private ServicoDivida _servico = null;
         private Usuario _usuario = null;
         private Divida _divida = null;
 
-        public DividasForm(Usuario usuarioLogado, ServicoDivida servicoDivida)
+        public DividasFormNova(Usuario usuarioLogado, ServicoDivida servicoDivida)
         {
             InitializeComponent();
             _servico = servicoDivida;
@@ -62,7 +62,7 @@ namespace ControleSe.Operacoes
 
             if (_divida != null)
             {
-                using (var form = new DividaDetalheForm(_servico, _divida, _usuario))
+                using (var form = new DividaDetalheFormNova(_servico, _divida, _usuario))
                 {
                     form.ShowDialog();
                 }
@@ -143,26 +143,25 @@ namespace ControleSe.Operacoes
 
             lblValorTotalDivida.Text = somaTotalDivida.ToString("C");
         }
-        
-        private void grid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-            => VerificarVencimento(e);
 
         private void grid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        { 
+        {
             LinhaSeleciona(e);
             AlterarIncluirDivida();
         }
 
-        private void grid_CellClick(object sender, DataGridViewCellEventArgs e)
-            => LinhaSeleciona(e);
+        private void btnMinimizar_Click(object sender, EventArgs e) => WindowState = FormWindowState.Minimized;
 
-        private void btnAdd_Click(object sender, EventArgs e)
-            => AlterarIncluirDivida(true);
+        private void btnFechar_Click(object sender, EventArgs e) => Close();
 
-        private void btnAlterar_Click(object sender, EventArgs e)
-            => AlterarIncluirDivida();
+        private void grid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e) => VerificarVencimento(e);
 
-        private void btnDeletar_Click(object sender, EventArgs e)
-            => ExcluirDivida();
+        private void grid_CellClick(object sender, DataGridViewCellEventArgs e) => LinhaSeleciona(e);
+
+        private void btnIncluir_Click(object sender, EventArgs e) => AlterarIncluirDivida(true);
+
+        private void btnAlterar_Click(object sender, EventArgs e) => AlterarIncluirDivida();
+        
+        private void btnExcluir_Click(object sender, EventArgs e) => ExcluirDivida();                
     }
 }

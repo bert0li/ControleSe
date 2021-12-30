@@ -22,7 +22,7 @@ namespace ControleSe
             var usuario = ServicoLogarUsuario.LogarUsuario();
 
             if (usuario.Id != 0)
-                Application.Run(new MenuForm(usuario));
+                Application.Run(new MenuPrincipalForm(usuario));
             else
                 Application.Exit();
         }
