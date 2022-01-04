@@ -144,6 +144,7 @@ namespace ControleSe
             this.btnCofre.TabIndex = 4;
             this.btnCofre.Text = "Cofre";
             this.btnCofre.UseVisualStyleBackColor = true;
+            this.btnCofre.Click += new System.EventHandler(this.btnCofre_Click);
             // 
             // btnEntradas
             // 

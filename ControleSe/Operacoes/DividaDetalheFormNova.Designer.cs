@@ -79,7 +79,7 @@ namespace ControleSe.Operacoes
             // 
             // panelCabecalho
             // 
-            this.panelCabecalho.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panelCabecalho.BackColor = System.Drawing.Color.DarkGray;
             this.panelCabecalho.Controls.Add(this.lblDetalheDivida);
             this.panelCabecalho.Controls.Add(this.btnMinimizar);
             this.panelCabecalho.Controls.Add(this.btnFechar);
@@ -131,8 +131,8 @@ namespace ControleSe.Operacoes
             // btnPagar
             // 
             this.btnPagar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPagar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnPagar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnPagar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnPagar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.btnPagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPagar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnPagar.Location = new System.Drawing.Point(3, 3);
@@ -300,6 +300,8 @@ namespace ControleSe.Operacoes
             // btnSalvar
             // 
             this.btnSalvar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSalvar.Location = new System.Drawing.Point(3, 3);
@@ -313,6 +315,8 @@ namespace ControleSe.Operacoes
             // btnSair
             // 
             this.btnSair.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSair.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSair.Location = new System.Drawing.Point(126, 3);
@@ -362,7 +366,7 @@ namespace ControleSe.Operacoes
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.Controls.Add(this.tlpInfoDivida);
             this.panel1.Controls.Add(this.tlpPagar);
             this.panel1.Controls.Add(this.tlpCodigo);
@@ -377,7 +381,7 @@ namespace ControleSe.Operacoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(660, 405);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

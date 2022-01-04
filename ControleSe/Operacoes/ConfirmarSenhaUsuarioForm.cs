@@ -67,5 +67,7 @@ namespace ControleSe.Operacoes
             if (e.KeyData == Keys.Enter)
                 btnConfirmar.PerformClick();
         }
+
+        private void btnFechar_Click(object sender, EventArgs e) => Close();        
     }
 }

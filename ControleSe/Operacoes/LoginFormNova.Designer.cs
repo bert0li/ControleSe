@@ -52,7 +52,7 @@ namespace ControleSe.Operacoes
             this.panelLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelLogin.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panelLogin.BackColor = System.Drawing.Color.Silver;
             this.panelLogin.Controls.Add(this.tlpBotoes);
             this.panelLogin.Controls.Add(this.tlpLogin);
             this.panelLogin.Controls.Add(this.panelCabecalho);
@@ -78,6 +78,8 @@ namespace ControleSe.Operacoes
             // btnEntrar
             // 
             this.btnEntrar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEntrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnEntrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEntrar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEntrar.Location = new System.Drawing.Point(3, 3);
@@ -91,6 +93,8 @@ namespace ControleSe.Operacoes
             // btnSair
             // 
             this.btnSair.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSair.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSair.Location = new System.Drawing.Point(101, 3);
@@ -165,7 +169,7 @@ namespace ControleSe.Operacoes
             // 
             // panelCabecalho
             // 
-            this.panelCabecalho.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panelCabecalho.BackColor = System.Drawing.Color.DarkGray;
             this.panelCabecalho.Controls.Add(this.lblLogin);
             this.panelCabecalho.Controls.Add(this.btnFechar);
             this.panelCabecalho.Dock = System.Windows.Forms.DockStyle.Top;
@@ -176,6 +180,7 @@ namespace ControleSe.Operacoes
             // 
             // lblLogin
             // 
+            this.lblLogin.BackColor = System.Drawing.Color.DarkGray;
             this.lblLogin.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblLogin.Location = new System.Drawing.Point(0, 0);
             this.lblLogin.Name = "lblLogin";
@@ -186,6 +191,7 @@ namespace ControleSe.Operacoes
             // 
             // btnFechar
             // 
+            this.btnFechar.BackColor = System.Drawing.Color.DarkGray;
             this.btnFechar.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnFechar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnFechar.FlatAppearance.BorderSize = 0;
@@ -198,14 +204,14 @@ namespace ControleSe.Operacoes
             this.btnFechar.Size = new System.Drawing.Size(51, 52);
             this.btnFechar.TabIndex = 0;
             this.btnFechar.Text = "X";
-            this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.UseVisualStyleBackColor = false;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // LoginFormNova
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(333, 252);
             this.Controls.Add(this.panelLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

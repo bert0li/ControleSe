@@ -62,7 +62,7 @@ namespace ControleSe.Operacoes
             this.panelDetalheUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelDetalheUsuario.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panelDetalheUsuario.BackColor = System.Drawing.Color.Silver;
             this.panelDetalheUsuario.Controls.Add(this.tlpBotoes);
             this.panelDetalheUsuario.Controls.Add(this.tlpInfoDivida);
             this.panelDetalheUsuario.Controls.Add(this.tlpCodigo);
@@ -89,6 +89,8 @@ namespace ControleSe.Operacoes
             // btnSalvar
             // 
             this.btnSalvar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSalvar.Location = new System.Drawing.Point(3, 3);
@@ -102,6 +104,8 @@ namespace ControleSe.Operacoes
             // btnSair
             // 
             this.btnSair.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSair.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSair.Location = new System.Drawing.Point(126, 3);
@@ -277,7 +281,7 @@ namespace ControleSe.Operacoes
             // 
             // panelCabecalho
             // 
-            this.panelCabecalho.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panelCabecalho.BackColor = System.Drawing.Color.DarkGray;
             this.panelCabecalho.Controls.Add(this.lblDetalheUsuario);
             this.panelCabecalho.Controls.Add(this.btnMinimizar);
             this.panelCabecalho.Controls.Add(this.btnFechar);
@@ -289,7 +293,7 @@ namespace ControleSe.Operacoes
             // 
             // lblDetalheUsuario
             // 
-            this.lblDetalheUsuario.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblDetalheUsuario.BackColor = System.Drawing.Color.DarkGray;
             this.lblDetalheUsuario.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblDetalheUsuario.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblDetalheUsuario.Location = new System.Drawing.Point(0, 0);
@@ -336,7 +340,7 @@ namespace ControleSe.Operacoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(653, 349);
             this.Controls.Add(this.panelDetalheUsuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

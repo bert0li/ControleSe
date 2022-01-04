@@ -85,5 +85,7 @@ namespace ControleSe.Operacoes
                 Msg.Erro($"[Erro]:{ex.Message}\n[StackTrace]:{ex.StackTrace}");
             }
         }
+
+        private void btnFechar_Click(object sender, EventArgs e) => Close();
     }
 }
