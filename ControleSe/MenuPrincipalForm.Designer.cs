@@ -44,7 +44,7 @@ namespace ControleSe
             // 
             // panelCabecalho
             // 
-            this.panelCabecalho.BackColor = System.Drawing.Color.Gray;
+            this.panelCabecalho.BackColor = System.Drawing.Color.DarkGray;
             this.panelCabecalho.Controls.Add(this.btnMinimizar);
             this.panelCabecalho.Controls.Add(this.btnFechar);
             this.panelCabecalho.Dock = System.Windows.Forms.DockStyle.Top;
@@ -89,7 +89,7 @@ namespace ControleSe
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.Gray;
+            this.panelMenu.BackColor = System.Drawing.Color.DarkGray;
             this.panelMenu.Controls.Add(this.btnUsuarios);
             this.panelMenu.Controls.Add(this.btnRelatorios);
             this.panelMenu.Controls.Add(this.btnCofre);
@@ -179,7 +179,7 @@ namespace ControleSe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1039, 563);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelCabecalho);

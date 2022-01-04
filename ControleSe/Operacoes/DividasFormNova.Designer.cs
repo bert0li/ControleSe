@@ -75,10 +75,11 @@ namespace ControleSe.Operacoes
             this.grid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.grid.BackgroundColor = System.Drawing.Color.Silver;
             this.grid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.grid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkGray;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
@@ -196,7 +197,7 @@ namespace ControleSe.Operacoes
             // 
             // panelCabecalho
             // 
-            this.panelCabecalho.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panelCabecalho.BackColor = System.Drawing.Color.DarkGray;
             this.panelCabecalho.Controls.Add(this.tlpBotoesCRUD);
             this.panelCabecalho.Controls.Add(this.btnMinimizar);
             this.panelCabecalho.Controls.Add(this.btnFechar);
@@ -291,7 +292,7 @@ namespace ControleSe.Operacoes
             this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.74757F));
             this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.25243F));
             this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
-            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 155F));
+            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 157F));
             this.tlpPesquisa.Controls.Add(this.lblDataDe, 0, 0);
             this.tlpPesquisa.Controls.Add(this.dtpDe, 1, 0);
             this.tlpPesquisa.Controls.Add(this.lblDataAte, 2, 0);
@@ -310,7 +311,7 @@ namespace ControleSe.Operacoes
             this.lblDataDe.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblDataDe.Location = new System.Drawing.Point(3, 0);
             this.lblDataDe.Name = "lblDataDe";
-            this.lblDataDe.Size = new System.Drawing.Size(94, 36);
+            this.lblDataDe.Size = new System.Drawing.Size(93, 36);
             this.lblDataDe.TabIndex = 0;
             this.lblDataDe.Text = "Data de:";
             this.lblDataDe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -322,9 +323,9 @@ namespace ControleSe.Operacoes
             this.dtpDe.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpDe.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtpDe.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDe.Location = new System.Drawing.Point(103, 3);
+            this.dtpDe.Location = new System.Drawing.Point(102, 3);
             this.dtpDe.Name = "dtpDe";
-            this.dtpDe.Size = new System.Drawing.Size(133, 30);
+            this.dtpDe.Size = new System.Drawing.Size(132, 30);
             this.dtpDe.TabIndex = 2;
             // 
             // lblDataAte
@@ -332,7 +333,7 @@ namespace ControleSe.Operacoes
             this.lblDataAte.AutoSize = true;
             this.lblDataAte.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblDataAte.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDataAte.Location = new System.Drawing.Point(242, 0);
+            this.lblDataAte.Location = new System.Drawing.Point(240, 0);
             this.lblDataAte.Name = "lblDataAte";
             this.lblDataAte.Size = new System.Drawing.Size(124, 36);
             this.lblDataAte.TabIndex = 0;
@@ -344,18 +345,18 @@ namespace ControleSe.Operacoes
             this.dtpAte.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpAte.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtpAte.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpAte.Location = new System.Drawing.Point(372, 3);
+            this.dtpAte.Location = new System.Drawing.Point(370, 3);
             this.dtpAte.Name = "dtpAte";
-            this.dtpAte.Size = new System.Drawing.Size(150, 30);
+            this.dtpAte.Size = new System.Drawing.Size(152, 30);
             this.dtpAte.TabIndex = 2;
             // 
             // btnPesquisa
             // 
             this.btnPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPesquisa.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnPesquisa.BackColor = System.Drawing.Color.Silver;
             this.btnPesquisa.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
-            this.btnPesquisa.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnPesquisa.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnPesquisa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnPesquisa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.btnPesquisa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPesquisa.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnPesquisa.Location = new System.Drawing.Point(1003, 110);
@@ -421,7 +422,7 @@ namespace ControleSe.Operacoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1220, 562);
             this.Controls.Add(this.tlpTotalDivida);
             this.Controls.Add(this.lblPesquisa);

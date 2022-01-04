@@ -29,12 +29,12 @@ namespace ControleSe.Operacoes
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelCabecalho = new System.Windows.Forms.Panel();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.tlpBotoesCRUD = new System.Windows.Forms.TableLayoutPanel();
@@ -61,7 +61,7 @@ namespace ControleSe.Operacoes
             // 
             // panelCabecalho
             // 
-            this.panelCabecalho.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panelCabecalho.BackColor = System.Drawing.Color.DarkGray;
             this.panelCabecalho.Controls.Add(this.btnMinimizar);
             this.panelCabecalho.Controls.Add(this.tlpBotoesCRUD);
             this.panelCabecalho.Controls.Add(this.btnFechar);
@@ -166,7 +166,7 @@ namespace ControleSe.Operacoes
             this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.74757F));
             this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.25243F));
             this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
-            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 159F));
+            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 162F));
             this.tlpPesquisa.Controls.Add(this.lblDataDe, 0, 0);
             this.tlpPesquisa.Controls.Add(this.dtpDataDe, 1, 0);
             this.tlpPesquisa.Controls.Add(this.lblDataAte, 2, 0);
@@ -185,7 +185,7 @@ namespace ControleSe.Operacoes
             this.lblDataDe.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblDataDe.Location = new System.Drawing.Point(3, 0);
             this.lblDataDe.Name = "lblDataDe";
-            this.lblDataDe.Size = new System.Drawing.Size(92, 36);
+            this.lblDataDe.Size = new System.Drawing.Size(91, 36);
             this.lblDataDe.TabIndex = 0;
             this.lblDataDe.Text = "Data de:";
             this.lblDataDe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -197,9 +197,9 @@ namespace ControleSe.Operacoes
             this.dtpDataDe.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpDataDe.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtpDataDe.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataDe.Location = new System.Drawing.Point(101, 3);
+            this.dtpDataDe.Location = new System.Drawing.Point(100, 3);
             this.dtpDataDe.Name = "dtpDataDe";
-            this.dtpDataDe.Size = new System.Drawing.Size(131, 30);
+            this.dtpDataDe.Size = new System.Drawing.Size(129, 30);
             this.dtpDataDe.TabIndex = 2;
             // 
             // lblDataAte
@@ -207,7 +207,7 @@ namespace ControleSe.Operacoes
             this.lblDataAte.AutoSize = true;
             this.lblDataAte.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblDataAte.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDataAte.Location = new System.Drawing.Point(238, 0);
+            this.lblDataAte.Location = new System.Drawing.Point(235, 0);
             this.lblDataAte.Name = "lblDataAte";
             this.lblDataAte.Size = new System.Drawing.Size(124, 36);
             this.lblDataAte.TabIndex = 0;
@@ -219,18 +219,18 @@ namespace ControleSe.Operacoes
             this.dtpDataAte.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpDataAte.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtpDataAte.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataAte.Location = new System.Drawing.Point(368, 3);
+            this.dtpDataAte.Location = new System.Drawing.Point(365, 3);
             this.dtpDataAte.Name = "dtpDataAte";
-            this.dtpDataAte.Size = new System.Drawing.Size(154, 30);
+            this.dtpDataAte.Size = new System.Drawing.Size(157, 30);
             this.dtpDataAte.TabIndex = 2;
             // 
             // btnPesquisa
             // 
             this.btnPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPesquisa.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnPesquisa.BackColor = System.Drawing.Color.Silver;
             this.btnPesquisa.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
-            this.btnPesquisa.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnPesquisa.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnPesquisa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnPesquisa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.btnPesquisa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPesquisa.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnPesquisa.Location = new System.Drawing.Point(871, 113);
@@ -248,30 +248,31 @@ namespace ControleSe.Operacoes
             this.grid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.grid.BackgroundColor = System.Drawing.Color.Silver;
             this.grid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.grid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCodigo,
             this.colValorEntrada,
             this.colDataEntrada,
             this.colObservacao});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grid.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grid.DefaultCellStyle = dataGridViewCellStyle6;
             this.grid.EnableHeadersVisualStyles = false;
             this.grid.Location = new System.Drawing.Point(12, 162);
             this.grid.MultiSelect = false;
@@ -287,8 +288,8 @@ namespace ControleSe.Operacoes
             // colCodigo
             // 
             this.colCodigo.DataPropertyName = "Id";
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.colCodigo.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.colCodigo.DefaultCellStyle = dataGridViewCellStyle2;
             this.colCodigo.HeaderText = "Código";
             this.colCodigo.Name = "colCodigo";
             this.colCodigo.ReadOnly = true;
@@ -297,8 +298,8 @@ namespace ControleSe.Operacoes
             // colValorEntrada
             // 
             this.colValorEntrada.DataPropertyName = "ValorEntrada";
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.colValorEntrada.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.colValorEntrada.DefaultCellStyle = dataGridViewCellStyle3;
             this.colValorEntrada.HeaderText = "Valor";
             this.colValorEntrada.Name = "colValorEntrada";
             this.colValorEntrada.ReadOnly = true;
@@ -307,8 +308,8 @@ namespace ControleSe.Operacoes
             // colDataEntrada
             // 
             this.colDataEntrada.DataPropertyName = "DataEntrada";
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.colDataEntrada.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.colDataEntrada.DefaultCellStyle = dataGridViewCellStyle4;
             this.colDataEntrada.HeaderText = "Data entrada";
             this.colDataEntrada.Name = "colDataEntrada";
             this.colDataEntrada.ReadOnly = true;
@@ -318,8 +319,8 @@ namespace ControleSe.Operacoes
             // 
             this.colObservacao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colObservacao.DataPropertyName = "Observacao";
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.colObservacao.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.colObservacao.DefaultCellStyle = dataGridViewCellStyle5;
             this.colObservacao.HeaderText = "Observação";
             this.colObservacao.Name = "colObservacao";
             this.colObservacao.ReadOnly = true;
@@ -328,7 +329,7 @@ namespace ControleSe.Operacoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1088, 519);
             this.Controls.Add(this.grid);
             this.Controls.Add(this.lblPesquisa);
