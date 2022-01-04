@@ -24,16 +24,6 @@ namespace ControleSe
             _usuario = usuario;
         }
 
-        private void btnFechar_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void btnMinimizar_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
-
         private void btnDividas_Click(object sender, EventArgs e)
         {
             using (var form = new DividasFormNova(_usuario, new ServicoDivida()))
@@ -62,5 +52,9 @@ namespace ControleSe
                 form.ShowDialog();
             }
         }
+
+        private void btnMinimizar_Click(object sender, EventArgs e) => WindowState = FormWindowState.Minimized;
+
+        private void btnFechar_Click(object sender, EventArgs e) => Close();
     }
 }
