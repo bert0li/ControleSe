@@ -56,7 +56,7 @@ namespace ControleSe.Operacoes
             this.tlpCodigo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.15858F));
             this.tlpCodigo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.84142F));
             this.tlpCodigo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 213F));
-            this.tlpCodigo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
+            this.tlpCodigo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 93F));
             this.tlpCodigo.Controls.Add(this.lblCodigo, 0, 0);
             this.tlpCodigo.Controls.Add(this.txtCodigo, 1, 0);
             this.tlpCodigo.Controls.Add(this.cbxAtivo, 3, 0);
@@ -74,7 +74,7 @@ namespace ControleSe.Operacoes
             this.lblCodigo.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblCodigo.Location = new System.Drawing.Point(3, 0);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(115, 37);
+            this.lblCodigo.Size = new System.Drawing.Size(113, 37);
             this.lblCodigo.TabIndex = 0;
             this.lblCodigo.Text = "Código:";
             this.lblCodigo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -84,10 +84,10 @@ namespace ControleSe.Operacoes
             this.txtCodigo.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtCodigo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCodigo.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCodigo.Location = new System.Drawing.Point(124, 3);
+            this.txtCodigo.Location = new System.Drawing.Point(122, 3);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.ReadOnly = true;
-            this.txtCodigo.Size = new System.Drawing.Size(181, 30);
+            this.txtCodigo.Size = new System.Drawing.Size(180, 30);
             this.txtCodigo.TabIndex = 1;
             // 
             // cbxAtivo
@@ -95,9 +95,9 @@ namespace ControleSe.Operacoes
             this.cbxAtivo.AutoSize = true;
             this.cbxAtivo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbxAtivo.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cbxAtivo.Location = new System.Drawing.Point(524, 3);
+            this.cbxAtivo.Location = new System.Drawing.Point(521, 3);
             this.cbxAtivo.Name = "cbxAtivo";
-            this.cbxAtivo.Size = new System.Drawing.Size(85, 31);
+            this.cbxAtivo.Size = new System.Drawing.Size(88, 31);
             this.cbxAtivo.TabIndex = 2;
             this.cbxAtivo.Text = "Ativo?";
             this.cbxAtivo.UseVisualStyleBackColor = true;

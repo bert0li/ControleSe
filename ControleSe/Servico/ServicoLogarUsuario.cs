@@ -14,7 +14,7 @@ namespace ControleSe.Servico
 
         public static Usuario LogarUsuario()
         {
-            using (var form = new LoginForm(new ServicoUsuario(), new Usuario()))
+            using (var form = new LoginFormNova(new ServicoUsuario(), new Usuario()))
             {
                 form.ShowDialog();
                 if (form.Usuario != null)

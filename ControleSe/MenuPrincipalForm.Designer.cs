@@ -114,6 +114,7 @@ namespace ControleSe
             this.btnUsuarios.TabIndex = 5;
             this.btnUsuarios.Text = "Usuários";
             this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // btnRelatorios
             // 
@@ -128,6 +129,7 @@ namespace ControleSe
             this.btnRelatorios.TabIndex = 5;
             this.btnRelatorios.Text = "Relatórios";
             this.btnRelatorios.UseVisualStyleBackColor = true;
+            this.btnRelatorios.Click += new System.EventHandler(this.btnRelatorios_Click);
             // 
             // btnCofre
             // 
@@ -156,6 +158,7 @@ namespace ControleSe
             this.btnEntradas.TabIndex = 3;
             this.btnEntradas.Text = "Entradas";
             this.btnEntradas.UseVisualStyleBackColor = true;
+            this.btnEntradas.Click += new System.EventHandler(this.btnEntradas_Click);
             // 
             // btnDividas
             // 

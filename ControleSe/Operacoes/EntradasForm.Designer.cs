@@ -96,7 +96,7 @@ namespace ControleSe.Operacoes
             this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.31469F));
             this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.68532F));
             this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
-            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 173F));
+            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 174F));
             this.tlpPesquisa.Controls.Add(this.lblDataDe, 0, 0);
             this.tlpPesquisa.Controls.Add(this.dtpDataDe, 1, 0);
             this.tlpPesquisa.Controls.Add(this.lblDataAte, 2, 0);
@@ -127,7 +127,7 @@ namespace ControleSe.Operacoes
             this.dtpDataDe.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDataDe.Location = new System.Drawing.Point(94, 3);
             this.dtpDataDe.Name = "dtpDataDe";
-            this.dtpDataDe.Size = new System.Drawing.Size(161, 26);
+            this.dtpDataDe.Size = new System.Drawing.Size(160, 26);
             this.dtpDataDe.TabIndex = 2;
             // 
             // lblDataAte
@@ -135,7 +135,7 @@ namespace ControleSe.Operacoes
             this.lblDataAte.AutoSize = true;
             this.lblDataAte.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblDataAte.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDataAte.Location = new System.Drawing.Point(261, 0);
+            this.lblDataAte.Location = new System.Drawing.Point(260, 0);
             this.lblDataAte.Name = "lblDataAte";
             this.lblDataAte.Size = new System.Drawing.Size(84, 33);
             this.lblDataAte.TabIndex = 0;
@@ -147,9 +147,9 @@ namespace ControleSe.Operacoes
             this.dtpDataAte.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpDataAte.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtpDataAte.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataAte.Location = new System.Drawing.Point(351, 3);
+            this.dtpDataAte.Location = new System.Drawing.Point(350, 3);
             this.dtpDataAte.Name = "dtpDataAte";
-            this.dtpDataAte.Size = new System.Drawing.Size(168, 26);
+            this.dtpDataAte.Size = new System.Drawing.Size(169, 26);
             this.dtpDataAte.TabIndex = 2;
             // 
             // btnPesquisa

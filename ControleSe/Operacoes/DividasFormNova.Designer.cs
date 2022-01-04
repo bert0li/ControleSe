@@ -97,7 +97,7 @@ namespace ControleSe.Operacoes
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ControlDark;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grid.DefaultCellStyle = dataGridViewCellStyle8;
@@ -291,7 +291,7 @@ namespace ControleSe.Operacoes
             this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.74757F));
             this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.25243F));
             this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
-            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 154F));
+            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 155F));
             this.tlpPesquisa.Controls.Add(this.lblDataDe, 0, 0);
             this.tlpPesquisa.Controls.Add(this.dtpDe, 1, 0);
             this.tlpPesquisa.Controls.Add(this.lblDataAte, 2, 0);
@@ -324,7 +324,7 @@ namespace ControleSe.Operacoes
             this.dtpDe.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDe.Location = new System.Drawing.Point(103, 3);
             this.dtpDe.Name = "dtpDe";
-            this.dtpDe.Size = new System.Drawing.Size(134, 30);
+            this.dtpDe.Size = new System.Drawing.Size(133, 30);
             this.dtpDe.TabIndex = 2;
             // 
             // lblDataAte
@@ -332,7 +332,7 @@ namespace ControleSe.Operacoes
             this.lblDataAte.AutoSize = true;
             this.lblDataAte.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblDataAte.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDataAte.Location = new System.Drawing.Point(243, 0);
+            this.lblDataAte.Location = new System.Drawing.Point(242, 0);
             this.lblDataAte.Name = "lblDataAte";
             this.lblDataAte.Size = new System.Drawing.Size(124, 36);
             this.lblDataAte.TabIndex = 0;
@@ -344,9 +344,9 @@ namespace ControleSe.Operacoes
             this.dtpAte.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpAte.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtpAte.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpAte.Location = new System.Drawing.Point(373, 3);
+            this.dtpAte.Location = new System.Drawing.Point(372, 3);
             this.dtpAte.Name = "dtpAte";
-            this.dtpAte.Size = new System.Drawing.Size(149, 30);
+            this.dtpAte.Size = new System.Drawing.Size(150, 30);
             this.dtpAte.TabIndex = 2;
             // 
             // btnPesquisa

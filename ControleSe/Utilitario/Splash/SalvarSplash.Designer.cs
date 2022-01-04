@@ -48,7 +48,7 @@ namespace ControleSe.Utilitario.Splash
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(195, 175);
             this.Controls.Add(this.pbxSalvarSplash);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

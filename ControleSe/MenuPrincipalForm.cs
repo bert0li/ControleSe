@@ -1,6 +1,7 @@
 ﻿using ControleSe.Entidade;
 using ControleSe.Operacoes;
 using ControleSe.Servico;
+using ControleSe.Utilitario;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,6 +37,27 @@ namespace ControleSe
         private void btnDividas_Click(object sender, EventArgs e)
         {
             using (var form = new DividasFormNova(_usuario, new ServicoDivida()))
+            {
+                form.ShowDialog();
+            }
+        }
+
+        private void btnEntradas_Click(object sender, EventArgs e)
+        {
+            using (var form = new EntradasFormNova(_usuario, new ServicoEntrada()))
+            {
+                form.ShowDialog();
+            }
+        }
+
+        private void btnRelatorios_Click(object sender, EventArgs e)
+        {
+            Msg.Informacao("Recurso em desenvolvimento");
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            using (var form = new UsuariosFormNova(_usuario, new ServicoUsuario()))
             {
                 form.ShowDialog();
             }

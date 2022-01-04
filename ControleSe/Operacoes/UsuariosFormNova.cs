@@ -14,14 +14,14 @@ using System.Windows.Forms;
 
 namespace ControleSe.Operacoes
 {
-    public partial class UsuariosForm : Form
+    public partial class UsuariosFormNova : Form
     {
         private ServicoUsuario _servico = null;
         private Usuario _usuario = null;
 
-        public UsuariosForm(Usuario usuarioLogado, ServicoUsuario servico)
+        public UsuariosFormNova(Usuario usuarioLogado, ServicoUsuario servico)
         {
-            InitializeComponent();  
+            InitializeComponent();
             _servico = servico;
             _usuario = usuarioLogado;
             AtivarCheckBox();
@@ -53,7 +53,7 @@ namespace ControleSe.Operacoes
                 //_usuario.EhIncluir = true;
             }
 
-            using (var form = new UsuarioDetalheForm(_servico, _usuario))
+            using (var form = new UsuarioDetalheFormNova(_servico, _usuario))
             {
                 form.ShowDialog();
             }
@@ -106,30 +106,29 @@ namespace ControleSe.Operacoes
             }
         }
 
+        private void btnPesquisa_Click(object sender, EventArgs e)
+        {
+            // TODO : Implementar
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e) => WindowState = FormWindowState.Minimized;
+
+        private void btnFechar_Click(object sender, EventArgs e) => Close();
+
         private void grid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             SelecionarLinha(e);
             AlterarIncluirUsuario();
         }
 
-        private void cbxAtivos_CheckedChanged(object sender, EventArgs e)
-            => BindingUsuarios(cbxAtivos.Checked);
+        private void cbxAtivos_CheckedChanged(object sender, EventArgs e) => BindingUsuarios(cbxAtivos.Checked);
 
-        private void grid_CellClick(object sender, DataGridViewCellEventArgs e)
-            => SelecionarLinha(e);
+        private void grid_CellClick(object sender, DataGridViewCellEventArgs e) => SelecionarLinha(e);
 
-        private void btnAdd_Click(object sender, EventArgs e)
-            => AlterarIncluirUsuario(true);
+        private void btnIncluir_Click(object sender, EventArgs e) => AlterarIncluirUsuario(true);
 
-        private void btnAlterar_Click(object sender, EventArgs e)
-            => AlterarIncluirUsuario();
+        private void btnAlterar_Click(object sender, EventArgs e) => AlterarIncluirUsuario();
 
-        private void btnDeletar_Click(object sender, EventArgs e)
-            => ExluirUsuario();
-
-        private void btnPesquisa_Click(object sender, EventArgs e)
-        {
-            // TODO : Implementar
-        }
+        private void btnExcluir_Click(object sender, EventArgs e) => ExluirUsuario();
     }
 }
