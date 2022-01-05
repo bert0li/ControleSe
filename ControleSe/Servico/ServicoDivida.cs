@@ -82,7 +82,7 @@ namespace ControleSe.Servico
                         {
                             using (var contexto = new Contexto())
                             {
-                                var dividaParaPagar = contexto.Divida.Where(w => w.Id == divida.Id && 
+                                var dividaParaPagar = contexto.Divida.Where(w => w.Id == divida.Id &&
                                                                                  w.UsuarioId == usuarioLogado.Id)
                                                                      .FirstOrDefault();
 
@@ -201,6 +201,37 @@ namespace ControleSe.Servico
                 }
 
                 return EhValido;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public IEnumerable<Divida> PesquisarDividas(Usuario usuarioLogado, DateTime dataDe, DateTime dataAte, bool dividasPagas)
+        {
+            try
+            {
+                IEnumerable<Divida> dividasPesquisa = null;
+
+                using (var contexto = new Contexto())
+                {
+                    if (dividasPagas)
+                    {
+                        dividasPesquisa = contexto.Divida.Where(w =>
+                                                            w.UsuarioId == usuarioLogado.Id &&
+                                                            w.DataPagamento >= dataDe &&
+                                                            w.DataPagamento <= dataAte &&
+                                                            w.Pago == dividasPagas)
+                                                            .ToList();
+                    }
+                    else
+                    {
+                        dividasPesquisa = contexto.Divida.Where(w => w.UsuarioId == usuarioLogado.Id).ToList();
+                    }
+                }
+
+                return dividasPesquisa;
             }
             catch (Exception)
             {

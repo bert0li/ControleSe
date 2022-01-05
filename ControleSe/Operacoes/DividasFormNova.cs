@@ -150,6 +150,19 @@ namespace ControleSe.Operacoes
             AlterarIncluirDivida();
         }
 
+        private void btnPesquisa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                grid.DataSource = _servico.PesquisarDividas(_usuario, dtpDe.Value, dtpAte.Value, cbxSomenteDividasPagas.Checked);
+            }
+            catch (Exception ex)
+            {
+                ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
+                Msg.Erro($"[Erro]:{ex.Message}\n[StackTrace]:{ex.StackTrace}");
+            }
+        }
+
         private void btnMinimizar_Click(object sender, EventArgs e) => WindowState = FormWindowState.Minimized;
 
         private void btnFechar_Click(object sender, EventArgs e) => Close();
@@ -161,7 +174,7 @@ namespace ControleSe.Operacoes
         private void btnIncluir_Click(object sender, EventArgs e) => AlterarIncluirDivida(true);
 
         private void btnAlterar_Click(object sender, EventArgs e) => AlterarIncluirDivida();
-        
-        private void btnExcluir_Click(object sender, EventArgs e) => ExcluirDivida();                
+
+        private void btnExcluir_Click(object sender, EventArgs e) => ExcluirDivida();
     }
 }

@@ -61,6 +61,7 @@ namespace ControleSe.Operacoes
             this.tlpTotalDivida = new System.Windows.Forms.TableLayoutPanel();
             this.lblTotalDivida = new System.Windows.Forms.Label();
             this.lblValorTotalDivida = new System.Windows.Forms.Label();
+            this.cbxSomenteDividasPagas = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.panelCabecalho.SuspendLayout();
             this.tlpBotoesCRUD.SuspendLayout();
@@ -288,20 +289,23 @@ namespace ControleSe.Operacoes
             // 
             // tlpPesquisa
             // 
-            this.tlpPesquisa.ColumnCount = 4;
-            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.74757F));
-            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.25243F));
-            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
-            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 157F));
+            this.tlpPesquisa.ColumnCount = 6;
+            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.51163F));
+            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.48837F));
+            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 116F));
+            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 141F));
+            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 342F));
             this.tlpPesquisa.Controls.Add(this.lblDataDe, 0, 0);
             this.tlpPesquisa.Controls.Add(this.dtpDe, 1, 0);
             this.tlpPesquisa.Controls.Add(this.lblDataAte, 2, 0);
             this.tlpPesquisa.Controls.Add(this.dtpAte, 3, 0);
+            this.tlpPesquisa.Controls.Add(this.cbxSomenteDividasPagas, 5, 0);
             this.tlpPesquisa.Location = new System.Drawing.Point(12, 110);
             this.tlpPesquisa.Name = "tlpPesquisa";
             this.tlpPesquisa.RowCount = 1;
             this.tlpPesquisa.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpPesquisa.Size = new System.Drawing.Size(525, 36);
+            this.tlpPesquisa.Size = new System.Drawing.Size(854, 36);
             this.tlpPesquisa.TabIndex = 2;
             // 
             // lblDataDe
@@ -311,7 +315,7 @@ namespace ControleSe.Operacoes
             this.lblDataDe.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblDataDe.Location = new System.Drawing.Point(3, 0);
             this.lblDataDe.Name = "lblDataDe";
-            this.lblDataDe.Size = new System.Drawing.Size(93, 36);
+            this.lblDataDe.Size = new System.Drawing.Size(105, 36);
             this.lblDataDe.TabIndex = 0;
             this.lblDataDe.Text = "Data de:";
             this.lblDataDe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -323,9 +327,9 @@ namespace ControleSe.Operacoes
             this.dtpDe.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpDe.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtpDe.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDe.Location = new System.Drawing.Point(102, 3);
+            this.dtpDe.Location = new System.Drawing.Point(114, 3);
             this.dtpDe.Name = "dtpDe";
-            this.dtpDe.Size = new System.Drawing.Size(132, 30);
+            this.dtpDe.Size = new System.Drawing.Size(121, 30);
             this.dtpDe.TabIndex = 2;
             // 
             // lblDataAte
@@ -333,9 +337,9 @@ namespace ControleSe.Operacoes
             this.lblDataAte.AutoSize = true;
             this.lblDataAte.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblDataAte.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDataAte.Location = new System.Drawing.Point(240, 0);
+            this.lblDataAte.Location = new System.Drawing.Point(241, 0);
             this.lblDataAte.Name = "lblDataAte";
-            this.lblDataAte.Size = new System.Drawing.Size(124, 36);
+            this.lblDataAte.Size = new System.Drawing.Size(110, 36);
             this.lblDataAte.TabIndex = 0;
             this.lblDataAte.Text = "Data até:";
             this.lblDataAte.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -345,9 +349,9 @@ namespace ControleSe.Operacoes
             this.dtpAte.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpAte.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtpAte.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpAte.Location = new System.Drawing.Point(370, 3);
+            this.dtpAte.Location = new System.Drawing.Point(357, 3);
             this.dtpAte.Name = "dtpAte";
-            this.dtpAte.Size = new System.Drawing.Size(152, 30);
+            this.dtpAte.Size = new System.Drawing.Size(135, 30);
             this.dtpAte.TabIndex = 2;
             // 
             // btnPesquisa
@@ -365,6 +369,7 @@ namespace ControleSe.Operacoes
             this.btnPesquisa.TabIndex = 3;
             this.btnPesquisa.Text = "Pesquisar";
             this.btnPesquisa.UseVisualStyleBackColor = false;
+            this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
             // 
             // lblPesquisa
             // 
@@ -417,6 +422,18 @@ namespace ControleSe.Operacoes
             this.lblValorTotalDivida.TabIndex = 0;
             this.lblValorTotalDivida.Text = "Valor";
             this.lblValorTotalDivida.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // cbxSomenteDividasPagas
+            // 
+            this.cbxSomenteDividasPagas.AutoSize = true;
+            this.cbxSomenteDividasPagas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbxSomenteDividasPagas.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cbxSomenteDividasPagas.Location = new System.Drawing.Point(514, 3);
+            this.cbxSomenteDividasPagas.Name = "cbxSomenteDividasPagas";
+            this.cbxSomenteDividasPagas.Size = new System.Drawing.Size(337, 30);
+            this.cbxSomenteDividasPagas.TabIndex = 3;
+            this.cbxSomenteDividasPagas.Text = "Somente dividas pagas?";
+            this.cbxSomenteDividasPagas.UseVisualStyleBackColor = true;
             // 
             // DividasFormNova
             // 
@@ -473,5 +490,6 @@ namespace ControleSe.Operacoes
         private System.Windows.Forms.DataGridViewTextBoxColumn colValor;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDataVencimento;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colPago;
+        private System.Windows.Forms.CheckBox cbxSomenteDividasPagas;
     }
 }
