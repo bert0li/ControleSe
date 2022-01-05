@@ -38,8 +38,12 @@ namespace ControleSe
             this.btnCofre = new System.Windows.Forms.Button();
             this.btnEntradas = new System.Windows.Forms.Button();
             this.btnDividas = new System.Windows.Forms.Button();
+            this.panelRodape = new System.Windows.Forms.Panel();
+            this.lblRodapeDataHora = new System.Windows.Forms.Label();
+            this.lblRodapeUsuarioLogado = new System.Windows.Forms.Label();
             this.panelCabecalho.SuspendLayout();
             this.panelMenu.SuspendLayout();
+            this.panelRodape.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelCabecalho
@@ -98,19 +102,19 @@ namespace ControleSe
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 52);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(200, 511);
+            this.panelMenu.Size = new System.Drawing.Size(200, 450);
             this.panelMenu.TabIndex = 1;
             // 
             // btnUsuarios
             // 
-            this.btnUsuarios.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnUsuarios.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnUsuarios.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnUsuarios.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btnUsuarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnUsuarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsuarios.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnUsuarios.Location = new System.Drawing.Point(0, 216);
+            this.btnUsuarios.Location = new System.Drawing.Point(3, 231);
             this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(200, 48);
+            this.btnUsuarios.Size = new System.Drawing.Size(194, 48);
             this.btnUsuarios.TabIndex = 5;
             this.btnUsuarios.Text = "Usuários";
             this.btnUsuarios.UseVisualStyleBackColor = true;
@@ -118,14 +122,14 @@ namespace ControleSe
             // 
             // btnRelatorios
             // 
-            this.btnRelatorios.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnRelatorios.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnRelatorios.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnRelatorios.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btnRelatorios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnRelatorios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.btnRelatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRelatorios.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnRelatorios.Location = new System.Drawing.Point(0, 162);
+            this.btnRelatorios.Location = new System.Drawing.Point(3, 177);
             this.btnRelatorios.Name = "btnRelatorios";
-            this.btnRelatorios.Size = new System.Drawing.Size(200, 48);
+            this.btnRelatorios.Size = new System.Drawing.Size(194, 48);
             this.btnRelatorios.TabIndex = 5;
             this.btnRelatorios.Text = "Relatórios";
             this.btnRelatorios.UseVisualStyleBackColor = true;
@@ -133,14 +137,14 @@ namespace ControleSe
             // 
             // btnCofre
             // 
-            this.btnCofre.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnCofre.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnCofre.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnCofre.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btnCofre.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnCofre.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.btnCofre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCofre.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCofre.Location = new System.Drawing.Point(0, 108);
+            this.btnCofre.Location = new System.Drawing.Point(3, 123);
             this.btnCofre.Name = "btnCofre";
-            this.btnCofre.Size = new System.Drawing.Size(200, 48);
+            this.btnCofre.Size = new System.Drawing.Size(194, 48);
             this.btnCofre.TabIndex = 4;
             this.btnCofre.Text = "Cofre";
             this.btnCofre.UseVisualStyleBackColor = true;
@@ -148,14 +152,14 @@ namespace ControleSe
             // 
             // btnEntradas
             // 
-            this.btnEntradas.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnEntradas.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnEntradas.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnEntradas.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btnEntradas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnEntradas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.btnEntradas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEntradas.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnEntradas.Location = new System.Drawing.Point(0, 54);
+            this.btnEntradas.Location = new System.Drawing.Point(3, 69);
             this.btnEntradas.Name = "btnEntradas";
-            this.btnEntradas.Size = new System.Drawing.Size(200, 48);
+            this.btnEntradas.Size = new System.Drawing.Size(194, 48);
             this.btnEntradas.TabIndex = 3;
             this.btnEntradas.Text = "Entradas";
             this.btnEntradas.UseVisualStyleBackColor = true;
@@ -163,25 +167,59 @@ namespace ControleSe
             // 
             // btnDividas
             // 
-            this.btnDividas.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnDividas.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnDividas.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnDividas.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btnDividas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnDividas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.btnDividas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDividas.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnDividas.Location = new System.Drawing.Point(0, 0);
+            this.btnDividas.Location = new System.Drawing.Point(3, 15);
             this.btnDividas.Name = "btnDividas";
-            this.btnDividas.Size = new System.Drawing.Size(200, 48);
+            this.btnDividas.Size = new System.Drawing.Size(194, 48);
             this.btnDividas.TabIndex = 2;
             this.btnDividas.Text = "Dividas";
             this.btnDividas.UseVisualStyleBackColor = true;
             this.btnDividas.Click += new System.EventHandler(this.btnDividas_Click);
+            // 
+            // panelRodape
+            // 
+            this.panelRodape.BackColor = System.Drawing.Color.DarkGray;
+            this.panelRodape.Controls.Add(this.lblRodapeDataHora);
+            this.panelRodape.Controls.Add(this.lblRodapeUsuarioLogado);
+            this.panelRodape.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelRodape.Location = new System.Drawing.Point(200, 457);
+            this.panelRodape.Name = "panelRodape";
+            this.panelRodape.Size = new System.Drawing.Size(839, 45);
+            this.panelRodape.TabIndex = 2;
+            // 
+            // lblRodapeDataHora
+            // 
+            this.lblRodapeDataHora.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblRodapeDataHora.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblRodapeDataHora.Location = new System.Drawing.Point(402, 0);
+            this.lblRodapeDataHora.Name = "lblRodapeDataHora";
+            this.lblRodapeDataHora.Size = new System.Drawing.Size(437, 45);
+            this.lblRodapeDataHora.TabIndex = 1;
+            this.lblRodapeDataHora.Text = "Data/Hora";
+            this.lblRodapeDataHora.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblRodapeUsuarioLogado
+            // 
+            this.lblRodapeUsuarioLogado.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblRodapeUsuarioLogado.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblRodapeUsuarioLogado.Location = new System.Drawing.Point(0, 0);
+            this.lblRodapeUsuarioLogado.Name = "lblRodapeUsuarioLogado";
+            this.lblRodapeUsuarioLogado.Size = new System.Drawing.Size(396, 45);
+            this.lblRodapeUsuarioLogado.TabIndex = 0;
+            this.lblRodapeUsuarioLogado.Text = "Usuário logado:";
+            this.lblRodapeUsuarioLogado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // MenuPrincipalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(1039, 563);
+            this.ClientSize = new System.Drawing.Size(1039, 502);
+            this.Controls.Add(this.panelRodape);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelCabecalho);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -190,6 +228,7 @@ namespace ControleSe
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelCabecalho.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
+            this.panelRodape.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -205,5 +244,8 @@ namespace ControleSe
         private System.Windows.Forms.Button btnCofre;
         private System.Windows.Forms.Button btnRelatorios;
         private System.Windows.Forms.Button btnUsuarios;
+        private System.Windows.Forms.Panel panelRodape;
+        private System.Windows.Forms.Label lblRodapeUsuarioLogado;
+        private System.Windows.Forms.Label lblRodapeDataHora;
     }
 }

@@ -106,20 +106,31 @@ namespace ControleSe.Operacoes
             }
         }
 
-        private void btnPesquisa_Click(object sender, EventArgs e)
-        {
-            // TODO : Implementar
-        }
-
-        private void btnMinimizar_Click(object sender, EventArgs e) => WindowState = FormWindowState.Minimized;
-
-        private void btnFechar_Click(object sender, EventArgs e) => Close();
-
         private void grid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             SelecionarLinha(e);
             AlterarIncluirUsuario();
         }
+
+        private void txtPesquisa_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(txtPesquisa.Text))
+                    BindingUsuarios(cbxAtivos.Checked);
+                else
+                    grid.DataSource = _servico.PesquisarUsuario(txtPesquisa.Text, cbxAtivos.Checked);
+            }
+            catch (Exception ex)
+            {
+                ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
+                Msg.Erro($"[Erro]:{ex.Message}\n[StackTrace]:{ex.StackTrace}");
+            }
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e) => WindowState = FormWindowState.Minimized;
+
+        private void btnFechar_Click(object sender, EventArgs e) => Close();
 
         private void cbxAtivos_CheckedChanged(object sender, EventArgs e) => BindingUsuarios(cbxAtivos.Checked);
 

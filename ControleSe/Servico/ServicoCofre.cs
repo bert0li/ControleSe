@@ -24,7 +24,7 @@ namespace ControleSe.Servico
                                               .Where(w => w.UsuarioId == usuarioLogado.Id)
                                               .FirstOrDefault();
 
-                    valorNoCofre = cofre.TotalCobre.ToString("C2");
+                    valorNoCofre = cofre?.TotalCobre.ToString("C2") != null ? cofre?.TotalCobre.ToString("C2") : "R$ 0,00";
 
                     return valorNoCofre;
                 }

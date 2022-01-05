@@ -134,7 +134,7 @@ namespace ControleSe.Operacoes
             this.lblUltimaEntrada01.Name = "lblUltimaEntrada01";
             this.lblUltimaEntrada01.Size = new System.Drawing.Size(371, 65);
             this.lblUltimaEntrada01.TabIndex = 1;
-            this.lblUltimaEntrada01.Text = "Valor/Data";
+            this.lblUltimaEntrada01.Text = "R$ 0,00";
             this.lblUltimaEntrada01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblUltimaEntrada02
@@ -147,7 +147,7 @@ namespace ControleSe.Operacoes
             this.lblUltimaEntrada02.Name = "lblUltimaEntrada02";
             this.lblUltimaEntrada02.Size = new System.Drawing.Size(371, 70);
             this.lblUltimaEntrada02.TabIndex = 1;
-            this.lblUltimaEntrada02.Text = "Valor/Data";
+            this.lblUltimaEntrada02.Text = "R$ 0,00";
             this.lblUltimaEntrada02.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblUltimaEntrada03
@@ -160,7 +160,7 @@ namespace ControleSe.Operacoes
             this.lblUltimaEntrada03.Name = "lblUltimaEntrada03";
             this.lblUltimaEntrada03.Size = new System.Drawing.Size(371, 67);
             this.lblUltimaEntrada03.TabIndex = 1;
-            this.lblUltimaEntrada03.Text = "Valor/Data";
+            this.lblUltimaEntrada03.Text = "R$ 0,00";
             this.lblUltimaEntrada03.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblUltimaEntrada04
@@ -173,7 +173,7 @@ namespace ControleSe.Operacoes
             this.lblUltimaEntrada04.Name = "lblUltimaEntrada04";
             this.lblUltimaEntrada04.Size = new System.Drawing.Size(371, 62);
             this.lblUltimaEntrada04.TabIndex = 1;
-            this.lblUltimaEntrada04.Text = "Valor/Data";
+            this.lblUltimaEntrada04.Text = "R$ 0,00";
             this.lblUltimaEntrada04.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelCabecalho

@@ -46,7 +46,6 @@ namespace ControleSe.Operacoes
             this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUsuarioAcesso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpPesquisa = new System.Windows.Forms.TableLayoutPanel();
-            this.btnPesquisa = new System.Windows.Forms.Button();
             this.lblPesquisa = new System.Windows.Forms.Label();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.cbxAtivos = new System.Windows.Forms.CheckBox();
@@ -243,13 +242,11 @@ namespace ControleSe.Operacoes
             // 
             this.tlpPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tlpPesquisa.ColumnCount = 5;
-            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.64873F));
-            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.35127F));
-            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 9F));
-            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 239F));
-            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 192F));
-            this.tlpPesquisa.Controls.Add(this.btnPesquisa, 4, 0);
+            this.tlpPesquisa.ColumnCount = 4;
+            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.69659F));
+            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.30341F));
+            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 467F));
             this.tlpPesquisa.Controls.Add(this.lblPesquisa, 0, 0);
             this.tlpPesquisa.Controls.Add(this.txtPesquisa, 1, 0);
             this.tlpPesquisa.Controls.Add(this.cbxAtivos, 3, 0);
@@ -260,30 +257,13 @@ namespace ControleSe.Operacoes
             this.tlpPesquisa.Size = new System.Drawing.Size(1109, 37);
             this.tlpPesquisa.TabIndex = 10;
             // 
-            // btnPesquisa
-            // 
-            this.btnPesquisa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPesquisa.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
-            this.btnPesquisa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.btnPesquisa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
-            this.btnPesquisa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesquisa.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnPesquisa.Location = new System.Drawing.Point(920, 3);
-            this.btnPesquisa.Name = "btnPesquisa";
-            this.btnPesquisa.Size = new System.Drawing.Size(186, 31);
-            this.btnPesquisa.TabIndex = 7;
-            this.btnPesquisa.Text = "Pesquisa";
-            this.btnPesquisa.UseVisualStyleBackColor = true;
-            this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
-            // 
             // lblPesquisa
             // 
-            this.lblPesquisa.AutoSize = true;
             this.lblPesquisa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblPesquisa.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblPesquisa.Location = new System.Drawing.Point(3, 0);
             this.lblPesquisa.Name = "lblPesquisa";
-            this.lblPesquisa.Size = new System.Drawing.Size(92, 37);
+            this.lblPesquisa.Size = new System.Drawing.Size(93, 37);
             this.lblPesquisa.TabIndex = 0;
             this.lblPesquisa.Text = "Pesquisa:";
             this.lblPesquisa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -292,19 +272,20 @@ namespace ControleSe.Operacoes
             // 
             this.txtPesquisa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPesquisa.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPesquisa.Location = new System.Drawing.Point(101, 3);
+            this.txtPesquisa.Location = new System.Drawing.Point(102, 3);
             this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(565, 26);
+            this.txtPesquisa.Size = new System.Drawing.Size(489, 26);
             this.txtPesquisa.TabIndex = 1;
+            this.txtPesquisa.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
             // 
             // cbxAtivos
             // 
             this.cbxAtivos.AutoSize = true;
             this.cbxAtivos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbxAtivos.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cbxAtivos.Location = new System.Drawing.Point(681, 3);
+            this.cbxAtivos.Location = new System.Drawing.Point(644, 3);
             this.cbxAtivos.Name = "cbxAtivos";
-            this.cbxAtivos.Size = new System.Drawing.Size(233, 31);
+            this.cbxAtivos.Size = new System.Drawing.Size(462, 31);
             this.cbxAtivos.TabIndex = 8;
             this.cbxAtivos.Text = "Somente usuários ativos?";
             this.cbxAtivos.UseVisualStyleBackColor = true;
@@ -343,7 +324,6 @@ namespace ControleSe.Operacoes
         private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.DataGridView grid;
         private System.Windows.Forms.TableLayoutPanel tlpPesquisa;
-        private System.Windows.Forms.Button btnPesquisa;
         private System.Windows.Forms.Label lblPesquisa;
         private System.Windows.Forms.TextBox txtPesquisa;
         private System.Windows.Forms.CheckBox cbxAtivos;

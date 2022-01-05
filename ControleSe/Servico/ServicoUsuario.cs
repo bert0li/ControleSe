@@ -82,7 +82,7 @@ namespace ControleSe.Servico
                 {
                     _usuario = contexto.Usuario
                                        .Include(i => i.Dividas)
-                                       .Include(i=>i.Cofre)
+                                       .Include(i => i.Cofre)
                                        .Where(w =>
                                               w.UsuarioAcesso == usuarioLogado.UsuarioAcesso &&
                                               w.SenhaAcesso == usuarioLogado.SenhaAcesso)
@@ -203,7 +203,7 @@ namespace ControleSe.Servico
 
                 using (var contexto = new Contexto())
                 {
-                    var any = contexto.Usuario.Any(a => a.Id == usuarioLogado.Id && 
+                    var any = contexto.Usuario.Any(a => a.Id == usuarioLogado.Id &&
                                                         a.SenhaAcesso == senha.Trim());
 
                     if (any)
@@ -211,6 +211,28 @@ namespace ControleSe.Servico
                 }
 
                 return EhValido;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public IEnumerable<Usuario> PesquisarUsuario(string usuario, bool ativo)
+        {
+            try
+            {
+                IEnumerable<Usuario> usuarioPesquisa = null;
+
+                using (var contexto = new Contexto())
+                {
+                    usuarioPesquisa = contexto.Usuario.Where(w =>
+                                                             w.UsuarioAcesso.StartsWith(usuario) &&
+                                                             w.Ativo == ativo)
+                                                             .ToList();
+                }
+
+                return usuarioPesquisa;
             }
             catch (Exception)
             {

@@ -16,12 +16,30 @@ namespace ControleSe
 {
     public partial class MenuPrincipalForm : Form
     {
-        private Usuario _usuario;
+        private Usuario _usuario = null;
+        private Timer _timer = null;
 
         public MenuPrincipalForm(Usuario usuario)
         {
             InitializeComponent();
             _usuario = usuario;
+            SetarUsuarioLogado();
+            SetarDataHoraAtual();
+        }
+
+        private void SetarUsuarioLogado()
+        {
+            lblRodapeUsuarioLogado.Text = $"Usuário: {_usuario.UsuarioAcesso}";
+        }
+
+        private void SetarDataHoraAtual()
+        {
+            _timer = new Timer() { Interval = 1000 };
+            _timer.Start();
+            _timer.Tick += (o, e) =>
+            {
+                lblRodapeDataHora.Text = DateTime.Now.ToString();
+            };
         }
 
         private void btnDividas_Click(object sender, EventArgs e)
