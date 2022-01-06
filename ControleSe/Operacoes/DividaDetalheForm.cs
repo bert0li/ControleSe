@@ -23,6 +23,7 @@ namespace ControleSe.Operacoes
         private Divida _divida = null;
         private Usuario _usuario = null;
         private bool PrimeiroBinding = false;
+        private DateTime _dataNovoVencimento;
 
         public DividaDetalheForm(ServicoDivida servicoDivida, Divida divida, Usuario usuarioLogado)
         {
@@ -148,7 +149,22 @@ namespace ControleSe.Operacoes
                     if (_servico.Pagar(_divida, _usuario))
                     {
                         Msg.Informacao("Divida paga.");
-                        Close();
+
+                        if (Msg.Pergunta("Esse é uma divida FIXA. Deseja reabri-lá?") == DialogResult.Yes)
+                        {
+                            using (var form = new DataNovoVencimentoForm())
+                            {
+                                form.ShowDialog();
+                                _dataNovoVencimento = form.NovoVencimento;
+                                form.Close();
+                            }
+
+                            if (_servico.ReabrirDivida(_usuario, _divida, _dataNovoVencimento))
+                            {
+                                Msg.Informacao("Divida reaberta com sucesso.");
+                                Close();
+                            }
+                        }
                     }
                 }
             }

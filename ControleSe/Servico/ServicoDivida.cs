@@ -74,37 +74,63 @@ namespace ControleSe.Servico
             {
                 EhValido = false;
 
-                try
+                if (divida != null)
                 {
-                    if (divida != null)
+                    if (RetirarValorNoCofre(divida.Valor, usuarioLogado))
                     {
-                        if (RetirarValorNoCofre(divida.Valor, usuarioLogado))
+                        using (var contexto = new Contexto())
                         {
-                            using (var contexto = new Contexto())
-                            {
-                                var dividaParaPagar = contexto.Divida.Where(w => w.Id == divida.Id &&
-                                                                                 w.UsuarioId == usuarioLogado.Id)
-                                                                     .FirstOrDefault();
+                            var dividaParaPagar = contexto.Divida.Where(w => w.Id == divida.Id &&
+                                                                             w.UsuarioId == usuarioLogado.Id)
+                                                                 .FirstOrDefault();
 
-                                if (dividaParaPagar != null)
-                                {
-                                    dividaParaPagar.Pago = true;
-                                    dividaParaPagar.DataPagamento = DateTime.Now;
-                                    contexto.Divida.Update(dividaParaPagar);
-                                    contexto.SaveChanges();
-                                    EhValido = true;
-                                }
+                            if (dividaParaPagar != null)
+                            {
+                                dividaParaPagar.Pago = true;
+                                dividaParaPagar.DataPagamento = DateTime.Now;
+                                contexto.Divida.Update(dividaParaPagar);
+                                contexto.SaveChanges();
+                                EhValido = true;
                             }
                         }
                     }
-
-                    return EhValido;
                 }
-                catch (Exception)
+
+                return EhValido;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public bool ReabrirDivida(Usuario usuarioLogado, Divida divida, DateTime dataNovoVencimento)
+        {
+            try
+            {
+                EhValido = false;
+
+                if (divida != null)
                 {
-                    throw;
+                    using (var contexto = new Contexto())
+                    {
+                        Divida dividaPesquisa = contexto.Divida.Where(w =>
+                                                               w.Id == divida.Id &&
+                                                               w.UsuarioId == usuarioLogado.Id)
+                                                               .FirstOrDefault();
+
+                        if (dividaPesquisa != null)
+                        {
+                            dividaPesquisa.Pago = false;
+                            dividaPesquisa.DataVencimento = dataNovoVencimento;
+                            contexto.Divida.Update(dividaPesquisa);
+                            contexto.SaveChanges();
+                            EhValido = true;
+                        }
+                    }
                 }
 
+                return EhValido;
             }
             catch (Exception)
             {
