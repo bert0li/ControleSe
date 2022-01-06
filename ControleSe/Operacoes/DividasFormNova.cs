@@ -106,17 +106,25 @@ namespace ControleSe.Operacoes
         {
             try
             {
+                var cells = grid.Columns.Count;
                 var dataVencimento = (DateTime)grid.Rows[e.RowIndex].Cells["colDataVencimento"]?.Value;
                 var pago = (bool)grid.Rows[e.RowIndex].Cells["colPago"]?.Value;
 
+                if ((DateTime.Now.Day + 3) == dataVencimento.Day)
+                {
+                    for (int i = 0; i < cells; i++)
+                    {
+                        grid.Rows[e.RowIndex].Cells[i].Style.ForeColor = Color.Orange;
+                        grid.Rows[e.RowIndex].Cells[i].Style.Font = new Font(new FontFamily("Tahoma"), 12, FontStyle.Bold);
+                    }
+                }
+
                 if (dataVencimento <= DateTime.Now && pago != true)
                 {
-                    var cells = grid.Columns.Count;
-
                     for (int i = 0; i < cells; i++)
                     {
                         grid.Rows[e.RowIndex].Cells[i].Style.ForeColor = Color.Red;
-                        grid.Rows[e.RowIndex].Cells[i].Style.Font = new Font(new FontFamily("Tahoma"), 11, FontStyle.Bold);
+                        grid.Rows[e.RowIndex].Cells[i].Style.Font = new Font(new FontFamily("Tahoma"), 12, FontStyle.Bold);
                     }
                 }
             }
