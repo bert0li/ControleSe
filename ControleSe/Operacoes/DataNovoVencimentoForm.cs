@@ -37,5 +37,7 @@ namespace ControleSe.Operacoes
         private void btnConfirmar_Click(object sender, EventArgs e) => SetarNovoVencimento();
 
         private void btnCancelar_Click(object sender, EventArgs e) => Close();
+
+        private void btnFechar_Click(object sender, EventArgs e) => Close();        
     }
 }

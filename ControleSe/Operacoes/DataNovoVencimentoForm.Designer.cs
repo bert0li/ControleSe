@@ -196,6 +196,7 @@ namespace ControleSe.Operacoes
             this.btnFechar.TabIndex = 0;
             this.btnFechar.Text = "X";
             this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // DataNovoVencimentoForm
             // 

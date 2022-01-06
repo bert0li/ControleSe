@@ -143,21 +143,26 @@ namespace ControleSe.Operacoes
                     {
                         Msg.Informacao("Divida paga.");
 
-                        if (Msg.Pergunta("Esse é uma divida FIXA. Deseja reabri-lá?") == DialogResult.Yes)
+                        if (_divida.TipoDivida == TipoDivida.Fixa)
                         {
-                            using (var form = new DataNovoVencimentoForm())
+                            if (Msg.Pergunta("Esse é uma divida FIXA. Deseja reabri-lá?") == DialogResult.Yes)
                             {
-                                form.ShowDialog();
-                                _dataNovoVencimento = form.NovoVencimento;
-                                form.Close();
-                            }
+                                using (var form = new DataNovoVencimentoForm())
+                                {
+                                    form.ShowDialog();
+                                    _dataNovoVencimento = form.NovoVencimento;
+                                    form.Close();
+                                }
 
-                            if (_servico.ReabrirDivida(_usuario, _divida, _dataNovoVencimento))
-                            {
-                                Msg.Informacao("Divida reaberta com sucesso.");
-                                Close();
+                                if (_servico.ReabrirDivida(_usuario, _divida, _dataNovoVencimento))
+                                {
+                                    Msg.Informacao("Divida reaberta com sucesso.");
+                                    Close();
+                                }
                             }
                         }
+                        else
+                            Close();
                     }
                 }
             }
