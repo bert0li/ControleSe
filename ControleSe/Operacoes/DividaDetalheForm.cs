@@ -133,14 +133,7 @@ namespace ControleSe.Operacoes
             }
         }
 
-        private void cbxTipoDivida_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (PrimeiroBinding) return;
-
-            _divida.TipoDivida = (TipoDivida)cbxTipoDivida.SelectedIndex;
-        }
-
-        private void btnPagar_Click(object sender, EventArgs e)
+        private void Pagar()
         {
             if (_divida.Pago != true)
             {
@@ -174,11 +167,20 @@ namespace ControleSe.Operacoes
             }
         }
 
+        private void cbxTipoDivida_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (PrimeiroBinding) return;
+
+            _divida.TipoDivida = (TipoDivida)cbxTipoDivida.SelectedIndex;
+        }
+
         private void txtValor_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
                 e.Handled = true;
         }
+
+        private void btnPagar_Click(object sender, EventArgs e) => Pagar();        
 
         private void btnSalvar_Click(object sender, EventArgs e) => Salvar();
 
