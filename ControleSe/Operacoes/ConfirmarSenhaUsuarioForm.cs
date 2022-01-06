@@ -40,7 +40,7 @@ namespace ControleSe.Operacoes
                     }
                     else
                     {
-                        Msg.Informacao("Senha invalida.");
+                        Msg.Informacao("Senha inválida.");
                         txtSenha.Focus();
                         txtSenha.SelectAll();
                     }

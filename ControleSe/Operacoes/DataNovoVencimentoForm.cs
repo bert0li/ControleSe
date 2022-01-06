@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ControleSe.Utilitario;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,6 +32,11 @@ namespace ControleSe.Operacoes
             {
                 NovoVencimento = dtpDataNovoVencimento.Value;
                 Close();
+            }
+            else
+            {
+                Msg.Informacao("Informe uma data válida.");
+                dtpDataNovoVencimento.Focus();
             }
         }
 

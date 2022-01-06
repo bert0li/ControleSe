@@ -34,7 +34,7 @@ namespace ControleSe.Servico
                 }
                 else if (divida.DataVencimento == DateTime.MinValue)
                 {
-                    Msg.Atencao("Informe uma Data valida da divida");
+                    Msg.Atencao("Informe uma Data válida da divida");
                     EhValido = false;
                 }
                 else
