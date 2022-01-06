@@ -17,6 +17,7 @@ namespace ControleSe.Servico
             using (var form = new LoginFormNova(new ServicoUsuario(), new Usuario()))
             {
                 form.ShowDialog();
+
                 if (form.Usuario != null)
                     Usuario = form.Usuario;
             }

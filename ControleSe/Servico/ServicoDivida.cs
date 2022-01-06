@@ -80,9 +80,11 @@ namespace ControleSe.Servico
                     {
                         using (var contexto = new Contexto())
                         {
-                            var dividaParaPagar = contexto.Divida.Where(w => w.Id == divida.Id &&
-                                                                             w.UsuarioId == usuarioLogado.Id)
-                                                                 .FirstOrDefault();
+                            Divida dividaParaPagar = contexto.Divida
+                                                             .Where(w => 
+                                                                    w.Id == divida.Id &&
+                                                                    w.UsuarioId == usuarioLogado.Id)
+                                                                    .FirstOrDefault();
 
                             if (dividaParaPagar != null)
                             {
@@ -114,7 +116,8 @@ namespace ControleSe.Servico
                 {
                     using (var contexto = new Contexto())
                     {
-                        Divida dividaPesquisa = contexto.Divida.Where(w =>
+                        Divida dividaPesquisa = contexto.Divida
+                                                        .Where(w =>
                                                                w.Id == divida.Id &&
                                                                w.UsuarioId == usuarioLogado.Id)
                                                                .FirstOrDefault();
@@ -203,8 +206,9 @@ namespace ControleSe.Servico
 
                 using (var contexto = new Contexto())
                 {
-                    var cofre = contexto.Cofre.Where(w => w.UsuarioId == usuarioLogado.Id)
-                                              .FirstOrDefault();
+                    Cofre cofre = contexto.Cofre
+                                          .Where(w => w.UsuarioId == usuarioLogado.Id)
+                                          .FirstOrDefault();
 
                     if (cofre != null)
                     {
@@ -244,16 +248,19 @@ namespace ControleSe.Servico
                 {
                     if (dividasPagas)
                     {
-                        dividasPesquisa = contexto.Divida.Where(w =>
-                                                            w.UsuarioId == usuarioLogado.Id &&
-                                                            w.DataPagamento >= dataDe &&
-                                                            w.DataPagamento <= dataAte &&
-                                                            w.Pago == dividasPagas)
-                                                            .ToList();
+                        dividasPesquisa = contexto.Divida
+                                                  .Where(w =>
+                                                         w.UsuarioId == usuarioLogado.Id &&
+                                                         w.DataPagamento >= dataDe &&
+                                                         w.DataPagamento <= dataAte &&
+                                                         w.Pago == dividasPagas)
+                                                         .ToList();
                     }
                     else
                     {
-                        dividasPesquisa = contexto.Divida.Where(w => w.UsuarioId == usuarioLogado.Id).ToList();
+                        dividasPesquisa = contexto.Divida
+                                                  .Where(w => w.UsuarioId == usuarioLogado.Id)
+                                                  .ToList();
                     }
                 }
 

@@ -20,9 +20,10 @@ namespace ControleSe.Servico
 
                 using (var contexto = new Contexto())
                 {
-                    var cofre = contexto.Cofre.Include(i => i.Usuario)
-                                              .Where(w => w.UsuarioId == usuarioLogado.Id)
-                                              .FirstOrDefault();
+                    Cofre cofre = contexto.Cofre
+                                          .Include(i => i.Usuario)
+                                          .Where(w => w.UsuarioId == usuarioLogado.Id)
+                                          .FirstOrDefault();
 
                     valorNoCofre = cofre?.TotalCobre.ToString("C2") != null ? cofre?.TotalCobre.ToString("C2") : "R$ 0,00";
 

@@ -57,7 +57,7 @@ namespace ControleSe.Servico
         {
             try
             {
-                var dataAteCorreta = dataAte.AddDays(1).AddSeconds(-1);
+                DateTime dataAteCorreta = dataAte.AddDays(1).AddSeconds(-1);
 
                 IEnumerable<Entrada> entradas = null;
 
@@ -65,10 +65,11 @@ namespace ControleSe.Servico
                 {
                     entradas = contexto.Entrada
                                        .Include(i => i.Usuario)
-                                       .Where(w => w.UsuarioId == usuario.Id &&
-                                                   w.DataEntrada >= dataDe &&
-                                                   w.DataEntrada <= dataAteCorreta)
-                                       .ToList();
+                                       .Where(w => 
+                                              w.UsuarioId == usuario.Id &&
+                                              w.DataEntrada >= dataDe &&
+                                              w.DataEntrada <= dataAteCorreta)
+                                              .ToList();
                 }
 
                 return entradas;
@@ -110,8 +111,9 @@ namespace ControleSe.Servico
             {
                 using (var contexto = new Contexto())
                 {
-                    var cofre = contexto.Cofre.Where(w => w.UsuarioId == usuarioLogado.Id)
-                                              .FirstOrDefault();
+                    Cofre cofre = contexto.Cofre
+                                          .Where(w => w.UsuarioId == usuarioLogado.Id)
+                                          .FirstOrDefault();
 
                     if (cofre != null)
                     {

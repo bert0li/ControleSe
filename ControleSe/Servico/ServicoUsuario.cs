@@ -161,10 +161,10 @@ namespace ControleSe.Servico
                 {
                     using (var contexto = new Contexto())
                     {
-                        var usuarioRetorno = contexto.Usuario
-                                                     .Include(i => i.Dividas)
-                                                     .Where(w => w.Id == usuarioLogado.Id)
-                                                     .FirstOrDefault();
+                        Usuario usuarioRetorno = contexto.Usuario
+                                                         .Include(i => i.Dividas)
+                                                         .Where(w => w.Id == usuarioLogado.Id)
+                                                         .FirstOrDefault();
 
                         if (usuarioRetorno != null)
                         {
@@ -203,8 +203,9 @@ namespace ControleSe.Servico
 
                 using (var contexto = new Contexto())
                 {
-                    var any = contexto.Usuario.Any(a => a.Id == usuarioLogado.Id &&
-                                                        a.SenhaAcesso == senha.Trim());
+                    bool any = contexto.Usuario.Any(a =>
+                                                    a.Id == usuarioLogado.Id &&
+                                                    a.SenhaAcesso == senha.Trim());
 
                     if (any)
                         EhValido = true;
@@ -229,7 +230,7 @@ namespace ControleSe.Servico
                     usuarioPesquisa = contexto.Usuario.Where(w =>
                                                              w.UsuarioAcesso.StartsWith(usuario) &&
                                                              w.Ativo == ativo)
-                                                             .ToList();
+                                                            .ToList();
                 }
 
                 return usuarioPesquisa;
