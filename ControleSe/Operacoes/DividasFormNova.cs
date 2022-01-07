@@ -117,7 +117,7 @@ namespace ControleSe.Operacoes
                 {
                     for (int i = 0; i < cells; i++)
                     {
-                        grid.Rows[e.RowIndex].Cells[i].Style.ForeColor = Color.FromArgb(255, 172, 57);
+                        grid.Rows[e.RowIndex].Cells[i].Style.ForeColor = Color.FromArgb(255, 115, 57);
                         grid.Rows[e.RowIndex].Cells[i].Style.Font = new Font(new FontFamily("Tahoma"), 12, FontStyle.Bold);
                     }
                 }                
@@ -128,7 +128,7 @@ namespace ControleSe.Operacoes
                 {
                     for (int i = 0; i < cells; i++)
                     {
-                        grid.Rows[e.RowIndex].Cells[i].Style.ForeColor = Color.FromArgb(255, 172, 57);
+                        grid.Rows[e.RowIndex].Cells[i].Style.ForeColor = Color.FromArgb(255, 115, 57);
                         grid.Rows[e.RowIndex].Cells[i].Style.Font = new Font(new FontFamily("Tahoma"), 12, FontStyle.Bold);
                     }
                 }
@@ -139,7 +139,7 @@ namespace ControleSe.Operacoes
                 {
                     for (int i = 0; i < cells; i++)
                     {
-                        grid.Rows[e.RowIndex].Cells[i].Style.ForeColor = Color.FromArgb(255, 172, 57);
+                        grid.Rows[e.RowIndex].Cells[i].Style.ForeColor = Color.FromArgb(255, 115, 57);
                         grid.Rows[e.RowIndex].Cells[i].Style.Font = new Font(new FontFamily("Tahoma"), 12, FontStyle.Bold);
                     }
                 }

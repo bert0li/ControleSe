@@ -96,7 +96,7 @@ namespace ControleSe.Operacoes
             this.colDataVencimento,
             this.colPago});
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Silver;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -295,7 +295,7 @@ namespace ControleSe.Operacoes
             this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 116F));
             this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 141F));
             this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 343F));
+            this.tlpPesquisa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 344F));
             this.tlpPesquisa.Controls.Add(this.lblDataDe, 0, 0);
             this.tlpPesquisa.Controls.Add(this.dtpDe, 1, 0);
             this.tlpPesquisa.Controls.Add(this.lblDataAte, 2, 0);
@@ -329,7 +329,7 @@ namespace ControleSe.Operacoes
             this.dtpDe.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDe.Location = new System.Drawing.Point(113, 3);
             this.dtpDe.Name = "dtpDe";
-            this.dtpDe.Size = new System.Drawing.Size(121, 30);
+            this.dtpDe.Size = new System.Drawing.Size(120, 30);
             this.dtpDe.TabIndex = 2;
             // 
             // lblDataAte
@@ -337,7 +337,7 @@ namespace ControleSe.Operacoes
             this.lblDataAte.AutoSize = true;
             this.lblDataAte.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblDataAte.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDataAte.Location = new System.Drawing.Point(240, 0);
+            this.lblDataAte.Location = new System.Drawing.Point(239, 0);
             this.lblDataAte.Name = "lblDataAte";
             this.lblDataAte.Size = new System.Drawing.Size(110, 36);
             this.lblDataAte.TabIndex = 0;
@@ -349,7 +349,7 @@ namespace ControleSe.Operacoes
             this.dtpAte.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpAte.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtpAte.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpAte.Location = new System.Drawing.Point(356, 3);
+            this.dtpAte.Location = new System.Drawing.Point(355, 3);
             this.dtpAte.Name = "dtpAte";
             this.dtpAte.Size = new System.Drawing.Size(135, 30);
             this.dtpAte.TabIndex = 2;
@@ -359,9 +359,9 @@ namespace ControleSe.Operacoes
             this.cbxSomenteDividasPagas.AutoSize = true;
             this.cbxSomenteDividasPagas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbxSomenteDividasPagas.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cbxSomenteDividasPagas.Location = new System.Drawing.Point(513, 3);
+            this.cbxSomenteDividasPagas.Location = new System.Drawing.Point(512, 3);
             this.cbxSomenteDividasPagas.Name = "cbxSomenteDividasPagas";
-            this.cbxSomenteDividasPagas.Size = new System.Drawing.Size(338, 30);
+            this.cbxSomenteDividasPagas.Size = new System.Drawing.Size(339, 30);
             this.cbxSomenteDividasPagas.TabIndex = 3;
             this.cbxSomenteDividasPagas.Text = "Somente dividas pagas?";
             this.cbxSomenteDividasPagas.UseVisualStyleBackColor = true;
