@@ -39,6 +39,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Arquivos\Gifs\deletandoSplash.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Arquivos\Gifs\deletarSplash.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
