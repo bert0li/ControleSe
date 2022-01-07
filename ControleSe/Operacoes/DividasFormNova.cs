@@ -110,16 +110,40 @@ namespace ControleSe.Operacoes
                 var dataVencimento = (DateTime)grid.Rows[e.RowIndex].Cells["colDataVencimento"]?.Value;
                 var pago = (bool)grid.Rows[e.RowIndex].Cells["colPago"]?.Value;
 
-                if ((DateTime.Now.Day + 3) == dataVencimento.Day)
+                if (DateTime.Now.Day + 1 == dataVencimento.Day &&
+                    DateTime.Now.Month == dataVencimento.Month &&
+                    DateTime.Now.Year == dataVencimento.Year &&
+                    pago != true)
                 {
                     for (int i = 0; i < cells; i++)
                     {
-                        grid.Rows[e.RowIndex].Cells[i].Style.ForeColor = Color.Orange;
+                        grid.Rows[e.RowIndex].Cells[i].Style.ForeColor = Color.FromArgb(255, 128, 0);
+                        grid.Rows[e.RowIndex].Cells[i].Style.Font = new Font(new FontFamily("Tahoma"), 12, FontStyle.Bold);
+                    }
+                }                
+                else if (DateTime.Now.Day + 2 == dataVencimento.Day &&
+                         DateTime.Now.Month == dataVencimento.Month &&
+                         DateTime.Now.Year == dataVencimento.Year &&
+                         pago != true)
+                {
+                    for (int i = 0; i < cells; i++)
+                    {
+                        grid.Rows[e.RowIndex].Cells[i].Style.ForeColor = Color.FromArgb(255, 128, 0);
                         grid.Rows[e.RowIndex].Cells[i].Style.Font = new Font(new FontFamily("Tahoma"), 12, FontStyle.Bold);
                     }
                 }
-
-                if (dataVencimento <= DateTime.Now && pago != true)
+                else if (DateTime.Now.Day + 3 == dataVencimento.Day &&
+                         DateTime.Now.Month == dataVencimento.Month &&
+                         DateTime.Now.Year == dataVencimento.Year &&
+                         pago != true)
+                {
+                    for (int i = 0; i < cells; i++)
+                    {
+                        grid.Rows[e.RowIndex].Cells[i].Style.ForeColor = Color.FromArgb(255, 128, 0);
+                        grid.Rows[e.RowIndex].Cells[i].Style.Font = new Font(new FontFamily("Tahoma"), 12, FontStyle.Bold);
+                    }
+                }
+                else if (dataVencimento.Date <= DateTime.Now.Date && pago != true)
                 {
                     for (int i = 0; i < cells; i++)
                     {
@@ -127,6 +151,8 @@ namespace ControleSe.Operacoes
                         grid.Rows[e.RowIndex].Cells[i].Style.Font = new Font(new FontFamily("Tahoma"), 12, FontStyle.Bold);
                     }
                 }
+                else
+                    return;
             }
             catch (Exception ex)
             {
