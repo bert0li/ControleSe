@@ -17,13 +17,14 @@ namespace ControleSe.Operacoes
     public partial class UsuariosForm : Form
     {
         private ServicoUsuario _servico = null;
-        private Usuario _usuario = null;
+        private Usuario _usuarioLogado = null;
+        private Usuario _usuarioSelecionado = null;
 
         public UsuariosForm(Usuario usuarioLogado, ServicoUsuario servico)
         {
             InitializeComponent();  
             _servico = servico;
-            _usuario = usuarioLogado;
+            _usuarioLogado = usuarioLogado;
             AtivarCheckBox();
             BindingUsuarios(true);
         }
@@ -49,11 +50,11 @@ namespace ControleSe.Operacoes
         {
             if (incluir)
             {
-                _usuario = new Usuario();
+                _usuarioSelecionado = new Usuario();
                 //_usuario.EhIncluir = true;
             }
 
-            using (var form = new UsuarioDetalheForm(_servico, _usuario))
+            using (var form = new UsuarioDetalheForm(_servico, _usuarioSelecionado))
             {
                 form.ShowDialog();
             }
@@ -66,11 +67,11 @@ namespace ControleSe.Operacoes
         {
             try
             {
-                if (_usuario != null)
+                if (_usuarioSelecionado != null)
                 {
                     if (Msg.Pergunta("Deseja realmente exluir o usuário?") == DialogResult.Yes)
                     {
-                        if (_servico.Excluir(_usuario))
+                        if (_servico.Excluir(_usuarioLogado, _usuarioSelecionado))
                         {
                             ExibirSplash();
                             AtivarCheckBox();
@@ -95,7 +96,7 @@ namespace ControleSe.Operacoes
             if (e.RowIndex < 0)
                 return;
             else
-                _usuario = grid.Rows[e.RowIndex].DataBoundItem as Usuario;
+                _usuarioSelecionado = grid.Rows[e.RowIndex].DataBoundItem as Usuario;
         }
 
         private void ExibirSplash()

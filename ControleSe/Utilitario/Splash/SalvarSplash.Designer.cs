@@ -29,17 +29,19 @@ namespace ControleSe.Utilitario.Splash
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalvarSplash));
             this.pbxSalvarSplash = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSalvarSplash)).BeginInit();
             this.SuspendLayout();
             // 
             // pbxSalvarSplash
             // 
-            this.pbxSalvarSplash.Image = ((System.Drawing.Image)(resources.GetObject("pbxSalvarSplash.Image")));
+            this.pbxSalvarSplash.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbxSalvarSplash.Image = global::ControleSe.Properties.Resources.salvarSplash;
             this.pbxSalvarSplash.Location = new System.Drawing.Point(12, 12);
             this.pbxSalvarSplash.Name = "pbxSalvarSplash";
-            this.pbxSalvarSplash.Size = new System.Drawing.Size(171, 151);
+            this.pbxSalvarSplash.Size = new System.Drawing.Size(179, 156);
             this.pbxSalvarSplash.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbxSalvarSplash.TabIndex = 0;
             this.pbxSalvarSplash.TabStop = false;
@@ -49,7 +51,7 @@ namespace ControleSe.Utilitario.Splash
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(195, 175);
+            this.ClientSize = new System.Drawing.Size(203, 180);
             this.Controls.Add(this.pbxSalvarSplash);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SalvarSplash";

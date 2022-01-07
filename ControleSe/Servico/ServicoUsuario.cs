@@ -151,19 +151,19 @@ namespace ControleSe.Servico
             return EhValido;
         }
 
-        public bool Excluir(Usuario usuarioLogado)
+        public bool Excluir(Usuario usuarioLogado, Usuario usuarioSelecionado)
         {
             EhValido = true;
 
             try
             {
-                if (usuarioLogado.Id != usuarioLogado.Id)
+                if (usuarioLogado.Id != usuarioSelecionado.Id)
                 {
                     using (var contexto = new Contexto())
                     {
                         Usuario usuarioRetorno = contexto.Usuario
                                                          .Include(i => i.Dividas)
-                                                         .Where(w => w.Id == usuarioLogado.Id)
+                                                         .Where(w => w.Id == usuarioSelecionado.Id)
                                                          .FirstOrDefault();
 
                         if (usuarioRetorno != null)
