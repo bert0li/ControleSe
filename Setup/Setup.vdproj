@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_670B7B41CF5F47C68D1AFF9AD00C9BAC"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_7336EA55582A4F6498FD9247B7CFE769"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -27,19 +33,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_EA7EFA52FB9D4438B4BB03A0A615B381"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_F2CDDBBE70374CA5A4E167C8D88F432B"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_FD19AAB8BEE6484FB7CE4AFF0F81962E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -100,6 +94,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -132,10 +134,10 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EA7EFA52FB9D4438B4BB03A0A615B381"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_670B7B41CF5F47C68D1AFF9AD00C9BAC"
             {
-            "SourcePath" = "8:..\\ControleSe\\bin\\Release\\net5.0-windows\\publish\\ControleSe.deps.json"
-            "TargetName" = "8:ControleSe.deps.json"
+            "SourcePath" = "8:..\\ControleSe\\obj\\Debug\\net5.0-windows\\apphost.exe"
+            "TargetName" = "8:ControleSe.exe"
             "Tag" = "8:"
             "Folder" = "8:_A87F84DE32CF45E7BC3A3E385D7B7305"
             "Condition" = "8:"
@@ -156,26 +158,6 @@
             {
             "SourcePath" = "8:..\\ControleSe\\Arquivos\\Logo-Sistema\\ControleSe.ico"
             "TargetName" = "8:ControleSe.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_A87F84DE32CF45E7BC3A3E385D7B7305"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FD19AAB8BEE6484FB7CE4AFF0F81962E"
-            {
-            "SourcePath" = "8:..\\ControleSe\\bin\\Release\\net5.0-windows\\publish\\ControleSe.exe"
-            "TargetName" = "8:ControleSe.exe"
             "Tag" = "8:"
             "Folder" = "8:_A87F84DE32CF45E7BC3A3E385D7B7305"
             "Condition" = "8:"
@@ -249,7 +231,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:ControleSe"
         "ProductCode" = "8:{827F0AA3-C343-48B8-9D0C-B47153755EB8}"
-        "PackageCode" = "8:{CAF9F891-297B-4119-857A-5EA8F9019EF6}"
+        "PackageCode" = "8:{32E0CFC4-6B92-475B-ACD2-448C528A3724}"
         "UpgradeCode" = "8:{2456615C-38E3-45C0-A70B-B753BD74A128}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -369,7 +351,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_4CE0A080ABED417C8A81168A011A402B"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_9D6615A6B2784CA59EFC7EC35F7A4B37"
             {
             "Name" = "8:ControleSe"
             "Arguments" = "8:"
@@ -377,13 +359,13 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_FD19AAB8BEE6484FB7CE4AFF0F81962E"
-            "Folder" = "8:_C6868C6D11294EF198B49E7C5F8CFDF1"
+            "Target" = "8:_670B7B41CF5F47C68D1AFF9AD00C9BAC"
+            "Folder" = "8:_8AB2DEA3C0F74522B1A963E932FB03D9"
             "WorkingFolder" = "8:_A87F84DE32CF45E7BC3A3E385D7B7305"
             "Icon" = "8:_F2CDDBBE70374CA5A4E167C8D88F432B"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_59C900B1628644ECA965C6632D58FA7A"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_C960F76A0EC0482FA6D466F5F4D5E945"
             {
             "Name" = "8:ControleSe"
             "Arguments" = "8:"
@@ -391,8 +373,8 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_FD19AAB8BEE6484FB7CE4AFF0F81962E"
-            "Folder" = "8:_8AB2DEA3C0F74522B1A963E932FB03D9"
+            "Target" = "8:_670B7B41CF5F47C68D1AFF9AD00C9BAC"
+            "Folder" = "8:_C6868C6D11294EF198B49E7C5F8CFDF1"
             "WorkingFolder" = "8:_A87F84DE32CF45E7BC3A3E385D7B7305"
             "Icon" = "8:_F2CDDBBE70374CA5A4E167C8D88F432B"
             "Feature" = "8:"
@@ -410,7 +392,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_B6232BBFD1F042C1A403A40BDDDC8FD4"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Progresso"
+                    "DisplayName" = "8:Progress"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminProgressDlg.wid"
@@ -454,7 +436,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_49A3055D8ECA42C9B8DE0571F85D98F4"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Bem-vindo"
+                    "DisplayName" = "8:Welcome"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdWelcomeDlg.wid"
@@ -502,7 +484,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_AA36E307C45F4433BB6CCE188B0848EA"
                     {
                     "Sequence" = "3:300"
-                    "DisplayName" = "8:Confirmar Instalação"
+                    "DisplayName" = "8:Confirm Installation"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdConfirmDlg.wid"
@@ -524,7 +506,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_D8450B32FA844ECE96FD6D714515F0C8"
                     {
                     "Sequence" = "3:200"
-                    "DisplayName" = "8:Pasta de Instalação"
+                    "DisplayName" = "8:Installation Folder"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdFolderDlg.wid"
@@ -568,7 +550,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_9337C395A11E493CAACC7A36B9DE61BE"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Concluído"
+                    "DisplayName" = "8:Finished"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdFinishedDlg.wid"
@@ -618,7 +600,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_111F4C1F354A448ABB00C676798B25F3"
                     {
                     "Sequence" = "3:300"
-                    "DisplayName" = "8:Confirmar Instalação"
+                    "DisplayName" = "8:Confirm Installation"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminConfirmDlg.wid"
@@ -640,7 +622,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_3B0CC9FE81514B0A992E5707EEBE8B12"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Bem-vindo"
+                    "DisplayName" = "8:Welcome"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminWelcomeDlg.wid"
@@ -688,7 +670,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_79AD597740C94556B8A22650FB0B6FE3"
                     {
                     "Sequence" = "3:200"
-                    "DisplayName" = "8:Pasta de Instalação"
+                    "DisplayName" = "8:Installation Folder"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminFolderDlg.wid"
@@ -719,7 +701,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_C43128F6B88B4DEE88C42E116B94B1CA"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Progresso"
+                    "DisplayName" = "8:Progress"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdProgressDlg.wid"
@@ -769,7 +751,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_3D7BB9309F3F44A8A89761EE31A1C702"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Concluído"
+                    "DisplayName" = "8:Finished"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminFinishedDlg.wid"
@@ -826,7 +808,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_7336EA55582A4F6498FD9247B7CFE769"
             {
-            "SourcePath" = "8:..\\ControleSe\\obj\\Debug\\net5.0-windows\\ControleSe.dll"
+            "SourcePath" = "8:..\\ControleSe\\obj\\Release\\net5.0-windows\\ControleSe.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_A87F84DE32CF45E7BC3A3E385D7B7305"
@@ -854,7 +836,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_E5A49F9232DC4927B60CF1E47A364737"
             {
-            "SourcePath" = "8:..\\ControleSe\\obj\\Debug\\net5.0-windows\\apphost.exe"
+            "SourcePath" = "8:..\\ControleSe\\obj\\Release\\net5.0-windows\\apphost.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_A87F84DE32CF45E7BC3A3E385D7B7305"
