@@ -17,7 +17,7 @@ namespace ControleSe.Repositorio.Contexto.Map
             entity.HasKey(m => m.Id);
             entity.Property(m => m.Nome).HasMaxLength(200).IsRequired();
             entity.Property(m => m.Descricao).HasMaxLength(400).IsRequired(false);
-            entity.Property(m => m.Valor).HasColumnType("decimal(65, 2)").HasDefaultValue(0).IsRequired();
+            entity.Property(m => m.Valor).HasColumnType("decimal(18, 2)").HasDefaultValue(0).IsRequired();
             entity.Property(m => m.TipoDivida).HasConversion<int>();
             entity.Property(m => m.DataVencimento).HasColumnType("date").IsRequired();
             entity.Property(m => m.DataPagamento).HasColumnType("date").IsRequired(false);

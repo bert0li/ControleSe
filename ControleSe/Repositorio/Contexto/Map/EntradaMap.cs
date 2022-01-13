@@ -15,7 +15,7 @@ namespace ControleSe.Repositorio.Contexto.Map
         {
             entity.ToTable("Entrada");
             entity.HasKey(m => m.Id);
-            entity.Property(m => m.ValorEntrada).HasColumnType("decimal(65, 2)").HasDefaultValue(0).IsRequired();
+            entity.Property(m => m.ValorEntrada).HasColumnType("decimal(18, 2)").HasDefaultValue(0).IsRequired();
             entity.Property(m => m.DataEntrada).HasColumnType("date").IsRequired();
             entity.Property(m => m.Observacao).HasMaxLength(150).IsRequired(false);
             entity.Ignore(m => m.EhIncluir);
