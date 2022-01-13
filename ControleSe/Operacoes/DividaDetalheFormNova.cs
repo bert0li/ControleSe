@@ -135,40 +135,48 @@ namespace ControleSe.Operacoes
 
         private void Pagar()
         {
-            if (_divida.Pago != true)
+            try
             {
-                if (Msg.Pergunta("Deseja realmente pagar?") == DialogResult.Yes)
+                if (_divida.Pago != true)
                 {
-                    if (_servico.Pagar(_divida, _usuario))
+                    if (Msg.Pergunta("Deseja realmente pagar?") == DialogResult.Yes)
                     {
-                        Msg.Informacao("Divida paga.");
-
-                        if (_divida.TipoDivida == TipoDivida.Fixa)
+                        if (_servico.Pagar(_divida, _usuario))
                         {
-                            if (Msg.Pergunta("Esse é uma divida FIXA. Deseja reabri-lá?") == DialogResult.Yes)
-                            {
-                                using (var form = new DataNovoVencimentoForm())
-                                {
-                                    form.ShowDialog();
-                                    _dataNovoVencimento = form.NovoVencimento;
-                                    form.Close();
-                                }
+                            Msg.Informacao("Divida paga.");
 
-                                if (_servico.ReabrirDivida(_usuario, _divida, _dataNovoVencimento))
+                            if (_divida.TipoDivida == TipoDivida.Fixa)
+                            {
+                                if (Msg.Pergunta("Esse é uma divida FIXA. Deseja reabri-lá?") == DialogResult.Yes)
                                 {
-                                    Msg.Informacao("Divida reaberta com sucesso.");
-                                    Close();
+                                    using (var form = new DataNovoVencimentoForm())
+                                    {
+                                        form.ShowDialog();
+                                        _dataNovoVencimento = form.NovoVencimento;
+                                        form.Close();
+                                    }
+
+                                    if (_servico.ReabrirDivida(_usuario, _divida, _dataNovoVencimento))
+                                    {
+                                        Msg.Informacao("Divida reaberta com sucesso.");
+                                        Close();
+                                    }
                                 }
                             }
+                            else
+                                Close();
                         }
-                        else
-                            Close();
                     }
                 }
+                else
+                {
+                    Msg.Informacao("Divida já paga.");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Msg.Informacao("Divida já paga.");
+                ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
+                Msg.Erro($"[Erro]:{ex.Message} - [StackTrace]:{ex.StackTrace}");
             }
         }
 

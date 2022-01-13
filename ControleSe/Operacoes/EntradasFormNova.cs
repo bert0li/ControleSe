@@ -1,6 +1,7 @@
 ﻿using ControleSe.Entidade;
 using ControleSe.Servico;
 using ControleSe.Utilitario;
+using ControleSe.Utilitario.Splash;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -66,7 +67,22 @@ namespace ControleSe.Operacoes
 
         private void ExcluirEntrada()
         {
-            // TODO: Implementar
+            try
+            {
+                if (Msg.Pergunta("Deseja realmente excluir?") == DialogResult.Yes)
+                {
+                    if (_servico.Excluir(_entrada, _usuario))
+                    {
+                        ExibirSplash();
+                        BindingEntradas();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
+                Msg.Erro($"[Erro]:{ex.Message}\n[StackTrace]:{ex.StackTrace}");
+            }
         }
 
         private void Pesquisar()
@@ -91,9 +107,19 @@ namespace ControleSe.Operacoes
                 _entrada = grid.Rows[e.RowIndex].DataBoundItem as Entrada;
         }
 
+        private void ExibirSplash()
+        {
+            using (var formSplah = new DeletarSplash())
+            {
+                formSplah.ShowDialog();
+            }
+        }
+
         private void grid_CellClick(object sender, DataGridViewCellEventArgs e) => LinhasSelecionada(e);
 
         private void btnIncluir_Click(object sender, EventArgs e) => IncluirEntrada();
+
+        private void btnExcluir_Click(object sender, EventArgs e) => ExcluirEntrada();
 
         private void btnPesquisa_Click(object sender, EventArgs e) => Pesquisar();
 

@@ -65,7 +65,7 @@ namespace ControleSe.Servico
                 {
                     entradas = contexto.Entrada
                                        .Include(i => i.Usuario)
-                                       .Where(w => 
+                                       .Where(w =>
                                               w.UsuarioId == usuario.Id &&
                                               w.DataEntrada >= dataDe &&
                                               w.DataEntrada <= dataAteCorreta)
@@ -82,10 +82,10 @@ namespace ControleSe.Servico
 
         public bool Salvar(Entrada entrada, Usuario usuarioLogado)
         {
-            EhValido = false;
-
             try
             {
+                EhValido = false;
+
                 using (var contexto = new Contexto())
                 {
                     if (entrada != null)
@@ -96,13 +96,37 @@ namespace ControleSe.Servico
                         EhValido = true;
                     }
                 }
+
+                return EhValido;
             }
             catch (Exception)
             {
                 throw;
             }
+        }
 
-            return EhValido;
+        public bool Excluir(Entrada entrada, Usuario usuarioLogado)
+        {
+            try
+            {
+                EhValido = false;
+
+                if (RetirarValorNoCofre(entrada.ValorEntrada, usuarioLogado))
+                {
+                    using (var contexto = new Contexto())
+                    {
+                        contexto.Entrada.Remove(entrada);
+                        contexto.SaveChanges();
+                        EhValido = true;
+                    }
+                }
+
+                return EhValido;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         private void AdicionarValorNoCofre(decimal valor, Usuario usuarioLogado)
@@ -130,6 +154,46 @@ namespace ControleSe.Servico
 
                     contexto.SaveChanges();
                 }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private bool RetirarValorNoCofre(decimal valor, Usuario usuarioLogado)
+        {
+            try
+            {
+                EhValido = false;
+
+                using (var contexto = new Contexto())
+                {
+                    Cofre cofre = contexto.Cofre
+                                          .Where(w => w.UsuarioId == usuarioLogado.Id)
+                                          .FirstOrDefault();
+
+                    if (cofre != null)
+                    {
+                        if (cofre.TotalCobre >= valor)
+                        {
+                            cofre.RetirarValor(valor);
+                            contexto.Cofre.Update(cofre);
+                            contexto.SaveChanges();
+                            EhValido = true;
+                        }
+                        else
+                        {
+                            Msg.Informacao($"Valor insuficiente no cofre para remover a entrada desejada.\nValor no cofre: {cofre.TotalCobre}\nValor divida: {valor}");
+                        }
+                    }
+                    else
+                    {
+                        Msg.Informacao("O cofre esta vazio. Não é possível remover a entrada desejada.");
+                    }
+                }
+
+                return EhValido;
             }
             catch (Exception)
             {
