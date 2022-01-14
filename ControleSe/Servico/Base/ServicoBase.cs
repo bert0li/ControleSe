@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ControleSe.Entidade.Base
+namespace ControleSe.Servico.Base
 {
     public abstract class ServicoBase
     {

@@ -41,6 +41,7 @@ namespace ControleSe
             this.panelRodape = new System.Windows.Forms.Panel();
             this.lblRodapeDataHora = new System.Windows.Forms.Label();
             this.lblRodapeUsuarioLogado = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelCabecalho.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelRodape.SuspendLayout();
@@ -213,12 +214,25 @@ namespace ControleSe
             this.lblRodapeUsuarioLogado.Text = "Usuário logado:";
             this.lblRodapeUsuarioLogado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Yu Gothic Light", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.Gray;
+            this.label1.Location = new System.Drawing.Point(200, 52);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(839, 405);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "ControleSe";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MenuPrincipalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1039, 502);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panelRodape);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelCabecalho);
@@ -247,5 +261,6 @@ namespace ControleSe
         private System.Windows.Forms.Panel panelRodape;
         private System.Windows.Forms.Label lblRodapeUsuarioLogado;
         private System.Windows.Forms.Label lblRodapeDataHora;
+        private System.Windows.Forms.Label label1;
     }
 }

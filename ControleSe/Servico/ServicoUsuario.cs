@@ -1,5 +1,5 @@
 ﻿using ControleSe.Entidade;
-using ControleSe.Entidade.Base;
+using ControleSe.Servico.Base;
 using ControleSe.Repositorio.Contexto;
 using ControleSe.Utilitario;
 using Microsoft.EntityFrameworkCore;

@@ -12,9 +12,6 @@ namespace ControleSe.Utilitario.Splash
 {
     public partial class LoginSplash : Form
     {
-        private Timer _timer = null;
-        private int _contador = 0;
-
         public LoginSplash()
         {
             InitializeComponent();
@@ -23,18 +20,29 @@ namespace ControleSe.Utilitario.Splash
 
         private void IniciarSplash()
         {
-            _timer = new Timer() { Interval = 1000 };
-            _timer.Start();
-            _timer.Tick += (o, e) =>
+            Timer timer = new Timer() { Interval = 1000 };
+            int contador = 0;
+
+            timer.Start();
+            timer.Tick += (o, e) =>
             {
-                if (_contador == 4)
+                if (contador == 1)
+                    lblInfo.Text = "Aguarde, carregando informações.";
+
+                if (contador == 2)
+                    lblInfo.Text = "Aguarde, carregando informações..";
+
+                if (contador == 3)
+                    lblInfo.Text = "Aguarde, carregando informações...";
+
+                if (contador == 4)
                 {
-                    _timer.Stop();
-                    _timer.Dispose();
+                    timer.Stop();
+                    timer.Dispose();
                     Close();
                 }
 
-                _contador++;
+                contador++;
             };
         }
     }

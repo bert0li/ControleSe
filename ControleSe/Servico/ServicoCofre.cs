@@ -1,6 +1,6 @@
 ﻿using ControleSe.Entidade;
-using ControleSe.Entidade.Base;
 using ControleSe.Repositorio.Contexto;
+using ControleSe.Servico.Base;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
