@@ -29,7 +29,9 @@ namespace ControleSe
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipalForm));
             this.panelCabecalho = new System.Windows.Forms.Panel();
+            this.pbxIcone = new System.Windows.Forms.PictureBox();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
             this.panelMenu = new System.Windows.Forms.Panel();
@@ -43,6 +45,7 @@ namespace ControleSe
             this.lblRodapeUsuarioLogado = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelCabecalho.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxIcone)).BeginInit();
             this.panelMenu.SuspendLayout();
             this.panelRodape.SuspendLayout();
             this.SuspendLayout();
@@ -50,6 +53,7 @@ namespace ControleSe
             // panelCabecalho
             // 
             this.panelCabecalho.BackColor = System.Drawing.Color.DarkGray;
+            this.panelCabecalho.Controls.Add(this.pbxIcone);
             this.panelCabecalho.Controls.Add(this.btnMinimizar);
             this.panelCabecalho.Controls.Add(this.btnFechar);
             this.panelCabecalho.Dock = System.Windows.Forms.DockStyle.Top;
@@ -57,6 +61,17 @@ namespace ControleSe
             this.panelCabecalho.Name = "panelCabecalho";
             this.panelCabecalho.Size = new System.Drawing.Size(1039, 52);
             this.panelCabecalho.TabIndex = 0;
+            // 
+            // pbxIcone
+            // 
+            this.pbxIcone.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pbxIcone.Image = ((System.Drawing.Image)(resources.GetObject("pbxIcone.Image")));
+            this.pbxIcone.Location = new System.Drawing.Point(0, 0);
+            this.pbxIcone.Name = "pbxIcone";
+            this.pbxIcone.Size = new System.Drawing.Size(55, 52);
+            this.pbxIcone.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxIcone.TabIndex = 2;
+            this.pbxIcone.TabStop = false;
             // 
             // btnMinimizar
             // 
@@ -241,6 +256,7 @@ namespace ControleSe
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelCabecalho.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxIcone)).EndInit();
             this.panelMenu.ResumeLayout(false);
             this.panelRodape.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -262,5 +278,6 @@ namespace ControleSe
         private System.Windows.Forms.Label lblRodapeUsuarioLogado;
         private System.Windows.Forms.Label lblRodapeDataHora;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pbxIcone;
     }
 }

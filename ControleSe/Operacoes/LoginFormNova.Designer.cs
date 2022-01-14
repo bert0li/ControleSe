@@ -29,7 +29,9 @@ namespace ControleSe.Operacoes
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginFormNova));
             this.panelLogin = new System.Windows.Forms.Panel();
+            this.pbxIcone = new System.Windows.Forms.PictureBox();
             this.tlpBotoes = new System.Windows.Forms.TableLayoutPanel();
             this.btnEntrar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
@@ -42,6 +44,7 @@ namespace ControleSe.Operacoes
             this.lblLogin = new System.Windows.Forms.Label();
             this.btnFechar = new System.Windows.Forms.Button();
             this.panelLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxIcone)).BeginInit();
             this.tlpBotoes.SuspendLayout();
             this.tlpLogin.SuspendLayout();
             this.panelCabecalho.SuspendLayout();
@@ -53,13 +56,24 @@ namespace ControleSe.Operacoes
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelLogin.BackColor = System.Drawing.Color.Silver;
+            this.panelLogin.Controls.Add(this.pbxIcone);
             this.panelLogin.Controls.Add(this.tlpBotoes);
             this.panelLogin.Controls.Add(this.tlpLogin);
             this.panelLogin.Controls.Add(this.panelCabecalho);
             this.panelLogin.Location = new System.Drawing.Point(12, 12);
             this.panelLogin.Name = "panelLogin";
-            this.panelLogin.Size = new System.Drawing.Size(309, 228);
+            this.panelLogin.Size = new System.Drawing.Size(382, 197);
             this.panelLogin.TabIndex = 0;
+            // 
+            // pbxIcone
+            // 
+            this.pbxIcone.Image = ((System.Drawing.Image)(resources.GetObject("pbxIcone.Image")));
+            this.pbxIcone.Location = new System.Drawing.Point(258, 64);
+            this.pbxIcone.Name = "pbxIcone";
+            this.pbxIcone.Size = new System.Drawing.Size(120, 120);
+            this.pbxIcone.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxIcone.TabIndex = 4;
+            this.pbxIcone.TabStop = false;
             // 
             // tlpBotoes
             // 
@@ -68,11 +82,11 @@ namespace ControleSe.Operacoes
             this.tlpBotoes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpBotoes.Controls.Add(this.btnEntrar, 0, 0);
             this.tlpBotoes.Controls.Add(this.btnSair, 1, 0);
-            this.tlpBotoes.Location = new System.Drawing.Point(96, 179);
+            this.tlpBotoes.Location = new System.Drawing.Point(87, 149);
             this.tlpBotoes.Name = "tlpBotoes";
             this.tlpBotoes.RowCount = 1;
             this.tlpBotoes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpBotoes.Size = new System.Drawing.Size(196, 35);
+            this.tlpBotoes.Size = new System.Drawing.Size(162, 35);
             this.tlpBotoes.TabIndex = 6;
             // 
             // btnEntrar
@@ -81,10 +95,10 @@ namespace ControleSe.Operacoes
             this.btnEntrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
             this.btnEntrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEntrar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEntrar.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEntrar.Location = new System.Drawing.Point(3, 3);
             this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Size = new System.Drawing.Size(92, 29);
+            this.btnEntrar.Size = new System.Drawing.Size(75, 29);
             this.btnEntrar.TabIndex = 0;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
@@ -96,10 +110,10 @@ namespace ControleSe.Operacoes
             this.btnSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
             this.btnSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSair.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSair.Location = new System.Drawing.Point(101, 3);
+            this.btnSair.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSair.Location = new System.Drawing.Point(84, 3);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(92, 29);
+            this.btnSair.Size = new System.Drawing.Size(75, 29);
             this.btnSair.TabIndex = 0;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
@@ -108,18 +122,18 @@ namespace ControleSe.Operacoes
             // tlpLogin
             // 
             this.tlpLogin.ColumnCount = 2;
-            this.tlpLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.35314F));
-            this.tlpLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.64687F));
+            this.tlpLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.73494F));
+            this.tlpLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.26506F));
             this.tlpLogin.Controls.Add(this.lblUsuario, 0, 0);
             this.tlpLogin.Controls.Add(this.lblSenha, 0, 1);
             this.tlpLogin.Controls.Add(this.txtUsuario, 1, 0);
             this.tlpLogin.Controls.Add(this.txtSenha, 1, 1);
-            this.tlpLogin.Location = new System.Drawing.Point(3, 85);
+            this.tlpLogin.Location = new System.Drawing.Point(3, 67);
             this.tlpLogin.Name = "tlpLogin";
             this.tlpLogin.RowCount = 2;
             this.tlpLogin.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.68421F));
             this.tlpLogin.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.31579F));
-            this.tlpLogin.Size = new System.Drawing.Size(289, 68);
+            this.tlpLogin.Size = new System.Drawing.Size(249, 68);
             this.tlpLogin.TabIndex = 4;
             // 
             // lblUsuario
@@ -129,7 +143,7 @@ namespace ControleSe.Operacoes
             this.lblUsuario.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblUsuario.Location = new System.Drawing.Point(3, 0);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(84, 33);
+            this.lblUsuario.Size = new System.Drawing.Size(78, 33);
             this.lblUsuario.TabIndex = 0;
             this.lblUsuario.Text = "Usuário:";
             this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -141,7 +155,7 @@ namespace ControleSe.Operacoes
             this.lblSenha.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblSenha.Location = new System.Drawing.Point(3, 33);
             this.lblSenha.Name = "lblSenha";
-            this.lblSenha.Size = new System.Drawing.Size(84, 35);
+            this.lblSenha.Size = new System.Drawing.Size(78, 35);
             this.lblSenha.TabIndex = 0;
             this.lblSenha.Text = "Senha:";
             this.lblSenha.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -150,9 +164,9 @@ namespace ControleSe.Operacoes
             // 
             this.txtUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtUsuario.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtUsuario.Location = new System.Drawing.Point(93, 3);
+            this.txtUsuario.Location = new System.Drawing.Point(87, 3);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(193, 27);
+            this.txtUsuario.Size = new System.Drawing.Size(159, 27);
             this.txtUsuario.TabIndex = 1;
             this.txtUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsuario_KeyDown);
             // 
@@ -160,9 +174,9 @@ namespace ControleSe.Operacoes
             // 
             this.txtSenha.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSenha.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSenha.Location = new System.Drawing.Point(93, 36);
+            this.txtSenha.Location = new System.Drawing.Point(87, 36);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(193, 27);
+            this.txtSenha.Size = new System.Drawing.Size(159, 27);
             this.txtSenha.TabIndex = 1;
             this.txtSenha.UseSystemPasswordChar = true;
             this.txtSenha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSenha_KeyDown);
@@ -175,7 +189,7 @@ namespace ControleSe.Operacoes
             this.panelCabecalho.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCabecalho.Location = new System.Drawing.Point(0, 0);
             this.panelCabecalho.Name = "panelCabecalho";
-            this.panelCabecalho.Size = new System.Drawing.Size(309, 52);
+            this.panelCabecalho.Size = new System.Drawing.Size(382, 52);
             this.panelCabecalho.TabIndex = 3;
             // 
             // lblLogin
@@ -199,7 +213,7 @@ namespace ControleSe.Operacoes
             this.btnFechar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDark;
             this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFechar.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnFechar.Location = new System.Drawing.Point(258, 0);
+            this.btnFechar.Location = new System.Drawing.Point(331, 0);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(51, 52);
             this.btnFechar.TabIndex = 0;
@@ -212,12 +226,13 @@ namespace ControleSe.Operacoes
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(333, 252);
+            this.ClientSize = new System.Drawing.Size(406, 221);
             this.Controls.Add(this.panelLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoginFormNova";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panelLogin.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxIcone)).EndInit();
             this.tlpBotoes.ResumeLayout(false);
             this.tlpLogin.ResumeLayout(false);
             this.tlpLogin.PerformLayout();
@@ -240,5 +255,6 @@ namespace ControleSe.Operacoes
         private System.Windows.Forms.TableLayoutPanel tlpBotoes;
         private System.Windows.Forms.Button btnEntrar;
         private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.PictureBox pbxIcone;
     }
 }

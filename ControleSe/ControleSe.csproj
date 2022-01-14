@@ -76,6 +76,9 @@
     <None Update="Arquivos\Imagens\cofreMenu.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Arquivos\Imagens\ControleSeLogoGrande.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Arquivos\Imagens\deletar.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -106,7 +109,7 @@
     <None Update="Arquivos\Logo-Sistema\ControleSe.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Arquivos\Logo-Sistema\ControleSe.png">
+    <None Update="Arquivos\Logo-Sistema\ControleSeLogoPequeno.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

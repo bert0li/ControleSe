@@ -27,13 +27,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_DD6CD639B773437CA159F67578B4E2C3"
+        "MsmKey" = "8:_B829B1B7E316476F88E4DDD80491CD9A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_F2CDDBBE70374CA5A4E167C8D88F432B"
+        "MsmKey" = "8:_DD6CD639B773437CA159F67578B4E2C3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -154,9 +154,9 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F2CDDBBE70374CA5A4E167C8D88F432B"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B829B1B7E316476F88E4DDD80491CD9A"
             {
-            "SourcePath" = "8:..\\ControleSe\\Arquivos\\Logo-Sistema\\ControleSe.ico"
+            "SourcePath" = "8:..\\..\\..\\..\\Downloads\\cat.ico"
             "TargetName" = "8:ControleSe.ico"
             "Tag" = "8:"
             "Folder" = "8:_A87F84DE32CF45E7BC3A3E385D7B7305"
@@ -362,7 +362,7 @@
             "Target" = "8:_8BDFF54FE6EA4951B66809DC4A2F4C51"
             "Folder" = "8:_C6868C6D11294EF198B49E7C5F8CFDF1"
             "WorkingFolder" = "8:_A87F84DE32CF45E7BC3A3E385D7B7305"
-            "Icon" = "8:_F2CDDBBE70374CA5A4E167C8D88F432B"
+            "Icon" = "8:_B829B1B7E316476F88E4DDD80491CD9A"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_BF10CD9767A9415CAA145CC7101BE296"
@@ -376,7 +376,7 @@
             "Target" = "8:_8BDFF54FE6EA4951B66809DC4A2F4C51"
             "Folder" = "8:_8AB2DEA3C0F74522B1A963E932FB03D9"
             "WorkingFolder" = "8:_A87F84DE32CF45E7BC3A3E385D7B7305"
-            "Icon" = "8:_F2CDDBBE70374CA5A4E167C8D88F432B"
+            "Icon" = "8:_B829B1B7E316476F88E4DDD80491CD9A"
             "Feature" = "8:"
             }
         }
@@ -780,7 +780,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_1A610FB0BFC74D8A8C2C99C7BEFBA7CC"
             {
-            "SourcePath" = "8:..\\ControleSe\\obj\\Release\\net5.0-windows\\apphost.exe"
+            "SourcePath" = "8:..\\ControleSe\\obj\\Debug\\net5.0-windows\\apphost.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_A87F84DE32CF45E7BC3A3E385D7B7305"
@@ -836,7 +836,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_DD6CD639B773437CA159F67578B4E2C3"
             {
-            "SourcePath" = "8:..\\ControleSe\\obj\\Release\\net5.0-windows\\ControleSe.dll"
+            "SourcePath" = "8:..\\ControleSe\\obj\\Debug\\net5.0-windows\\ControleSe.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_A87F84DE32CF45E7BC3A3E385D7B7305"
