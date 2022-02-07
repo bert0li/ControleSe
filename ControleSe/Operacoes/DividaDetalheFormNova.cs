@@ -32,6 +32,7 @@ namespace ControleSe.Operacoes
             _divida = divida;
             _usuario = usuarioLogado;
             AtribuirBinding();
+            VerificarSePodePagar();
         }
 
         private void InicializarDatas()
@@ -42,6 +43,10 @@ namespace ControleSe.Operacoes
                 _divida.DataVencimento = dtpDataVencimento.Value;
         }
 
+        private void VerificarSePodePagar() 
+        {
+            btnPagar.Enabled = _divida.Id == 0 ? false : true;
+        } 
 
         /// <summary>
         /// Link com a documentação do código para 

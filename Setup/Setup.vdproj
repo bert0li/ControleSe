@@ -15,25 +15,25 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_1A610FB0BFC74D8A8C2C99C7BEFBA7CC"
+        "MsmKey" = "8:_2AA8FAEA6ED3476EAB7CE7DE48999F2F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_8BDFF54FE6EA4951B66809DC4A2F4C51"
+        "MsmKey" = "8:_9431B1A3905D4C22B9129C5720A04EF0"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_B829B1B7E316476F88E4DDD80491CD9A"
+        "MsmKey" = "8:_A036DE21D24F48EEB2A259D427A8EEA2"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_DD6CD639B773437CA159F67578B4E2C3"
+        "MsmKey" = "8:_C07E9A9B7C5B4A41B112C2D0C12D8FC9"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -134,9 +134,9 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8BDFF54FE6EA4951B66809DC4A2F4C51"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A036DE21D24F48EEB2A259D427A8EEA2"
             {
-            "SourcePath" = "8:..\\ControleSe\\bin\\Release\\net5.0-windows\\ControleSe.exe"
+            "SourcePath" = "8:..\\ControleSe\\bin\\Debug\\net5.0-windows\\ControleSe.exe"
             "TargetName" = "8:ControleSe.exe"
             "Tag" = "8:"
             "Folder" = "8:_A87F84DE32CF45E7BC3A3E385D7B7305"
@@ -154,9 +154,9 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B829B1B7E316476F88E4DDD80491CD9A"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C07E9A9B7C5B4A41B112C2D0C12D8FC9"
             {
-            "SourcePath" = "8:..\\..\\..\\..\\Downloads\\cat.ico"
+            "SourcePath" = "8:..\\ControleSe\\Arquivos\\Logo-Sistema\\ControleSe.ico"
             "TargetName" = "8:ControleSe.ico"
             "Tag" = "8:"
             "Folder" = "8:_A87F84DE32CF45E7BC3A3E385D7B7305"
@@ -231,7 +231,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:ControleSe"
         "ProductCode" = "8:{827F0AA3-C343-48B8-9D0C-B47153755EB8}"
-        "PackageCode" = "8:{4C3C4A80-CC2A-4089-8D95-879271E58B18}"
+        "PackageCode" = "8:{1270E635-C50D-4836-8B60-FA782BF06E82}"
         "UpgradeCode" = "8:{2456615C-38E3-45C0-A70B-B753BD74A128}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -351,7 +351,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_6ECB623B7B824D9B964403F1F0C1263C"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_9ED556DD0D1C4646B449D38882EC6DD9"
             {
             "Name" = "8:ControleSe"
             "Arguments" = "8:"
@@ -359,13 +359,13 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_8BDFF54FE6EA4951B66809DC4A2F4C51"
+            "Target" = "8:_A036DE21D24F48EEB2A259D427A8EEA2"
             "Folder" = "8:_C6868C6D11294EF198B49E7C5F8CFDF1"
             "WorkingFolder" = "8:_A87F84DE32CF45E7BC3A3E385D7B7305"
-            "Icon" = "8:_B829B1B7E316476F88E4DDD80491CD9A"
+            "Icon" = "8:_C07E9A9B7C5B4A41B112C2D0C12D8FC9"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_BF10CD9767A9415CAA145CC7101BE296"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_FD62F3CA34C64AD8B00E5D8CF6E23753"
             {
             "Name" = "8:ControleSe"
             "Arguments" = "8:"
@@ -373,10 +373,10 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_8BDFF54FE6EA4951B66809DC4A2F4C51"
+            "Target" = "8:_A036DE21D24F48EEB2A259D427A8EEA2"
             "Folder" = "8:_8AB2DEA3C0F74522B1A963E932FB03D9"
             "WorkingFolder" = "8:_A87F84DE32CF45E7BC3A3E385D7B7305"
-            "Icon" = "8:_B829B1B7E316476F88E4DDD80491CD9A"
+            "Icon" = "8:_C07E9A9B7C5B4A41B112C2D0C12D8FC9"
             "Feature" = "8:"
             }
         }
@@ -778,7 +778,7 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_1A610FB0BFC74D8A8C2C99C7BEFBA7CC"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_2AA8FAEA6ED3476EAB7CE7DE48999F2F"
             {
             "SourcePath" = "8:..\\ControleSe\\obj\\Debug\\net5.0-windows\\apphost.exe"
             "TargetName" = "8:"
@@ -806,7 +806,7 @@
                 {
                 }
             }
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_1B1B6FFFBEB54097B9D332F0C2193A28"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_5710D17AD122474AA3AB6C2FFFA20435"
             {
             "SourcePath" = "8:"
             "TargetName" = "8:"
@@ -834,7 +834,7 @@
                 {
                 }
             }
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_DD6CD639B773437CA159F67578B4E2C3"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_9431B1A3905D4C22B9129C5720A04EF0"
             {
             "SourcePath" = "8:..\\ControleSe\\obj\\Debug\\net5.0-windows\\ControleSe.dll"
             "TargetName" = "8:"
