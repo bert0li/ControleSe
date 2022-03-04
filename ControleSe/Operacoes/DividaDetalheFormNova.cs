@@ -167,6 +167,8 @@ namespace ControleSe.Operacoes
                                         Close();
                                     }
                                 }
+                                else
+                                    Close();
                             }
                             else
                                 Close();

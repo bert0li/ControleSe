@@ -1,4 +1,5 @@
 ﻿using ControleSe.Entidade;
+using ControleSe.Enumerador;
 using ControleSe.Repositorio.Contexto;
 using ControleSe.Servico.Base;
 using ControleSe.Utilitario;
@@ -54,10 +55,9 @@ namespace ControleSe.Servico
 
                 using (var contexto = new Contexto())
                 {
-                    dividas = contexto.Divida
-                                      .Include(i => i.Usuario)
-                                      .Where(w => w.UsuarioId == usuarioLogado.Id)
-                                      .ToList();
+                    dividas = contexto.Divida.Include(i => i.Usuario)
+                                             .Where(w => w.UsuarioId == usuarioLogado.Id)
+                                             .ToList();
                 }
 
                 return dividas;
@@ -80,11 +80,10 @@ namespace ControleSe.Servico
                     {
                         using (var contexto = new Contexto())
                         {
-                            Divida dividaParaPagar = contexto.Divida
-                                                             .Where(w => 
-                                                                    w.Id == divida.Id &&
-                                                                    w.UsuarioId == usuarioLogado.Id)
-                                                                    .FirstOrDefault();
+                            Divida dividaParaPagar = contexto.Divida.Where(w =>
+                                                                           w.Id == divida.Id &&
+                                                                           w.UsuarioId == usuarioLogado.Id)
+                                                                           .FirstOrDefault();
 
                             if (dividaParaPagar != null)
                             {
@@ -116,11 +115,10 @@ namespace ControleSe.Servico
                 {
                     using (var contexto = new Contexto())
                     {
-                        Divida dividaPesquisa = contexto.Divida
-                                                        .Where(w =>
-                                                               w.Id == divida.Id &&
-                                                               w.UsuarioId == usuarioLogado.Id)
-                                                               .FirstOrDefault();
+                        Divida dividaPesquisa = contexto.Divida.Where(w =>
+                                                                      w.Id == divida.Id &&
+                                                                      w.UsuarioId == usuarioLogado.Id)
+                                                                      .FirstOrDefault();
 
                         if (dividaPesquisa != null)
                         {
@@ -206,9 +204,8 @@ namespace ControleSe.Servico
 
                 using (var contexto = new Contexto())
                 {
-                    Cofre cofre = contexto.Cofre
-                                          .Where(w => w.UsuarioId == usuarioLogado.Id)
-                                          .FirstOrDefault();
+                    Cofre cofre = contexto.Cofre.Where(w => w.UsuarioId == usuarioLogado.Id)
+                                                .FirstOrDefault();
 
                     if (cofre != null)
                     {
@@ -238,31 +235,98 @@ namespace ControleSe.Servico
             }
         }
 
-        public IEnumerable<Divida> PesquisarDividas(Usuario usuarioLogado, DateTime dataDe, DateTime dataAte, bool dividasPagas)
+        public IEnumerable<Divida> PesquisarDividas(Usuario usuarioLogado, DateTime dataDe,
+                                                    DateTime dataAte, string tipoDivida,
+                                                    string dataPor, bool dividasPagas)
         {
             try
             {
                 IEnumerable<Divida> dividasPesquisa = null;
+                TipoDivida tipoDividaConsulta = TipoDivida.Fixa;
+                DateTime dataDePesquisa = dataDe.Date;
+                DateTime dataAtePesquisa = dataAte.Date;
 
                 using (var contexto = new Contexto())
                 {
+
+                    dividasPesquisa = contexto.Divida.Where(w => w.UsuarioId == usuarioLogado.Id).ToList();
+
+                    if (tipoDivida != "Selecione...")
+                    {
+                        if (tipoDivida == "Fixa")
+                            tipoDividaConsulta = TipoDivida.Fixa;
+
+                        if (tipoDivida == "Não-Fixa")
+                            tipoDividaConsulta = TipoDivida.NaoFixa;
+
+                        dividasPesquisa = PesquisarPorTipoDivida(dividasPesquisa, tipoDividaConsulta);
+                    }
+
+                    if (dataPor != "Selecione...")
+                    {
+                        dividasPesquisa = PesquisarDataPor(dividasPesquisa, dataPor, dataDePesquisa, dataAtePesquisa);
+                    }
+
                     if (dividasPagas)
-                    {
-                        dividasPesquisa = contexto.Divida
-                                                  .Where(w =>
-                                                         w.UsuarioId == usuarioLogado.Id &&
-                                                         w.DataPagamento >= dataDe &&
-                                                         w.DataPagamento <= dataAte &&
-                                                         w.Pago == dividasPagas)
-                                                         .ToList();
-                    }
-                    else
-                    {
-                        dividasPesquisa = contexto.Divida
-                                                  .Where(w => w.UsuarioId == usuarioLogado.Id)
-                                                  .ToList();
-                    }
+                        dividasPesquisa = PesquisarDiidasPagas(dividasPesquisa, dividasPagas);
                 }
+
+                return dividasPesquisa;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private IEnumerable<Divida> PesquisarPorTipoDivida(IEnumerable<Divida> dividasPesquisa, TipoDivida tipoDivida)
+        {
+            try
+            {
+                dividasPesquisa = dividasPesquisa.Where(w => w.TipoDivida == tipoDivida).ToList();
+
+                return dividasPesquisa;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private IEnumerable<Divida> PesquisarDataPor(IEnumerable<Divida> dividasPesquisa, string dataPor, 
+                                                     DateTime dataDe, DateTime dataAte)
+        {
+            try
+            {
+                if (dataPor.Contains("Pagamento"))
+                {
+                    dividasPesquisa = dividasPesquisa.Where(w =>
+                                                            w.DataPagamento >= dataDe &&
+                                                            w.DataPagamento <= dataAte)
+                                                            .ToList();
+                }
+
+                if (dataPor.Contains("Vencimento"))
+                {
+                    dividasPesquisa = dividasPesquisa.Where(w =>
+                                                            w.DataVencimento >= dataDe &&
+                                                            w.DataVencimento <= dataAte)
+                                                            .ToList();
+                }
+
+                return dividasPesquisa;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private IEnumerable<Divida> PesquisarDiidasPagas(IEnumerable<Divida> dividasPesquisa, bool dividaPaga)
+        {
+            try
+            {
+                dividasPesquisa = dividasPesquisa.Where(w => w.Pago == dividaPaga).ToList();
 
                 return dividasPesquisa;
             }

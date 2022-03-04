@@ -35,6 +35,8 @@ namespace ControleSe.Operacoes
                 _servico = _servico ?? new ServicoDivida();
                 grid.AutoGenerateColumns = false;
                 grid.DataSource = _servico.ObterDividas(_usuario);
+                cbxTipoDivida.SelectedIndex = 0;
+                cbxDataPor.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
@@ -188,7 +190,7 @@ namespace ControleSe.Operacoes
         {
             try
             {
-                grid.DataSource = _servico.PesquisarDividas(_usuario, dtpDe.Value, dtpAte.Value, cbxSomenteDividasPagas.Checked);
+                grid.DataSource = _servico.PesquisarDividas(_usuario, dtpDe.Value, dtpAte.Value, cbxTipoDivida.Text, cbxDataPor.Text, cbxSomenteDividasPagas.Checked);
             }
             catch (Exception ex)
             {

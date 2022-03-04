@@ -25,9 +25,9 @@ namespace ControleSe.Repositorio.Contexto
 
             optionsBuilder.UseMySql(connectionStringMySql, ServerVersion.AutoDetect(connectionStringMySql),
                                     o => o.EnableRetryOnFailure(
-                                            maxRetryCount : 3,
-                                            maxRetryDelay : TimeSpan.FromSeconds(5),
-                                            errorNumbersToAdd : null)
+                                            maxRetryCount: 3,
+                                            maxRetryDelay: TimeSpan.FromSeconds(5),
+                                            errorNumbersToAdd: null)
                                     .MigrationsHistoryTable("HistoricoMigracao"));
 
             //optionsBuilder.UseSqlServer(
