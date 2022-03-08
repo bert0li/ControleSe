@@ -21,24 +21,24 @@ namespace ControleSe.Repositorio.Contexto
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionStringMySql = "server=easyinfo.zapto.org; initial catalog=Bertoli; user id=root; password=casarao08009890";
+            //var connectionStringMySql = "server=easyinfo.zapto.org; initial catalog=Bertoli; user id=root; password=casarao08009890";
 
-            optionsBuilder.UseMySql(connectionStringMySql, ServerVersion.AutoDetect(connectionStringMySql),
-                                    o => o.EnableRetryOnFailure(
-                                            maxRetryCount: 3,
-                                            maxRetryDelay: TimeSpan.FromSeconds(5),
-                                            errorNumbersToAdd: null)
-                                    .MigrationsHistoryTable("HistoricoMigracao"));
+            //optionsBuilder.UseMySql(connectionStringMySql, ServerVersion.AutoDetect(connectionStringMySql),
+            //                        o => o.EnableRetryOnFailure(
+            //                                maxRetryCount: 3,
+            //                                maxRetryDelay: TimeSpan.FromSeconds(5),
+            //                                errorNumbersToAdd: null)
+            //                        .MigrationsHistoryTable("HistoricoMigracao"));
 
-            //optionsBuilder.UseSqlServer(
-            //    //"server=Desenv;initial catalog=ControleSe;user id=sa;password=bertoli1836"
-            //    @"server=CODER\SQLEXPRESS;initial catalog=ControleSe;user id=sa;password=bertoli1836"
-            //    , p =>
-            //      p.EnableRetryOnFailure(
-            //          maxRetryCount: 3,
-            //          maxRetryDelay: TimeSpan.FromSeconds(5),
-            //          errorNumbersToAdd: null)
-            //      .MigrationsHistoryTable("HistoricoMigracao"));
+            optionsBuilder.UseSqlServer(
+                //"server=Desenv;initial catalog=ControleSe;user id=sa;password=bertoli1836"
+                @"server=CODER\SQLEXPRESS;initial catalog=ControleSe;user id=sa;password=bertoli1836"
+                , p =>
+                  p.EnableRetryOnFailure(
+                      maxRetryCount: 3,
+                      maxRetryDelay: TimeSpan.FromSeconds(5),
+                      errorNumbersToAdd: null)
+                  .MigrationsHistoryTable("HistoricoMigracao"));
 
             base.OnConfiguring(optionsBuilder);
         }

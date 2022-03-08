@@ -87,12 +87,24 @@ namespace ControleSe.Operacoes
                 }
             }
         }
-        
+
+        private void CadastrarSe()
+        {
+            using (var form = new UsuarioDetalheFormNova(_servicoUsuario, new Usuario(), true))
+            {
+                form.lblDetalheUsuario.Text = "Cadastro de novo usuário";
+                form.ShowDialog();
+                txtUsuario.Focus();
+            }
+        }
+
         private void btnFechar_Click(object sender, EventArgs e) => Close();        
 
         private void txtUsuario_KeyDown(object sender, KeyEventArgs e) => AcaoAcionada(e);
 
         private void txtSenha_KeyDown(object sender, KeyEventArgs e) => AcaoAcionada(e);
+
+        private void lblCadastrarSe_Click(object sender, EventArgs e) => CadastrarSe();
 
         private void btnEntrar_Click(object sender, EventArgs e) => Entrar();
 

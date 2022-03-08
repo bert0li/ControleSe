@@ -298,10 +298,10 @@ namespace ControleSe.Operacoes
             this.lblDetalheUsuario.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblDetalheUsuario.Location = new System.Drawing.Point(0, 0);
             this.lblDetalheUsuario.Name = "lblDetalheUsuario";
-            this.lblDetalheUsuario.Size = new System.Drawing.Size(187, 52);
+            this.lblDetalheUsuario.Size = new System.Drawing.Size(363, 52);
             this.lblDetalheUsuario.TabIndex = 3;
             this.lblDetalheUsuario.Text = "Detalhe do usuário";
-            this.lblDetalheUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDetalheUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnMinimizar
             // 
@@ -362,7 +362,6 @@ namespace ControleSe.Operacoes
 
         private System.Windows.Forms.Panel panelDetalheUsuario;
         private System.Windows.Forms.Panel panelCabecalho;
-        private System.Windows.Forms.Label lblDetalheUsuario;
         private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.TableLayoutPanel tlpCodigo;
@@ -381,5 +380,6 @@ namespace ControleSe.Operacoes
         private System.Windows.Forms.TableLayoutPanel tlpBotoes;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnSair;
+        public System.Windows.Forms.Label lblDetalheUsuario;
     }
 }

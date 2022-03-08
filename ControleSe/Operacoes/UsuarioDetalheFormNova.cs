@@ -18,12 +18,14 @@ namespace ControleSe.Operacoes
     {
         private ServicoUsuario _servico = null;
         private Usuario _usuario = null;
+        public bool EhNovoUsuario = false;
 
-        public UsuarioDetalheFormNova(ServicoUsuario servico, Usuario usuarioLogado)
+        public UsuarioDetalheFormNova(ServicoUsuario servico, Usuario usuarioLogado, bool ehNovoUsuario = false)
         {
             InitializeComponent();
             _servico = servico;
             _usuario = usuarioLogado;
+            EhNovoUsuario = ehNovoUsuario;
             AtribuirBinding(_usuario);
         }
 
@@ -62,6 +64,10 @@ namespace ControleSe.Operacoes
                     if (_servico.Salvar(_usuario))
                     {
                         ExibirSplash();
+
+                        if (EhNovoUsuario)
+                            Msg.Informacao("Novo usuário cadastrado com sucesso!\nFaça o login com o seu novo usuário (=");
+
                         Close();
                     }
                 }
