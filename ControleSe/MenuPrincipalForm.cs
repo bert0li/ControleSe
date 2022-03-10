@@ -16,21 +16,23 @@ namespace ControleSe
 {
     public partial class MenuPrincipalForm : Form
     {
-        private Usuario _usuario = null;
+        private Usuario _usuarioLogado = null;
         private Timer _timer = null;
+        private ServicoPermissao _servicoPermissao = null;
 
         public MenuPrincipalForm(Usuario usuario)
         {
             InitializeComponent();
-            _usuario = usuario;
+            InicializarSevicoPermissao();
+            _usuarioLogado = usuario;
+            AplicarPermissaoBotoes(_usuarioLogado);
             SetarUsuarioLogado();
             SetarDataHoraAtual();
         }
 
-        private void SetarUsuarioLogado()
-        {
-            lblRodapeUsuarioLogado.Text = $"Usuário: {_usuario.UsuarioAcesso}";
-        }
+        private void SetarUsuarioLogado() => lblRodapeUsuarioLogado.Text = $"Usuário: {_usuarioLogado.UsuarioAcesso}";
+
+        private void InicializarSevicoPermissao() => _servicoPermissao = _servicoPermissao ?? new ServicoPermissao();
 
         private void SetarDataHoraAtual()
         {
@@ -42,9 +44,27 @@ namespace ControleSe
             };
         }
 
+        private void AplicarPermissaoBotoes(Usuario usuarioLogado)
+        {
+            try
+            {
+                bool ehAdm = _servicoPermissao.VerificarSeUsusarioEhAdm(usuarioLogado);
+
+                if (!ehAdm)
+                {
+                    btnUsuarios.Visible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
+                Msg.Erro($"[Erro]:{ex.Message}\n[StackTrace]:{ex.StackTrace}");
+            }
+        }
+
         private void btnDividas_Click(object sender, EventArgs e)
         {
-            using (var form = new DividasFormNova(_usuario, new ServicoDivida()))
+            using (var form = new DividasFormNova(_usuarioLogado, new ServicoDivida()))
             {
                 form.ShowDialog();
             }
@@ -52,7 +72,7 @@ namespace ControleSe
 
         private void btnEntradas_Click(object sender, EventArgs e)
         {
-            using (var form = new EntradasFormNova(_usuario, new ServicoEntrada()))
+            using (var form = new EntradasFormNova(_usuarioLogado, new ServicoEntrada()))
             {
                 form.ShowDialog();
             }
@@ -62,7 +82,7 @@ namespace ControleSe
         {
             bool EhValido = false;
 
-            using (var form = new ConfirmarSenhaUsuarioForm(_usuario, new ServicoUsuario()))
+            using (var form = new ConfirmarSenhaUsuarioForm(_usuarioLogado, new ServicoUsuario()))
             {
                 form.ShowDialog();
                 EhValido = form.EhValido;
@@ -70,7 +90,7 @@ namespace ControleSe
 
             if (EhValido)
             {
-                using (var form = new CofreForm(_usuario, new ServicoCofre()))
+                using (var form = new CofreForm(_usuarioLogado, new ServicoCofre()))
                 {
                     form.ShowDialog();
                 }
@@ -84,7 +104,7 @@ namespace ControleSe
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            using (var form = new UsuariosFormNova(_usuario, new ServicoUsuario()))
+            using (var form = new UsuariosFormNova(_usuarioLogado, new ServicoUsuario()))
             {
                 form.ShowDialog();
             }

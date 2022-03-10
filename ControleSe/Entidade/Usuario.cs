@@ -14,6 +14,7 @@ namespace ControleSe.Entidade
         public List<Divida> Dividas { get; set; }
         public List<Entrada> Entradas { get; set; }
         public bool Ativo { get; set; } = true;
+        public bool EhAdm { get; set; } = false;
 
         [NotMapped]
         public bool EhIncluir { get; set; }
