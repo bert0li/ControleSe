@@ -190,6 +190,7 @@ namespace ControleSe.Operacoes
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(489, 27);
             this.txtNome.TabIndex = 1;
+            this.txtNome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodigo_KeyDown);
             // 
             // lblDescricao
             // 
@@ -228,6 +229,7 @@ namespace ControleSe.Operacoes
             this.cbxTipoDivida.Size = new System.Drawing.Size(168, 27);
             this.cbxTipoDivida.TabIndex = 2;
             this.cbxTipoDivida.SelectedIndexChanged += new System.EventHandler(this.cbxTipoDivida_SelectedIndexChanged);
+            this.cbxTipoDivida.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodigo_KeyDown);
             // 
             // lblTipoDivida
             // 
@@ -250,6 +252,7 @@ namespace ControleSe.Operacoes
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(489, 27);
             this.txtDescricao.TabIndex = 1;
+            this.txtDescricao.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodigo_KeyDown);
             // 
             // txtValor
             // 
@@ -260,6 +263,7 @@ namespace ControleSe.Operacoes
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(489, 27);
             this.txtValor.TabIndex = 1;
+            this.txtValor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodigo_KeyDown);
             this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
             // 
             // lblDataVencimento
@@ -282,6 +286,7 @@ namespace ControleSe.Operacoes
             this.dtpDataVencimento.Name = "dtpDataVencimento";
             this.dtpDataVencimento.Size = new System.Drawing.Size(168, 27);
             this.dtpDataVencimento.TabIndex = 3;
+            this.dtpDataVencimento.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodigo_KeyDown);
             // 
             // tlpBotoes
             // 
@@ -363,6 +368,7 @@ namespace ControleSe.Operacoes
             this.txtCodigo.ReadOnly = true;
             this.txtCodigo.Size = new System.Drawing.Size(181, 30);
             this.txtCodigo.TabIndex = 1;
+            this.txtCodigo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodigo_KeyDown);
             // 
             // panel1
             // 

@@ -148,6 +148,7 @@ namespace ControleSe.Operacoes
             this.txtConfirmarSenha.Size = new System.Drawing.Size(484, 27);
             this.txtConfirmarSenha.TabIndex = 2;
             this.txtConfirmarSenha.UseSystemPasswordChar = true;
+            this.txtConfirmarSenha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodigo_KeyDown);
             this.txtConfirmarSenha.Validated += new System.EventHandler(this.txtConfirmarSenha_Validated);
             // 
             // lblNome
@@ -170,6 +171,7 @@ namespace ControleSe.Operacoes
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(484, 27);
             this.txtNome.TabIndex = 1;
+            this.txtNome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodigo_KeyDown);
             // 
             // lblUsuario
             // 
@@ -215,6 +217,7 @@ namespace ControleSe.Operacoes
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(484, 27);
             this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodigo_KeyDown);
             // 
             // txtSenha
             // 
@@ -225,6 +228,7 @@ namespace ControleSe.Operacoes
             this.txtSenha.Size = new System.Drawing.Size(484, 27);
             this.txtSenha.TabIndex = 1;
             this.txtSenha.UseSystemPasswordChar = true;
+            this.txtSenha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodigo_KeyDown);
             this.txtSenha.Validated += new System.EventHandler(this.txtSenha_Validated);
             // 
             // tlpCodigo
@@ -266,6 +270,7 @@ namespace ControleSe.Operacoes
             this.txtCodigo.ReadOnly = true;
             this.txtCodigo.Size = new System.Drawing.Size(152, 30);
             this.txtCodigo.TabIndex = 1;
+            this.txtCodigo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodigo_KeyDown);
             // 
             // cbxAtivo
             // 
@@ -278,6 +283,7 @@ namespace ControleSe.Operacoes
             this.cbxAtivo.TabIndex = 2;
             this.cbxAtivo.Text = "Ativo?";
             this.cbxAtivo.UseVisualStyleBackColor = true;
+            this.cbxAtivo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodigo_KeyDown);
             // 
             // panelCabecalho
             // 

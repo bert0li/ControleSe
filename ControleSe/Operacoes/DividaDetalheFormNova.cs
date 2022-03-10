@@ -110,6 +110,21 @@ namespace ControleSe.Operacoes
             }
         }
 
+        private void AcaoAcionada(KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F5)
+            {
+                btnSalvar.PerformClick();
+                return;
+            }
+
+            if (e.KeyData == Keys.Escape)
+            {
+                btnSair.PerformClick();
+                return;
+            }
+        }
+
         private void Salvar()
         {
             try
@@ -199,6 +214,8 @@ namespace ControleSe.Operacoes
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
                 e.Handled = true;
         }
+
+        private void txtCodigo_KeyDown(object sender, KeyEventArgs e) => AcaoAcionada(e);
 
         private void btnPagar_Click(object sender, EventArgs e) => Pagar();
 

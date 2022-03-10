@@ -51,6 +51,21 @@ namespace ControleSe.Operacoes
             }
         }
 
+        private void AcaoAcionada(KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F5)
+            {
+                btnSalvar.PerformClick();
+                return;
+            }
+
+            if (e.KeyData == Keys.Escape)
+            {
+                btnSair.PerformClick();
+                return;
+            }
+        }
+
         private void ExibirSplash()
         {
             using (var formSplah = new SalvarSplash())
@@ -85,13 +100,12 @@ namespace ControleSe.Operacoes
                 e.Handled = true;
         }
 
+        private void txtValorEntrada_KeyDown(object sender, KeyEventArgs e) => AcaoAcionada(e);
+
         private void btnSalvar_Click(object sender, EventArgs e) => Salvar();
 
         private void btnSair_Click(object sender, EventArgs e) => Close();
 
-        private void btnFechar_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+        private void btnFechar_Click(object sender, EventArgs e) => Close();
     }
 }

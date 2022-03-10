@@ -64,17 +64,17 @@ namespace ControleSe.Operacoes
             this.panelLogin.Controls.Add(this.panelCabecalho);
             this.panelLogin.Location = new System.Drawing.Point(12, 12);
             this.panelLogin.Name = "panelLogin";
-            this.panelLogin.Size = new System.Drawing.Size(404, 206);
+            this.panelLogin.Size = new System.Drawing.Size(377, 200);
             this.panelLogin.TabIndex = 0;
             // 
             // lblCadastrarSe
             // 
             this.lblCadastrarSe.AutoSize = true;
             this.lblCadastrarSe.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCadastrarSe.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCadastrarSe.Location = new System.Drawing.Point(168, 138);
+            this.lblCadastrarSe.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblCadastrarSe.Location = new System.Drawing.Point(147, 138);
             this.lblCadastrarSe.Name = "lblCadastrarSe";
-            this.lblCadastrarSe.Size = new System.Drawing.Size(81, 16);
+            this.lblCadastrarSe.Size = new System.Drawing.Size(84, 14);
             this.lblCadastrarSe.TabIndex = 7;
             this.lblCadastrarSe.Text = "Cadastrar-se";
             this.lblCadastrarSe.Click += new System.EventHandler(this.lblCadastrarSe_Click);
@@ -82,7 +82,7 @@ namespace ControleSe.Operacoes
             // pbxIcone
             // 
             this.pbxIcone.Image = ((System.Drawing.Image)(resources.GetObject("pbxIcone.Image")));
-            this.pbxIcone.Location = new System.Drawing.Point(258, 64);
+            this.pbxIcone.Location = new System.Drawing.Point(237, 64);
             this.pbxIcone.Name = "pbxIcone";
             this.pbxIcone.Size = new System.Drawing.Size(136, 128);
             this.pbxIcone.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -96,7 +96,7 @@ namespace ControleSe.Operacoes
             this.tlpBotoes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpBotoes.Controls.Add(this.btnEntrar, 0, 0);
             this.tlpBotoes.Controls.Add(this.btnSair, 1, 0);
-            this.tlpBotoes.Location = new System.Drawing.Point(87, 157);
+            this.tlpBotoes.Location = new System.Drawing.Point(72, 157);
             this.tlpBotoes.Name = "tlpBotoes";
             this.tlpBotoes.RowCount = 1;
             this.tlpBotoes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -136,8 +136,8 @@ namespace ControleSe.Operacoes
             // tlpLogin
             // 
             this.tlpLogin.ColumnCount = 2;
-            this.tlpLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.73494F));
-            this.tlpLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.26506F));
+            this.tlpLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.36364F));
+            this.tlpLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.63636F));
             this.tlpLogin.Controls.Add(this.lblUsuario, 0, 0);
             this.tlpLogin.Controls.Add(this.lblSenha, 0, 1);
             this.tlpLogin.Controls.Add(this.txtUsuario, 1, 0);
@@ -147,7 +147,7 @@ namespace ControleSe.Operacoes
             this.tlpLogin.RowCount = 2;
             this.tlpLogin.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.68421F));
             this.tlpLogin.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.31579F));
-            this.tlpLogin.Size = new System.Drawing.Size(249, 68);
+            this.tlpLogin.Size = new System.Drawing.Size(231, 68);
             this.tlpLogin.TabIndex = 4;
             // 
             // lblUsuario
@@ -180,7 +180,7 @@ namespace ControleSe.Operacoes
             this.txtUsuario.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtUsuario.Location = new System.Drawing.Point(87, 3);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(159, 27);
+            this.txtUsuario.Size = new System.Drawing.Size(141, 27);
             this.txtUsuario.TabIndex = 1;
             this.txtUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsuario_KeyDown);
             // 
@@ -190,7 +190,7 @@ namespace ControleSe.Operacoes
             this.txtSenha.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSenha.Location = new System.Drawing.Point(87, 36);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(159, 27);
+            this.txtSenha.Size = new System.Drawing.Size(141, 27);
             this.txtSenha.TabIndex = 1;
             this.txtSenha.UseSystemPasswordChar = true;
             this.txtSenha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSenha_KeyDown);
@@ -203,7 +203,7 @@ namespace ControleSe.Operacoes
             this.panelCabecalho.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCabecalho.Location = new System.Drawing.Point(0, 0);
             this.panelCabecalho.Name = "panelCabecalho";
-            this.panelCabecalho.Size = new System.Drawing.Size(404, 52);
+            this.panelCabecalho.Size = new System.Drawing.Size(377, 52);
             this.panelCabecalho.TabIndex = 3;
             // 
             // lblLogin
@@ -227,7 +227,7 @@ namespace ControleSe.Operacoes
             this.btnFechar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDark;
             this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFechar.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnFechar.Location = new System.Drawing.Point(353, 0);
+            this.btnFechar.Location = new System.Drawing.Point(326, 0);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(51, 52);
             this.btnFechar.TabIndex = 0;
@@ -240,7 +240,7 @@ namespace ControleSe.Operacoes
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(428, 230);
+            this.ClientSize = new System.Drawing.Size(401, 224);
             this.Controls.Add(this.panelLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoginFormNova";

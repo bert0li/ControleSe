@@ -210,6 +210,7 @@ namespace ControleSe.Operacoes
             this.txtValorEntrada.Name = "txtValorEntrada";
             this.txtValorEntrada.Size = new System.Drawing.Size(285, 26);
             this.txtValorEntrada.TabIndex = 1;
+            this.txtValorEntrada.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtValorEntrada_KeyDown);
             this.txtValorEntrada.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorEntrada_KeyPress);
             // 
             // txtObservacao
@@ -220,6 +221,7 @@ namespace ControleSe.Operacoes
             this.txtObservacao.Name = "txtObservacao";
             this.txtObservacao.Size = new System.Drawing.Size(285, 26);
             this.txtObservacao.TabIndex = 1;
+            this.txtObservacao.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtValorEntrada_KeyDown);
             // 
             // panelDetalheEntrada
             // 

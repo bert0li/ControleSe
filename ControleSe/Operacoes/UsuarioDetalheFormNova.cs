@@ -49,6 +49,21 @@ namespace ControleSe.Operacoes
             }
         }
 
+        private void AcaoAcionada(KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F5)
+            {
+                btnSalvar.PerformClick();
+                return;
+            }
+
+            if (e.KeyData == Keys.Escape)
+            {
+                btnSair.PerformClick();
+                return;
+            }
+        }
+
         private void BloquearLiberarSenha(bool liberar)
         {
             txtConfirmarSenha.Text = string.Empty;
@@ -116,6 +131,8 @@ namespace ControleSe.Operacoes
                 BloquearLiberarSenha(false);
             }
         }
+
+        private void txtCodigo_KeyDown(object sender, KeyEventArgs e) => AcaoAcionada(e);
 
         private void btnSalvar_Click(object sender, EventArgs e) => Salvar();
 
