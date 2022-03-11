@@ -14,6 +14,9 @@ namespace ControleSe.Repositorio.Contexto
         public DbSet<Divida> Divida { get; set; }
         public DbSet<Entrada> Entrada { get; set; }
         public DbSet<Cofre> Cofre { get; set; }
+        public DbSet<Email> Email { get; set; }
+
+        //public DbSet<EmailsEnviados> EmailsEnviados { get; set; }
 
         public Contexto() { }
 

@@ -83,6 +83,7 @@ namespace ControleSe.Servico
                     _usuario = contexto.Usuario
                                        .Include(i => i.Dividas)
                                        .Include(i => i.Cofre)
+                                       .Include(i => i.Email)
                                        .Where(w =>
                                               w.UsuarioAcesso == usuarioLogado.UsuarioAcesso &&
                                               w.SenhaAcesso == usuarioLogado.SenhaAcesso)

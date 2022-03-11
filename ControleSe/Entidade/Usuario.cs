@@ -15,6 +15,7 @@ namespace ControleSe.Entidade
         public List<Entrada> Entradas { get; set; }
         public bool Ativo { get; set; } = true;
         public bool EhAdm { get; set; } = false;
+        public Email Email { get; set; }
 
         [NotMapped]
         public bool EhIncluir { get; set; }

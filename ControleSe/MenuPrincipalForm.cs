@@ -102,6 +102,14 @@ namespace ControleSe
             Msg.Informacao("Recurso em desenvolvimento");
         }
 
+        private void btnEmail_Click(object sender, EventArgs e)
+        {
+            using (var form = new EmailDetalheFormNova(new ServicoEmail(), _usuarioLogado))
+            {
+                form.ShowDialog();
+            }
+        }
+
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             using (var form = new UsuariosFormNova(_usuarioLogado, new ServicoUsuario()))

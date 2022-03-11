@@ -19,18 +19,19 @@ namespace ControleSe.Operacoes
 {
     public partial class DividaDetalheFormNova : Form
     {
-        private ServicoDivida _servico = null;
+        private ServicoDivida _servicoDivida = null;
+        private ServicoEmail _servicoEmail = null;
         private Divida _divida = null;
-        private Usuario _usuario = null;
+        private Usuario _usuarioLogado = null;
         private bool PrimeiroBinding = false;
         private DateTime _dataNovoVencimento;
 
         public DividaDetalheFormNova(ServicoDivida servicoDivida, Divida divida, Usuario usuarioLogado)
         {
             InitializeComponent();
-            _servico = servicoDivida;
+            _servicoDivida = servicoDivida;
             _divida = divida;
-            _usuario = usuarioLogado;
+            _usuarioLogado = usuarioLogado;
             AtribuirBinding();
             VerificarSePodePagar();
         }
@@ -90,7 +91,8 @@ namespace ControleSe.Operacoes
             try
             {
                 PrimeiroBinding = true;
-                _servico = _servico ?? new ServicoDivida();
+                _servicoDivida = _servicoDivida ?? new ServicoDivida();
+                _servicoEmail = new ServicoEmail();
 
                 InicializarDatas();
                 CarregarCompoBox();
@@ -129,9 +131,9 @@ namespace ControleSe.Operacoes
         {
             try
             {
-                if (_servico.Validar(_divida))
+                if (_servicoDivida.Validar(_divida))
                 {
-                    if (_servico.Salvar(_divida))
+                    if (_servicoDivida.Salvar(_divida))
                     {
                         ExibirSplash();
                         Close();
@@ -161,9 +163,12 @@ namespace ControleSe.Operacoes
                 {
                     if (Msg.Pergunta("Deseja realmente pagar?") == DialogResult.Yes)
                     {
-                        if (_servico.Pagar(_divida, _usuario))
+                        if (_servicoDivida.Pagar(_divida, _usuarioLogado))
                         {
-                            Msg.Informacao("Divida paga.");
+                            if (Msg.Pergunta("Divida paga.\nDeseja enviar a comprovação do pagamento no seu e-mail?") == DialogResult.Yes)
+                            {
+                                var retornoEnvio = EnviarEmailAsync();
+                            }
 
                             if (_divida.TipoDivida == TipoDivida.Fixa)
                             {
@@ -176,7 +181,7 @@ namespace ControleSe.Operacoes
                                         form.Close();
                                     }
 
-                                    if (_servico.ReabrirDivida(_usuario, _divida, _dataNovoVencimento))
+                                    if (_servicoDivida.ReabrirDivida(_usuarioLogado, _divida, _dataNovoVencimento))
                                     {
                                         Msg.Informacao("Divida reaberta com sucesso.");
                                         Close();
@@ -194,6 +199,19 @@ namespace ControleSe.Operacoes
                 {
                     Msg.Informacao("Divida já paga.");
                 }
+            }
+            catch (Exception ex)
+            {
+                ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
+                Msg.Erro($"[Erro]:{ex.Message} - [StackTrace]:{ex.StackTrace}");
+            }
+        }
+
+        private async Task EnviarEmailAsync()
+        {
+            try
+            {
+                await _servicoEmail.EnviarEmail(_usuarioLogado.Email, _divida);
             }
             catch (Exception ex)
             {

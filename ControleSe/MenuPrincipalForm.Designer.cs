@@ -44,6 +44,7 @@ namespace ControleSe
             this.lblRodapeDataHora = new System.Windows.Forms.Label();
             this.lblRodapeUsuarioLogado = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnEmail = new System.Windows.Forms.Button();
             this.panelCabecalho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxIcone)).BeginInit();
             this.panelMenu.SuspendLayout();
@@ -110,6 +111,7 @@ namespace ControleSe
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.DarkGray;
+            this.panelMenu.Controls.Add(this.btnEmail);
             this.panelMenu.Controls.Add(this.btnUsuarios);
             this.panelMenu.Controls.Add(this.btnRelatorios);
             this.panelMenu.Controls.Add(this.btnCofre);
@@ -128,7 +130,7 @@ namespace ControleSe
             this.btnUsuarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsuarios.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnUsuarios.Location = new System.Drawing.Point(3, 231);
+            this.btnUsuarios.Location = new System.Drawing.Point(3, 285);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(194, 48);
             this.btnUsuarios.TabIndex = 5;
@@ -241,6 +243,21 @@ namespace ControleSe
             this.label1.Text = "ControleSe";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnEmail
+            // 
+            this.btnEmail.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btnEmail.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnEmail.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.btnEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmail.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEmail.Location = new System.Drawing.Point(3, 231);
+            this.btnEmail.Name = "btnEmail";
+            this.btnEmail.Size = new System.Drawing.Size(194, 48);
+            this.btnEmail.TabIndex = 6;
+            this.btnEmail.Text = "Email";
+            this.btnEmail.UseVisualStyleBackColor = true;
+            this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click);
+            // 
             // MenuPrincipalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -279,5 +296,6 @@ namespace ControleSe
         private System.Windows.Forms.Label lblRodapeDataHora;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pbxIcone;
+        private System.Windows.Forms.Button btnEmail;
     }
 }

@@ -17,30 +17,30 @@ namespace ControleSe.Operacoes
     public partial class UsuarioDetalheFormNova : Form
     {
         private ServicoUsuario _servico = null;
-        private Usuario _usuario = null;
+        private Usuario _usuarioLogado = null;
         public bool EhNovoUsuario = false;
 
         public UsuarioDetalheFormNova(ServicoUsuario servico, Usuario usuarioLogado, bool ehNovoUsuario = false)
         {
             InitializeComponent();
             _servico = servico;
-            _usuario = usuarioLogado;
+            _usuarioLogado = usuarioLogado;
             EhNovoUsuario = ehNovoUsuario;
-            AtribuirBinding(_usuario);
+            AtribuirBinding(_usuarioLogado);
         }
 
-        private void AtribuirBinding(Usuario usuario)
+        private void AtribuirBinding(Usuario usuarioLogado)
         {
             try
             {
                 BloquearLiberarSenha(false);
-                _usuario = usuario ?? new Usuario();
+                _usuarioLogado = usuarioLogado ?? new Usuario();
 
-                txtCodigo.DataBindings.Add("Text", _usuario, "Id");
-                txtNome.DataBindings.Add("Text", _usuario, "Nome");
-                txtUsuario.DataBindings.Add("Text", _usuario, "UsuarioAcesso");
-                txtSenha.DataBindings.Add("Text", _usuario, "SenhaAcesso");
-                cbxAtivo.DataBindings.Add("Checked", _usuario, "Ativo");
+                txtCodigo.DataBindings.Add("Text", _usuarioLogado, "Id");
+                txtNome.DataBindings.Add("Text", _usuarioLogado, "Nome");
+                txtUsuario.DataBindings.Add("Text", _usuarioLogado, "UsuarioAcesso");
+                txtSenha.DataBindings.Add("Text", _usuarioLogado, "SenhaAcesso");
+                cbxAtivo.DataBindings.Add("Checked", _usuarioLogado, "Ativo");
             }
             catch (Exception ex)
             {
@@ -74,9 +74,9 @@ namespace ControleSe.Operacoes
         {
             try
             {
-                if (_servico.Validar(_usuario))
+                if (_servico.Validar(_usuarioLogado))
                 {
-                    if (_servico.Salvar(_usuario))
+                    if (_servico.Salvar(_usuarioLogado))
                     {
                         ExibirSplash();
 

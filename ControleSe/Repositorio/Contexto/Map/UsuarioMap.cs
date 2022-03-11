@@ -37,6 +37,11 @@ namespace ControleSe.Repositorio.Contexto.Map
                   .HasPrincipalKey<Usuario>(m => m.Id)
                   .OnDelete(DeleteBehavior.NoAction);
 
+            entity.HasOne(m => m.Email)
+                  .WithOne(m => m.Usuario)
+                  .HasPrincipalKey<Usuario>(m => m.Id)
+                  .OnDelete(DeleteBehavior.NoAction);
+
             entity.HasIndex(i => i.Nome)
                   .HasDatabaseName("index_nome_usuario");
         }

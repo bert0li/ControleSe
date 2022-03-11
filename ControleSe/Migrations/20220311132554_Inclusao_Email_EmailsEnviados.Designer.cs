@@ -4,14 +4,16 @@ using ControleSe.Repositorio.Contexto;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ControleSe.Migrations
 {
     [DbContext(typeof(Contexto))]
-    partial class ContextoModelSnapshot : ModelSnapshot
+    [Migration("20220311132554_Inclusao_Email_EmailsEnviados")]
+    partial class Inclusao_Email_EmailsEnviados
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -106,7 +108,7 @@ namespace ControleSe.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("Smtp")
+                    b.Property<string>("Smpt")
                         .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
@@ -123,6 +125,49 @@ namespace ControleSe.Migrations
                         .IsUnique();
 
                     b.ToTable("Email");
+                });
+
+            modelBuilder.Entity("ControleSe.Entidade.EmailsEnviados", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Assunto")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("Cc")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime>("DataEnvio")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("EmailDestinatario")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<int>("EmailId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Mensagem")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmailId");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("EmailsEnviados");
                 });
 
             modelBuilder.Entity("ControleSe.Entidade.Entrada", b =>
@@ -228,6 +273,25 @@ namespace ControleSe.Migrations
                     b.Navigation("Usuario");
                 });
 
+            modelBuilder.Entity("ControleSe.Entidade.EmailsEnviados", b =>
+                {
+                    b.HasOne("ControleSe.Entidade.Email", "Email")
+                        .WithMany("EmailsEnviados")
+                        .HasForeignKey("EmailId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("ControleSe.Entidade.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Email");
+
+                    b.Navigation("Usuario");
+                });
+
             modelBuilder.Entity("ControleSe.Entidade.Entrada", b =>
                 {
                     b.HasOne("ControleSe.Entidade.Usuario", "Usuario")
@@ -237,6 +301,11 @@ namespace ControleSe.Migrations
                         .IsRequired();
 
                     b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("ControleSe.Entidade.Email", b =>
+                {
+                    b.Navigation("EmailsEnviados");
                 });
 
             modelBuilder.Entity("ControleSe.Entidade.Usuario", b =>

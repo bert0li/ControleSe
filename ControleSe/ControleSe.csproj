@@ -46,6 +46,9 @@
     <None Update="Arquivos\Gifs\deletarSplash.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Arquivos\Gifs\envioEmail.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Arquivos\Gifs\loginSplash.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
