@@ -235,7 +235,7 @@ namespace ControleSe.Operacoes
         {
             try
             {
-                await _servicoEmail.EnviarEmail(_usuarioLogado.Email, _divida);
+                await _servicoEmail.EnviarEmailAsync(_usuarioLogado.Email, _divida);
             }
             catch (Exception ex)
             {

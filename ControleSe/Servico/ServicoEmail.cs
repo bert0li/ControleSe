@@ -91,7 +91,7 @@ namespace ControleSe.Servico
                 return new Regex(@"^([\w\-]+\.)*[\w\- ]+@([\w\- ]+\.)+([\w\-]{2,3})$").IsMatch(email);
         }
 
-        public async Task EnviarEmail(Email email, Divida divida)
+        public async Task EnviarEmailAsync(Email email, Divida divida)
         {
             try
             {
@@ -113,7 +113,7 @@ namespace ControleSe.Servico
                         smptClient.Host = email.Smtp;
                         smptClient.Port = email.Porta;
                         smptClient.EnableSsl = email.Ssl;
-                        smptClient.Timeout = 2;
+                        //smptClient.Timeout = 2;
                         smptClient.UseDefaultCredentials = false;
                         smptClient.Credentials = new NetworkCredential(email.EnderecoEmail, email.SenhaEmail);
 
@@ -121,9 +121,10 @@ namespace ControleSe.Servico
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
+                Msg.Erro("Falha no envio de e-mail.\nConsulte o log para ter mais detalhes.");
             }
         }
     }
