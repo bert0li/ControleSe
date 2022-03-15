@@ -35,7 +35,7 @@ namespace ControleSe.Servico
                 {
                     Msg.Atencao("Informe o E-mail.");
                     EhValido = false;
-                }                
+                }               
                 else if (string.IsNullOrWhiteSpace(email.SenhaEmail))
                 {
                     Msg.Atencao("Informe a senha.");
@@ -100,8 +100,13 @@ namespace ControleSe.Servico
                     using (var mailMessage = new MailMessage())
                     {
                         mailMessage.From = new MailAddress(email.EnderecoEmail);
-                        mailMessage.Subject = $"ControleSe - Divida paga {DateTime.Now.Date}";
-                        mailMessage.Body = $"Divida paga: {divida.Nome}\nValor: {divida.Valor}";
+                        mailMessage.Subject = "ControleSe - DIVIDA PAGA";
+                        
+                        mailMessage.Body = $"<b>Divida paga</b>: {divida.Nome}</br>" +
+                                           $"<b>Valor</b>: {divida.Valor.ToString("C")}</br>" +
+                                           $"<b>Data do pagamento</b>: {divida.DataPagamento}</br>" +
+                                           $"<b>Data do vencimento</b>: {divida.DataVencimento.ToShortDateString()}";
+                        
                         mailMessage.IsBodyHtml = true;
                         mailMessage.To.Add(email.EnderecoEmail);
 
@@ -113,11 +118,6 @@ namespace ControleSe.Servico
                         smptClient.Credentials = new NetworkCredential(email.EnderecoEmail, email.SenhaEmail);
 
                         await smptClient.SendMailAsync(mailMessage);
-                    }
-
-                    using (var form = new SplashEnvioEmail())
-                    {
-                        form.ShowDialog();
                     }
                 }
             }

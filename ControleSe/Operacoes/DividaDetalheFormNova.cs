@@ -24,6 +24,7 @@ namespace ControleSe.Operacoes
         private Divida _divida = null;
         private Usuario _usuarioLogado = null;
         private bool PrimeiroBinding = false;
+        private Task _retornoEnvioEmail = null;
         private DateTime _dataNovoVencimento;
 
         public DividaDetalheFormNova(ServicoDivida servicoDivida, Divida divida, Usuario usuarioLogado)
@@ -44,10 +45,10 @@ namespace ControleSe.Operacoes
                 _divida.DataVencimento = dtpDataVencimento.Value;
         }
 
-        private void VerificarSePodePagar() 
+        private void VerificarSePodePagar()
         {
             btnPagar.Enabled = _divida.Id == 0 ? false : true;
-        } 
+        }
 
         /// <summary>
         /// Link com a documentação do código para 
@@ -155,6 +156,28 @@ namespace ControleSe.Operacoes
             }
         }
 
+        private void VerificarRetornoEnvioEmail()
+        {
+            try
+            {
+                Timer timer = new Timer() { Interval = 1000 };
+                timer.Start();
+                timer.Tick += (o, e) =>
+                {
+                    if (_retornoEnvioEmail.IsCompletedSuccessfully)
+                    {
+                        using (var form = new SplashEnvioEmail())
+                        {
+                            timer.Stop();
+                            timer.Dispose();
+                            form.ShowDialog();
+                        }
+                    }
+                };
+            }
+            catch { }
+        }
+
         private void Pagar()
         {
             try
@@ -167,7 +190,8 @@ namespace ControleSe.Operacoes
                         {
                             if (Msg.Pergunta("Divida paga.\nDeseja enviar a comprovação do pagamento no seu e-mail?") == DialogResult.Yes)
                             {
-                                var retornoEnvio = EnviarEmailAsync();
+                                _retornoEnvioEmail = EnviarEmailAsync();
+                                VerificarRetornoEnvioEmail();
                             }
 
                             if (_divida.TipoDivida == TipoDivida.Fixa)

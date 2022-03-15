@@ -27,7 +27,7 @@ namespace ControleSe.Utilitario.Splash
             _timer.Start();
             _timer.Tick += (o, e) =>
             {
-                if (_contador == 1)
+                if (_contador == 2)
                 {
                     _timer.Stop();
                     _timer.Dispose();
