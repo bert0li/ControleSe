@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ControleSe.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20220310165634_PrimeiraMigration")]
-    partial class PrimeiraMigration
+    [Migration("20220321135614_BancoSqlServerTeste")]
+    partial class BancoSqlServerTeste
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -86,6 +86,45 @@ namespace ControleSe.Migrations
                     b.HasIndex("UsuarioId");
 
                     b.ToTable("Divida");
+                });
+
+            modelBuilder.Entity("ControleSe.Entidade.Email", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("EnderecoEmail")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<int>("Porta")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SenhaEmail")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Smtp")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<bool>("Ssl")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UsuarioId")
+                        .IsUnique();
+
+                    b.ToTable("Email");
                 });
 
             modelBuilder.Entity("ControleSe.Entidade.Entrada", b =>
@@ -180,6 +219,17 @@ namespace ControleSe.Migrations
                     b.Navigation("Usuario");
                 });
 
+            modelBuilder.Entity("ControleSe.Entidade.Email", b =>
+                {
+                    b.HasOne("ControleSe.Entidade.Usuario", "Usuario")
+                        .WithOne("Email")
+                        .HasForeignKey("ControleSe.Entidade.Email", "UsuarioId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("Usuario");
+                });
+
             modelBuilder.Entity("ControleSe.Entidade.Entrada", b =>
                 {
                     b.HasOne("ControleSe.Entidade.Usuario", "Usuario")
@@ -196,6 +246,8 @@ namespace ControleSe.Migrations
                     b.Navigation("Cofre");
 
                     b.Navigation("Dividas");
+
+                    b.Navigation("Email");
 
                     b.Navigation("Entradas");
                 });

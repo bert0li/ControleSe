@@ -18,7 +18,6 @@ namespace ControleSe.Servico
     {
         public bool Validar(Email email)
         {
-            // TODO: COLOCAR VALIDAÇÃO PARA VERIFICAR SE O EMAIL É VALIDO
             if (email is not null)
             {
                 if (string.IsNullOrWhiteSpace(email.Smtp))
@@ -35,7 +34,12 @@ namespace ControleSe.Servico
                 {
                     Msg.Atencao("Informe o E-mail.");
                     EhValido = false;
-                }               
+                }
+                else if (!ValidarEmail(email.EnderecoEmail))
+                {
+                    Msg.Atencao("Informe um e-mail valido.");
+                    EhValido = false;
+                }
                 else if (string.IsNullOrWhiteSpace(email.SenhaEmail))
                 {
                     Msg.Atencao("Informe a senha.");
@@ -85,10 +89,14 @@ namespace ControleSe.Servico
 
         private bool ValidarEmail(string email)
         {
+            EhValido = false;
+
             if (string.IsNullOrWhiteSpace(email))
-                return false;
+                return EhValido;
             else
-                return new Regex(@"^([\w\-]+\.)*[\w\- ]+@([\w\- ]+\.)+([\w\-]{2,3})$").IsMatch(email);
+                EhValido = new Regex(@"^([\w\-]+\.)*[\w\- ]+@([\w\- ]+\.)+([\w\-]{2,3})$").IsMatch(email);
+
+            return EhValido;
         }
 
         public async Task EnviarEmailAsync(Email email, Divida divida)
@@ -124,7 +132,7 @@ namespace ControleSe.Servico
             catch (Exception ex)
             {
                 ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
-                Msg.Erro("Falha no envio de e-mail.\nConsulte o log para ter mais detalhes.");
+                Msg.Erro("Falha no envio de e-mail.\nVerifique as configurações de e-mail cadastrada.\nConsulte o log para ter mais detalhes.");
             }
         }
     }

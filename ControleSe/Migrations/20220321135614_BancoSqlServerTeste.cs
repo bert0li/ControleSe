@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ControleSe.Migrations
 {
-    public partial class PrimeiraMigration : Migration
+    public partial class BancoSqlServerTeste : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -69,6 +69,29 @@ namespace ControleSe.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Email",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Smtp = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    Porta = table.Column<int>(type: "int", nullable: false),
+                    Ssl = table.Column<bool>(type: "bit", nullable: false),
+                    EnderecoEmail = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    SenhaEmail = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    UsuarioId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Email", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Email_Usuario_UsuarioId",
+                        column: x => x.UsuarioId,
+                        principalTable: "Usuario",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Entrada",
                 columns: table => new
                 {
@@ -106,6 +129,12 @@ namespace ControleSe.Migrations
                 column: "UsuarioId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Email_UsuarioId",
+                table: "Email",
+                column: "UsuarioId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "index_dataEntrada_entrada",
                 table: "Entrada",
                 column: "DataEntrada");
@@ -128,6 +157,9 @@ namespace ControleSe.Migrations
 
             migrationBuilder.DropTable(
                 name: "Divida");
+
+            migrationBuilder.DropTable(
+                name: "Email");
 
             migrationBuilder.DropTable(
                 name: "Entrada");

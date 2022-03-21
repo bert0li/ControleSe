@@ -25,6 +25,7 @@ namespace ControleSe.Repositorio.Contexto
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //var connectionStringMySql = "server=easyinfo.zapto.org; initial catalog=Bertoli; user id=root; password=casarao08009890";
+            //var connectionStringMySql = "server=easyinfo.zapto.org; initial catalog=ControleSe; user id=root; password=casarao08009890";
 
             //optionsBuilder.UseMySql(connectionStringMySql, ServerVersion.AutoDetect(connectionStringMySql),
             //                        o => o.EnableRetryOnFailure(
