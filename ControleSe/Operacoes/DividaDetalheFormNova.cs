@@ -148,10 +148,13 @@ namespace ControleSe.Operacoes
             }
         }
 
-        private void ExibirSplash()
+        private void ExibirSplash(string texto = null)
         {
             using (var formSplah = new SalvarSplash())
             {
+                if (!string.IsNullOrWhiteSpace(texto))
+                    formSplah.lblInfo.Text = texto;
+                
                 formSplah.ShowDialog();
             }
         }
@@ -207,7 +210,7 @@ namespace ControleSe.Operacoes
 
                                     if (_servicoDivida.ReabrirDivida(_usuarioLogado, _divida, _dataNovoVencimento))
                                     {
-                                        Msg.Informacao("Divida reaberta com sucesso.");
+                                        ExibirSplash("Divida reaberta com sucesso.");
                                         Close();
                                     }
                                 }
