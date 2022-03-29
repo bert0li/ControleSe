@@ -19,19 +19,23 @@ namespace ControleSe.Operacoes
 {
     public partial class DividaDetalheForm : Form
     {
-        private ServicoDivida _servico = null;
+        private ServicoDivida _servicoDivida = null;
+        private ServicoEmail _servicoEmail = null;
+        private ServicoArquivo _servicoArquivo = null;
         private Divida _divida = null;
-        private Usuario _usuario = null;
+        private Usuario _usuarioLogado = null;
         private bool PrimeiroBinding = false;
+        private Task _retornoEnvioEmail = null;
         private DateTime _dataNovoVencimento;
 
         public DividaDetalheForm(ServicoDivida servicoDivida, Divida divida, Usuario usuarioLogado)
         {
             InitializeComponent();
-            _servico = servicoDivida;
+            _servicoDivida = servicoDivida;
             _divida = divida;
-            _usuario = usuarioLogado;
+            _usuarioLogado = usuarioLogado;
             AtribuirBinding();
+            VerificarSePodePagar();
         }
 
         private void InicializarDatas()
@@ -42,6 +46,10 @@ namespace ControleSe.Operacoes
                 _divida.DataVencimento = dtpDataVencimento.Value;
         }
 
+        private void VerificarSePodePagar()
+        {
+            btnPagar.Enabled = _divida.Id == 0 ? false : true;
+        }
 
         /// <summary>
         /// Link com a documentação do código para 
@@ -85,7 +93,9 @@ namespace ControleSe.Operacoes
             try
             {
                 PrimeiroBinding = true;
-                _servico = _servico ?? new ServicoDivida();
+                _servicoDivida = _servicoDivida ?? new ServicoDivida();
+                _servicoEmail = new ServicoEmail();
+                _servicoArquivo = new ServicoArquivo();
 
                 InicializarDatas();
                 CarregarCompoBox();
@@ -105,13 +115,28 @@ namespace ControleSe.Operacoes
             }
         }
 
+        private void AcaoAcionada(KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F5)
+            {
+                btnSalvar.PerformClick();
+                return;
+            }
+
+            if (e.KeyData == Keys.Escape)
+            {
+                btnSair.PerformClick();
+                return;
+            }
+        }
+
         private void Salvar()
         {
             try
             {
-                if (_servico.Validar(_divida))
+                if (_servicoDivida.Validar(_divida))
                 {
-                    if (_servico.Salvar(_divida))
+                    if (_servicoDivida.Salvar(_divida))
                     {
                         ExibirSplash();
                         Close();
@@ -125,45 +150,106 @@ namespace ControleSe.Operacoes
             }
         }
 
-        private void ExibirSplash()
+        private void ExibirSplash(string texto = null)
         {
             using (var formSplah = new SalvarSplash())
             {
+                if (!string.IsNullOrWhiteSpace(texto))
+                    formSplah.lblInfo.Text = texto;
+
                 formSplah.ShowDialog();
             }
         }
 
+        private void VerificarRetornoEnvioEmail()
+        {
+            try
+            {
+                Timer timer = new Timer() { Interval = 1000 };
+                timer.Start();
+                timer.Tick += (o, e) =>
+                {
+                    if (_retornoEnvioEmail.IsCompletedSuccessfully)
+                    {
+                        using (var form = new SplashEnvioEmail())
+                        {
+                            timer.Stop();
+                            timer.Dispose();
+                            form.ShowDialog();
+                        }
+                    }
+                };
+            }
+            catch { }
+        }
+
         private void Pagar()
         {
-            if (_divida.Pago != true)
+            try
             {
-                if (Msg.Pergunta("Deseja realmente pagar?") == DialogResult.Yes)
+                if (_divida.Pago != true)
                 {
-                    if (_servico.Pagar(_divida, _usuario))
+                    if (Msg.Pergunta("Deseja realmente pagar?") == DialogResult.Yes)
                     {
-                        Msg.Informacao("Divida paga.");
+                        var dividaTuple = _servicoDivida.Pagar(_divida, _usuarioLogado);
 
-                        if (Msg.Pergunta("Esse é uma divida FIXA. Deseja reabri-lá?") == DialogResult.Yes)
+                        if (dividaTuple.Item2)
                         {
-                            using (var form = new DataNovoVencimentoForm())
+                            if (Msg.Pergunta("Divida paga.\nDeseja enviar a comprovação do pagamento no seu e-mail?") == DialogResult.Yes)
                             {
-                                form.ShowDialog();
-                                _dataNovoVencimento = form.NovoVencimento;
-                                form.Close();
+                                _retornoEnvioEmail = EnviarEmailAsync();
+                                VerificarRetornoEnvioEmail();
                             }
 
-                            if (_servico.ReabrirDivida(_usuario, _divida, _dataNovoVencimento))
+                            if (_divida.TipoDivida == TipoDivida.Fixa)
                             {
-                                Msg.Informacao("Divida reaberta com sucesso.");
-                                Close();
+                                if (Msg.Pergunta("Esse é uma divida FIXA. Deseja reabri-lá?") == DialogResult.Yes)
+                                {
+                                    using (var form = new DataNovoVencimentoForm())
+                                    {
+                                        form.ShowDialog();
+                                        _dataNovoVencimento = form.NovoVencimento;
+                                        form.Close();
+                                    }
+
+                                    if (_servicoDivida.ReabrirDivida(_usuarioLogado, _divida, _dataNovoVencimento))
+                                    {
+                                        ExibirSplash("Divida reaberta com sucesso.");
+                                        Close();
+                                    }
+                                }
+                                else
+                                    Close();
                             }
+                            else
+                                Close();
+
+                            _servicoArquivo.GravarArquivoDividaPaga(dividaTuple.Item1);
                         }
                     }
                 }
+                else
+                {
+                    Msg.Informacao("Divida já paga.");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Msg.Informacao("Divida já paga.");
+                ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
+                Msg.Erro($"[Erro]:{ex.Message} - [StackTrace]:{ex.StackTrace}");
+            }
+        }
+
+        private async Task EnviarEmailAsync()
+        {
+            try
+            {
+                await _servicoEmail.EnviarEmailAsync(_usuarioLogado.Email, _divida);
+            }
+            catch (Exception ex)
+            {
+                ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
+                Msg.Erro($"[Erro]:{ex.Message} - [StackTrace]:{ex.StackTrace}");
             }
         }
 
@@ -180,7 +266,11 @@ namespace ControleSe.Operacoes
                 e.Handled = true;
         }
 
-        private void btnPagar_Click(object sender, EventArgs e) => Pagar();        
+        private void txtCodigo_KeyDown(object sender, KeyEventArgs e) => AcaoAcionada(e);
+
+        private void btnPagar_Click(object sender, EventArgs e) => Pagar();
+
+        private void btnFechar_Click(object sender, EventArgs e) => Close();
 
         private void btnSalvar_Click(object sender, EventArgs e) => Salvar();
 

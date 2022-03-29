@@ -21,6 +21,7 @@ namespace ControleSe.Operacoes
     {
         private ServicoDivida _servicoDivida = null;
         private ServicoEmail _servicoEmail = null;
+        private ServicoArquivo _servicoArquivo = null;
         private Divida _divida = null;
         private Usuario _usuarioLogado = null;
         private bool PrimeiroBinding = false;
@@ -94,6 +95,7 @@ namespace ControleSe.Operacoes
                 PrimeiroBinding = true;
                 _servicoDivida = _servicoDivida ?? new ServicoDivida();
                 _servicoEmail = new ServicoEmail();
+                _servicoArquivo = new ServicoArquivo();
 
                 InicializarDatas();
                 CarregarCompoBox();
@@ -189,7 +191,9 @@ namespace ControleSe.Operacoes
                 {
                     if (Msg.Pergunta("Deseja realmente pagar?") == DialogResult.Yes)
                     {
-                        if (_servicoDivida.Pagar(_divida, _usuarioLogado))
+                        var dividaTuple = _servicoDivida.Pagar(_divida, _usuarioLogado);
+                        
+                        if (dividaTuple.Item2)
                         {
                             if (Msg.Pergunta("Divida paga.\nDeseja enviar a comprovação do pagamento no seu e-mail?") == DialogResult.Yes)
                             {
@@ -219,6 +223,8 @@ namespace ControleSe.Operacoes
                             }
                             else
                                 Close();
+
+                            _servicoArquivo.GravarArquivoDividaPaga(dividaTuple.Item1);
                         }
                     }
                 }

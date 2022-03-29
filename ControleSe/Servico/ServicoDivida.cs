@@ -68,11 +68,12 @@ namespace ControleSe.Servico
             }
         }
 
-        public bool Pagar(Divida divida, Usuario usuarioLogado)
+        public Tuple<Divida, bool> Pagar(Divida divida, Usuario usuarioLogado)
         {
             try
             {
                 EhValido = false;
+                Tuple<Divida, bool> dividaTuple = null;
 
                 if (divida != null)
                 {
@@ -92,12 +93,13 @@ namespace ControleSe.Servico
                                 contexto.Divida.Update(dividaParaPagar);
                                 contexto.SaveChanges();
                                 EhValido = true;
+                                dividaTuple = new Tuple<Divida, bool>(dividaParaPagar, EhValido);
                             }
                         }
                     }
                 }
 
-                return EhValido;
+                return dividaTuple;
             }
             catch (Exception)
             {
