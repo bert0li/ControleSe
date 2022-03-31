@@ -67,10 +67,12 @@ namespace ControleSe.Servico
                         if (email.Id is 0)
                         {
                             email.UsuarioId = usuarioLogado.Id;
+                            email.SenhaEmail = CriptografarSenha(email.SenhaEmail);
                             contexto.Email.Add(email);
                         }
                         else
                         {
+                            email.SenhaEmail = CriptografarSenha(email.SenhaEmail);
                             contexto.Email.Update(email);
                         }
 
@@ -134,6 +136,16 @@ namespace ControleSe.Servico
                 ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
                 Msg.Erro("Falha no envio de e-mail.\nVerifique as configurações de e-mail cadastrada.\nConsulte o log para ter mais detalhes.");
             }
+        }
+
+        private string CriptografarSenha(string senha)
+        {
+            return ServicoCriptografia.Criptografar(senha);
+        }
+
+        private string DescriptografarSenha(string senha)
+        {
+            return ServicoCriptografia.Descriptografar(senha);
         }
     }
 }

@@ -23,7 +23,6 @@ namespace ControleSe.Servico
         private StreamWriter _stringWriter = null;
         private Divida _divida = null;
 
-
         public void GravarArquivoDividaPaga(Divida divida)
         {
             _divida = divida;

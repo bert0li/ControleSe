@@ -80,6 +80,8 @@ namespace ControleSe.Servico
             {
                 using (var contexto = new Contexto())
                 {
+                    usuarioLogado.SenhaAcesso = CriptografarSenha(usuarioLogado.SenhaAcesso);
+
                     _usuario = contexto.Usuario
                                        .Include(i => i.Dividas)
                                        .Include(i => i.Cofre)
@@ -91,6 +93,13 @@ namespace ControleSe.Servico
 
                     if (_usuario == null)
                         Msg.Atencao("Usuario ou Senha invalido. Tente novamente.");
+                    else
+                    {
+                        _usuario.SenhaAcesso = DescriptografarSenha(_usuario.SenhaAcesso);
+
+                        if (_usuario.Email is not null)
+                            _usuario.Email.SenhaEmail = DescriptografarSenha(_usuario.Email.SenhaEmail);
+                    }
                 }
             }
             catch (Exception)
@@ -111,6 +120,14 @@ namespace ControleSe.Servico
                 {
                     usuarios = contexto.Usuario.Where(w => w.Ativo == ativoInativo)
                                                .ToList();
+
+                    foreach (var usuario in usuarios)
+                    {
+                        usuario.SenhaAcesso = DescriptografarSenha(usuario.SenhaAcesso);
+
+                        if (usuario.Email is not null)
+                            usuario.Email.SenhaEmail = DescriptografarSenha(usuario.Email.SenhaEmail);
+                    }
                 }
             }
             catch (Exception)
@@ -134,9 +151,15 @@ namespace ControleSe.Servico
                         if (usuarioLogado != null)
                         {
                             if (usuarioLogado.Id == 0)
+                            {
+                                usuarioLogado.SenhaAcesso = CriptografarSenha(usuarioLogado.SenhaAcesso);
                                 contexto.Usuario.Add(usuarioLogado);
+                            }
                             else
+                            {
+                                usuarioLogado.SenhaAcesso = CriptografarSenha(usuarioLogado.SenhaAcesso);
                                 contexto.Usuario.Update(usuarioLogado);
+                            }
 
                             contexto.SaveChanges();
                             EhValido = true;
@@ -202,6 +225,8 @@ namespace ControleSe.Servico
             {
                 EhValido = false;
 
+                usuarioLogado.SenhaAcesso = CriptografarSenha(usuarioLogado.SenhaAcesso);
+
                 using (var contexto = new Contexto())
                 {
                     bool any = contexto.Usuario.Any(a =>
@@ -220,26 +245,46 @@ namespace ControleSe.Servico
             }
         }
 
-        public IEnumerable<Usuario> PesquisarUsuario(string usuario, bool ativo)
+        public IEnumerable<Usuario> PesquisarUsuario(string usuarioPesquisa, bool ativo)
         {
             try
             {
-                IEnumerable<Usuario> usuarioPesquisa = null;
+                IEnumerable<Usuario> usuarios = null;
 
                 using (var contexto = new Contexto())
                 {
-                    usuarioPesquisa = contexto.Usuario.Where(w =>
-                                                             w.UsuarioAcesso.StartsWith(usuario) &&
-                                                             w.Ativo == ativo)
-                                                            .ToList();
+                    usuarios = contexto.Usuario.Where(w =>
+                                                      w.UsuarioAcesso.StartsWith(usuarioPesquisa) &&
+                                                      w.Ativo == ativo)
+                                                      .ToList();
                 }
 
-                return usuarioPesquisa;
+                foreach (var usuario in usuarios)
+                {
+                    usuario.SenhaAcesso = CriptografarSenha(usuario.SenhaAcesso);
+
+                    if (usuario.Email is not null)
+                    {
+                        usuario.Email.SenhaEmail = DescriptografarSenha(usuario.Email.SenhaEmail);
+                    }
+                }
+
+                return usuarios;
             }
             catch (Exception)
             {
                 throw;
             }
+        }
+
+        private string CriptografarSenha(string senha)
+        {
+            return ServicoCriptografia.Criptografar(senha);
+        }
+
+        private string DescriptografarSenha(string senha)
+        {
+            return ServicoCriptografia.Descriptografar(senha);
         }
     }
 }
