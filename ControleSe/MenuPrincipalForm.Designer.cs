@@ -31,10 +31,12 @@ namespace ControleSe
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipalForm));
             this.panelCabecalho = new System.Windows.Forms.Panel();
+            this.lblLogoff = new System.Windows.Forms.Label();
             this.pbxIcone = new System.Windows.Forms.PictureBox();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnEmail = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnRelatorios = new System.Windows.Forms.Button();
             this.btnCofre = new System.Windows.Forms.Button();
@@ -44,7 +46,6 @@ namespace ControleSe
             this.lblRodapeDataHora = new System.Windows.Forms.Label();
             this.lblRodapeUsuarioLogado = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnEmail = new System.Windows.Forms.Button();
             this.panelCabecalho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxIcone)).BeginInit();
             this.panelMenu.SuspendLayout();
@@ -54,6 +55,7 @@ namespace ControleSe
             // panelCabecalho
             // 
             this.panelCabecalho.BackColor = System.Drawing.Color.DarkGray;
+            this.panelCabecalho.Controls.Add(this.lblLogoff);
             this.panelCabecalho.Controls.Add(this.pbxIcone);
             this.panelCabecalho.Controls.Add(this.btnMinimizar);
             this.panelCabecalho.Controls.Add(this.btnFechar);
@@ -62,6 +64,18 @@ namespace ControleSe
             this.panelCabecalho.Name = "panelCabecalho";
             this.panelCabecalho.Size = new System.Drawing.Size(1039, 52);
             this.panelCabecalho.TabIndex = 0;
+            // 
+            // lblLogoff
+            // 
+            this.lblLogoff.AutoSize = true;
+            this.lblLogoff.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblLogoff.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblLogoff.Location = new System.Drawing.Point(64, 17);
+            this.lblLogoff.Name = "lblLogoff";
+            this.lblLogoff.Size = new System.Drawing.Size(49, 18);
+            this.lblLogoff.TabIndex = 3;
+            this.lblLogoff.Text = "Logoff";
+            this.lblLogoff.Click += new System.EventHandler(this.lblLogoff_Click);
             // 
             // pbxIcone
             // 
@@ -122,6 +136,21 @@ namespace ControleSe
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(200, 450);
             this.panelMenu.TabIndex = 1;
+            // 
+            // btnEmail
+            // 
+            this.btnEmail.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btnEmail.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnEmail.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.btnEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmail.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEmail.Location = new System.Drawing.Point(3, 231);
+            this.btnEmail.Name = "btnEmail";
+            this.btnEmail.Size = new System.Drawing.Size(194, 48);
+            this.btnEmail.TabIndex = 6;
+            this.btnEmail.Text = "Email";
+            this.btnEmail.UseVisualStyleBackColor = true;
+            this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click);
             // 
             // btnUsuarios
             // 
@@ -243,21 +272,6 @@ namespace ControleSe
             this.label1.Text = "ControleSe";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnEmail
-            // 
-            this.btnEmail.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
-            this.btnEmail.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.btnEmail.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
-            this.btnEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmail.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnEmail.Location = new System.Drawing.Point(3, 231);
-            this.btnEmail.Name = "btnEmail";
-            this.btnEmail.Size = new System.Drawing.Size(194, 48);
-            this.btnEmail.TabIndex = 6;
-            this.btnEmail.Text = "Email";
-            this.btnEmail.UseVisualStyleBackColor = true;
-            this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click);
-            // 
             // MenuPrincipalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -273,6 +287,7 @@ namespace ControleSe
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelCabecalho.ResumeLayout(false);
+            this.panelCabecalho.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxIcone)).EndInit();
             this.panelMenu.ResumeLayout(false);
             this.panelRodape.ResumeLayout(false);
@@ -297,5 +312,6 @@ namespace ControleSe
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pbxIcone;
         private System.Windows.Forms.Button btnEmail;
+        private System.Windows.Forms.Label lblLogoff;
     }
 }

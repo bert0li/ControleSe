@@ -28,7 +28,7 @@ namespace ControleSe.Servico
                 _chaveSecretaByte = Encoding.UTF8.GetBytes(_chaveSecreta);
                 _textoByArray = Encoding.UTF8.GetBytes(texto);
 
-                using (DESCryptoServiceProvider des = new DESCryptoServiceProvider())
+                using (DESCryptoServiceProvider des = new())
                 {
                     _memoryStream = new MemoryStream();
                     _cryptoStream = new CryptoStream(_memoryStream, des.CreateEncryptor(_chavePublicaByte, _chaveSecretaByte), CryptoStreamMode.Write);
@@ -42,7 +42,7 @@ namespace ControleSe.Servico
             catch (Exception ex)
             {
                 ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
-                return default(string);
+                return default;
             }
         }
 
@@ -56,7 +56,7 @@ namespace ControleSe.Servico
                 _textoByArray = new byte[texto.Replace(" ", "+").Length];
                 _textoByArray = Convert.FromBase64String(texto.Replace(" ", "+"));
 
-                using (DESCryptoServiceProvider des = new DESCryptoServiceProvider())
+                using (DESCryptoServiceProvider des = new())
                 {
                     _memoryStream = new MemoryStream();
                     _cryptoStream = new CryptoStream(_memoryStream, des.CreateDecryptor(_chavePublicaByte, _chaveSecretaByte), CryptoStreamMode.Write);
@@ -71,7 +71,7 @@ namespace ControleSe.Servico
             catch (Exception ex)
             {
                 ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
-                return default(string);
+                return default;
             }
         }
     }

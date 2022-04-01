@@ -96,7 +96,7 @@ namespace ControleSe.Operacoes
 
         private void ExibirSplash()
         {
-            using (var formSplah = new SalvarSplash())
+            using (SalvarSplash formSplah = new())
             {
                 formSplah.ShowDialog();
             }
@@ -104,7 +104,7 @@ namespace ControleSe.Operacoes
 
         private bool VerificarIgualdadeSenha()
         {
-            var senhasIguais = false;
+            bool senhasIguais = false;
 
             if (txtSenha.Text != txtConfirmarSenha.Text)
                 Msg.Atencao("Senhas são diferentes. Digite novamente.");

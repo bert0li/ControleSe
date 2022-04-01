@@ -55,14 +55,14 @@ namespace ControleSe.Operacoes
         {
             if (incluir)
             {
-                _divida = new Divida();
+                _divida = new();
                 _divida.UsuarioId = _usuario.Id;
                 _divida.EhIncluir = true;
             }
 
             if (_divida != null)
             {
-                using (var form = new DividaDetalheForm(_servico, _divida, _usuario))
+                using (DividaDetalheForm form = new(_servico, _divida, _usuario))
                 {
                     form.ShowDialog();
                 }
@@ -106,12 +106,12 @@ namespace ControleSe.Operacoes
         {
             try
             {
-                var dataVencimento = (DateTime)grid.Rows[e.RowIndex].Cells["colDataVencimento"]?.Value;
-                var pago = (bool)grid.Rows[e.RowIndex].Cells["colPago"]?.Value;
+                DateTime dataVencimento = (DateTime)grid.Rows[e.RowIndex].Cells["colDataVencimento"]?.Value;
+                bool pago = (bool)grid.Rows[e.RowIndex].Cells["colPago"]?.Value;
 
                 if (dataVencimento <= DateTime.Now && pago != true)
                 {
-                    var cells = grid.Columns.Count;
+                    int cells = grid.Columns.Count;
 
                     for (int i = 0; i < cells; i++)
                     {
@@ -129,12 +129,13 @@ namespace ControleSe.Operacoes
 
         private void SomarTotalDivida()
         {
-            var somaTotalDivida = 0M;
+            decimal somaTotalDivida = 0M;
 
             for (var i = 0; i < grid.RowCount; i++)
             {
-                var valorDivida = (decimal)grid.Rows[i].Cells["colValor"]?.Value;
-                var pagoDivida = (bool)grid.Rows[i].Cells["colPago"]?.Value;
+                decimal valorDivida = (decimal)grid.Rows[i].Cells["colValor"]?.Value;
+                bool pagoDivida = (bool)grid.Rows[i].Cells["colPago"]?.Value;
+
                 if (valorDivida > 0 && pagoDivida != true)
                 {
                     somaTotalDivida += valorDivida;
@@ -143,26 +144,21 @@ namespace ControleSe.Operacoes
 
             lblValorTotalDivida.Text = somaTotalDivida.ToString("C");
         }
-        
-        private void grid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-            => VerificarVencimento(e);
 
         private void grid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        { 
+        {
             LinhaSeleciona(e);
             AlterarIncluirDivida();
         }
 
-        private void grid_CellClick(object sender, DataGridViewCellEventArgs e)
-            => LinhaSeleciona(e);
+        private void grid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e) => VerificarVencimento(e);
 
-        private void btnAdd_Click(object sender, EventArgs e)
-            => AlterarIncluirDivida(true);
+        private void grid_CellClick(object sender, DataGridViewCellEventArgs e) => LinhaSeleciona(e);
 
-        private void btnAlterar_Click(object sender, EventArgs e)
-            => AlterarIncluirDivida();
+        private void btnAdd_Click(object sender, EventArgs e) => AlterarIncluirDivida(true);
 
-        private void btnDeletar_Click(object sender, EventArgs e)
-            => ExcluirDivida();
+        private void btnAlterar_Click(object sender, EventArgs e) => AlterarIncluirDivida();
+
+        private void btnDeletar_Click(object sender, EventArgs e) => ExcluirDivida();
     }
 }

@@ -68,16 +68,13 @@ namespace ControleSe.Operacoes
 
         private void ExibirSplash()
         {
-            using (var formSplah = new SalvarSplash())
+            using (SalvarSplash formSplah = new())
             {
                 formSplah.ShowDialog();
             }
         }
 
-        private void IncluirLabelInformacao()
-        {
-            lblInformacao.Text = "Atenção!!\nApós a inclusão da entrada não é possível alterar, somente exluir.";
-        }
+        private void IncluirLabelInformacao() => lblInformacao.Text = "Atenção!!\nApós a inclusão da entrada não é possível alterar, somente exluir.";
 
         private void txtValorEntrada_KeyPress(object sender, KeyPressEventArgs e)
         {

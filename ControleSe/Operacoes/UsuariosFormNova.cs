@@ -51,10 +51,9 @@ namespace ControleSe.Operacoes
             if (incluir)
             {
                 _usuarioSelecionado = new Usuario();
-                //_usuario.EhIncluir = true;
             }
 
-            using (var form = new UsuarioDetalheFormNova(_servico, _usuarioSelecionado))
+            using (UsuarioDetalheFormNova form = new(_servico, _usuarioSelecionado))
             {
                 form.ShowDialog();
             }
@@ -101,7 +100,7 @@ namespace ControleSe.Operacoes
 
         private void ExibirSplash()
         {
-            using (var form = new DeletarSplash())
+            using (DeletarSplash form = new())
             {
                 form.ShowDialog();
             }

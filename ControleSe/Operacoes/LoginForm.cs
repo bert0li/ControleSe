@@ -34,7 +34,6 @@ namespace ControleSe.Operacoes
 
             txtUsuario.DataBindings.Add("Text", Usuario, "UsuarioAcesso");
             txtSenha.DataBindings.Add("Text", Usuario, "SenhaAcesso");
-
         }
 
         private void Entrar()
@@ -63,7 +62,7 @@ namespace ControleSe.Operacoes
 
         private void ExibirSplas()
         {
-            using(var form = new LoginSplash())
+            using(LoginSplash form = new())
             {
                 form.ShowDialog();
             }
@@ -90,16 +89,12 @@ namespace ControleSe.Operacoes
             }
         }
 
-        private void txtUsuario_KeyDown(object sender, KeyEventArgs e)
-            => AcaoAcionada(e);
+        private void txtUsuario_KeyDown(object sender, KeyEventArgs e) => AcaoAcionada(e);
 
-        private void txtSenha_KeyDown(object sender, KeyEventArgs e)
-            => AcaoAcionada(e);
+        private void txtSenha_KeyDown(object sender, KeyEventArgs e) => AcaoAcionada(e);
 
-        private void btnEntrar_Click(object sender, EventArgs e)
-            => Entrar();
+        private void btnEntrar_Click(object sender, EventArgs e) => Entrar();
 
-        private void btnCancelar_Click(object sender, EventArgs e)
-            => Close();
+        private void btnCancelar_Click(object sender, EventArgs e) => Close();
     }
 }

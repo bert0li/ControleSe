@@ -21,10 +21,7 @@ namespace ControleSe.Operacoes
             SetarDataAtual();
         }
 
-        private void SetarDataAtual()
-        {
-            dtpDataNovoVencimento.Value = DateTime.Now;
-        }
+        private void SetarDataAtual() => dtpDataNovoVencimento.Value = DateTime.Now;
 
         private void SetarNovoVencimento()
         {

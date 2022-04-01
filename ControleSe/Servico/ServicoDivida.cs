@@ -53,7 +53,7 @@ namespace ControleSe.Servico
             {
                 IEnumerable<Divida> dividas = null;
 
-                using (var contexto = new Contexto())
+                using (Contexto contexto = new())
                 {
                     dividas = contexto.Divida.Include(i => i.Usuario)
                                              .Where(w => w.UsuarioId == usuarioLogado.Id)
@@ -79,7 +79,7 @@ namespace ControleSe.Servico
                 {
                     if (RetirarValorNoCofre(divida.Valor, usuarioLogado))
                     {
-                        using (var contexto = new Contexto())
+                        using (Contexto contexto = new())
                         {
                             Divida dividaParaPagar = contexto.Divida.Where(w =>
                                                                            w.Id == divida.Id &&
@@ -115,7 +115,7 @@ namespace ControleSe.Servico
 
                 if (divida != null)
                 {
-                    using (var contexto = new Contexto())
+                    using (Contexto contexto = new())
                     {
                         Divida dividaPesquisa = contexto.Divida.Where(w =>
                                                                       w.Id == divida.Id &&
@@ -149,7 +149,7 @@ namespace ControleSe.Servico
             {
                 if (divida != null)
                 {
-                    using (var contexto = new Contexto())
+                    using (Contexto contexto = new())
                     {
                         if (divida.Id == 0)
                         {
@@ -180,7 +180,7 @@ namespace ControleSe.Servico
 
             try
             {
-                using (var contexto = new Contexto())
+                using (Contexto contexto = new())
                 {
                     if (divida != null)
                     {
@@ -204,7 +204,7 @@ namespace ControleSe.Servico
             {
                 EhValido = false;
 
-                using (var contexto = new Contexto())
+                using (Contexto contexto = new())
                 {
                     Cofre cofre = contexto.Cofre.Where(w => w.UsuarioId == usuarioLogado.Id)
                                                 .FirstOrDefault();
@@ -248,7 +248,7 @@ namespace ControleSe.Servico
                 DateTime dataDePesquisa = dataDe.Date;
                 DateTime dataAtePesquisa = dataAte.Date;
 
-                using (var contexto = new Contexto())
+                using (Contexto contexto = new())
                 {
 
                     dividasPesquisa = contexto.Divida.Where(w => w.UsuarioId == usuarioLogado.Id).ToList();

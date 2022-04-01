@@ -17,7 +17,7 @@ namespace ControleSe.Servico
             {
                 bool ehAdm = false;
 
-                using (var contexto = new Contexto())
+                using (Contexto contexto = new())
                 {
                     ehAdm = contexto.Usuario.Any(w => w.Id == usuarioLogado.Id && w.EhAdm == true);
                 }

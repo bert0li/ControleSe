@@ -37,7 +37,7 @@ namespace ControleSe.Servico
             {
                 IEnumerable<Entrada> entradas = null;
 
-                using (var contexto = new Contexto())
+                using (Contexto contexto = new())
                 {
                     entradas = contexto.Entrada
                                        .Include(i => i.Usuario)
@@ -61,7 +61,7 @@ namespace ControleSe.Servico
 
                 IEnumerable<Entrada> entradas = null;
 
-                using (var contexto = new Contexto())
+                using (Contexto contexto = new())
                 {
                     entradas = contexto.Entrada
                                        .Include(i => i.Usuario)
@@ -86,7 +86,7 @@ namespace ControleSe.Servico
             {
                 EhValido = false;
 
-                using (var contexto = new Contexto())
+                using (Contexto contexto = new())
                 {
                     if (entrada != null)
                     {
@@ -113,7 +113,7 @@ namespace ControleSe.Servico
 
                 if (RetirarValorNoCofre(entrada.ValorEntrada, usuarioLogado))
                 {
-                    using (var contexto = new Contexto())
+                    using (Contexto contexto = new())
                     {
                         contexto.Entrada.Remove(entrada);
                         contexto.SaveChanges();
@@ -133,7 +133,7 @@ namespace ControleSe.Servico
         {
             try
             {
-                using (var contexto = new Contexto())
+                using (Contexto contexto = new())
                 {
                     Cofre cofre = contexto.Cofre
                                           .Where(w => w.UsuarioId == usuarioLogado.Id)
@@ -146,8 +146,11 @@ namespace ControleSe.Servico
                     }
                     else
                     {
-                        cofre = new Cofre();
-                        cofre.UsuarioId = usuarioLogado.Id;
+                        cofre = new Cofre
+                        {
+                            UsuarioId = usuarioLogado.Id
+                        };
+
                         cofre.AdicionarValor(valor);
                         contexto.Cofre.Add(cofre);
                     }
@@ -167,7 +170,7 @@ namespace ControleSe.Servico
             {
                 EhValido = false;
 
-                using (var contexto = new Contexto())
+                using (Contexto contexto = new())
                 {
                     Cofre cofre = contexto.Cofre
                                           .Where(w => w.UsuarioId == usuarioLogado.Id)

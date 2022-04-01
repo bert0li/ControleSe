@@ -31,8 +31,8 @@ namespace ControleSe.Operacoes
 
         private void SetarDatas()
         {
-            var primeiroDiaMes = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
-            var ultimoDiaMes = primeiroDiaMes.AddMonths(1).AddDays(-1);
+            DateTime primeiroDiaMes = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            DateTime ultimoDiaMes = primeiroDiaMes.AddMonths(1).AddDays(-1);
             dtpDataDe.Value = primeiroDiaMes;
             dtpDataAte.Value = ultimoDiaMes;
         }
@@ -54,10 +54,10 @@ namespace ControleSe.Operacoes
 
         private void IncluirEntrada()
         {
-            _entrada = new Entrada();
+            _entrada = new();
             _entrada.UsuarioId = _usuario.Id;
 
-            using (var form = new EntradaDetalheForm(_servico, _entrada, _usuario))
+            using (EntradaDetalheForm form = new (_servico, _entrada, _usuario))
             {
                 form.ShowDialog();
             }
@@ -87,7 +87,7 @@ namespace ControleSe.Operacoes
         {
             try
             {
-                var entradaPesquisa = _servico.PesquisarEntradas(_usuario, dtpDataDe.Value, dtpDataAte.Value);
+                IEnumerable<Entrada> entradaPesquisa = _servico.PesquisarEntradas(_usuario, dtpDataDe.Value, dtpDataAte.Value);
                 grid.DataSource = entradaPesquisa;
             }
             catch (Exception ex)
@@ -107,7 +107,7 @@ namespace ControleSe.Operacoes
 
         private void ExibirSplash()
         {
-            using (var formSplah = new DeletarSplash())
+            using (DeletarSplash formSplah = new())
             {
                 formSplah.ShowDialog();
             }
@@ -120,6 +120,5 @@ namespace ControleSe.Operacoes
         private void btnDeletar_Click(object sender, EventArgs e) => ExcluirEntrada();
 
         private void btnPesquisa_Click(object sender, EventArgs e) => Pesquisar();
-
     }
 }

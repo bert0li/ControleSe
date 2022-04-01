@@ -54,13 +54,25 @@ namespace ControleSe.Servico
             return EhValido;
         }
 
+        private bool ValidarEmail(string email)
+        {
+            EhValido = false;
+
+            if (string.IsNullOrWhiteSpace(email))
+                return EhValido;
+            else
+                EhValido = new Regex(@"^([\w\-]+\.)*[\w\- ]+@([\w\- ]+\.)+([\w\-]{2,3})$").IsMatch(email);
+
+            return EhValido;
+        }
+
         public bool Salvar(Email email, Usuario usuarioLogado)
         {
             try
             {
                 EhValido = false;
 
-                using (var contexto = new Contexto())
+                using (Contexto contexto = new())
                 {
                     if (email is not null)
                     {
@@ -89,25 +101,13 @@ namespace ControleSe.Servico
             }
         }
 
-        private bool ValidarEmail(string email)
-        {
-            EhValido = false;
-
-            if (string.IsNullOrWhiteSpace(email))
-                return EhValido;
-            else
-                EhValido = new Regex(@"^([\w\-]+\.)*[\w\- ]+@([\w\- ]+\.)+([\w\-]{2,3})$").IsMatch(email);
-
-            return EhValido;
-        }
-
         public async Task EnviarEmailAsync(Email email, Divida divida)
         {
             try
             {
-                using (var smptClient = new SmtpClient())
+                using (SmtpClient smptClient = new())
                 {
-                    using (var mailMessage = new MailMessage())
+                    using (MailMessage mailMessage = new())
                     {
                         mailMessage.From = new MailAddress(email.EnderecoEmail);
                         mailMessage.Subject = "ControleSe - DIVIDA PAGA";
@@ -141,11 +141,6 @@ namespace ControleSe.Servico
         private string CriptografarSenha(string senha)
         {
             return ServicoCriptografia.Criptografar(senha);
-        }
-
-        private string DescriptografarSenha(string senha)
-        {
-            return ServicoCriptografia.Descriptografar(senha);
         }
     }
 }

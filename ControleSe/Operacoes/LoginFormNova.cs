@@ -42,7 +42,7 @@ namespace ControleSe.Operacoes
             {
                 if (_servicoUsuario.ValidarLogin(Usuario))
                 {
-                    var usuario = _servicoUsuario.Logar(Usuario);
+                    Usuario usuario = _servicoUsuario.Logar(Usuario);
 
                     if (usuario != null)
                     {
@@ -61,7 +61,7 @@ namespace ControleSe.Operacoes
 
         private void ExibirSplas()
         {
-            using (var form = new LoginSplash())
+            using (LoginSplash form = new())
             {
                 form.ShowDialog();
             }
@@ -90,7 +90,7 @@ namespace ControleSe.Operacoes
 
         private void CadastrarSe()
         {
-            using (var form = new UsuarioDetalheFormNova(_servicoUsuario, new Usuario(), true))
+            using (UsuarioDetalheFormNova form = new(_servicoUsuario, new Usuario(), true))
             {
                 form.lblDetalheUsuario.Text = "Cadastro de novo usuário";
                 form.ShowDialog();

@@ -57,14 +57,14 @@ namespace ControleSe.Operacoes
         {
             if (incluir)
             {
-                _divida = new Divida();
+                _divida = new();
                 _divida.UsuarioId = _usuario.Id;
                 _divida.EhIncluir = true;
             }
 
             if (_divida != null)
             {
-                using (var form = new DividaDetalheFormNova(_servico, _divida, _usuario))
+                using (DividaDetalheFormNova form = new(_servico, _divida, _usuario))
                 {
                     form.ShowDialog();
                 }
@@ -108,9 +108,9 @@ namespace ControleSe.Operacoes
         {
             try
             {
-                var cells = grid.Columns.Count;
-                var dataVencimento = (DateTime)grid.Rows[e.RowIndex].Cells["colDataVencimento"]?.Value;
-                var pago = (bool)grid.Rows[e.RowIndex].Cells["colPago"]?.Value;
+                int cells = grid.Columns.Count;
+                DateTime dataVencimento = (DateTime)grid.Rows[e.RowIndex].Cells["colDataVencimento"]?.Value;
+                bool pago = (bool)grid.Rows[e.RowIndex].Cells["colPago"]?.Value;
 
                 if (DateTime.Now.Day + 1 == dataVencimento.Day &&
                     DateTime.Now.Month == dataVencimento.Month &&
@@ -165,16 +165,15 @@ namespace ControleSe.Operacoes
 
         private void SomarTotalDivida()
         {
-            var somaTotalDivida = 0M;
+            decimal somaTotalDivida = 0M;
 
-            for (var i = 0; i < grid.RowCount; i++)
+            for (int i = 0; i < grid.RowCount; i++)
             {
-                var valorDivida = (decimal)grid.Rows[i].Cells["colValor"]?.Value;
-                var pagoDivida = (bool)grid.Rows[i].Cells["colPago"]?.Value;
+                decimal valorDivida = (decimal)grid.Rows[i].Cells["colValor"]?.Value;
+                bool pagoDivida = (bool)grid.Rows[i].Cells["colPago"]?.Value;
+
                 if (valorDivida > 0 && pagoDivida != true)
-                {
                     somaTotalDivida += valorDivida;
-                }
             }
 
             lblValorTotalDivida.Text = somaTotalDivida.ToString("C");

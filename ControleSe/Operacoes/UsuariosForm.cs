@@ -51,10 +51,9 @@ namespace ControleSe.Operacoes
             if (incluir)
             {
                 _usuarioSelecionado = new Usuario();
-                //_usuario.EhIncluir = true;
             }
 
-            using (var form = new UsuarioDetalheForm(_servico, _usuarioSelecionado))
+            using (UsuarioDetalheForm form = new(_servico, _usuarioSelecionado))
             {
                 form.ShowDialog();
             }
@@ -101,7 +100,7 @@ namespace ControleSe.Operacoes
 
         private void ExibirSplash()
         {
-            using (var form = new DeletarSplash())
+            using (DeletarSplash form = new())
             {
                 form.ShowDialog();
             }
@@ -113,20 +112,15 @@ namespace ControleSe.Operacoes
             AlterarIncluirUsuario();
         }
 
-        private void cbxAtivos_CheckedChanged(object sender, EventArgs e)
-            => BindingUsuarios(cbxAtivos.Checked);
+        private void cbxAtivos_CheckedChanged(object sender, EventArgs e) => BindingUsuarios(cbxAtivos.Checked);
 
-        private void grid_CellClick(object sender, DataGridViewCellEventArgs e)
-            => SelecionarLinha(e);
+        private void grid_CellClick(object sender, DataGridViewCellEventArgs e) => SelecionarLinha(e);
 
-        private void btnAdd_Click(object sender, EventArgs e)
-            => AlterarIncluirUsuario(true);
+        private void btnAdd_Click(object sender, EventArgs e) => AlterarIncluirUsuario(true);
 
-        private void btnAlterar_Click(object sender, EventArgs e)
-            => AlterarIncluirUsuario();
+        private void btnAlterar_Click(object sender, EventArgs e) => AlterarIncluirUsuario();
 
-        private void btnDeletar_Click(object sender, EventArgs e)
-            => ExluirUsuario();
+        private void btnDeletar_Click(object sender, EventArgs e) => ExluirUsuario();
 
         private void btnPesquisa_Click(object sender, EventArgs e)
         {

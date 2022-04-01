@@ -118,6 +118,8 @@ namespace ControleSe
             }
         }
 
+        private void lblLogoff_Click(object sender, EventArgs e) => Application.Restart();
+
         private void btnMinimizar_Click(object sender, EventArgs e) => WindowState = FormWindowState.Minimized;
 
         private void btnFechar_Click(object sender, EventArgs e) => Close();

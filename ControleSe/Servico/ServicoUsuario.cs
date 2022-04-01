@@ -78,7 +78,7 @@ namespace ControleSe.Servico
 
             try
             {
-                using (var contexto = new Contexto())
+                using (Contexto contexto = new())
                 {
                     usuarioLogado.SenhaAcesso = CriptografarSenha(usuarioLogado.SenhaAcesso);
 
@@ -116,12 +116,12 @@ namespace ControleSe.Servico
 
             try
             {
-                using (var contexto = new Contexto())
+                using (Contexto contexto = new())
                 {
                     usuarios = contexto.Usuario.Where(w => w.Ativo == ativoInativo)
                                                .ToList();
 
-                    foreach (var usuario in usuarios)
+                    foreach (Usuario usuario in usuarios)
                     {
                         usuario.SenhaAcesso = DescriptografarSenha(usuario.SenhaAcesso);
 
@@ -146,7 +146,7 @@ namespace ControleSe.Servico
             {
                 if (usuarioLogado != null)
                 {
-                    using (var contexto = new Contexto())
+                    using (Contexto contexto = new())
                     {
                         if (usuarioLogado != null)
                         {
@@ -183,7 +183,7 @@ namespace ControleSe.Servico
             {
                 if (usuarioLogado.Id != usuarioSelecionado.Id)
                 {
-                    using (var contexto = new Contexto())
+                    using (Contexto contexto = new())
                     {
                         Usuario usuarioRetorno = contexto.Usuario
                                                          .Include(i => i.Dividas)
@@ -227,7 +227,7 @@ namespace ControleSe.Servico
 
                 usuarioLogado.SenhaAcesso = CriptografarSenha(usuarioLogado.SenhaAcesso);
 
-                using (var contexto = new Contexto())
+                using (Contexto contexto = new())
                 {
                     bool any = contexto.Usuario.Any(a =>
                                                     a.Id == usuarioLogado.Id &&
@@ -251,7 +251,7 @@ namespace ControleSe.Servico
             {
                 IEnumerable<Usuario> usuarios = null;
 
-                using (var contexto = new Contexto())
+                using (Contexto contexto = new())
                 {
                     usuarios = contexto.Usuario.Where(w =>
                                                       w.UsuarioAcesso.StartsWith(usuarioPesquisa) &&
@@ -259,7 +259,7 @@ namespace ControleSe.Servico
                                                       .ToList();
                 }
 
-                foreach (var usuario in usuarios)
+                foreach (Usuario usuario in usuarios)
                 {
                     usuario.SenhaAcesso = CriptografarSenha(usuario.SenhaAcesso);
 

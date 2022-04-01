@@ -46,10 +46,7 @@ namespace ControleSe.Operacoes
                 _divida.DataVencimento = dtpDataVencimento.Value;
         }
 
-        private void VerificarSePodePagar()
-        {
-            btnPagar.Enabled = _divida.Id == 0 ? false : true;
-        }
+        private void VerificarSePodePagar() =>  btnPagar.Enabled = _divida.Id == 0 ? false : true;
 
         /// <summary>
         /// Link com a documentação do código para 
@@ -66,7 +63,7 @@ namespace ControleSe.Operacoes
 
         public IList ListarEnum(Type tipo)
         {
-            ArrayList lista = new ArrayList();
+            ArrayList lista = new();
 
             if (tipo != null)
             {
@@ -152,7 +149,7 @@ namespace ControleSe.Operacoes
 
         private void ExibirSplash(string texto = null)
         {
-            using (var formSplah = new SalvarSplash())
+            using (SalvarSplash formSplah = new())
             {
                 if (!string.IsNullOrWhiteSpace(texto))
                     formSplah.lblInfo.Text = texto;
@@ -165,13 +162,13 @@ namespace ControleSe.Operacoes
         {
             try
             {
-                Timer timer = new Timer() { Interval = 1000 };
+                Timer timer = new() { Interval = 1000 };
                 timer.Start();
                 timer.Tick += (o, e) =>
                 {
                     if (_retornoEnvioEmail.IsCompletedSuccessfully)
                     {
-                        using (var form = new SplashEnvioEmail())
+                        using (SplashEnvioEmail form = new())
                         {
                             timer.Stop();
                             timer.Dispose();
@@ -205,7 +202,7 @@ namespace ControleSe.Operacoes
                             {
                                 if (Msg.Pergunta("Esse é uma divida FIXA. Deseja reabri-lá?") == DialogResult.Yes)
                                 {
-                                    using (var form = new DataNovoVencimentoForm())
+                                    using (DataNovoVencimentoForm form = new())
                                     {
                                         form.ShowDialog();
                                         _dataNovoVencimento = form.NovoVencimento;

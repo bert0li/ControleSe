@@ -31,7 +31,7 @@ namespace ControleSe.Operacoes
         {
             try
             {
-                var valorTotalNoCofre = _servico.ObterValorTotalCofre(_usuario);
+                string valorTotalNoCofre = _servico.ObterValorTotalCofre(_usuario);
                 lblValorTotalCofre.Text = valorTotalNoCofre;
             }
             catch (Exception ex)
@@ -46,9 +46,9 @@ namespace ControleSe.Operacoes
             try
             {
                 int contador = 0;
-                var ultimasEntradas = _servico.ObterUltimasEntradas(_usuario);
+                IEnumerable<Tuple<decimal, DateTime>> ultimasEntradas = _servico.ObterUltimasEntradas(_usuario);
 
-                foreach (var entrada in ultimasEntradas)
+                foreach (Tuple<decimal, DateTime> entrada in ultimasEntradas)
                 {
                     if (contador == 0)
                     {

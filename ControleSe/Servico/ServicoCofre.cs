@@ -18,7 +18,7 @@ namespace ControleSe.Servico
             {
                 string valorNoCofre = string.Empty;
 
-                using (var contexto = new Contexto())
+                using (Contexto contexto = new())
                 {
                     Cofre cofre = contexto.Cofre
                                           .Include(i => i.Usuario)
@@ -43,7 +43,7 @@ namespace ControleSe.Servico
                 IList<Tuple<decimal, DateTime>> tuple = new List<Tuple<decimal, DateTime>>();
                 IEnumerable<Entrada> ultimasEntradas = null;
 
-                using (var contexto = new Contexto())
+                using (Contexto contexto = new())
                 {
                     ultimasEntradas = contexto.Entrada
                                               .Where(w => w.UsuarioId == usuarioLogado.Id)
@@ -54,7 +54,7 @@ namespace ControleSe.Servico
 
                 if (usuarioLogado != null)
                 {
-                    foreach (var entrada in ultimasEntradas)
+                    foreach (Entrada entrada in ultimasEntradas)
                     {
                         tuple.Add(Tuple.Create(entrada.ValorEntrada, entrada.DataEntrada));
                     }

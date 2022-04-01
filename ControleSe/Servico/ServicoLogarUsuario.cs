@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace ControleSe.Servico
 {
-    public static class ServicoLogarUsuario
+    public class ServicoLogarUsuario
     {
         public static Usuario Usuario;
 
         public static Usuario LogarUsuario()
         {
-            using (var form = new LoginFormNova(new ServicoUsuario(), new Usuario()))
+            using (LoginFormNova form = new(new ServicoUsuario(), new Usuario()))
             {
                 form.ShowDialog();
 

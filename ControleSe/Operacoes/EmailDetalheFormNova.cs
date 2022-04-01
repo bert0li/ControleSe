@@ -49,7 +49,7 @@ namespace ControleSe.Operacoes
 
         private void ExibirSplash()
         {
-            using (var formSplah = new SalvarSplash())
+            using (SalvarSplash formSplah = new())
             {
                 formSplah.ShowDialog();
             }

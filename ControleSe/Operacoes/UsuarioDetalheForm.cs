@@ -49,7 +49,7 @@ namespace ControleSe.Operacoes
 
         private bool VerificarIgualdadeSenha()
         {
-            var senhasIguais = false;
+            bool senhasIguais = false;
 
             if (txtSenha.Text != txtConfirmarSenha.Text)
                 Msg.Atencao("Senhas são diferentes. Digite novamente.");
@@ -87,7 +87,7 @@ namespace ControleSe.Operacoes
 
         private void ExibirSplash()
         {
-            using (var formSplah = new SalvarSplash())
+            using (SalvarSplash formSplah = new())
             {
                 formSplah.ShowDialog();
             }
@@ -111,10 +111,8 @@ namespace ControleSe.Operacoes
             }
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
-            => Salvar();
+        private void btnSalvar_Click(object sender, EventArgs e) => Salvar();
 
-        private void btnSair_Click(object sender, EventArgs e)
-            => Close();
+        private void btnSair_Click(object sender, EventArgs e) => Close();
     }
 }
