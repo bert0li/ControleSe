@@ -19,6 +19,7 @@ namespace ControleSe.Operacoes
         private ServicoEntrada _servico = null;
         private Entrada _entrada = null;
         private Usuario _usuario = null;
+        private IList<Mensagem> _erros = null;
 
         public EntradaDetalheFormNova(ServicoEntrada servicoEntrada, Entrada entrada, Usuario usuarioLogado)
         {
@@ -37,6 +38,7 @@ namespace ControleSe.Operacoes
             try
             {
                 _servico = _servico ?? new ServicoEntrada();
+                _erros = new List<Mensagem>();
 
                 txtValorEntrada.DataBindings.Add("Text", _entrada, "ValorEntrada");
                 txtObservacao.DataBindings.Add("Text", _entrada, "Observacao");
@@ -75,7 +77,13 @@ namespace ControleSe.Operacoes
         {
             try
             {
-                if (_servico.Validar(_entrada))
+                _erros = _servico.Validar(_entrada, _erros);
+
+                if (_erros.Count > 0)
+                {
+                    MensagemUtil.ExibirMensagem("Entrada", _erros);
+                }
+                else
                 {
                     if (_servico.Salvar(_entrada, _usuario))
                     {

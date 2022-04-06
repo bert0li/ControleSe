@@ -27,6 +27,7 @@ namespace ControleSe.Operacoes
         private bool PrimeiroBinding = false;
         private Task _retornoEnvioEmail = null;
         private DateTime _dataNovoVencimento;
+        private IList<Mensagem> _erros = null;
 
         public DividaDetalheFormNova(ServicoDivida servicoDivida, Divida divida, Usuario usuarioLogado)
         {
@@ -93,6 +94,7 @@ namespace ControleSe.Operacoes
                 _servicoDivida = _servicoDivida ?? new ServicoDivida();
                 _servicoEmail = new ServicoEmail();
                 _servicoArquivo = new ServicoArquivo();
+                _erros = new List<Mensagem>();
 
                 InicializarDatas();
                 CarregarCompoBox();
@@ -131,7 +133,13 @@ namespace ControleSe.Operacoes
         {
             try
             {
-                if (_servicoDivida.Validar(_divida))
+                _erros = _servicoDivida.Validar(_divida, _erros);
+
+                if (_erros.Count > 0)
+                {
+                    MensagemUtil.ExibirMensagem("Divida", _erros);
+                }
+                else
                 {
                     if (_servicoDivida.Salvar(_divida))
                     {
@@ -153,7 +161,7 @@ namespace ControleSe.Operacoes
             {
                 if (!string.IsNullOrWhiteSpace(texto))
                     formSplah.lblInfo.Text = texto;
-                
+
                 formSplah.ShowDialog();
             }
         }
@@ -189,7 +197,7 @@ namespace ControleSe.Operacoes
                     if (Msg.Pergunta("Deseja realmente pagar?") == DialogResult.Yes)
                     {
                         Tuple<Divida, bool> dividaTuple = _servicoDivida.Pagar(_divida, _usuarioLogado);
-                        
+
                         if (dividaTuple.Item2)
                         {
                             if (Msg.Pergunta("Divida paga.\nDeseja enviar a comprovação do pagamento no seu e-mail?") == DialogResult.Yes)

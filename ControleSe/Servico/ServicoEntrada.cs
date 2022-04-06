@@ -13,22 +13,23 @@ namespace ControleSe.Servico
 {
     public class ServicoEntrada : ServicoBase
     {
-        public bool Validar(Entrada entrada)
+        public IList<Mensagem> Validar(Entrada entrada, IList<Mensagem> erros)
         {
             if (entrada != null)
             {
                 if (entrada.ValorEntrada <= 0)
                 {
-                    Msg.Atencao("Informe o Valor da entrada.");
-                    EhValido = false;
+                    erros.Add(new Mensagem("Informe o Valor da entrada."));
+                    //Msg.Atencao("Informe o Valor da entrada.");
+                    //EhValido = false;
                 }
-                else
-                {
-                    EhValido = true;
-                }
+                //else
+                //{
+                //    EhValido = true;
+                //}
             }
 
-            return EhValido;
+            return erros;
         }
 
         public IEnumerable<Entrada> ObterEntradas(Usuario usuario)

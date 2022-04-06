@@ -129,22 +129,22 @@ namespace ControleSe.Operacoes
 
         private void Salvar()
         {
-            try
-            {
-                if (_servicoDivida.Validar(_divida))
-                {
-                    if (_servicoDivida.Salvar(_divida))
-                    {
-                        ExibirSplash();
-                        Close();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
-                Msg.Erro($"[Erro]:{ex.Message} - [StackTrace]:{ex.StackTrace}");
-            }
+            //try
+            //{
+            //    if (_servicoDivida.Validar(_divida))
+            //    {
+            //        if (_servicoDivida.Salvar(_divida))
+            //        {
+            //            ExibirSplash();
+            //            Close();
+            //        }
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
+            //    Msg.Erro($"[Erro]:{ex.Message} - [StackTrace]:{ex.StackTrace}");
+            //}
         }
 
         private void ExibirSplash(string texto = null)

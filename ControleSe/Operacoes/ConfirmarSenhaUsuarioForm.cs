@@ -18,12 +18,14 @@ namespace ControleSe.Operacoes
         private ServicoUsuario _servico = null;
         private Usuario _usuario = null;
         public bool EhValido = false;
+        private IList<Mensagem> _erros = null;
 
         public ConfirmarSenhaUsuarioForm(Usuario usuarioLogado, ServicoUsuario servicoUsuario)
         {
             InitializeComponent();
             _usuario = usuarioLogado;
             _servico = servicoUsuario;
+            _erros = new List<Mensagem>();
         }
 
         private void VerificarSenhaSegurança()
@@ -32,22 +34,26 @@ namespace ControleSe.Operacoes
             {
                 if(!string.IsNullOrWhiteSpace(txtSenha.Text))
                 {
-                    EhValido = _servico.VerificarSenhaSegurança(_usuario, txtSenha.Text);
+                    _erros = _servico.VerificarSenhaSegurança(_usuario, txtSenha.Text, _erros);
 
-                    if (EhValido)
+                    if (_erros.Count > 0)
                     {
-                        Close();
+                        MensagemUtil.ExibirMensagem("Confirmação de senha", _erros);
+                        //Msg.Informacao("Senha inválida.");
+                        txtSenha.Focus();
+                        txtSenha.SelectAll();
                     }
                     else
                     {
-                        Msg.Informacao("Senha inválida.");
-                        txtSenha.Focus();
-                        txtSenha.SelectAll();
+                        Close();
                     }
                 }
                 else
                 {
-                    Msg.Informacao("Informe a senha do seu usuário.");
+                    _erros.Clear();
+                    _erros.Add(new Mensagem("Informe a senha do seu usuário."));
+                    MensagemUtil.ExibirMensagem("Confirmação de senha", _erros);
+                    //Msg.Informacao("Informe a senha do seu usuário.");
                     txtSenha.Focus();
                 }
             }

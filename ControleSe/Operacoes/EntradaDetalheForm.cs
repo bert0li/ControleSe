@@ -48,22 +48,22 @@ namespace ControleSe.Operacoes
 
         private void Salvar()
         {
-            try
-            {
-                if (_servico.Validar(_entrada))
-                {
-                    if (_servico.Salvar(_entrada, _usuario))
-                    {
-                        ExibirSplash();
-                        Close();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
-                Msg.Erro($"[Erro]:{ex.Message}\n[StackTrace]:{ex.StackTrace}");
-            }
+            //try
+            //{
+            //    if (_servico.Validar(_entrada))
+            //    {
+            //        if (_servico.Salvar(_entrada, _usuario))
+            //        {
+            //            ExibirSplash();
+            //            Close();
+            //        }
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    ServicoLogErro.Gravar(ex.Message, ex.StackTrace);
+            //    Msg.Erro($"[Erro]:{ex.Message}\n[StackTrace]:{ex.StackTrace}");
+            //}
         }
 
         private void ExibirSplash()

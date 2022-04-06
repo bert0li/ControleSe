@@ -18,6 +18,7 @@ namespace ControleSe.Operacoes
     {
         private ServicoEmail _servico = null;
         private Usuario _usuarioLogado = null;
+        private IList<Mensagem> _erros = null;
 
         public EmailDetalheFormNova(ServicoEmail servico, Usuario usuarioLogado)
         {
@@ -33,6 +34,7 @@ namespace ControleSe.Operacoes
             {
                 _usuarioLogado = usuairoLogado ?? new Usuario();
                 _usuarioLogado.Email = usuairoLogado.Email ?? new Email();
+                _erros = new List<Mensagem>();
 
                 txtSmtp.DataBindings.Add("Text", _usuarioLogado.Email, "Smtp");
                 txtPorta.DataBindings.Add("Text", _usuarioLogado.Email, "Porta");
@@ -74,7 +76,13 @@ namespace ControleSe.Operacoes
         {
             try
             {
-                if (_servico.Validar(_usuarioLogado.Email))
+                _erros = _servico.Validar(_usuarioLogado.Email, _erros);
+
+                if (_erros.Count > 0)
+                {
+                    MensagemUtil.ExibirMensagem("E-mail", _erros);
+                }
+                else
                 {
                     if (_servico.Salvar(_usuarioLogado.Email, _usuarioLogado))
                     {

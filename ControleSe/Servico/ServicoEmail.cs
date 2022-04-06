@@ -16,42 +16,49 @@ namespace ControleSe.Servico
 {
     public class ServicoEmail : ServicoBase
     {
-        public bool Validar(Email email)
+        public IList<Mensagem> Validar(Email email, IList<Mensagem> erros)
         {
             if (email is not null)
             {
+                erros.Clear();
+
                 if (string.IsNullOrWhiteSpace(email.Smtp))
                 {
-                    Msg.Atencao("Informe o servidor Smtp.");
-                    EhValido = false;
+                    erros.Add(new Mensagem("Informe o servidor Smtp."));
+                    //Msg.Atencao("Informe o servidor Smtp.");
+                    //EhValido = false;
                 }
-                else if (email.Porta < 0)
+                if (email.Porta < 0 || email.Porta == 0)
                 {
-                    Msg.Atencao("Informe a Porta.");
-                    EhValido = false;
+                    erros.Add(new Mensagem("Informe a Porta."));
+                    //Msg.Atencao("Informe a Porta.");
+                    //EhValido = false;
                 }
-                else if (string.IsNullOrWhiteSpace(email.EnderecoEmail))
+                if (string.IsNullOrWhiteSpace(email.EnderecoEmail))
                 {
-                    Msg.Atencao("Informe o E-mail.");
-                    EhValido = false;
+                    erros.Add(new Mensagem("Informe o E-mail."));
+                    //Msg.Atencao("Informe o E-mail.");
+                    //EhValido = false;
                 }
-                else if (!ValidarEmail(email.EnderecoEmail))
+                if (!ValidarEmail(email.EnderecoEmail))
                 {
-                    Msg.Atencao("Informe um e-mail valido.");
-                    EhValido = false;
+                    erros.Add(new Mensagem("Informe um e-mail valido."));
+                    //Msg.Atencao("Informe um e-mail valido.");
+                    //EhValido = false;
                 }
-                else if (string.IsNullOrWhiteSpace(email.SenhaEmail))
+                if (string.IsNullOrWhiteSpace(email.SenhaEmail))
                 {
-                    Msg.Atencao("Informe a senha.");
-                    EhValido = false;
+                    erros.Add(new Mensagem("Informe a senha."));
+                    //Msg.Atencao("Informe a senha.");
+                    //EhValido = false;
                 }
-                else
-                {
-                    EhValido = true;
-                }
+                //else
+                //{
+                //    EhValido = true;
+                //}
             }
 
-            return EhValido;
+            return erros;
         }
 
         private bool ValidarEmail(string email)

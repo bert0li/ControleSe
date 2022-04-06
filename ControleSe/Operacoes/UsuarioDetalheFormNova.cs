@@ -18,6 +18,7 @@ namespace ControleSe.Operacoes
     {
         private ServicoUsuario _servico = null;
         private Usuario _usuarioLogado = null;
+        private IList<Mensagem> _erros = null;
         public bool EhNovoUsuario = false;
 
         public UsuarioDetalheFormNova(ServicoUsuario servico, Usuario usuarioLogado, bool ehNovoUsuario = false)
@@ -35,6 +36,7 @@ namespace ControleSe.Operacoes
             {
                 BloquearLiberarSenha(false);
                 _usuarioLogado = usuarioLogado ?? new Usuario();
+                _erros = new List<Mensagem>();
 
                 txtCodigo.DataBindings.Add("Text", _usuarioLogado, "Id");
                 txtNome.DataBindings.Add("Text", _usuarioLogado, "Nome");
@@ -74,7 +76,13 @@ namespace ControleSe.Operacoes
         {
             try
             {
-                if (_servico.Validar(_usuarioLogado))
+                _erros = _servico.Validar(_usuarioLogado, _erros);
+
+                if (_erros.Count > 0)
+                {
+                    MensagemUtil.ExibirMensagem("Usuário", _erros);
+                }
+                else
                 {
                     if (_servico.Salvar(_usuarioLogado))
                     {

@@ -14,11 +14,13 @@ namespace ControleSe.Operacoes
     public partial class DataNovoVencimentoForm : Form
     {
         public DateTime NovoVencimento;
+        private IList<Mensagem> _erros = null;
 
         public DataNovoVencimentoForm()
         {
             InitializeComponent();
             SetarDataAtual();
+            _erros = new List<Mensagem>();
         }
 
         private void SetarDataAtual() => dtpDataNovoVencimento.Value = DateTime.Now;
@@ -32,7 +34,10 @@ namespace ControleSe.Operacoes
             }
             else
             {
-                Msg.Informacao("Informe uma data válida.");
+                _erros.Clear();
+                _erros.Add(new Mensagem("Informe uma data válida."));
+                //MensagemUtil.ExibirMensagem("Novo vencimento", _erros);
+                //Msg.Informacao("Informe uma data válida.");
                 dtpDataNovoVencimento.Focus();
             }
         }

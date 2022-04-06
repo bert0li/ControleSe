@@ -37,39 +37,38 @@ namespace ControleSe.Servico
             return EhValido;
         }
 
-        public bool Validar(Usuario usuarioLogado)
+        public IList<Mensagem> Validar(Usuario usuarioLogado, IList<Mensagem> erros)
         {
-            try
+
+            if (usuarioLogado != null)
             {
-                if (usuarioLogado != null)
+                erros.Clear();
+
+                if (string.IsNullOrWhiteSpace(usuarioLogado.Nome))
                 {
-                    if (string.IsNullOrWhiteSpace(usuarioLogado.Nome))
-                    {
-                        Msg.Atencao("Informe o Nome do usuário");
-                        EhValido = false;
-                    }
-                    else if (string.IsNullOrWhiteSpace(usuarioLogado.UsuarioAcesso))
-                    {
-                        Msg.Atencao("Informe o Usuário de acesso.");
-                        EhValido = false;
-                    }
-                    else if (string.IsNullOrWhiteSpace(usuarioLogado.SenhaAcesso))
-                    {
-                        Msg.Atencao("Informe o Senha do usuário");
-                        EhValido = false;
-                    }
-                    else
-                    {
-                        EhValido = true;
-                    }
+                    erros.Add(new Mensagem("Informe o Nome do usuário"));
+                    //Msg.Atencao("Informe o Nome do usuário");
+                    //EhValido = false;
                 }
-            }
-            catch (Exception)
-            {
-                throw;
+                if (string.IsNullOrWhiteSpace(usuarioLogado.UsuarioAcesso))
+                {
+                    erros.Add(new Mensagem("Informe o Usuário de acesso."));
+                    //Msg.Atencao("Informe o Usuário de acesso.");
+                    //EhValido = false;
+                }
+                if (string.IsNullOrWhiteSpace(usuarioLogado.SenhaAcesso))
+                {
+                    erros.Add(new Mensagem("Informe o Senha do usuário"));
+                    //Msg.Atencao("Informe o Senha do usuário");
+                    //EhValido = false;
+                }
+                //else
+                //{
+                //    EhValido = true;
+                //}
             }
 
-            return EhValido;
+            return erros;
         }
 
         public Usuario Logar(Usuario usuarioLogado)
@@ -219,11 +218,11 @@ namespace ControleSe.Servico
             return EhValido;
         }
 
-        public bool VerificarSenhaSegurança(Usuario usuarioLogado, string senha)
+        public IList<Mensagem> VerificarSenhaSegurança(Usuario usuarioLogado, string senha, IList<Mensagem> erros)
         {
             try
             {
-                EhValido = false;
+                //EhValido = false;
 
                 usuarioLogado.SenhaAcesso = CriptografarSenha(usuarioLogado.SenhaAcesso);
 
@@ -233,11 +232,11 @@ namespace ControleSe.Servico
                                                     a.Id == usuarioLogado.Id &&
                                                     a.SenhaAcesso == senha.Trim());
 
-                    if (any)
-                        EhValido = true;
+                    if (!any)
+                        erros.Add(new Mensagem("Senha inválida."));
                 }
 
-                return EhValido;
+                return erros;
             }
             catch (Exception)
             {

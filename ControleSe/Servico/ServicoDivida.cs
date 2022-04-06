@@ -14,37 +14,43 @@ namespace ControleSe.Servico
 {
     public class ServicoDivida : ServicoBase
     {
-        public bool Validar(Divida divida)
+        public IList<Mensagem> Validar(Divida divida, IList<Mensagem> erros)
         {
             if (divida != null)
             {
+                erros.Clear();
+
                 if (string.IsNullOrWhiteSpace(divida.Nome))
                 {
-                    Msg.Atencao("Informe o Nome da divida");
-                    EhValido = false;
+                    //Msg.Atencao("Informe o Nome da divida");
+                    erros.Add(new Mensagem("Informe o Nome da divida"));
+                    //EhValido = false;
                 }
-                else if (string.IsNullOrWhiteSpace(divida.Descricao))
+                if (string.IsNullOrWhiteSpace(divida.Descricao))
                 {
-                    Msg.Atencao("Informe o Descricao da divida");
-                    EhValido = false;
+                    //Msg.Atencao("Informe o Descricao da divida");
+                    erros.Add(new Mensagem("Informe o Descrição da divida"));
+                    //EhValido = false;
                 }
-                else if (divida.Valor == 0)
+                if (divida.Valor == 0)
                 {
-                    Msg.Atencao("Informe o Valor da divida");
-                    EhValido = false;
+                    //Msg.Atencao("Informe o Valor da divida");
+                    erros.Add(new Mensagem("Informe o Valor da divida"));
+                    //EhValido = false;
                 }
-                else if (divida.DataVencimento == DateTime.MinValue)
+                if (divida.DataVencimento == DateTime.MinValue)
                 {
-                    Msg.Atencao("Informe uma Data válida da divida");
-                    EhValido = false;
+                    //Msg.Atencao("Informe uma Data válida da divida");
+                    erros.Add(new Mensagem("Informe uma Data válida da divida"));
+                    //EhValido = false;
                 }
-                else
-                {
-                    EhValido = true;
-                }
+                //else
+                //{
+                //    EhValido = true;
+                //}
             }
 
-            return EhValido;
+            return erros;
         }
 
         public IEnumerable<Divida> ObterDividas(Usuario usuarioLogado)
@@ -295,7 +301,7 @@ namespace ControleSe.Servico
             }
         }
 
-        private IEnumerable<Divida> PesquisarDataPor(IEnumerable<Divida> dividasPesquisa, string dataPor, 
+        private IEnumerable<Divida> PesquisarDataPor(IEnumerable<Divida> dividasPesquisa, string dataPor,
                                                      DateTime dataDe, DateTime dataAte)
         {
             try
