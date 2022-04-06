@@ -1,4 +1,6 @@
-﻿using ControleSe.Utilitario.UtilMensagem;
+﻿using ControleSe.Utilitario;
+using ControleSe.Utilitario.Base;
+using ControleSe.Utilitario.UtilMensagem;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,16 +13,17 @@ using System.Windows.Forms;
 
 namespace ControleSe.Operacoes
 {
-    public partial class DataNovoVencimentoForm : Form
+    public partial class DataNovoVencimentoForm : FormDetalheBase
     {
         public DateTime NovoVencimento;
-        private IList<Mensagem> _erros = null;
+        //private IList<Mensagem> _erros = null;
 
         public DataNovoVencimentoForm()
         {
             InitializeComponent();
             SetarDataAtual();
-            _erros = new List<Mensagem>();
+            //_erros = new List<Mensagem>();
+            Erros = new List<Mensagem>();
         }
 
         private void SetarDataAtual() => dtpDataNovoVencimento.Value = DateTime.Now;
@@ -34,8 +37,8 @@ namespace ControleSe.Operacoes
             }
             else
             {
-                _erros.Clear();
-                _erros.Add(new Mensagem("Informe uma data válida."));
+                Erros.Clear();
+                Erros.Add(new Mensagem("Informe uma data válida."));
                 //MensagemUtil.ExibirMensagem("Novo vencimento", _erros);
                 //Msg.Informacao("Informe uma data válida.");
                 dtpDataNovoVencimento.Focus();

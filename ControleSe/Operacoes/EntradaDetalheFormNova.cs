@@ -1,7 +1,6 @@
 ﻿using ControleSe.Entidade;
 using ControleSe.Servico;
 using ControleSe.Utilitario.UtilMensagem;
-using ControleSe.Utilitario.UtilMensagem;
 using ControleSe.Utilitario.Splash;
 using System;
 using System.Collections.Generic;
@@ -12,15 +11,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ControleSe.Utilitario;
+using ControleSe.Utilitario.Base;
 
 namespace ControleSe.Operacoes
 {
-    public partial class EntradaDetalheFormNova : Form
+    public partial class EntradaDetalheFormNova : FormDetalheBase
     {
         private ServicoEntrada _servico = null;
         private Entrada _entrada = null;
         private Usuario _usuario = null;
-        private IList<Mensagem> _erros = null;
+        //private IList<Mensagem> _erros = null;
 
         public EntradaDetalheFormNova(ServicoEntrada servicoEntrada, Entrada entrada, Usuario usuarioLogado)
         {
@@ -39,7 +40,8 @@ namespace ControleSe.Operacoes
             try
             {
                 _servico = _servico ?? new ServicoEntrada();
-                _erros = new List<Mensagem>();
+                //_erros = new List<Mensagem>();
+                Erros = new List<Mensagem>();
 
                 txtValorEntrada.DataBindings.Add("Text", _entrada, "ValorEntrada");
                 txtObservacao.DataBindings.Add("Text", _entrada, "Observacao");
@@ -78,11 +80,11 @@ namespace ControleSe.Operacoes
         {
             try
             {
-                _erros = _servico.Validar(_entrada, _erros);
+                Erros = _servico.Validar(_entrada, Erros);
 
-                if (_erros.Count > 0)
+                if (Erros.Count > 0)
                 {
-                    MensagemUtil.ExibirMensagem("Entrada", _erros);
+                    MensagemUtil.ExibirMensagem("Entrada", Erros);
                 }
                 else
                 {

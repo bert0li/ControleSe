@@ -1,5 +1,7 @@
 ﻿using ControleSe.Entidade;
 using ControleSe.Servico;
+using ControleSe.Utilitario;
+using ControleSe.Utilitario.Base;
 using ControleSe.Utilitario.UtilMensagem;
 using System;
 using System.Collections.Generic;
@@ -13,19 +15,20 @@ using System.Windows.Forms;
 
 namespace ControleSe.Operacoes
 {
-    public partial class ConfirmarSenhaUsuarioForm : Form
+    public partial class ConfirmarSenhaUsuarioForm : FormDetalheBase
     {
         private ServicoUsuario _servico = null;
         private Usuario _usuario = null;
         public bool EhValido = false;
-        private IList<Mensagem> _erros = null;
+        //private IList<Mensagem> _erros = null;
 
         public ConfirmarSenhaUsuarioForm(Usuario usuarioLogado, ServicoUsuario servicoUsuario)
         {
             InitializeComponent();
             _usuario = usuarioLogado;
             _servico = servicoUsuario;
-            _erros = new List<Mensagem>();
+            //_erros = new List<Mensagem>();
+            Erros = new List<Mensagem>();
         }
 
         private void VerificarSenhaSegurança()
@@ -34,11 +37,11 @@ namespace ControleSe.Operacoes
             {
                 if(!string.IsNullOrWhiteSpace(txtSenha.Text))
                 {
-                    _erros = _servico.VerificarSenhaSegurança(_usuario, txtSenha.Text, _erros);
+                    Erros = _servico.VerificarSenhaSegurança(_usuario, txtSenha.Text, Erros);
 
-                    if (_erros.Count > 0)
+                    if (Erros.Count > 0)
                     {
-                        MensagemUtil.ExibirMensagem("Confirmação de senha", _erros);
+                        MensagemUtil.ExibirMensagem("Confirmação de senha", Erros);
                         //Msg.Informacao("Senha inválida.");
                         txtSenha.Focus();
                         txtSenha.SelectAll();
@@ -50,9 +53,9 @@ namespace ControleSe.Operacoes
                 }
                 else
                 {
-                    _erros.Clear();
-                    _erros.Add(new Mensagem("Informe a senha do seu usuário."));
-                    MensagemUtil.ExibirMensagem("Confirmação de senha", _erros);
+                    Erros.Clear();
+                    Erros.Add(new Mensagem("Informe a senha do seu usuário."));
+                    MensagemUtil.ExibirMensagem("Confirmação de senha", Erros);
                     //Msg.Informacao("Informe a senha do seu usuário.");
                     txtSenha.Focus();
                 }

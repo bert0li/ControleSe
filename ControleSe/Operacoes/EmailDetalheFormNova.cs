@@ -11,14 +11,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ControleSe.Utilitario;
+using ControleSe.Utilitario.Base;
 
 namespace ControleSe.Operacoes
 {
-    public partial class EmailDetalheFormNova : Form
+    public partial class EmailDetalheFormNova : FormDetalheBase
     {
         private ServicoEmail _servico = null;
         private Usuario _usuarioLogado = null;
-        private IList<Mensagem> _erros = null;
+        //private IList<Mensagem> _erros = null;
 
         public EmailDetalheFormNova(ServicoEmail servico, Usuario usuarioLogado)
         {
@@ -34,7 +36,8 @@ namespace ControleSe.Operacoes
             {
                 _usuarioLogado = usuairoLogado ?? new Usuario();
                 _usuarioLogado.Email = usuairoLogado.Email ?? new Email();
-                _erros = new List<Mensagem>();
+                //_erros = new List<Mensagem>();
+                Erros = new List<Mensagem>();
 
                 txtSmtp.DataBindings.Add("Text", _usuarioLogado.Email, "Smtp");
                 txtPorta.DataBindings.Add("Text", _usuarioLogado.Email, "Porta");
@@ -76,11 +79,11 @@ namespace ControleSe.Operacoes
         {
             try
             {
-                _erros = _servico.Validar(_usuarioLogado.Email, _erros);
+                Erros = _servico.Validar(_usuarioLogado.Email, Erros);
 
-                if (_erros.Count > 0)
+                if (Erros.Count > 0)
                 {
-                    MensagemUtil.ExibirMensagem("E-mail", _erros);
+                    MensagemUtil.ExibirMensagem("E-mail", Erros);
                 }
                 else
                 {

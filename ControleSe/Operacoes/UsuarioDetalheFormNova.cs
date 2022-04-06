@@ -11,14 +11,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ControleSe.Utilitario;
+using ControleSe.Utilitario.Base;
 
 namespace ControleSe.Operacoes
 {
-    public partial class UsuarioDetalheFormNova : Form
+    public partial class UsuarioDetalheFormNova : FormDetalheBase
     {
         private ServicoUsuario _servico = null;
         private Usuario _usuarioLogado = null;
-        private IList<Mensagem> _erros = null;
+        //private IList<Mensagem> _erros = null;
         public bool EhNovoUsuario = false;
 
         public UsuarioDetalheFormNova(ServicoUsuario servico, Usuario usuarioLogado, bool ehNovoUsuario = false)
@@ -36,7 +38,8 @@ namespace ControleSe.Operacoes
             {
                 BloquearLiberarSenha(false);
                 _usuarioLogado = usuarioLogado ?? new Usuario();
-                _erros = new List<Mensagem>();
+                //_erros = new List<Mensagem>();
+                Erros = new List<Mensagem>();
 
                 txtCodigo.DataBindings.Add("Text", _usuarioLogado, "Id");
                 txtNome.DataBindings.Add("Text", _usuarioLogado, "Nome");
@@ -76,11 +79,11 @@ namespace ControleSe.Operacoes
         {
             try
             {
-                _erros = _servico.Validar(_usuarioLogado, _erros);
+                Erros = _servico.Validar(_usuarioLogado, Erros);
 
-                if (_erros.Count > 0)
+                if (Erros.Count > 0)
                 {
-                    MensagemUtil.ExibirMensagem("Usuário", _erros);
+                    MensagemUtil.ExibirMensagem("Usuário", Erros);
                 }
                 else
                 {

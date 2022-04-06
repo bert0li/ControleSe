@@ -18,7 +18,7 @@ namespace ControleSe.Utilitario.UtilMensagem
             grid.AutoGenerateColumns = false;
         }
 
-        public void AtribuirDataSourceGrid(string titulo, IList<Mensagem> erros)
+        public void AtribuirBinding(string titulo, IList<Mensagem> erros)
         {
             lblMsgTitulo.Text = titulo;
             grid.DataSource = erros;

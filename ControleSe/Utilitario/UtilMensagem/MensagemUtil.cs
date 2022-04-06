@@ -16,7 +16,7 @@ namespace ControleSe.Utilitario.UtilMensagem
             if (_msgForm is null)
                 _msgForm = new MsgForm();
 
-            _msgForm.AtribuirDataSourceGrid(titulo, mensagens);
+            _msgForm.AtribuirBinding(titulo, mensagens);
 
             return _msgForm.ShowDialog();
         }

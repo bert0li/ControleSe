@@ -14,10 +14,12 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ControleSe.Utilitario;
+using ControleSe.Utilitario.Base;
 
 namespace ControleSe.Operacoes
 {
-    public partial class DividaDetalheFormNova : Form
+    public partial class DividaDetalheFormNova : FormDetalheBase
     {
         private ServicoDivida _servicoDivida = null;
         private ServicoEmail _servicoEmail = null;
@@ -27,7 +29,7 @@ namespace ControleSe.Operacoes
         private bool PrimeiroBinding = false;
         private Task _retornoEnvioEmail = null;
         private DateTime _dataNovoVencimento;
-        private IList<Mensagem> _erros = null;
+        //private IList<Mensagem> _erros = null;
 
         public DividaDetalheFormNova(ServicoDivida servicoDivida, Divida divida, Usuario usuarioLogado)
         {
@@ -94,7 +96,8 @@ namespace ControleSe.Operacoes
                 _servicoDivida = _servicoDivida ?? new ServicoDivida();
                 _servicoEmail = new ServicoEmail();
                 _servicoArquivo = new ServicoArquivo();
-                _erros = new List<Mensagem>();
+                //_erros = new List<Mensagem>();
+                Erros = new List<Mensagem>();
 
                 InicializarDatas();
                 CarregarCompoBox();
@@ -133,11 +136,11 @@ namespace ControleSe.Operacoes
         {
             try
             {
-                _erros = _servicoDivida.Validar(_divida, _erros);
+                Erros = _servicoDivida.Validar(_divida, Erros);
 
-                if (_erros.Count > 0)
+                if (Erros.Count > 0)
                 {
-                    MensagemUtil.ExibirMensagem("Divida", _erros);
+                    MensagemUtil.ExibirMensagem("Divida", Erros);
                 }
                 else
                 {
