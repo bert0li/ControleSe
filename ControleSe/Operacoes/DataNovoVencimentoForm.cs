@@ -1,4 +1,4 @@
-﻿using ControleSe.Utilitario;
+﻿using ControleSe.Utilitario.Mensagem;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

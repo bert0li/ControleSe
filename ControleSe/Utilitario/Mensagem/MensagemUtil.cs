@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ControleSe.Utilitario
+namespace ControleSe.Utilitario.Mensagem
 {
     public static class MensagemUtil
     {

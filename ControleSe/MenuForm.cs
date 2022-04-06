@@ -1,7 +1,7 @@
 ﻿using ControleSe.Entidade;
 using ControleSe.Operacoes;
 using ControleSe.Servico;
-using ControleSe.Utilitario;
+using ControleSe.Utilitario.Mensagem;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

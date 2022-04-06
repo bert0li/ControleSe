@@ -1,5 +1,5 @@
 ﻿
-namespace ControleSe.Utilitario
+namespace ControleSe.Utilitario.Mensagem
 {
     partial class MsgForm
     {

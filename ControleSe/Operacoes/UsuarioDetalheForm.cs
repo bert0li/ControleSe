@@ -1,6 +1,6 @@
 ﻿using ControleSe.Entidade;
 using ControleSe.Servico;
-using ControleSe.Utilitario;
+using ControleSe.Utilitario.Mensagem;
 using ControleSe.Utilitario.Splash;
 using System;
 using System.Collections.Generic;
