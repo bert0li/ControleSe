@@ -2,7 +2,7 @@
 using ControleSe.Enumerador;
 using ControleSe.Repositorio.Contexto;
 using ControleSe.Servico.Base;
-using ControleSe.Utilitario.Mensagem;
+using ControleSe.Utilitario.UtilMensagem;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

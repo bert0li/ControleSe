@@ -1,7 +1,7 @@
 ﻿using ControleSe.Entidade;
 using ControleSe.Servico;
-using ControleSe.Utilitario.Mensagem;
-using ControleSe.Utilitario.Mensagem;
+using ControleSe.Utilitario.UtilMensagem;
+using ControleSe.Utilitario.UtilMensagem;
 using ControleSe.Utilitario.Splash;
 using System;
 using System.Collections.Generic;

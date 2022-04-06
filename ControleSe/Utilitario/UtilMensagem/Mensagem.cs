@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ControleSe.Utilitario.Mensagem
+namespace ControleSe.Utilitario.UtilMensagem
 {
     public class Mensagem
     {

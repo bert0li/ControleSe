@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ControleSe.Utilitario.Mensagem
+namespace ControleSe.Utilitario.UtilMensagem
 {
     public partial class MsgForm : Form
     {
