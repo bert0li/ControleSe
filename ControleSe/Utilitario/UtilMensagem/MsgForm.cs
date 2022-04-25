@@ -15,11 +15,11 @@ namespace ControleSe.Utilitario.UtilMensagem
         public MsgForm()
         {
             InitializeComponent();
-            grid.AutoGenerateColumns = false;
         }
 
         public void AtribuirBinding(string titulo, IList<Mensagem> erros)
         {
+            grid.AutoGenerateColumns = false;
             lblMsgTitulo.Text = titulo;
             grid.DataSource = erros;
             grid.ClearSelection();

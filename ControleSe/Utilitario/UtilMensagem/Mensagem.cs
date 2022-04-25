@@ -12,7 +12,7 @@ namespace ControleSe.Utilitario.UtilMensagem
         public string TextMensagem { get; set; }
         public Bitmap Icone { get; set; }
 
-        public Mensagem( string textoMensagem)
+        public Mensagem(string textoMensagem)
         {
             TextMensagem = textoMensagem;
             Icone = Properties.Resources.alerta;

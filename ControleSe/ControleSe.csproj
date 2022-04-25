@@ -120,8 +120,4 @@
     </None>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Utilitario\Mensagem\" />
-  </ItemGroup>
-
 </Project>

@@ -119,7 +119,7 @@ namespace ControleSe.Utilitario.UtilMensagem
             // 
             // lblMsgTitulo
             // 
-            this.lblMsgTitulo.BackColor = System.Drawing.Color.Tomato;
+            this.lblMsgTitulo.BackColor = System.Drawing.Color.DarkSalmon;
             this.lblMsgTitulo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblMsgTitulo.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblMsgTitulo.Location = new System.Drawing.Point(12, 9);
