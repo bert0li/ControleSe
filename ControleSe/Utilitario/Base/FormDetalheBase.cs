@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace ControleSe.Utilitario.Base
 {
-    public abstract class FormDetalheBase : Form
+    public class FormDetalheBase : Form
     {
         public IList<Mensagem> Erros;
     }

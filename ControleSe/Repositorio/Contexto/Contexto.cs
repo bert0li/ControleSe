@@ -35,8 +35,8 @@ namespace ControleSe.Repositorio.Contexto
             //                        .MigrationsHistoryTable("HistoricoMigracao"));
 
             optionsBuilder.UseSqlServer(
-                //"server=Desenv;initial catalog=ControleSe;user id=sa;password=bertoli1836"
-                @"server=CODER\SQLEXPRESS;initial catalog=ControleSe;user id=sa;password=bertoli1836"
+                "server=DESENV;initial catalog=ControleSe;user id=sa;password=bertoli1836"
+                //@"server=CODER\SQLEXPRESS;initial catalog=ControleSe;user id=sa;password=bertoli1836"
                 , p =>
                   p.EnableRetryOnFailure(
                       maxRetryCount: 3,
