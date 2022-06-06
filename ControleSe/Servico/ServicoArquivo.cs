@@ -43,50 +43,66 @@ namespace ControleSe.Servico
 
             if (Directory.Exists(subPasta))
             {
-                VerificarArquivo(localArquivo);
+                //VerificarArquivo(localArquivo);
+                EscreverArquivo(localArquivo);
             }
             else
             {
                 Directory.CreateDirectory(subPasta);
-                VerificarArquivo(localArquivo);
+                //VerificarArquivo(localArquivo);
+                EscreverArquivo(localArquivo);
             }
         }
 
         private void VerificarSeExistePastaRoot(string pastaRoot)
         {
             string localPasta = string.Concat(_localPadrao, pastaRoot);
+            string caminhoComSubPasta = $@"{localPasta}\{_nomeSubPasta}";
 
             if (Directory.Exists(localPasta))
             {
-                string caminhoComSubPasta = $@"{localPasta}\{_nomeSubPasta}";
                 VerificarSeExisteSubPasta(caminhoComSubPasta);
             }
             else
             {
                 Directory.CreateDirectory(localPasta);
-                VerificarSeExisteSubPasta(_nomeSubPasta);
+                VerificarSeExisteSubPasta(caminhoComSubPasta);
             }
         }
 
-        private void VerificarArquivo(string arquivoTexto)
-        {
-            if (!File.Exists(arquivoTexto))
-                _stringWriter = File.CreateText(arquivoTexto); // cria e já abre o arquivo para inserir as info.
+        //private void VerificarArquivo(string arquivoTexto)
+        //{
+        //    if (!File.Exists(arquivoTexto))
+        //        _stringWriter = File.CreateText(arquivoTexto); // cria e já abre o arquivo para inserir as info.
+        //    else
+        //        _stringWriter = File.CreateText(arquivoTexto);
 
-            EscreverArquivo(_stringWriter);
-        }
+        //    EscreverArquivo(_stringWriter);
+        //}
 
-        private void EscreverArquivo(StreamWriter streamWriter)
+        private void EscreverArquivo(/*StreamWriter streamWriter*/ string localArquivo)
         {
-            streamWriter.WriteLine("---------------------------------------------");
-            streamWriter.WriteLine("- DIVIDA PAGA");
-            streamWriter.WriteLine("---------------------------------------------");
-            streamWriter.WriteLine($"- Nome da divida: {_divida.Nome}");
-            streamWriter.WriteLine($"- Valor: R$ {_divida.Valor}");
-            streamWriter.WriteLine($"- Data do pagamento: {Convert.ToDateTime(_divida.DataPagamento).ToShortDateString()}");
-            streamWriter.WriteLine($"- Data do vencimento: {_divida.DataVencimento.ToShortDateString()}");
-            streamWriter.WriteLine("---------------------------------------------");
-            streamWriter.Close();
+            //streamWriter.WriteLine("---------------------------------------------");
+            //streamWriter.WriteLine("- DIVIDA PAGA");
+            //streamWriter.WriteLine("---------------------------------------------");
+            //streamWriter.WriteLine($"- Nome da divida: {_divida.Nome}");
+            //streamWriter.WriteLine($"- Valor: R$ {_divida.Valor}");
+            //streamWriter.WriteLine($"- Data do pagamento: {Convert.ToDateTime(_divida.DataPagamento).ToShortDateString()}");
+            //streamWriter.WriteLine($"- Data do vencimento: {_divida.DataVencimento.ToShortDateString()}");
+            //streamWriter.WriteLine("---------------------------------------------");
+            //streamWriter.Close();
+
+            _stringWriter = File.CreateText(localArquivo); // cria e já abre o arquivo para inserir as info.
+
+            _stringWriter.WriteLine("---------------------------------------------");
+            _stringWriter.WriteLine("- DIVIDA PAGA");
+            _stringWriter.WriteLine("---------------------------------------------");
+            _stringWriter.WriteLine($"- Nome da divida: {_divida.Nome}");
+            _stringWriter.WriteLine($"- Valor: R$ {_divida.Valor}");
+            _stringWriter.WriteLine($"- Data do pagamento: {Convert.ToDateTime(_divida.DataPagamento).ToShortDateString()}");
+            _stringWriter.WriteLine($"- Data do vencimento: {_divida.DataVencimento.ToShortDateString()}");
+            _stringWriter.WriteLine("---------------------------------------------");
+            _stringWriter.Close();
         }
     }
 }

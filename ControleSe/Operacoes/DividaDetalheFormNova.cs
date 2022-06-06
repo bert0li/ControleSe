@@ -201,6 +201,8 @@ namespace ControleSe.Operacoes
                     {
                         Tuple<Divida, bool> dividaTuple = _servicoDivida.Pagar(_divida, _usuarioLogado);
 
+                        if (dividaTuple == null) return;
+
                         if (dividaTuple.Item2)
                         {
                             if (Msg.Pergunta("Divida paga.\nDeseja enviar a comprovação do pagamento no seu e-mail?") == DialogResult.Yes)

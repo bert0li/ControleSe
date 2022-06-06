@@ -225,12 +225,13 @@ namespace ControleSe.Servico
                 //EhValido = false;
 
                 usuarioLogado.SenhaAcesso = CriptografarSenha(usuarioLogado.SenhaAcesso);
+                var senhaCritpt = CriptografarSenha(senha);
 
                 using (Contexto contexto = new())
                 {
                     bool any = contexto.Usuario.Any(a =>
                                                     a.Id == usuarioLogado.Id &&
-                                                    a.SenhaAcesso == senha.Trim());
+                                                    a.SenhaAcesso == senhaCritpt.Trim());
 
                     if (!any)
                         erros.Add(new Mensagem("Senha inválida."));

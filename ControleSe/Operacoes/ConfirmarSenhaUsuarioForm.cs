@@ -49,16 +49,17 @@ namespace ControleSe.Operacoes
                     else
                     {
                         Close();
+                        EhValido = true;
                     }
                 }
-                else
-                {
-                    Erros.Clear();
-                    Erros.Add(new Mensagem("Informe a senha do seu usuário."));
-                    MensagemUtil.ExibirMensagem("Confirmação de senha", Erros);
-                    //Msg.Informacao("Informe a senha do seu usuário.");
-                    txtSenha.Focus();
-                }
+                //else
+                //{
+                //    Erros.Clear();
+                //    Erros.Add(new Mensagem("Informe a senha do seu usuário."));
+                //    MensagemUtil.ExibirMensagem("Confirmação de senha", Erros);
+                //    //Msg.Informacao("Informe a senha do seu usuário.");
+                //    txtSenha.Focus();
+                //}
             }
             catch (Exception ex)
             {
